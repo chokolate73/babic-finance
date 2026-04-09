@@ -60,7 +60,7 @@ export default function Trust() {
             </div>
           </div>
 
-          {/* Credentials */}
+          {/* Credentials + Stats */}
           <div>
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mb-8">
               Владислав Бабич
@@ -78,22 +78,22 @@ export default function Trust() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mt-16 max-w-2xl mx-auto">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="text-center p-6 bg-white rounded-xl border border-border"
-            >
-              <p className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-gold">
-                {s.value}
-              </p>
-              <p className="text-sm text-muted-foreground mt-1">{s.label}</p>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 mt-8">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="text-center p-6 bg-white rounded-xl border border-border"
+                >
+                  <p className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-gold">
+                    {s.value}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">{s.label}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
