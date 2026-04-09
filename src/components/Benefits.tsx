@@ -59,10 +59,10 @@ export default function Benefits() {
             return (
               <div
                 key={b.title}
-                className="bg-card p-7 rounded-xl border border-border hover:shadow-lg hover:border-gold/30 transition-all duration-300 group"
+                className="bg-card p-7 rounded-2xl border border-border hover:shadow-xl hover:border-l-4 hover:border-l-gold hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
-                  <Icon className="w-6 h-6 text-gold" />
+                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold transition-colors duration-300">
+                  <Icon className="w-6 h-6 text-gold group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="font-semibold text-navy text-lg mb-2">
                   {b.title}
