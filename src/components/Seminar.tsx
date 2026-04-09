@@ -42,7 +42,7 @@ export default function Seminar() {
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Ближайший семинар
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Присоединяйтесь к мероприятию
             </h2>
           </div>
@@ -72,7 +72,7 @@ export default function Seminar() {
                 {countdown.map((c) => (
                   <div key={c.label} className="text-center">
                     <div className="bg-navy text-white w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center">
-                      <span className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold">
+                      <span className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold">
                         {c.value}
                       </span>
                     </div>
@@ -83,7 +83,7 @@ export default function Seminar() {
                 ))}
               </div>
 
-              <h3 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-navy mb-4 text-center">
+              <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mb-4 text-center">
                 Недвижимость в Германии — простым языком
               </h3>
 

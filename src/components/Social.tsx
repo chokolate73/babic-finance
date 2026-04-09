@@ -13,7 +13,7 @@ export default function Social() {
           <span className="text-gold font-semibold text-sm uppercase tracking-wider">
             Социальные сети
           </span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3 mb-4">
+          <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3 mb-4">
             Подписывайтесь в Instagram
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto mb-8">

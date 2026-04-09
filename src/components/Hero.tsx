@@ -35,14 +35,14 @@ export default function Hero() {
           <div className="h-px w-10 bg-gold" />
         </div>
 
-        <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
+        <h1 className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
           Персональный эксперт
           <br />
           <span className="text-gold">по финансам в Германии</span>
         </h1>
 
         <p
-          className={`text-gold font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-medium mt-4 mb-6 transition-all duration-1000 ease-out ${
+          className={`text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-medium mt-4 mb-6 transition-all duration-1000 ease-out ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "300ms" }}

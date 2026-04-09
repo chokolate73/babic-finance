@@ -50,7 +50,7 @@ export default function FAQ() {
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Вопросы
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Часто задаваемые вопросы
             </h2>
           </div>
