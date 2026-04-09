@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const SEMINAR_DATE = new Date("2026-04-10T18:30:00+02:00");
 
@@ -35,16 +36,18 @@ export default function Seminar() {
   return (
     <section id="seminar" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-            Ближайший семинар
-          </span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-            Присоединяйтесь к мероприятию
-          </h2>
-        </div>
+        <AnimateOnScroll animation="fade-up">
+          <div className="text-center mb-14">
+            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+              Ближайший семинар
+            </span>
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+              Присоединяйтесь к мероприятию
+            </h2>
+          </div>
+        </AnimateOnScroll>
 
-        <div className="max-w-4xl mx-auto">
+        <AnimateOnScroll animation="scale-in" className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl border border-border overflow-hidden shadow-lg">
             <div className="relative h-56 sm:h-72">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -137,7 +140,7 @@ export default function Seminar() {
               </div>
             </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

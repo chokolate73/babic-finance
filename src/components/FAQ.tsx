@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const faqs = [
   {
@@ -44,21 +45,23 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-20 lg:py-28 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-            Вопросы
-          </span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-            Часто задаваемые вопросы
-          </h2>
-        </div>
+        <AnimateOnScroll animation="fade-up">
+          <div className="text-center mb-14">
+            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+              Вопросы
+            </span>
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+              Часто задаваемые вопросы
+            </h2>
+          </div>
+        </AnimateOnScroll>
 
         <div className="space-y-3">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
+              <AnimateOnScroll key={i} animation="fade-up" delay={i * 80}>
               <div
-                key={i}
                 className={`bg-white border rounded-xl px-6 transition-colors ${
                   isOpen ? "border-gold/30" : "border-border"
                 }`}
@@ -87,6 +90,7 @@ export default function FAQ() {
                   </p>
                 </div>
               </div>
+              </AnimateOnScroll>
             );
           })}
         </div>

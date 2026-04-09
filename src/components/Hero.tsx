@@ -1,6 +1,15 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Hero() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
@@ -13,7 +22,11 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/80" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
+      <div
+        className={`relative z-10 max-w-4xl mx-auto px-4 text-center pt-20 transition-all duration-1000 ease-out ${
+          loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-px w-10 bg-gold" />
           <div className="w-2 h-2 rotate-45 bg-gold" />
@@ -26,11 +39,21 @@ export default function Hero() {
           <span className="text-gold">по финансам в Германии</span>
         </h1>
 
-        <p className="text-gold font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-medium mt-4 mb-6">
+        <p
+          className={`text-gold font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-medium mt-4 mb-6 transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
           Владислав Бабич
         </p>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div
+          className={`flex flex-wrap justify-center gap-2 mb-10 transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "500ms" }}
+        >
           {["Финансовые консультации", "Инвестиции", "Пенсия", "Страхование"].map(
             (tag) => (
               <span
@@ -43,7 +66,12 @@ export default function Hero() {
           )}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+        <div
+          className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "700ms" }}
+        >
           <a
             href="https://wa.me/491784743490"
             target="_blank"
@@ -61,7 +89,12 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="text-white/60 text-sm">
+        <p
+          className={`text-white/60 text-sm transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ transitionDelay: "900ms" }}
+        >
           Отвечаем в течение часа в рабочее время
         </p>
       </div>

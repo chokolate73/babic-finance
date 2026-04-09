@@ -4,6 +4,7 @@ import { useState, FormEvent } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import TelegramIcon from "./TelegramIcon";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -25,20 +26,23 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-            Контакт
-          </span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-            Оставить заявку
-          </h2>
-          <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-            Заполните форму, и я свяжусь с вами в ближайшее время
-          </p>
-        </div>
+        <AnimateOnScroll animation="fade-up">
+          <div className="text-center mb-14">
+            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+              Контакт
+            </span>
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+              Оставить заявку
+            </h2>
+            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+              Заполните форму, и я свяжусь с вами в ближайшее время
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Form */}
+          <AnimateOnScroll animation="fade-left">
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div>
               <label className="text-sm font-medium text-navy mb-1.5 block">
@@ -96,8 +100,10 @@ export default function Contact() {
               {submitted ? "Отправлено!" : "Отправить заявку"}
             </button>
           </form>
+          </AnimateOnScroll>
 
           {/* Contact info */}
+          <AnimateOnScroll animation="fade-right">
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-xl border border-border space-y-5">
               <h3 className="font-semibold text-navy text-lg">
@@ -173,6 +179,7 @@ export default function Contact() {
               </a>
             </div>
           </div>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>
