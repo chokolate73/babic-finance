@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CircleCheckBig } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -47,11 +48,13 @@ export default function Trust() {
           <AnimateOnScroll animation="fade-left">
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
                   alt="Владислав Бабич — финансовый консультант"
                   className="w-full h-auto object-cover"
+                  width={800}
+                  height={600}
+                  priority
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
                   <p className="text-gold font-[family-name:var(--font-playfair)] text-lg font-semibold">

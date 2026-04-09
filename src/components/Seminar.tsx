@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -50,11 +51,12 @@ export default function Seminar() {
         <AnimateOnScroll animation="scale-in" className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl border border-border overflow-hidden shadow-lg">
             <div className="relative h-56 sm:h-72">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/18a10eace_generated_e3868091.png"
                 alt="Семинар — Недвижимость в Германии"
-                className="w-full h-full object-cover"
+                className="object-cover"
+                fill
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
               <div className="absolute top-4 left-4">

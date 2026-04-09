@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Hero() {
@@ -13,11 +14,12 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/hero.png"
           alt="Финансовый консультант в Германии"
-          className="w-full h-full object-cover"
+          className="object-cover"
+          fill
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/80" />
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const services = [
@@ -66,12 +67,13 @@ export default function Services() {
           {services.map((s, i) => (
             <AnimateOnScroll key={s.title} animation="fade-up" delay={i * 100}>
               <div className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-lg hover:border-gold/30 transition-all duration-300">
-                <div className="h-44 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="relative h-44 overflow-hidden">
+                  <Image
                     src={s.img}
                     alt={s.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    priority
                   />
                 </div>
                 <div className="p-5">
