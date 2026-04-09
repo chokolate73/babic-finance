@@ -59,15 +59,15 @@ export default function Hero() {
           priority
           quality={85}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30 lg:to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div>
-          <div className="max-w-2xl text-center lg:text-left">
+          <div className="text-center">
             {/* Gold decorative line */}
             <motion.div
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
+              className="flex items-center justify-center gap-3 mb-6"
               {...fadeUp(0.2)}
             >
               <div className="h-px w-10 bg-gold" />
@@ -93,7 +93,7 @@ export default function Hero() {
 
             {/* Stat badges */}
             <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
+              className="flex flex-wrap justify-center gap-3 mb-6"
               {...fadeUp(0.6)}
             >
               {heroContent.stats.map((stat) => (
@@ -109,7 +109,7 @@ export default function Hero() {
 
             {/* Service pills */}
             <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10"
+              className="flex flex-wrap justify-center gap-2 mb-10"
               {...fadeUp(0.6)}
             >
               {heroContent.pills.map((pill) => (
@@ -124,7 +124,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
               {...fadeUp(0.7)}
             >
               <a
