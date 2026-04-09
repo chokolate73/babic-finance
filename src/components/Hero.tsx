@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/f2c948c71_generated_5870c463.png"
+          src="/hero.png"
           alt="Финансовый консультант в Германии"
           className="w-full h-full object-cover"
         />
