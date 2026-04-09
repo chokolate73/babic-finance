@@ -35,19 +35,15 @@ export default function Trust() {
   return (
     <section id="trust" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-4">
-            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Почему мне доверяют?
-            </span>
-          </div>
-        </AnimateOnScroll>
-
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Photo */}
+          {/* Photo with decorative gold border */}
           <AnimateOnScroll animation="fade-left">
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative p-4">
+              {/* Gold L-shaped corner borders */}
+              <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-gold rounded-tl-2xl" />
+              <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-gold rounded-br-2xl" />
+
+              <div className="relative rounded-2xl overflow-hidden">
                 <Image
                   src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
                   alt="Владислав Бабич — финансовый консультант"
@@ -56,14 +52,6 @@ export default function Trust() {
                   height={600}
                   priority
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
-                  <p className="text-gold font-[family-name:var(--font-serif)] text-lg font-semibold">
-                    Владислав Бабич
-                  </p>
-                  <p className="text-white/80 text-sm">
-                    Региональный директор, DVAG
-                  </p>
-                </div>
               </div>
             </div>
           </AnimateOnScroll>
@@ -71,6 +59,14 @@ export default function Trust() {
           {/* Credentials + Stats */}
           <AnimateOnScroll animation="fade-right">
             <div>
+              {/* Section label with left line */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-10 bg-gold" />
+                <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+                  Почему мне доверяют?
+                </span>
+              </div>
+
               <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mb-8">
                 Владислав Бабич
               </h2>
@@ -92,7 +88,7 @@ export default function Trust() {
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {stats.map((s, i) => (
                   <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 150}>
-                    <div className="text-center p-6 bg-white rounded-xl border border-border">
+                    <div className="text-center p-6 bg-gray-50 rounded-xl border border-border">
                       <p className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-gold">
                         {s.value}
                       </p>
