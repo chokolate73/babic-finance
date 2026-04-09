@@ -1,54 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-const heroContent = {
-  headline: "Персональный эксперт",
-  headlineAccent: "по финансам в Германии",
-  subtitle: "Владислав Бабич",
-  stats: [
-    { value: "21", label: "год опыта" },
-    { value: "391+", label: "клиентов" },
-    { value: "С 2005", label: "года" },
-  ],
-  pills: ["Консультации", "Инвестиции", "Пенсия", "Страхование"],
-  cta: {
-    primary: { text: "Обсудить детали", href: "https://wa.me/491784743490" },
-    secondary: { text: "Узнать подробнее", href: "#about" },
-  },
-  trustLine: "Отвечаем в течение часа в рабочее время",
-  scrollLabel: "Прокрутить вниз",
-};
-
 export default function VideoHero() {
-  const prefersReduced = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    setLoaded(true);
   }, []);
 
-  const fadeUp = (delay: number) =>
-    prefersReduced
-      ? {}
-      : {
-          initial: { opacity: 0, y: 24 },
-          animate: mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
-          transition: { duration: 0.6, delay, ease: "easeOut" as const },
-        };
-
-  const bounce = prefersReduced
-    ? {}
-    : {
-        animate: { y: [0, 8, 0] },
-        transition: { duration: 2, repeat: Infinity, ease: "easeInOut" as const },
-      };
-
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-      {/* Video background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <video
           autoPlay
@@ -59,129 +22,97 @@ export default function VideoHero() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/80" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
-          {/* Text content — 60% */}
-          <div className="lg:col-span-3 text-center lg:text-left">
-            {/* Gold decorative line */}
-            <motion.div
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
-              {...fadeUp(0.2)}
-            >
-              <div className="h-px w-10 bg-gold" />
-              <div className="w-2 h-2 rotate-45 bg-gold" />
-              <div className="h-px w-10 bg-gold" />
-            </motion.div>
-
-            <motion.h1
-              className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-4"
-              {...fadeUp(0.4)}
-            >
-              {heroContent.headline}
-              <br />
-              <span className="text-gold">{heroContent.headlineAccent}</span>
-            </motion.h1>
-
-            <motion.p
-              className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-medium mt-4 mb-6"
-              {...fadeUp(0.5)}
-            >
-              {heroContent.subtitle}
-            </motion.p>
-
-            {/* Stat badges */}
-            <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
-              {...fadeUp(0.6)}
-            >
-              {heroContent.stats.map((stat) => (
-                <span
-                  key={stat.label}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90"
-                >
-                  <span className="font-bold text-white">{stat.value}</span>{" "}
-                  {stat.label}
-                </span>
-              ))}
-            </motion.div>
-
-            {/* Service pills */}
-            <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10"
-              {...fadeUp(0.6)}
-            >
-              {heroContent.pills.map((pill) => (
-                <span
-                  key={pill}
-                  className="px-4 py-1.5 text-sm text-white/90 border border-white/25 rounded-full"
-                >
-                  {pill}
-                </span>
-              ))}
-            </motion.div>
-
-            {/* CTAs */}
-            <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6"
-              {...fadeUp(0.7)}
-            >
-              <a
-                href={heroContent.cta.primary.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Написать в WhatsApp"
-                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#25D366] text-white font-semibold rounded-full text-lg hover:brightness-110 transition-all shadow-lg shadow-[#25D366]/25 min-h-[44px]"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                {heroContent.cta.primary.text}
-              </a>
-              <a
-                href={heroContent.cta.secondary.href}
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 border border-white/30 text-white font-medium rounded-full text-base hover:bg-white/10 transition-all min-h-[44px]"
-              >
-                {heroContent.cta.secondary.text}
-              </a>
-            </motion.div>
-
-            <motion.p className="text-white/60 text-sm" {...fadeUp(0.8)}>
-              {heroContent.trustLine}
-            </motion.p>
-          </div>
-
-          {/* Photo placeholder — 40%, desktop only */}
-          <div className="hidden lg:block lg:col-span-2">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10">
-              {/* TODO: replace with real photo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg
-                  className="w-32 h-32 text-white/20"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
-            </div>
-          </div>
+      <div
+        className={`relative z-10 max-w-4xl mx-auto px-4 text-center pt-20 transition-all duration-1000 ease-out ${
+          loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="h-px w-10 bg-gold" />
+          <div className="w-2 h-2 rotate-45 bg-gold" />
+          <div className="h-px w-10 bg-gold" />
         </div>
+
+        <h1 className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
+          Персональный эксперт
+          <br />
+          <span className="text-gold">по финансам в Германии</span>
+        </h1>
+
+        <p
+          className={`text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-medium mt-4 mb-6 transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          Владислав Бабич
+        </p>
+
+        <div
+          className={`flex flex-wrap justify-center gap-2 mb-10 transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "500ms" }}
+        >
+          {["Финансовые консультации", "Инвестиции", "Пенсия", "Страхование"].map(
+            (tag) => (
+              <span
+                key={tag}
+                className="px-4 py-1.5 text-sm text-white/90 border border-white/25 rounded-full backdrop-blur-sm"
+              >
+                {tag}
+              </span>
+            )
+          )}
+        </div>
+
+        <div
+          className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "700ms" }}
+        >
+          <a
+            href="https://wa.me/491784743490"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-whatsapp text-white font-semibold rounded-full text-base hover:opacity-90 transition-all shadow-lg shadow-whatsapp/25"
+          >
+            <WhatsAppIcon className="w-5 h-5" />
+            Обсудить детали
+          </a>
+          <a
+            href="#services"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-navy font-semibold rounded-full text-base hover:opacity-90 transition-all"
+          >
+            Узнать подробнее
+          </a>
+        </div>
+
+        <p
+          className={`text-white/60 text-sm transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ transitionDelay: "900ms" }}
+        >
+          Отвечаем в течение часа в рабочее время
+        </p>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <a
           href="#trust"
           className="flex flex-col items-center gap-2 text-white/50 hover:text-white/80 transition-colors"
         >
-          <span className="text-xs">{heroContent.scrollLabel}</span>
-          <motion.svg
-            className="w-5 h-5"
+          <span className="text-xs">Прокрутить вниз</span>
+          <svg
+            className="w-5 h-5 animate-bounce-arrow"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            {...bounce}
           >
             <path
               strokeLinecap="round"
@@ -189,7 +120,7 @@ export default function VideoHero() {
               strokeWidth={2}
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
-          </motion.svg>
+          </svg>
         </a>
       </div>
     </section>

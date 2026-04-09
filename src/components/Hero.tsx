@@ -59,13 +59,12 @@ export default function Hero() {
           priority
           quality={85}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30 lg:to-black/20" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
-          {/* Text content — 60% */}
-          <div className="lg:col-span-3 text-center lg:text-left">
+        <div>
+          <div className="max-w-2xl text-center lg:text-left">
             {/* Gold decorative line */}
             <motion.div
               className="flex items-center justify-center lg:justify-start gap-3 mb-6"
@@ -149,22 +148,6 @@ export default function Hero() {
             <motion.p className="text-white/60 text-sm" {...fadeUp(0.8)}>
               {heroContent.trustLine}
             </motion.p>
-          </div>
-
-          {/* Photo placeholder — 40%, desktop only */}
-          <div className="hidden lg:block lg:col-span-2">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10">
-              {/* TODO: replace with real photo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg
-                  className="w-32 h-32 text-white/20"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                </svg>
-              </div>
-            </div>
           </div>
         </div>
       </div>
