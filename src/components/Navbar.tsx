@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -15,13 +15,32 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 50);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border/50">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md border-b border-border/50 shadow-sm"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="flex items-center gap-2">
-            <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-navy">
+            <span
+              className={`font-[family-name:var(--font-playfair)] text-xl font-bold transition-colors duration-300 ${
+                scrolled ? "text-navy" : "text-white"
+              }`}
+            >
               Babic
             </span>
             <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-gold">
@@ -34,7 +53,11 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-navy transition-colors"
+                className={`text-sm font-medium transition-colors duration-300 ${
+                  scrolled
+                    ? "text-muted-foreground hover:text-navy"
+                    : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
               </a>
@@ -54,7 +77,9 @@ export default function Navbar() {
           </div>
 
           <button
-            className="lg:hidden p-2 text-navy"
+            className={`lg:hidden p-2 transition-colors duration-300 ${
+              scrolled ? "text-navy" : "text-white"
+            }`}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
