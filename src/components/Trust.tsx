@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CircleCheckBig, ShieldCheck, Building2, Users } from "lucide-react";
+import { CircleCheckBig } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const credentials = [
@@ -26,9 +26,9 @@ const credentials = [
 ];
 
 const stats = [
-  { value: "21+", label: "лет опыта", icon: ShieldCheck },
-  { value: "391+", label: "клиентов", icon: Users },
-  { value: "DVAG", label: "партнёр", icon: Building2 },
+  { value: "21+", label: "лет опыта" },
+  { value: "391+", label: "клиентов" },
+  { value: "DVAG", label: "партнёр" },
 ];
 
 export default function Trust() {
@@ -84,12 +84,11 @@ export default function Trust() {
                 ))}
               </div>
 
-              {/* Stats with icons */}
+              {/* Stats */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {stats.map((s, i) => (
                   <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 150}>
                     <div className="text-center p-6 bg-gray-50 rounded-xl border border-border">
-                      <s.icon className="w-6 h-6 text-navy mx-auto mb-2" />
                       <p className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-gold">
                         {s.value}
                       </p>
