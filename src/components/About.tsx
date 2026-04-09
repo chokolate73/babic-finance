@@ -9,7 +9,7 @@ export default function About() {
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Обо мне
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Моя история
             </h2>
           </div>
@@ -49,7 +49,7 @@ export default function About() {
                 показываю, что в Германии возможно реализовать себя с нуля. Даже
                 если у вас нет языка, опыта или уверенности.
               </p>
-              <p className="text-gold font-semibold font-[family-name:var(--font-playfair)] text-xl">
+              <p className="text-gold font-semibold font-[family-name:var(--font-serif)] text-xl">
                 Моя миссия — убрать страх и дать людям шанс начать.
               </p>
             </div>

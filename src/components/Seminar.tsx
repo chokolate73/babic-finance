@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -41,7 +42,7 @@ export default function Seminar() {
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Ближайший семинар
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Присоединяйтесь к мероприятию
             </h2>
           </div>
@@ -50,11 +51,12 @@ export default function Seminar() {
         <AnimateOnScroll animation="scale-in" className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl border border-border overflow-hidden shadow-lg">
             <div className="relative h-56 sm:h-72">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/18a10eace_generated_e3868091.png"
                 alt="Семинар — Недвижимость в Германии"
-                className="w-full h-full object-cover"
+                className="object-cover"
+                fill
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
               <div className="absolute top-4 left-4">
@@ -70,7 +72,7 @@ export default function Seminar() {
                 {countdown.map((c) => (
                   <div key={c.label} className="text-center">
                     <div className="bg-navy text-white w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center">
-                      <span className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold">
+                      <span className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold">
                         {c.value}
                       </span>
                     </div>
@@ -81,7 +83,7 @@ export default function Seminar() {
                 ))}
               </div>
 
-              <h3 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-navy mb-4 text-center">
+              <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mb-4 text-center">
                 Недвижимость в Германии — простым языком
               </h3>
 

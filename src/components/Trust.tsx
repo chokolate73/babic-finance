@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CircleCheckBig } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -47,14 +48,16 @@ export default function Trust() {
           <AnimateOnScroll animation="fade-left">
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
                   alt="Владислав Бабич — финансовый консультант"
                   className="w-full h-auto object-cover"
+                  width={800}
+                  height={600}
+                  priority
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
-                  <p className="text-gold font-[family-name:var(--font-playfair)] text-lg font-semibold">
+                  <p className="text-gold font-[family-name:var(--font-serif)] text-lg font-semibold">
                     Владислав Бабич
                   </p>
                   <p className="text-white/80 text-sm">
@@ -68,7 +71,7 @@ export default function Trust() {
           {/* Credentials + Stats */}
           <AnimateOnScroll animation="fade-right">
             <div>
-              <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mb-8">
+              <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mb-8">
                 Владислав Бабич
               </h2>
               <div className="space-y-5">
@@ -90,7 +93,7 @@ export default function Trust() {
                 {stats.map((s, i) => (
                   <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 150}>
                     <div className="text-center p-6 bg-white rounded-xl border border-border">
-                      <p className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-gold">
+                      <p className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-gold">
                         {s.value}
                       </p>
                       <p className="text-sm text-muted-foreground mt-1">

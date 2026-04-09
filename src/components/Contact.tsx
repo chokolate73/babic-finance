@@ -31,7 +31,7 @@ export default function Contact() {
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Контакт
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Оставить заявку
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">

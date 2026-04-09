@@ -37,7 +37,7 @@ export default function Process() {
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Этапы сотрудничества
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Как строится работа
             </h2>
           </div>
@@ -49,7 +49,7 @@ export default function Process() {
             {steps.map((s, i) => (
               <AnimateOnScroll key={s.num} animation="fade-up" delay={i * 150}>
                 <div className="flex flex-col items-center text-center relative">
-                  <div className="w-20 h-20 rounded-full bg-gold text-navy flex items-center justify-center text-2xl font-bold font-[family-name:var(--font-playfair)] relative z-10 shadow-lg shadow-gold/20">
+                  <div className="w-20 h-20 rounded-full bg-gold text-navy flex items-center justify-center text-2xl font-bold font-[family-name:var(--font-serif)] relative z-10 shadow-lg shadow-gold/20">
                     {s.num}
                   </div>
                   <h3 className="font-semibold text-navy mt-5 mb-2 text-base">

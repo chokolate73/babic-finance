@@ -37,13 +37,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="flex items-center gap-2">
             <span
-              className={`font-[family-name:var(--font-playfair)] text-xl font-bold transition-colors duration-300 ${
+              className={`font-[family-name:var(--font-serif)] text-xl font-bold transition-colors duration-300 ${
                 scrolled ? "text-navy" : "text-white"
               }`}
             >
               Babic
             </span>
-            <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-gold">
+            <span className="font-[family-name:var(--font-serif)] text-xl font-bold text-gold">
               Finance
             </span>
           </a>

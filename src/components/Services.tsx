@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const services = [
@@ -52,7 +53,7 @@ export default function Services() {
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Предложение
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Услуги
             </h2>
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
@@ -66,12 +67,13 @@ export default function Services() {
           {services.map((s, i) => (
             <AnimateOnScroll key={s.title} animation="fade-up" delay={i * 100}>
               <div className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-lg hover:border-gold/30 transition-all duration-300">
-                <div className="h-44 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="relative h-44 overflow-hidden">
+                  <Image
                     src={s.img}
                     alt={s.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    priority
                   />
                 </div>
                 <div className="p-5">

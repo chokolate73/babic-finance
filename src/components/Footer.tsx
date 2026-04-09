@@ -10,10 +10,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-white">
+              <span className="font-[family-name:var(--font-serif)] text-xl font-bold text-white">
                 Babic
               </span>
-              <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-gold">
+              <span className="font-[family-name:var(--font-serif)] text-xl font-bold text-gold">
                 Finance
               </span>
             </div>
