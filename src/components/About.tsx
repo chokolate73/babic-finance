@@ -1,9 +1,10 @@
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function About() {
   return (
     <section id="about" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-12">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
@@ -15,10 +16,29 @@ export default function About() {
           </div>
         </AnimateOnScroll>
 
-        <AnimateOnScroll animation="fade-up" delay={200}>
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-gold via-gold/50 to-transparent rounded-full hidden md:block" />
-            <div className="md:pl-10 space-y-6 text-foreground/80 leading-relaxed text-base sm:text-lg">
+        <div className="grid lg:grid-cols-[auto_1fr] gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
+          {/* Portrait */}
+          <AnimateOnScroll animation="fade-left">
+            <div className="mx-auto lg:mx-0 w-64 sm:w-72 flex-shrink-0">
+              <div className="relative p-3">
+                <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-gold rounded-tl-xl" />
+                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-gold rounded-br-xl" />
+                <div className="relative rounded-xl overflow-hidden">
+                  <Image
+                    src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
+                    alt="Владислав Бабич — финансовый консультант"
+                    className="w-full h-auto object-cover"
+                    width={400}
+                    height={500}
+                  />
+                </div>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Text */}
+          <AnimateOnScroll animation="fade-right" delay={200}>
+            <div className="space-y-6 text-foreground/80 leading-[1.6] text-base sm:text-lg max-w-[65ch]">
               <p>
                 Я приехал в Германию в 2003 году из Эстонии с чёткой целью —
                 построить свой бизнес. Тогда я не знал немецкого языка и не имел
@@ -49,12 +69,16 @@ export default function About() {
                 показываю, что в Германии возможно реализовать себя с нуля. Даже
                 если у вас нет языка, опыта или уверенности.
               </p>
-              <p className="text-gold font-semibold font-[family-name:var(--font-serif)] text-xl">
+            </div>
+
+            {/* Pull-quote */}
+            <blockquote className="mt-10 pt-8 border-t border-gold/30">
+              <p className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-semibold italic leading-snug">
                 Моя миссия — убрать страх и дать людям шанс начать.
               </p>
-            </div>
-          </div>
-        </AnimateOnScroll>
+            </blockquote>
+          </AnimateOnScroll>
+        </div>
       </div>
     </section>
   );

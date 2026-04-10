@@ -16,8 +16,8 @@ const heroContent = {
   ],
   pills: ["Консультации", "Инвестиции", "Пенсия", "Страхование"],
   cta: {
-    primary: { text: "Обсудить детали", href: "https://wa.me/491784743490" },
-    secondary: { text: "Узнать подробнее", href: "#about" },
+    primary: { text: "Получить бесплатную консультацию", href: "https://wa.me/491784743490" },
+    secondary: { text: "Как я работаю", href: "#process" },
   },
   trustLine: "Отвечаем в течение часа в рабочее время",
   scrollLabel: "Прокрутить вниз",
@@ -50,6 +50,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       {/* Background */}
+      {/* TODO: replace hero image with solo portrait of Vladislav against Frankfurt skyline — current team photo conflicts with personal-brand positioning */}
       <div className="absolute inset-0">
         <Image
           src="/hero.png"

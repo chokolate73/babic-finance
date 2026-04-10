@@ -46,7 +46,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-secondary/50">
+    <section id="services" className="py-20 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
@@ -93,7 +93,7 @@ export default function Services() {
               href="#contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
             >
-              Записаться на консультацию
+              Записаться на бесплатную консультацию
             </a>
           </div>
         </AnimateOnScroll>
