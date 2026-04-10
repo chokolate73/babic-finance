@@ -55,7 +55,7 @@ export default function Seminar() {
       ];
 
   return (
-    <section id="seminar" className="py-20 lg:py-28 bg-cream">
+    <section id="seminar" className="pt-20 pb-10 lg:pt-28 lg:pb-14 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
