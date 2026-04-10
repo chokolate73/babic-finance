@@ -164,7 +164,7 @@ export default function Seminar() {
                     href="https://forms.office.com/e/GqjXvfPaSX"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-whatsapp text-white font-semibold rounded-full hover:opacity-90 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-whatsapp text-white font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Зарегистрироваться
@@ -173,7 +173,7 @@ export default function Seminar() {
                     href={getWhatsAppQuestionLink()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
                   >
                     Задать вопрос
                   </a>
@@ -186,9 +186,9 @@ export default function Seminar() {
                     href="https://wa.me/491784743490"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
                   >
-                    Узнать о следующем семинаре
+                    Следующий семинар
                   </a>
                 </div>
               )}

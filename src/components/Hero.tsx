@@ -16,7 +16,7 @@ const heroContent = {
   ],
   pills: ["Консультации", "Инвестиции", "Пенсия", "Страхование"],
   cta: {
-    primary: { text: "Получить бесплатную консультацию", href: "https://wa.me/491784743490" },
+    primary: { text: "Бесплатная консультация", href: "https://wa.me/491784743490" },
     secondary: { text: "Как я работаю", href: "#process" },
   },
   trustLine: "Отвечаем в течение часа в рабочее время",
@@ -133,7 +133,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Написать в WhatsApp"
-                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#25D366] text-white font-semibold rounded-full text-lg hover:brightness-110 transition-all shadow-lg shadow-[#25D366]/25 min-h-[44px]"
+                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-5 sm:px-8 py-3.5 sm:py-4 bg-[#25D366] text-white font-semibold rounded-full text-sm sm:text-lg whitespace-nowrap hover:brightness-110 transition-all shadow-lg shadow-[#25D366]/25 min-h-[44px]"
               >
                 <WhatsAppIcon className="w-5 h-5" />
                 {heroContent.cta.primary.text}
