@@ -2,11 +2,24 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 // TODO: Add future event dates here. Update SEMINAR_DATE to the next upcoming seminar.
 const SEMINAR_DATE = new Date("2026-04-10T18:30:00+02:00");
+const SEMINAR_TITLE = "Недвижимость в Германии";
+
+function getSeminarDateString() {
+  const d = SEMINAR_DATE.getDate().toString().padStart(2, "0");
+  const m = (SEMINAR_DATE.getMonth() + 1).toString().padStart(2, "0");
+  return `${d}.${m}`;
+}
+
+function getWhatsAppQuestionLink() {
+  const dateStr = getSeminarDateString();
+  const text = `Здравствуйте, Владислав! У меня вопрос по семинару ${dateStr} "${SEMINAR_TITLE}"`;
+  return `https://wa.me/491784743490?text=${encodeURIComponent(text)}`;
+}
 
 function getTimeLeft() {
   const now = new Date();
@@ -42,7 +55,7 @@ export default function Seminar() {
       ];
 
   return (
-    <section id="seminar" className="py-20 lg:py-28 bg-white">
+    <section id="seminar" className="py-20 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
@@ -63,8 +76,14 @@ export default function Seminar() {
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="scale-in" className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl border border-border overflow-hidden shadow-lg">
+          <div
+            className="bg-white rounded-2xl overflow-hidden border-t-2 border-gold"
+            style={{
+              boxShadow: "0 20px 60px -15px rgba(26, 31, 61, 0.15)",
+            }}
+          >
             <div className="relative h-56 sm:h-72">
+              {/* TODO: swap for real seminar photo when available */}
               <Image
                 src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/18a10eace_generated_e3868091.png"
                 alt="Семинар — Недвижимость в Германии"
@@ -86,12 +105,18 @@ export default function Seminar() {
                 <div className="flex justify-center gap-3 sm:gap-4 mb-8">
                   {countdown.map((c) => (
                     <div key={c.label} className="text-center">
-                      <div className="bg-navy text-white w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center">
+                      <div
+                        className="text-white w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center border border-gold/30"
+                        style={{
+                          background:
+                            "linear-gradient(to bottom, #242a4e, #1a1f3d)",
+                        }}
+                      >
                         <span className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold">
                           {c.value}
                         </span>
                       </div>
-                      <span className="text-xs text-muted-foreground mt-2 block">
+                      <span className="text-[10px] sm:text-xs text-gold font-semibold uppercase tracking-wider mt-2 block">
                         {c.label}
                       </span>
                     </div>
@@ -100,16 +125,16 @@ export default function Seminar() {
               )}
 
               <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mb-4 text-center">
-                Недвижимость в Германии — простым языком
+                {SEMINAR_TITLE} — простым языком
               </h3>
 
               <div className="space-y-3 mb-6">
                 <p className="text-muted-foreground">Разберём:</p>
                 <ul className="space-y-2">
                   {[
-                    "Как начать с недвижимостью в Германии",
-                    "Что такое Bauspar и как им пользоваться",
-                    "Какие дотации от государства можно получить",
+                    "Поймёте, с чего начать покупку недвижимости — даже если делаете это впервые",
+                    "Узнаете, как работает Bauspar и подходит ли он именно вам",
+                    "Разберётесь, какие государственные дотации вы можете получить уже сейчас",
                   ].map((item) => (
                     <li
                       key={item}
@@ -131,10 +156,6 @@ export default function Seminar() {
                   <MapPin className="w-4 h-4 text-gold" />
                   <span>Mottmannstra&szlig;e 8, 53842 Troisdorf</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-gold" />
-                  <span>Очно</span>
-                </div>
               </div>
 
               {!isPast && (
@@ -149,7 +170,7 @@ export default function Seminar() {
                     Зарегистрироваться
                   </a>
                   <a
-                    href="https://wa.me/491784743490"
+                    href={getWhatsAppQuestionLink()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
