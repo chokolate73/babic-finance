@@ -12,7 +12,7 @@ import Process from "@/components/Process";
 import Seminar from "@/components/Seminar";
 import FAQ from "@/components/FAQ";
 import BlogPreview from "@/components/BlogPreview";
-import Social from "@/components/Social";
+
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
@@ -34,7 +34,7 @@ export default function Home() {
       <Seminar />
       <FAQ />
       <BlogPreview />
-      <Social />
+
       <Contact />
       <Footer />
       <FloatingButtons />
