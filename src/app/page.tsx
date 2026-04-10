@@ -25,9 +25,9 @@ export default function Home() {
       <HeroVideo />
       <PainPoints />
       <Trust />
+      <Services />
       <Benefits />
       <About />
-      <Services />
       <Testimonials />
       <LeadMagnet />
       <Process />
