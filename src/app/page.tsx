@@ -4,9 +4,7 @@ import VideoHero from "@/components/VideoHero";
 import HeroVideo from "@/components/HeroVideo";
 import PainPoints from "@/components/PainPoints";
 import Services from "@/components/Services";
-import Trust from "@/components/Trust";
-import Benefits from "@/components/Benefits";
-import AboutMe from "@/components/AboutMe";
+import About from "@/components/About";
 import Process from "@/components/Process";
 import Seminar from "@/components/Seminar";
 import Testimonials from "@/components/Testimonials";
@@ -26,9 +24,7 @@ export default function Home() {
       <HeroVideo />
       <PainPoints />
       <Services />
-      <Trust />
-      <Benefits />
-      <AboutMe />
+      <About />
       <Process />
       <Seminar />
       <Testimonials />
