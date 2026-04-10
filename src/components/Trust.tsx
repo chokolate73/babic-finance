@@ -45,7 +45,7 @@ export default function Trust() {
 
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
-                  src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
+                  src="/vladislav-portrait.png"
                   alt="Владислав Бабич — финансовый консультант"
                   className="w-full h-auto object-cover"
                   width={800}
