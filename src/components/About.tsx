@@ -15,10 +15,10 @@ export default function About() {
       <div className="absolute inset-0 bg-navy/55" />
 
       {/* Content — capped at 1200px for ultra-wide screens */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-10 lg:py-14">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-6 lg:py-8">
         {/* Heading — no eyebrow */}
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-6 lg:mb-8">
+          <div className="text-center mb-3 lg:mb-4">
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Моя история
             </h2>
@@ -26,7 +26,7 @@ export default function About() {
         </AnimateOnScroll>
 
         {/* Alternating paragraphs */}
-        <div className="space-y-5 lg:space-y-6">
+        <div className="space-y-3 lg:space-y-4">
           {/* Paragraph 1 — left */}
           <AnimateOnScroll animation="fade-up" delay={100}>
             <div className="lg:w-[44%] lg:mr-auto text-center lg:text-left">
@@ -64,7 +64,7 @@ export default function About() {
 
         {/* Pull-quote climax */}
         <AnimateOnScroll animation="fade-up" delay={400}>
-          <blockquote className="text-center mt-6 lg:mt-8">
+          <blockquote className="text-center mt-3 lg:mt-4">
             <p className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl lg:text-[28px] font-semibold italic leading-snug max-w-[620px] mx-auto">
               Моя миссия — убрать страх и дать людям шанс начать.
             </p>
