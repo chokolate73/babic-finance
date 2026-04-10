@@ -1,20 +1,21 @@
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
-const painPoints = [
-  "Не понимаю, откуда берутся вычеты в моей зарплате",
-  "Страховой агент говорит по-немецки — киваю и подписываю",
-  "Не знаю, хватит ли мне пенсии в Германии",
-  "Хочу купить квартиру, но не понимаю, с чего начать",
-  "Плачу за страховку, но не уверен, что она мне вообще нужна",
-  "Пугают налогами, а я даже не знаю, что такое Steuerklasse",
+const messages = [
+  { text: "Не понимаю, откуда берутся вычеты в моей зарплате 😐", time: "22:47" },
+  { text: "Страховой агент говорит по-немецки — киваю и подписываю", time: "22:48" },
+  { text: "Не знаю, хватит ли мне пенсии в Германии", time: "22:49" },
+  { text: "Хочу купить квартиру, но не понимаю, с чего начать", time: "22:51" },
+  { text: "Плачу за страховку, но не уверен, что она мне вообще нужна", time: "22:52" },
+  { text: "Пугают налогами, а я не знаю, что такое Steuerklasse 🫠", time: "22:53" },
 ];
 
 export default function PainPoints() {
   return (
-    <section className="py-20 lg:py-28 bg-cream">
+    <section className="py-12 sm:py-16 lg:py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 lg:mb-14">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Проблемы
             </span>
@@ -27,24 +28,99 @@ export default function PainPoints() {
           </div>
         </AnimateOnScroll>
 
-        <div className="max-w-2xl mx-auto space-y-6 lg:space-y-8">
-          {painPoints.map((point, i) => (
-            <AnimateOnScroll key={i} animation="fade-up" delay={i * 100}>
-              <p className="text-center text-navy/70 text-lg sm:text-xl lg:text-[1.35rem] leading-relaxed font-[family-name:var(--font-serif)]">
-                {point}
-              </p>
+        {/* Chat thread */}
+        <div
+          className="max-w-md mx-auto px-2 sm:px-0"
+          aria-label="Визуальное представление типичных вопросов клиентов в формате чата"
+        >
+          {/* Outgoing messages */}
+          <div className="flex flex-col gap-2.5">
+            {messages.map((msg, i) => (
+              <AnimateOnScroll key={i} animation="fade-up" delay={i * 80}>
+                <div className="flex justify-end">
+                  <div
+                    className="bg-white text-navy px-4 py-2.5 max-w-[85%] relative"
+                    style={{
+                      borderRadius: "16px 16px 4px 16px",
+                      boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+                      border: "0.5px solid rgba(0,0,0,0.06)",
+                    }}
+                  >
+                    <p className="text-[13px] sm:text-[14px] leading-relaxed">
+                      {msg.text}
+                    </p>
+                    <span className="block text-[10px] text-muted-foreground text-right mt-1">
+                      {msg.time}
+                    </span>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          {/* Typing indicator + reply */}
+          <div className="mt-5 flex flex-col gap-2.5">
+            <AnimateOnScroll animation="fade-up" delay={550}>
+              {/* Typing dots */}
+              <div className="flex items-end gap-2">
+                <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/vladislav-portrait.png"
+                    alt="Владислав"
+                    width={28}
+                    height={28}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  className="bg-navy px-4 py-3 flex gap-1.5 items-center"
+                  style={{ borderRadius: "16px 16px 16px 4px" }}
+                >
+                  <span
+                    className="typing-dot w-1.5 h-1.5 bg-white/70 rounded-full"
+                    style={{ animationDelay: "0s" }}
+                  />
+                  <span
+                    className="typing-dot w-1.5 h-1.5 bg-white/70 rounded-full"
+                    style={{ animationDelay: "0.2s" }}
+                  />
+                  <span
+                    className="typing-dot w-1.5 h-1.5 bg-white/70 rounded-full"
+                    style={{ animationDelay: "0.4s" }}
+                  />
+                </div>
+              </div>
             </AnimateOnScroll>
-          ))}
+
+            {/* Vladislav's reply */}
+            <AnimateOnScroll animation="fade-up" delay={700}>
+              <div className="flex items-end gap-2">
+                <div className="w-7 h-7 flex-shrink-0" />
+                <div
+                  className="bg-navy text-white px-4 py-2.5 max-w-[85%]"
+                  style={{ borderRadius: "16px 16px 16px 4px" }}
+                >
+                  <p className="text-[13px] sm:text-[14px] leading-relaxed">
+                    Давайте разберёмся вместе — это бесплатно.
+                  </p>
+                  <span className="block text-[10px] text-white/40 mt-1">
+                    Владислав · 22:54
+                  </span>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
         </div>
 
-        <AnimateOnScroll animation="fade-up" delay={500}>
-          <div className="text-center mt-14">
-            <p className="text-muted-foreground mb-8">
+        {/* CTA */}
+        <AnimateOnScroll animation="fade-up" delay={800}>
+          <div className="text-center mt-10 lg:mt-14">
+            <p className="text-muted-foreground text-sm mb-6">
               Если хоть что-то из этого — про вас, давайте разберёмся вместе.
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
+              className="inline-flex items-center gap-2 w-full sm:w-auto px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
             >
               Получить бесплатную консультацию
             </a>
