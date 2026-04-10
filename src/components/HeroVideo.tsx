@@ -5,12 +5,13 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import WhatsAppIcon from "./WhatsAppIcon";
 
+// TODO: compress hero3 video — current file is ~14MB, should be under 3MB
 const heroContent = {
   headline: "Персональный эксперт",
   headlineAccent: "по финансам в Германии",
   subtitle: "Владислав Бабич",
   stats: [
-    { value: "21", label: "год опыта" },
+    { label: "Региональный директор DVAG" },
     { value: "391+", label: "клиентов" },
     { value: "С 2005", label: "года" },
   ],
@@ -49,23 +50,51 @@ export default function HeroVideo() {
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background with reduced-motion fallback */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 via-40% to-black/25" />
+        {prefersReduced ? (
+          <Image
+            src="/hero.png"
+            alt="Франкфурт"
+            className="object-cover"
+            fill
+            priority
+          />
+        ) : (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="/hero.png"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+          </video>
+        )}
+        {/* Base dimming layer */}
+        <div className="absolute inset-0 bg-black/30" />
+        {/* Left-column navy gradient for text legibility — horizontal on desktop, vertical on mobile */}
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(26,31,61,0.80) 0%, rgba(26,31,61,0.60) 35%, transparent 58%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(26,31,61,0.80) 0%, rgba(26,31,61,0.50) 60%, transparent 100%)",
+          }}
+        />
       </div>
 
-      {/* Portrait — right side, anchored to bottom, desktop only */}
+      {/* Portrait — right side, anchored to bottom, faded at bottom edge */}
       <motion.div
-        className="hidden lg:block absolute bottom-0 right-0 xl:right-[5%] z-10 pointer-events-none"
+        className="hidden lg:block absolute bottom-0 right-[-3%] xl:right-[3%] z-10 pointer-events-none"
         {...(prefersReduced
           ? {}
           : {
@@ -79,25 +108,33 @@ export default function HeroVideo() {
         <Image
           src="/vladislav-portrait.png"
           alt="Владислав Бабич"
-          className="object-contain object-bottom"
+          className="object-cover object-bottom"
           width={520}
           height={650}
           priority
-          style={{ height: "85vh", width: "auto", maxWidth: "45vw" }}
+          style={{
+            height: "82vh",
+            width: "auto",
+            maxWidth: "42vw",
+            maskImage:
+              "linear-gradient(to bottom, black 65%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 65%, transparent 100%)",
+          }}
         />
       </motion.div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div>
           <div className="max-w-2xl text-center">
-            {/* Gold decorative line */}
+            {/* Gold decorative ornament */}
             <motion.div
               className="flex items-center justify-center gap-3 mb-6"
               {...fadeUp(0.2)}
             >
-              <div className="h-px w-10 bg-gold" />
-              <div className="w-2 h-2 rotate-45 bg-gold" />
-              <div className="h-px w-10 bg-gold" />
+              <div className="h-0.5 w-12 bg-gold" />
+              <div className="w-3 h-3 rotate-45 bg-gold shadow-sm shadow-gold/50" />
+              <div className="h-0.5 w-12 bg-gold" />
             </motion.div>
 
             <motion.h1
@@ -126,7 +163,11 @@ export default function HeroVideo() {
                   key={stat.label}
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90"
                 >
-                  <span className="font-bold text-white">{stat.value}</span>{" "}
+                  {stat.value && (
+                    <>
+                      <span className="font-bold text-white">{stat.value}</span>{" "}
+                    </>
+                  )}
                   {stat.label}
                 </span>
               ))}
@@ -175,30 +216,30 @@ export default function HeroVideo() {
             </motion.p>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <a
-          href="#trust"
-          className="flex flex-col items-center gap-2 text-white/50 hover:text-white/80 transition-colors"
-        >
-          <span className="text-xs">{heroContent.scrollLabel}</span>
-          <motion.svg
-            className="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            {...bounce}
+        {/* Scroll indicator — centered within text column, clears portrait */}
+        <div className="mt-12 flex justify-center">
+          <a
+            href="#trust"
+            className="flex flex-col items-center gap-2 text-white/50 hover:text-white/80 transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </motion.svg>
-        </a>
+            <span className="text-xs">{heroContent.scrollLabel}</span>
+            <motion.svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              {...bounce}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </motion.svg>
+          </a>
+        </div>
       </div>
     </section>
   );
