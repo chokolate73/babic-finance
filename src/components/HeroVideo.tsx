@@ -48,7 +48,7 @@ export default function HeroVideo() {
       };
 
   return (
-    <section className="relative min-h-[100svh] flex items-end overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-start sm:items-end overflow-hidden">
       {/* Video Background with reduced-motion fallback */}
       <div className="absolute inset-0">
         {prefersReduced ? (
@@ -119,7 +119,7 @@ export default function HeroVideo() {
       </motion.div>
 
       {/* Text content - anchored to bottom of hero */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 sm:pb-24 lg:pb-28 pt-[35vh] sm:pt-[40vh] lg:pt-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 sm:pb-24 lg:pb-28 pt-24 sm:pt-[40vh] lg:pt-0">
         <div className="max-w-2xl text-center">
           {/* Gold decorative ornament */}
           <motion.div
