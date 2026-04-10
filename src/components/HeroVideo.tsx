@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -59,8 +60,32 @@ export default function HeroVideo() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 via-40% to-black/25" />
       </div>
+
+      {/* Portrait — right side, anchored to bottom, desktop only */}
+      <motion.div
+        className="hidden lg:block absolute bottom-0 right-0 xl:right-[5%] z-10 pointer-events-none"
+        {...(prefersReduced
+          ? {}
+          : {
+              initial: { opacity: 0, y: 40 },
+              animate: mounted
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 40 },
+              transition: { duration: 0.8, delay: 0.5, ease: "easeOut" as const },
+            })}
+      >
+        <Image
+          src="/Vladislav-portrait.png"
+          alt="Владислав Бабич"
+          className="object-contain object-bottom"
+          width={520}
+          height={650}
+          priority
+          style={{ height: "85vh", width: "auto", maxWidth: "45vw" }}
+        />
+      </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div>
