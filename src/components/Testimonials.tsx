@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const reviews = [
@@ -8,39 +8,39 @@ const reviews = [
     name: "Александр Кашников",
     quote:
       "Спасибо за многолетнее сотрудничество! Владислав — очень ответственный и душевный человек! Профессионал в своём деле! Всегда на связи и готов помочь в любой ситуации. Рекомендуем его как надёжного человека!",
-    rating: 5,
   },
   {
     name: "Юрий Мартыненко",
     quote:
       "Сердечное спасибо Владиславу за менторство, коучинг и отличную организацию учебных групп!!!",
-    rating: 5,
   },
   {
     name: "Наталья Шефер",
     quote:
       "Владислав Бабич — опытный финансовый консультант, профессионал своего дела! Он не только владеет знаниями, но и может доступно всё объяснить. Владислав — это не только про финансовую грамотность, это и про надёжность, стабильность и уверенность! В моей непростой ситуации показал путь к финансовой независимости. Искренне благодарна и от души рекомендую!",
-    rating: 5,
   },
   {
     name: "Алексей Заборский",
     quote:
       "Очень благодарен, что познакомился с Владиславом Бабичем — теперь он мой наставник! Прошёл обучение и освоил все продукты DVAG и финансовые знания. Изучаю все продукты компании и повышаю финансовую грамотность. Это очень актуально для жизни в Германии!",
-    rating: 5,
   },
   {
     name: "Елена Гашенко",
     quote:
       "Я очень редко пишу отзывы, но здесь не удержалась! Эта компания заслуживает твёрдых пять звёзд! Консультация прошла профессионально и с вниманием к деталям. Мы получили очень информативную консультацию и смогли выбрать именно тот вариант страхования, который нам подходит! Рекомендую!",
-    rating: 5,
   },
   {
     name: "Анна Леонова",
     quote:
       "Рекомендую каждому обратиться к Владиславу за финансовой консультацией. Это человек с огромным опытом — настоящий профессионал в своём деле. Оперативно и компетентно отвечает на все вопросы, и что немаловажно — даже в нерабочее время! Владислав структурированно предоставил мне всю информацию на понятном языке и помог принять правильное решение.",
-    rating: 5,
   },
 ];
+
+// Clone first 3 cards at the end for seamless infinite loop
+const extended = [...reviews, ...reviews.slice(0, 3)];
+
+const GAP = 24; // gap-6 = 24px
+const DESKTOP_VISIBLE = 3;
 
 function StarRating() {
   return (
@@ -82,25 +82,85 @@ function GoogleLogo({ className }: { className?: string }) {
   );
 }
 
-export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+function ReviewCard({ review }: { review: (typeof reviews)[0] }) {
+  return (
+    <div className="bg-white p-7 rounded-2xl border border-border shadow-sm flex flex-col h-full">
+      <div className="flex items-center justify-between mb-4">
+        <StarRating />
+        <GoogleLogo className="w-5 h-5 opacity-40" />
+      </div>
+      <p className="text-foreground/80 leading-relaxed text-sm flex-grow mb-6">
+        &laquo;{review.quote}&raquo;
+      </p>
+      <div className="border-t border-border pt-4 mt-auto">
+        <p className="font-semibold text-navy text-sm">{review.name}</p>
+      </div>
+    </div>
+  );
+}
 
-  const advance = useCallback(() => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setActiveIndex((prev) => (prev + 1) % reviews.length);
-      setIsTransitioning(false);
-    }, 300);
+export default function Testimonials() {
+  const [position, setPosition] = useState(0);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
+  const [desktopStep, setDesktopStep] = useState(0);
+  const [mobileStep, setMobileStep] = useState(0);
+  const desktopRef = useRef<HTMLDivElement>(null);
+  const mobileRef = useRef<HTMLDivElement>(null);
+
+  // Measure card + gap step sizes
+  useEffect(() => {
+    const measure = () => {
+      if (desktopRef.current) {
+        const w = desktopRef.current.offsetWidth;
+        const cardWidth = (w - GAP * (DESKTOP_VISIBLE - 1)) / DESKTOP_VISIBLE;
+        setDesktopStep(cardWidth + GAP);
+      }
+      if (mobileRef.current) {
+        setMobileStep(mobileRef.current.offsetWidth + GAP);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
   }, []);
 
+  // Auto-advance every 5 seconds
   useEffect(() => {
-    const timer = setInterval(advance, 5000);
+    const timer = setInterval(() => {
+      setPosition((prev) => prev + 1);
+    }, 5000);
     return () => clearInterval(timer);
-  }, [advance]);
+  }, []);
 
-  const getReview = (offset: number) =>
-    reviews[(activeIndex + offset) % reviews.length];
+  // When reaching clone zone, wait for animation then snap back instantly
+  useEffect(() => {
+    if (position === reviews.length) {
+      const timeout = setTimeout(() => {
+        setShouldAnimate(false);
+        setPosition(0);
+      }, 700); // matches transition duration
+      return () => clearTimeout(timeout);
+    }
+  }, [position]);
+
+  // Re-enable animation after instant snap-back
+  useEffect(() => {
+    if (!shouldAnimate) {
+      const timeout = setTimeout(() => setShouldAnimate(true), 50);
+      return () => clearTimeout(timeout);
+    }
+  }, [shouldAnimate]);
+
+  const activeDot = position % reviews.length;
+
+  const goTo = (index: number) => {
+    setShouldAnimate(true);
+    setPosition(index);
+  };
+
+  const transitionClass = shouldAnimate
+    ? "transition-transform duration-700 ease-in-out"
+    : "";
 
   return (
     <section className="py-20 lg:py-28 bg-white">
@@ -120,56 +180,41 @@ export default function Testimonials() {
           </div>
         </AnimateOnScroll>
 
-        {/* Desktop: 3 cards */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-6">
-          {[0, 1, 2].map((offset) => {
-            const r = getReview(offset);
-            return (
+        {/* Desktop: 3 visible, sliding carousel */}
+        <div ref={desktopRef} className="hidden lg:block overflow-hidden">
+          <div
+            className={`flex gap-6 ${transitionClass}`}
+            style={{
+              transform: `translateX(-${position * desktopStep}px)`,
+            }}
+          >
+            {extended.map((r, i) => (
               <div
-                key={`${activeIndex}-${offset}`}
-                className={`bg-white p-7 rounded-2xl border border-border shadow-sm flex flex-col h-full transition-opacity duration-300 ${
-                  isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
+                key={i}
+                className="flex-shrink-0"
+                style={{
+                  width: `calc((100% - ${GAP * (DESKTOP_VISIBLE - 1)}px) / ${DESKTOP_VISIBLE})`,
+                }}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <StarRating />
-                  <GoogleLogo className="w-5 h-5 opacity-40" />
-                </div>
-
-                <p className="text-foreground/80 leading-relaxed text-sm flex-grow mb-6">
-                  &laquo;{r.quote}&raquo;
-                </p>
-
-                <div className="border-t border-border pt-4 mt-auto">
-                  <p className="font-semibold text-navy text-sm">{r.name}</p>
-                </div>
+                <ReviewCard review={r} />
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
-        {/* Mobile: 1 card */}
-        <div className="lg:hidden">
+        {/* Mobile: 1 visible, sliding carousel */}
+        <div ref={mobileRef} className="lg:hidden overflow-hidden">
           <div
-            key={activeIndex}
-            className={`bg-white p-7 rounded-2xl border border-border shadow-sm flex flex-col transition-opacity duration-300 ${
-              isTransitioning ? "opacity-0" : "opacity-100"
-            }`}
+            className={`flex gap-6 ${transitionClass}`}
+            style={{
+              transform: `translateX(-${position * mobileStep}px)`,
+            }}
           >
-            <div className="flex items-center justify-between mb-4">
-              <StarRating />
-              <GoogleLogo className="w-5 h-5 opacity-40" />
-            </div>
-
-            <p className="text-foreground/80 leading-relaxed text-sm mb-6">
-              &laquo;{getReview(0).quote}&raquo;
-            </p>
-
-            <div className="border-t border-border pt-4">
-              <p className="font-semibold text-navy text-sm">
-                {getReview(0).name}
-              </p>
-            </div>
+            {extended.map((r, i) => (
+              <div key={i} className="flex-shrink-0 w-full">
+                <ReviewCard review={r} />
+              </div>
+            ))}
           </div>
         </div>
 
@@ -178,17 +223,11 @@ export default function Testimonials() {
           {reviews.map((_, i) => (
             <button
               key={i}
-              onClick={() => {
-                setIsTransitioning(true);
-                setTimeout(() => {
-                  setActiveIndex(i);
-                  setIsTransitioning(false);
-                }, 300);
-              }}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === activeIndex
+              onClick={() => goTo(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === activeDot
                   ? "bg-gold w-6"
-                  : "bg-border hover:bg-muted-foreground"
+                  : "bg-border hover:bg-muted-foreground w-2"
               }`}
               aria-label={`Отзыв ${i + 1}`}
             />
