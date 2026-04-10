@@ -27,12 +27,21 @@ export default function FloatingButtons() {
       </div>
 
       {/* Mobile sticky CTA bar */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-border/50 px-4 py-3">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-border/50 px-4 py-3 flex gap-3">
+        <a
+          href="https://wa.me/491784743490"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 flex-1 py-3 bg-whatsapp text-white font-semibold rounded-full text-sm whitespace-nowrap hover:opacity-90 transition-all"
+        >
+          <WhatsAppIcon className="w-4 h-4" />
+          WhatsApp
+        </a>
         <a
           href="#contact"
-          className="flex items-center justify-center w-full py-3 bg-gold text-navy font-semibold rounded-full text-sm whitespace-nowrap hover:opacity-90 transition-all"
+          className="flex items-center justify-center flex-1 py-3 bg-gold text-navy font-semibold rounded-full text-sm whitespace-nowrap hover:opacity-90 transition-all"
         >
-          Бесплатная консультация
+          Консультация
         </a>
       </div>
     </>
