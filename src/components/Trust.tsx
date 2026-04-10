@@ -46,7 +46,7 @@ export default function Trust() {
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
                   src="/vladislav-portrait.png"
-                  alt="Владислав Бабич — финансовый консультант"
+                  alt="Владислав Бабич - финансовый консультант"
                   className="w-full h-auto object-cover"
                   width={800}
                   height={600}

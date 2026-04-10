@@ -17,12 +17,12 @@ const services = [
   },
   {
     title: "Пенсионное обеспечение",
-    desc: "Государственные и частные пенсионные программы для достойной жизни на пенсии. Riester, Rürup, betriebliche Altersvorsorge — разберёмся, что подходит именно вам.",
+    desc: "Государственные и частные пенсионные программы для достойной жизни на пенсии. Riester, Rürup, betriebliche Altersvorsorge - разберёмся, что подходит именно вам.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
   },
   {
     title: "Страхование",
-    desc: "Защита вас и вашей семьи — здоровье, имущество, ответственность. Проверим текущие полисы и оптимизируем покрытие.",
+    desc: "Защита вас и вашей семьи - здоровье, имущество, ответственность. Проверим текущие полисы и оптимизируем покрытие.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
   },
   {
@@ -37,7 +37,7 @@ const services = [
   },
   {
     title: "Консультации для фирм",
-    desc: "Финансовые решения для бизнеса — от стартапов до устоявшихся компаний. Корпоративное страхование, пенсии для сотрудников.",
+    desc: "Финансовые решения для бизнеса - от стартапов до устоявшихся компаний. Корпоративное страхование, пенсии для сотрудников.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/5e9da606e_generated_157ca161.png",
   },
   {
@@ -61,7 +61,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
-          {/* Left — active service image + details */}
+          {/* Left - active service image + details */}
           <AnimateOnScroll animation="fade-left">
             <div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6">
@@ -88,7 +88,7 @@ export default function Services() {
             </div>
           </AnimateOnScroll>
 
-          {/* Right — heading + numbered list */}
+          {/* Right - heading + numbered list */}
           <div>
             <AnimateOnScroll animation="fade-right">
               <span className="text-gold font-semibold text-sm uppercase tracking-wider">
@@ -139,7 +139,7 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Mobile layout — accordion */}
+        {/* Mobile layout - accordion */}
         <div className="lg:hidden">
           <AnimateOnScroll animation="fade-up">
             <div className="text-center mb-10">

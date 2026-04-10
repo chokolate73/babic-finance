@@ -4,11 +4,11 @@ import Link from "next/link";
 import { articles, formatDate } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Блог — Babic Finance",
+  title: "Блог - Babic Finance",
   description:
     "Полезные статьи о финансах в Германии: пенсия, ипотека, страхование, инвестиции. Разбираем сложные темы простым языком.",
   openGraph: {
-    title: "Блог — Babic Finance",
+    title: "Блог - Babic Finance",
     description:
       "Полезные статьи о финансах в Германии от Владислава Бабича.",
   },
@@ -29,7 +29,7 @@ export default function BlogIndex() {
             Блог
           </h1>
           <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-            Полезные статьи о финансах в Германии — разбираю сложные темы
+            Полезные статьи о финансах в Германии - разбираю сложные темы
             простым языком
           </p>
         </div>

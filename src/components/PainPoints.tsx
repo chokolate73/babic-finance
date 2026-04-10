@@ -3,7 +3,7 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const messages = [
   { text: "Не понимаю, откуда берутся вычеты в моей зарплате 😐", time: "22:47" },
-  { text: "Страховой агент говорит по-немецки — киваю и подписываю", time: "22:48" },
+  { text: "Страховой агент говорит по-немецки - киваю и подписываю", time: "22:48" },
   { text: "Не знаю, хватит ли мне пенсии в Германии", time: "22:49" },
   { text: "Хочу купить квартиру, но не понимаю, с чего начать", time: "22:51" },
   { text: "Плачу за страховку, но не уверен, что она мне вообще нужна", time: "22:52" },
@@ -23,7 +23,7 @@ export default function PainPoints() {
               Знакомая ситуация?
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-              Если хоть что-то из этого про вас — вы не одни
+              Если хоть что-то из этого про вас - вы не одни
             </p>
           </div>
         </AnimateOnScroll>
@@ -101,7 +101,7 @@ export default function PainPoints() {
                   style={{ borderRadius: "16px 16px 16px 4px" }}
                 >
                   <p className="text-[13px] sm:text-[14px] leading-relaxed">
-                    Давайте разберёмся вместе — это бесплатно.
+                    Давайте разберёмся вместе - это бесплатно.
                   </p>
                   <span className="block text-[10px] text-white/40 mt-1">
                     Владислав · 22:54
@@ -116,7 +116,7 @@ export default function PainPoints() {
         <AnimateOnScroll animation="fade-up" delay={800}>
           <div className="text-center mt-10 lg:mt-14">
             <p className="text-muted-foreground text-sm mb-6">
-              Если хоть что-то из этого — про вас, давайте разберёмся вместе.
+              Если хоть что-то из этого - про вас, давайте разберёмся вместе.
             </p>
             <a
               href="#contact"

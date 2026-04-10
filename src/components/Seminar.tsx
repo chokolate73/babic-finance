@@ -86,7 +86,7 @@ export default function Seminar() {
               {/* TODO: swap for real seminar photo when available */}
               <Image
                 src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/18a10eace_generated_e3868091.png"
-                alt="Семинар — Недвижимость в Германии"
+                alt="Семинар - Недвижимость в Германии"
                 className="object-cover"
                 fill
                 priority
@@ -100,7 +100,7 @@ export default function Seminar() {
             </div>
 
             <div className="p-6 sm:p-8">
-              {/* Countdown — only shown when event is upcoming */}
+              {/* Countdown - only shown when event is upcoming */}
               {!isPast && mounted && (
                 <div className="flex justify-center gap-3 sm:gap-4 mb-8">
                   {countdown.map((c) => (
@@ -125,14 +125,14 @@ export default function Seminar() {
               )}
 
               <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mb-4 text-center">
-                {SEMINAR_TITLE} — простым языком
+                {SEMINAR_TITLE} - простым языком
               </h3>
 
               <div className="space-y-3 mb-6">
                 <p className="text-muted-foreground">Разберём:</p>
                 <ul className="space-y-2">
                   {[
-                    "Поймёте, с чего начать покупку недвижимости — даже если делаете это впервые",
+                    "Поймёте, с чего начать покупку недвижимости - даже если делаете это впервые",
                     "Узнаете, как работает Bauspar и подходит ли он именно вам",
                     "Разберётесь, какие государственные дотации вы можете получить уже сейчас",
                   ].map((item) => (

@@ -75,7 +75,7 @@ export default function HeroVideo() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/80" />
       </div>
 
-      {/* Portrait — desktop: right side anchored to bottom; mobile: top half */}
+      {/* Portrait - desktop: right side anchored to bottom; mobile: top half */}
       <motion.div
         className="absolute bottom-0 right-0 lg:right-[2%] xl:right-[5%] z-10 pointer-events-none"
         {...(prefersReduced
@@ -102,7 +102,7 @@ export default function HeroVideo() {
             maxWidth: "40vw",
           }}
         />
-        {/* Mobile portrait — positioned from top */}
+        {/* Mobile portrait - positioned from top */}
         <Image
           src="/vladislav-portrait.png"
           alt="Владислав Бабич"
@@ -118,7 +118,7 @@ export default function HeroVideo() {
         />
       </motion.div>
 
-      {/* Text content — anchored to bottom of hero */}
+      {/* Text content - anchored to bottom of hero */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24 lg:pb-28 pt-[45vh] sm:pt-[40vh] lg:pt-0">
         <div className="max-w-2xl text-center">
           {/* Gold decorative ornament */}
@@ -171,7 +171,7 @@ export default function HeroVideo() {
             ))}
           </motion.div>
 
-          {/* Service pills — hidden on small mobile to save space */}
+          {/* Service pills - hidden on small mobile to save space */}
           <motion.div
             className="hidden sm:flex flex-wrap justify-center justify-center gap-2 mb-8 lg:mb-10"
             {...fadeUp(0.6)}
@@ -215,7 +215,7 @@ export default function HeroVideo() {
         </div>
       </div>
 
-      {/* Scroll indicator — bottom-left, clear of portrait */}
+      {/* Scroll indicator - bottom-left, clear of portrait */}
       <div className="absolute bottom-6 left-1/2 lg:left-8 -translate-x-1/2 lg:translate-x-0 z-20">
         <a
           href="#trust"
