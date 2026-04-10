@@ -116,7 +116,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-sm text-white/40">
-            &copy; 2026 Владислав Бабич — Региональный директор, DVAG. Все права
+            &copy; 2026 Владислав Бабич - Региональный директор, DVAG. Все права
             защищены.
           </p>
         </div>

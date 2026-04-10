@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = getArticleBySlug(slug);
   if (!article) return {};
   return {
-    title: `${article.title} — Babic Finance`,
+    title: `${article.title} - Babic Finance`,
     description: article.metaDescription,
     openGraph: {
       title: article.title,
@@ -145,7 +145,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
             Нужна персональная консультация?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-            Разберём вашу ситуацию на бесплатной встрече — без обязательств
+            Разберём вашу ситуацию на бесплатной встрече - без обязательств
           </p>
           <a
             href="https://wa.me/491784743490"
