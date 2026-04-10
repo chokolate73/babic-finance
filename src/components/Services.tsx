@@ -60,7 +60,7 @@ export default function Services() {
     <section id="services" className="py-20 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-12 xl:gap-16 items-start">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
           {/* Left — active service image + details */}
           <AnimateOnScroll animation="fade-left">
             <div>
