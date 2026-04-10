@@ -77,7 +77,7 @@ export default function HeroVideo() {
             })}
       >
         <Image
-          src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
+          src="/Vladislav-portrait.png"
           alt="Владислав Бабич"
           className="object-contain object-bottom"
           width={520}
@@ -89,10 +89,10 @@ export default function HeroVideo() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div>
-          <div className="max-w-2xl text-center lg:text-left">
+          <div className="max-w-2xl text-center">
             {/* Gold decorative line */}
             <motion.div
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
+              className="flex items-center justify-center gap-3 mb-6"
               {...fadeUp(0.2)}
             >
               <div className="h-px w-10 bg-gold" />
@@ -118,7 +118,7 @@ export default function HeroVideo() {
 
             {/* Stat badges */}
             <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
+              className="flex flex-wrap justify-center gap-3 mb-6"
               {...fadeUp(0.6)}
             >
               {heroContent.stats.map((stat) => (
@@ -134,7 +134,7 @@ export default function HeroVideo() {
 
             {/* Service pills */}
             <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10"
+              className="flex flex-wrap justify-center gap-2 mb-10"
               {...fadeUp(0.6)}
             >
               {heroContent.pills.map((pill) => (
@@ -149,7 +149,7 @@ export default function HeroVideo() {
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
               {...fadeUp(0.7)}
             >
               <a
