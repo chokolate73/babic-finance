@@ -1,19 +1,17 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
-// TODO: add background image at /public/images/my-story-bg.jpg (or similar)
-// Image will be provided separately — use a dark navy placeholder fill until then
-// When ready, uncomment the backgroundImage line below:
-// style={{ backgroundImage: "url('/images/my-story-bg.jpg')" }}
-
 export default function About() {
   return (
     <section
       id="about"
       className="relative overflow-hidden"
     >
-      {/* Full-bleed background — dark navy placeholder until real image is added */}
-      <div className="absolute inset-0 bg-navy" />
-      {/* Overlay — 55% opacity, ready for when a background image is added */}
+      {/* Full-bleed background image */}
+      <div
+        className="absolute inset-0 bg-navy bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/wmremove-transformed (2).png')" }}
+      />
+      {/* Overlay — 55% opacity to keep text readable over image */}
       <div className="absolute inset-0 bg-navy/55" />
 
       {/* Content — capped at 1200px for ultra-wide screens */}
