@@ -15,25 +15,22 @@ export default function About() {
       <div className="absolute inset-0 bg-navy/60" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6 sm:py-8 lg:py-10">
         {/* Heading */}
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-5 lg:mb-6">
-            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Обо мне
-            </span>
-            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3">
+          <div className="text-center mb-4 lg:mb-5">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Моя история
             </h2>
           </div>
         </AnimateOnScroll>
 
         {/* Alternating paragraphs */}
-        <div className="space-y-4 sm:space-y-5 lg:space-y-6">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-5">
           {/* Paragraph 1 — left */}
           <AnimateOnScroll animation="fade-up" delay={100}>
             <div className="lg:w-[45%] lg:mr-auto text-center lg:text-left">
-              <p className="text-white/90 text-base sm:text-lg lg:text-[17px] leading-[1.65] max-w-[55ch] mx-auto lg:mx-0">
+              <p className="text-white/90 text-lg sm:text-xl lg:text-[21px] leading-[1.6] max-w-[55ch] mx-auto lg:mx-0">
                 Я приехал в Германию в 2003 году из Эстонии. Без языка, без
                 связей, без поддержки. Единственное, что у меня было — желание
                 добиться большего.
@@ -44,7 +41,7 @@ export default function About() {
           {/* Paragraph 2 — right */}
           <AnimateOnScroll animation="fade-up" delay={200}>
             <div className="lg:w-[45%] lg:ml-auto text-center lg:text-right">
-              <p className="text-white/90 text-base sm:text-lg lg:text-[17px] leading-[1.65] max-w-[55ch] mx-auto lg:ml-auto lg:mx-0">
+              <p className="text-white/90 text-lg sm:text-xl lg:text-[21px] leading-[1.6] max-w-[55ch] mx-auto lg:ml-auto lg:mx-0">
                 В конце 2004 года я впервые познакомился с финансовым бизнесом.
                 Мне говорили: «Сначала выучи язык», «Разберись в законах». Я
                 выбрал другой путь — начал действовать сразу. Учился, ошибался,
@@ -56,7 +53,7 @@ export default function About() {
           {/* Paragraph 3 — left */}
           <AnimateOnScroll animation="fade-up" delay={300}>
             <div className="lg:w-[45%] lg:mr-auto text-center lg:text-left">
-              <p className="text-white/90 text-base sm:text-lg lg:text-[17px] leading-[1.65] max-w-[55ch] mx-auto lg:mx-0">
+              <p className="text-white/90 text-lg sm:text-xl lg:text-[21px] leading-[1.6] max-w-[55ch] mx-auto lg:mx-0">
                 Сегодня я помогаю людям не только выстраивать финансовое будущее,
                 но и показываю, что в Германии возможно реализовать себя с нуля.
                 Даже если у вас нет языка, опыта или уверенности.
@@ -67,7 +64,7 @@ export default function About() {
 
         {/* Pull-quote climax */}
         <AnimateOnScroll animation="fade-up" delay={400}>
-          <blockquote className="text-center mt-6 sm:mt-7 lg:mt-8">
+          <blockquote className="text-center mt-4 sm:mt-5 lg:mt-6">
             <p className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl lg:text-3xl font-semibold italic leading-snug max-w-2xl mx-auto">
               Моя миссия — убрать страх и дать людям шанс начать.
             </p>
