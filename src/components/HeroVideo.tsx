@@ -119,11 +119,11 @@ export default function HeroVideo() {
       </motion.div>
 
       {/* Text content - anchored to bottom of hero */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24 lg:pb-28 pt-[45vh] sm:pt-[40vh] lg:pt-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 sm:pb-24 lg:pb-28 pt-[50vh] sm:pt-[40vh] lg:pt-0">
         <div className="max-w-2xl text-center">
           {/* Gold decorative ornament */}
           <motion.div
-            className="flex items-center justify-center justify-center gap-3 mb-4 lg:mb-6"
+            className="hidden sm:flex items-center justify-center gap-3 mb-4 lg:mb-6"
             {...fadeUp(0.2)}
           >
             <div className="h-0.5 w-12 bg-gold" />
@@ -134,7 +134,7 @@ export default function HeroVideo() {
           <motion.h1
             className="font-[family-name:var(--font-serif)] font-bold text-white tracking-tight mb-4"
             style={{
-              fontSize: "clamp(2.5rem, 5vw, 5rem)",
+              fontSize: "clamp(1.85rem, 5vw, 5rem)",
               lineHeight: 1.08,
             }}
             {...fadeUp(0.4)}
@@ -145,7 +145,7 @@ export default function HeroVideo() {
           </motion.h1>
 
           <motion.p
-            className="text-gold font-[family-name:var(--font-serif)] text-lg sm:text-xl lg:text-2xl font-medium mt-3 mb-5 lg:mb-6"
+            className="text-gold font-[family-name:var(--font-serif)] text-base sm:text-xl lg:text-2xl font-medium mt-2 mb-3 lg:mb-6"
             {...fadeUp(0.5)}
           >
             {heroContent.subtitle}
@@ -153,7 +153,7 @@ export default function HeroVideo() {
 
           {/* Stat badges */}
           <motion.div
-            className="flex flex-wrap justify-center justify-center gap-2 lg:gap-3 mb-4 lg:mb-6"
+            className="hidden sm:flex flex-wrap justify-center gap-2 lg:gap-3 mb-4 lg:mb-6"
             {...fadeUp(0.6)}
           >
             {heroContent.stats.map((stat) => (
@@ -203,20 +203,20 @@ export default function HeroVideo() {
             </a>
             <a
               href={heroContent.cta.secondary.href}
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 lg:px-8 py-3.5 lg:py-4 border border-white/30 text-white font-medium rounded-full text-sm lg:text-base hover:bg-white/10 transition-all min-h-[44px]"
+              className="hidden sm:inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 lg:px-8 py-3.5 lg:py-4 border border-white/30 text-white font-medium rounded-full text-sm lg:text-base hover:bg-white/10 transition-all min-h-[44px]"
             >
               {heroContent.cta.secondary.text}
             </a>
           </motion.div>
 
-          <motion.p className="text-white/60 text-xs lg:text-sm" {...fadeUp(0.8)}>
+          <motion.p className="hidden sm:block text-white/60 text-xs lg:text-sm" {...fadeUp(0.8)}>
             {heroContent.trustLine}
           </motion.p>
         </div>
       </div>
 
       {/* Scroll indicator - bottom-left, clear of portrait */}
-      <div className="absolute bottom-6 left-1/2 lg:left-8 -translate-x-1/2 lg:translate-x-0 z-20">
+      <div className="hidden sm:flex absolute bottom-6 left-1/2 lg:left-8 -translate-x-1/2 lg:translate-x-0 z-20">
         <a
           href="#trust"
           className="flex flex-col items-center gap-1.5 text-white/40 hover:text-white/70 transition-colors"
