@@ -1,24 +1,27 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
+// TODO: add background image at /public/images/my-story-bg.jpg (or similar)
+// Image will be provided separately — use a dark navy placeholder fill until then
+// When ready, uncomment the backgroundImage line below:
+// style={{ backgroundImage: "url('/images/my-story-bg.jpg')" }}
+
 export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden lg:min-h-[85vh]"
+      style={{ minHeight: "720px" }}
     >
-      {/* Full-bleed background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero.png')" }}
-      />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-navy/60" />
+      {/* Full-bleed background — dark navy placeholder until real image is added */}
+      <div className="absolute inset-0 bg-navy" />
+      {/* Overlay — 55% opacity, ready for when a background image is added */}
+      <div className="absolute inset-0 bg-navy/55" />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6 sm:py-8 lg:py-10">
-        {/* Heading */}
+      {/* Content — capped at 1200px for ultra-wide screens */}
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-28 flex flex-col justify-center min-h-[inherit]">
+        {/* Heading — no eyebrow */}
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-4 lg:mb-5">
+          <div className="text-center mb-12 lg:mb-20">
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Моя история
             </h2>
@@ -26,11 +29,11 @@ export default function About() {
         </AnimateOnScroll>
 
         {/* Alternating paragraphs */}
-        <div className="space-y-3 sm:space-y-4 lg:space-y-5">
+        <div className="space-y-9 sm:space-y-11 lg:space-y-[70px]">
           {/* Paragraph 1 — left */}
           <AnimateOnScroll animation="fade-up" delay={100}>
-            <div className="lg:w-[45%] lg:mr-auto text-center lg:text-left">
-              <p className="text-white/90 text-lg sm:text-xl lg:text-[21px] leading-[1.6] max-w-[55ch] mx-auto lg:mx-0">
+            <div className="lg:w-[44%] lg:mr-auto text-center lg:text-left">
+              <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:mx-0">
                 Я приехал в Германию в 2003 году из Эстонии. Без языка, без
                 связей, без поддержки. Единственное, что у меня было — желание
                 добиться большего.
@@ -40,8 +43,8 @@ export default function About() {
 
           {/* Paragraph 2 — right */}
           <AnimateOnScroll animation="fade-up" delay={200}>
-            <div className="lg:w-[45%] lg:ml-auto text-center lg:text-right">
-              <p className="text-white/90 text-lg sm:text-xl lg:text-[21px] leading-[1.6] max-w-[55ch] mx-auto lg:ml-auto lg:mx-0">
+            <div className="lg:w-[44%] lg:ml-auto text-center lg:text-right">
+              <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:ml-auto lg:mx-0">
                 В конце 2004 года я впервые познакомился с финансовым бизнесом.
                 Мне говорили: «Сначала выучи язык», «Разберись в законах». Я
                 выбрал другой путь — начал действовать сразу. Учился, ошибался,
@@ -52,8 +55,8 @@ export default function About() {
 
           {/* Paragraph 3 — left */}
           <AnimateOnScroll animation="fade-up" delay={300}>
-            <div className="lg:w-[45%] lg:mr-auto text-center lg:text-left">
-              <p className="text-white/90 text-lg sm:text-xl lg:text-[21px] leading-[1.6] max-w-[55ch] mx-auto lg:mx-0">
+            <div className="lg:w-[44%] lg:mr-auto text-center lg:text-left">
+              <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:mx-0">
                 Сегодня я помогаю людям не только выстраивать финансовое будущее,
                 но и показываю, что в Германии возможно реализовать себя с нуля.
                 Даже если у вас нет языка, опыта или уверенности.
@@ -64,8 +67,8 @@ export default function About() {
 
         {/* Pull-quote climax */}
         <AnimateOnScroll animation="fade-up" delay={400}>
-          <blockquote className="text-center mt-4 sm:mt-5 lg:mt-6">
-            <p className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl lg:text-3xl font-semibold italic leading-snug max-w-2xl mx-auto">
+          <blockquote className="text-center mt-16 sm:mt-20 lg:mt-24 mb-4">
+            <p className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl lg:text-[28px] font-semibold italic leading-snug max-w-[620px] mx-auto">
               Моя миссия — убрать страх и дать людям шанс начать.
             </p>
           </blockquote>
