@@ -133,7 +133,7 @@ export default function Services() {
                 href="#contact"
                 className="inline-flex items-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
               >
-                Записаться на бесплатную консультацию
+                Бесплатная консультация
               </a>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default function Services() {
               href="#contact"
               className="inline-flex items-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
             >
-              Записаться на бесплатную консультацию
+              Бесплатная консультация
             </a>
           </div>
         </div>

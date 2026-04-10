@@ -84,7 +84,7 @@ export default function Process() {
               href="#contact"
               className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 sm:px-8 py-3.5 sm:py-4 bg-gold text-navy font-semibold rounded-full text-sm sm:text-lg whitespace-nowrap hover:opacity-90 transition-all"
             >
-              Получить бесплатную консультацию
+              Бесплатная консультация
             </a>
           </div>
         </AnimateOnScroll>

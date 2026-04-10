@@ -188,7 +188,7 @@ export default function Seminar() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
                   >
-                    Узнать о следующем семинаре
+                    Следующий семинар
                   </a>
                 </div>
               )}
