@@ -6,7 +6,7 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 // TODO: Add future event dates here. Update SEMINAR_DATE to the next upcoming seminar.
-const SEMINAR_DATE = new Date("2026-04-10T18:30:00+02:00");
+const SEMINAR_DATE = new Date("2026-05-20T18:30:00+02:00");
 const SEMINAR_TITLE = "Недвижимость в Германии";
 
 function getSeminarDateString() {
@@ -150,7 +150,7 @@ export default function Seminar() {
               <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground mb-8">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-gold" />
-                  <span>10.04.2026, 18:30</span>
+                  <span>20.05.2026, 18:30</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-gold" />
