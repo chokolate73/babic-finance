@@ -64,10 +64,10 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div>
-          <div className="max-w-2xl text-left">
+          <div className="max-w-2xl text-center">
             {/* Gold decorative line */}
             <motion.div
-              className="flex items-center justify-start gap-3 mb-6"
+              className="flex items-center justify-center gap-3 mb-6"
               {...fadeUp(0.2)}
             >
               <div className="h-px w-10 bg-gold" />
@@ -93,7 +93,7 @@ export default function Hero() {
 
             {/* Stat badges */}
             <motion.div
-              className="flex flex-wrap justify-start gap-3 mb-6"
+              className="flex flex-wrap justify-center gap-3 mb-6"
               {...fadeUp(0.6)}
             >
               {heroContent.stats.map((stat) => (
@@ -109,7 +109,7 @@ export default function Hero() {
 
             {/* Service pills */}
             <motion.div
-              className="flex flex-wrap justify-start gap-2 mb-10"
+              className="flex flex-wrap justify-center gap-2 mb-10"
               {...fadeUp(0.6)}
             >
               {heroContent.pills.map((pill) => (
@@ -124,7 +124,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4 mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
               {...fadeUp(0.7)}
             >
               <a
