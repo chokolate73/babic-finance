@@ -66,7 +66,7 @@ export default function HeroVideo() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             poster="/hero.png"
             className="absolute inset-0 w-full h-full object-cover"
           >
