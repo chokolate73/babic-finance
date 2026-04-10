@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative lg:min-h-[85vh] lg:min-h-[720px] flex items-center overflow-hidden"
+      className="relative overflow-hidden"
     >
       {/* Full-bleed background */}
       <div
@@ -15,10 +15,10 @@ export default function About() {
       <div className="absolute inset-0 bg-navy/60" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-28">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-14 lg:py-16">
         {/* Heading */}
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-14 lg:mb-20">
+          <div className="text-center mb-8 lg:mb-10">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Обо мне
             </span>
@@ -29,7 +29,7 @@ export default function About() {
         </AnimateOnScroll>
 
         {/* Alternating paragraphs */}
-        <div className="space-y-10 sm:space-y-12 lg:space-y-20">
+        <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {/* Paragraph 1 — left */}
           <AnimateOnScroll animation="fade-up" delay={100}>
             <div className="lg:w-[45%] lg:mr-auto text-center lg:text-left">
@@ -67,7 +67,7 @@ export default function About() {
 
         {/* Pull-quote climax */}
         <AnimateOnScroll animation="fade-up" delay={400}>
-          <blockquote className="text-center mt-16 sm:mt-20 lg:mt-24 mb-4">
+          <blockquote className="text-center mt-10 sm:mt-12 lg:mt-14">
             <p className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl lg:text-3xl font-semibold italic leading-snug max-w-2xl mx-auto">
               Моя миссия — убрать страх и дать людям шанс начать.
             </p>
