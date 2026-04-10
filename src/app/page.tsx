@@ -8,6 +8,7 @@ import Benefits from "@/components/Benefits";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
+import LeadMagnet from "@/components/LeadMagnet";
 import Process from "@/components/Process";
 import Seminar from "@/components/Seminar";
 import FAQ from "@/components/FAQ";
@@ -29,6 +30,7 @@ export default function Home() {
       <About />
       <Services />
       <Testimonials />
+      <LeadMagnet />
       <Process />
       <Seminar />
       <FAQ />
