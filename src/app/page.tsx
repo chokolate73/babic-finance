@@ -5,6 +5,7 @@ import HeroVideo from "@/components/HeroVideo";
 import Trust from "@/components/Trust";
 import Benefits from "@/components/Benefits";
 import About from "@/components/About";
+import PainPoints from "@/components/PainPoints";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Process from "@/components/Process";
@@ -25,6 +26,7 @@ export default function Home() {
       <Trust />
       <Benefits />
       <About />
+      <PainPoints />
       <Services />
       <Testimonials />
       <Process />
