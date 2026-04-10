@@ -23,13 +23,13 @@ export default function BlogPreview() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {latest.map((article, i) => (
             <AnimateOnScroll
               key={article.slug}
               animation="fade-up"
               delay={i * 150}
-              className="h-full"
+              className="h-full w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
             >
               <Link href={`/blog/${article.slug}`} className="block h-full">
                 <div className="bg-white rounded-xl border border-border overflow-hidden group hover:shadow-lg hover:border-gold/30 transition-all duration-300 h-full flex flex-col">
