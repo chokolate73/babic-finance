@@ -60,8 +60,8 @@ export default function Benefits() {
           {benefits.map((b, i) => {
             const Icon = b.icon;
             return (
-              <AnimateOnScroll key={b.title} animation="fade-up" delay={i * 100}>
-                <div className="bg-card p-7 rounded-2xl border border-border hover:shadow-xl hover:border-l-4 hover:border-l-gold hover:-translate-y-1 transition-all duration-300 group">
+              <AnimateOnScroll key={b.title} animation="fade-up" delay={i * 100} className="h-full">
+                <div className="bg-card p-7 rounded-2xl border border-border hover:shadow-xl hover:border-l-4 hover:border-l-gold hover:-translate-y-1 transition-all duration-300 group h-full">
                   <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold transition-colors duration-300">
                     <Icon className="w-6 h-6 text-gold group-hover:text-white transition-colors duration-300" />
                   </div>
