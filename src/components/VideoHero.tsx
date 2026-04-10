@@ -93,7 +93,7 @@ export default function VideoHero() {
         </div>
 
         <p
-          className={`text-white/60 text-sm transition-all duration-1000 ease-out ${
+          className={`hidden sm:block text-white/60 text-sm transition-all duration-1000 ease-out ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
           style={{ transitionDelay: "900ms" }}
@@ -102,7 +102,7 @@ export default function VideoHero() {
         </p>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <a
           href="#trust"
           className="flex flex-col items-center gap-2 text-white/50 hover:text-white/80 transition-colors"
