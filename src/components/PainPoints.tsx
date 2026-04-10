@@ -120,7 +120,7 @@ export default function PainPoints() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 w-full sm:w-auto px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
             >
               Получить бесплатную консультацию
             </a>

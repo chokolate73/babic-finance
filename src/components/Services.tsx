@@ -131,7 +131,7 @@ export default function Services() {
             <div className="mt-10 text-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
+                className="inline-flex items-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
               >
                 Записаться на бесплатную консультацию
               </a>
@@ -220,7 +220,7 @@ export default function Services() {
           <div className="text-center mt-10">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
+              className="inline-flex items-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
             >
               Записаться на бесплатную консультацию
             </a>
