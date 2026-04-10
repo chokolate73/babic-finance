@@ -48,7 +48,7 @@ export default function HeroVideo() {
       };
 
   return (
-    <section className="relative min-h-[100svh] flex items-start sm:items-end overflow-hidden">
+    <section className="hidden lg:flex relative min-h-[100svh] items-end overflow-hidden">
       {/* Video Background with reduced-motion fallback */}
       <div className="absolute inset-0">
         {prefersReduced ? (
