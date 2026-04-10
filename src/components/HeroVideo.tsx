@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -59,15 +60,39 @@ export default function HeroVideo() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 via-40% to-black/25" />
       </div>
+
+      {/* Portrait — right side, anchored to bottom, desktop only */}
+      <motion.div
+        className="hidden lg:block absolute bottom-0 right-0 xl:right-[5%] z-10 pointer-events-none"
+        {...(prefersReduced
+          ? {}
+          : {
+              initial: { opacity: 0, y: 40 },
+              animate: mounted
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 40 },
+              transition: { duration: 0.8, delay: 0.5, ease: "easeOut" as const },
+            })}
+      >
+        <Image
+          src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
+          alt="Владислав Бабич"
+          className="object-contain object-bottom"
+          width={520}
+          height={650}
+          priority
+          style={{ height: "85vh", width: "auto", maxWidth: "45vw" }}
+        />
+      </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div>
-          <div className="max-w-2xl text-center">
+          <div className="max-w-2xl text-center lg:text-left">
             {/* Gold decorative line */}
             <motion.div
-              className="flex items-center justify-center gap-3 mb-6"
+              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
               {...fadeUp(0.2)}
             >
               <div className="h-px w-10 bg-gold" />
@@ -93,7 +118,7 @@ export default function HeroVideo() {
 
             {/* Stat badges */}
             <motion.div
-              className="flex flex-wrap justify-center gap-3 mb-6"
+              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
               {...fadeUp(0.6)}
             >
               {heroContent.stats.map((stat) => (
@@ -109,7 +134,7 @@ export default function HeroVideo() {
 
             {/* Service pills */}
             <motion.div
-              className="flex flex-wrap justify-center gap-2 mb-10"
+              className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10"
               {...fadeUp(0.6)}
             >
               {heroContent.pills.map((pill) => (
@@ -124,7 +149,7 @@ export default function HeroVideo() {
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6"
               {...fadeUp(0.7)}
             >
               <a
