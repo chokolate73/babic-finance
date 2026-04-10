@@ -14,7 +14,7 @@ const navLinks = [
   { href: "#contact", label: "Контакт" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || forceDark
           ? "bg-white/90 backdrop-blur-md border-b border-border/50 shadow-sm"
           : "bg-transparent border-b border-transparent"
       }`}
@@ -39,7 +39,7 @@ export default function Navbar() {
           <a href="#" className="flex items-center gap-2">
             <span
               className={`font-[family-name:var(--font-serif)] text-xl font-bold transition-colors duration-300 ${
-                scrolled ? "text-navy" : "text-white"
+                scrolled || forceDark ? "text-navy" : "text-white"
               }`}
             >
               Babic
@@ -55,7 +55,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-300 ${
-                  scrolled
+                  scrolled || forceDark
                     ? "text-muted-foreground hover:text-navy"
                     : "text-white/80 hover:text-white"
                 }`}
@@ -79,7 +79,7 @@ export default function Navbar() {
 
           <button
             className={`lg:hidden p-2 transition-colors duration-300 ${
-              scrolled ? "text-navy" : "text-white"
+              scrolled || forceDark ? "text-navy" : "text-white"
             }`}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"

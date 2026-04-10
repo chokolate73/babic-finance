@@ -8,7 +8,7 @@ export default function BlogLayout({
 }) {
   return (
     <>
-      <Navbar />
+      <Navbar forceDark />
       {children}
       <Footer />
     </>
