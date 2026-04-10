@@ -119,7 +119,7 @@ export default function HeroVideo() {
       </motion.div>
 
       {/* Text content - anchored to bottom of hero */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 sm:pb-24 lg:pb-28 pt-[50vh] sm:pt-[40vh] lg:pt-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 sm:pb-24 lg:pb-28 pt-[35vh] sm:pt-[40vh] lg:pt-0">
         <div className="max-w-2xl text-center">
           {/* Gold decorative ornament */}
           <motion.div
