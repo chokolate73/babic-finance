@@ -27,21 +27,18 @@ export default function PainPoints() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-5xl mx-auto">
+        <div className="max-w-2xl mx-auto space-y-6 lg:space-y-8">
           {painPoints.map((point, i) => (
-            <AnimateOnScroll key={i} animation="fade-up" delay={i * 80} className="h-full">
-              <div className="bg-white p-6 rounded-xl border border-border flex items-start gap-4 h-full">
-                <span className="text-gold text-xl leading-none mt-0.5 flex-shrink-0">?</span>
-                <p className="text-foreground/80 text-sm leading-relaxed">
-                  {point}
-                </p>
-              </div>
+            <AnimateOnScroll key={i} animation="fade-up" delay={i * 100}>
+              <p className="text-center text-navy/70 text-lg sm:text-xl lg:text-[1.35rem] leading-relaxed font-[family-name:var(--font-serif)]">
+                {point}
+              </p>
             </AnimateOnScroll>
           ))}
         </div>
 
         <AnimateOnScroll animation="fade-up" delay={500}>
-          <div className="text-center mt-12">
+          <div className="text-center mt-14">
             <p className="text-muted-foreground mb-8">
               Если хоть что-то из этого — про вас, давайте разберёмся вместе.
             </p>
