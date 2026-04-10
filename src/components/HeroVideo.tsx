@@ -77,7 +77,7 @@ export default function HeroVideo() {
 
       {/* Portrait - desktop: right side anchored to bottom; mobile: top half */}
       <motion.div
-        className="absolute bottom-0 right-0 lg:right-[2%] xl:right-[5%] z-10 pointer-events-none"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-[2%] xl:right-[5%] z-10 pointer-events-none"
         {...(prefersReduced
           ? {}
           : {
