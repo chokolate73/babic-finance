@@ -77,7 +77,7 @@ export default function HeroVideo() {
             })}
       >
         <Image
-          src="/Vladislav-portrait.png"
+          src="/vladislav-portrait.png"
           alt="Владислав Бабич"
           className="object-contain object-bottom"
           width={520}
