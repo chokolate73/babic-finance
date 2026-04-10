@@ -11,6 +11,7 @@ import Testimonials from "@/components/Testimonials";
 import Process from "@/components/Process";
 import Seminar from "@/components/Seminar";
 import FAQ from "@/components/FAQ";
+import BlogPreview from "@/components/BlogPreview";
 import Social from "@/components/Social";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -32,6 +33,7 @@ export default function Home() {
       <Process />
       <Seminar />
       <FAQ />
+      <BlogPreview />
       <Social />
       <Contact />
       <Footer />

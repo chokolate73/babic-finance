@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#seminar", label: "Семинар" },
   { href: "#process", label: "Как работаю" },
   { href: "#faq", label: "FAQ" },
+  { href: "/blog", label: "Блог" },
   { href: "#contact", label: "Контакт" },
 ];
 
