@@ -163,7 +163,7 @@ export default function Services() {
                   >
                     <span
                       className={`font-[family-name:var(--font-serif)] text-xl font-bold transition-colors ${
-                        isOpen ? "text-gold" : "text-border"
+                        isOpen ? "text-gold" : "text-navy"
                       }`}
                     >
                       {pad(i + 1)}.
