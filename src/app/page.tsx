@@ -1,18 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import VideoHero from "@/components/VideoHero";
-import HeroVideo from "@/components/HeroVideo";
 import PainPoints from "@/components/PainPoints";
-import Trust from "@/components/Trust";
-import Benefits from "@/components/Benefits";
-import About from "@/components/About";
 import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
-import LeadMagnet from "@/components/LeadMagnet";
+import AboutMe from "@/components/AboutMe";
 import Process from "@/components/Process";
 import Seminar from "@/components/Seminar";
+import Testimonials from "@/components/Testimonials";
+import LeadMagnet from "@/components/LeadMagnet";
 import FAQ from "@/components/FAQ";
-import BlogPreview from "@/components/BlogPreview";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
@@ -22,19 +17,14 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <VideoHero />
-      <HeroVideo />
       <PainPoints />
-      <Trust />
-      <Benefits />
-      <About />
       <Services />
-      <Testimonials />
-      <LeadMagnet />
+      <AboutMe />
       <Process />
       <Seminar />
+      <Testimonials />
+      <LeadMagnet />
       <FAQ />
-      <BlogPreview />
       <Contact />
       <Footer />
       <FloatingButtons />
