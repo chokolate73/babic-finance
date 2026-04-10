@@ -12,9 +12,14 @@ const heroContent = {
   stats: [
     { value: "21", label: "год опыта" },
     { value: "391+", label: "клиентов" },
-    { value: "С 2005", label: "года" },
+    { value: "С 2005", label: "года", mobileHidden: true },
   ],
-  pills: ["Консультации", "Инвестиции", "Пенсия", "Страхование"],
+  pills: [
+    { text: "Консультации" },
+    { text: "Инвестиции" },
+    { text: "Пенсия" },
+    { text: "Страхование", mobileHidden: true },
+  ],
   cta: {
     primary: { text: "Бесплатная консультация", href: "https://wa.me/491784743490" },
     secondary: { text: "Как я работаю", href: "#process" },
@@ -100,7 +105,7 @@ export default function Hero() {
               {heroContent.stats.map((stat) => (
                 <span
                   key={stat.label}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90"
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90${stat.mobileHidden ? " hidden sm:inline-flex" : ""}`}
                 >
                   <span className="font-bold text-white">{stat.value}</span>{" "}
                   {stat.label}
@@ -115,10 +120,10 @@ export default function Hero() {
             >
               {heroContent.pills.map((pill) => (
                 <span
-                  key={pill}
-                  className="px-4 py-1.5 text-sm text-white/90 border border-white/25 rounded-full"
+                  key={pill.text}
+                  className={`px-4 py-1.5 text-sm text-white/90 border border-white/25 rounded-full${pill.mobileHidden ? " hidden sm:inline-flex" : ""}`}
                 >
-                  {pill}
+                  {pill.text}
                 </span>
               ))}
             </motion.div>
