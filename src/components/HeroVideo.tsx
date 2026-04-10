@@ -72,16 +72,7 @@ export default function HeroVideo() {
             <source src="/hero.mp4" type="video/mp4" />
           </video>
         )}
-        {/* Base dimming layer */}
-        <div className="absolute inset-0 bg-black/25" />
-        {/* Soft bottom-up gradient — full width, dark zone in lower half */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, transparent 25%, rgba(26,31,61,0.35) 50%, rgba(26,31,61,0.65) 100%)",
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/80" />
       </div>
 
       {/* Portrait — desktop: right side anchored to bottom; mobile: top half */}
