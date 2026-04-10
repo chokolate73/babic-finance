@@ -32,7 +32,7 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
         scrolled || forceDark
           ? "bg-white/90 backdrop-blur-md border-b border-border/50 shadow-sm"
           : "bg-transparent border-b border-transparent"
-      }`}
+      } ${scrolled && !forceDark ? "max-lg:-translate-y-full" : ""}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
