@@ -5,8 +5,9 @@ import Trust from "@/components/Trust";
 import Benefits from "@/components/Benefits";
 import About from "@/components/About";
 import Services from "@/components/Services";
-import Seminar from "@/components/Seminar";
+import Testimonials from "@/components/Testimonials";
 import Process from "@/components/Process";
+import Seminar from "@/components/Seminar";
 import FAQ from "@/components/FAQ";
 import Social from "@/components/Social";
 import Contact from "@/components/Contact";
@@ -23,8 +24,9 @@ export default function Home() {
       <Benefits />
       <About />
       <Services />
-      <Seminar />
+      <Testimonials />
       <Process />
+      <Seminar />
       <FAQ />
       <Social />
       <Contact />

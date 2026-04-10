@@ -97,7 +97,7 @@ export default function Contact() {
               type="submit"
             >
               <Send className="w-4 h-4 mr-2" />
-              {submitted ? "Отправлено!" : "Отправить заявку"}
+              {submitted ? "Отправлено!" : "Отправить мою заявку"}
             </button>
           </form>
           </AnimateOnScroll>
