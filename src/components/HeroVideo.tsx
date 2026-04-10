@@ -139,7 +139,11 @@ export default function HeroVideo() {
           </motion.div>
 
           <motion.h1
-            className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-4"
+            className="font-[family-name:var(--font-serif)] font-bold text-white tracking-tight mb-4"
+            style={{
+              fontSize: "clamp(2.5rem, 5vw, 5rem)",
+              lineHeight: 1.08,
+            }}
             {...fadeUp(0.4)}
           >
             {heroContent.headline}
