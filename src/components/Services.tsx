@@ -128,7 +128,7 @@ export default function Services() {
               ))}
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 text-center">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
