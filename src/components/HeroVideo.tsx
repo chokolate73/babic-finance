@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-// TODO: compress hero3 video — current file is ~14MB, should be under 3MB
 const heroContent = {
   headline: "Персональный эксперт",
   headlineAccent: "по финансам в Германии",
