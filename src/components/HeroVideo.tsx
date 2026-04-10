@@ -107,10 +107,6 @@ export default function HeroVideo() {
             height: "80vh",
             width: "auto",
             maxWidth: "40vw",
-            maskImage:
-              "linear-gradient(to bottom, black 60%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black 60%, transparent 100%)",
           }}
         />
         {/* Mobile portrait — positioned from top */}
@@ -125,20 +121,16 @@ export default function HeroVideo() {
             height: "45vh",
             width: "auto",
             maxWidth: "60vw",
-            maskImage:
-              "linear-gradient(to bottom, black 55%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black 55%, transparent 100%)",
           }}
         />
       </motion.div>
 
       {/* Text content — anchored to bottom of hero */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24 lg:pb-28 pt-[45vh] sm:pt-[40vh] lg:pt-0">
-        <div className="max-w-2xl text-center lg:text-left">
+        <div className="max-w-2xl text-center">
           {/* Gold decorative ornament */}
           <motion.div
-            className="flex items-center justify-center lg:justify-start gap-3 mb-4 lg:mb-6"
+            className="flex items-center justify-center justify-center gap-3 mb-4 lg:mb-6"
             {...fadeUp(0.2)}
           >
             <div className="h-0.5 w-12 bg-gold" />
@@ -147,11 +139,7 @@ export default function HeroVideo() {
           </motion.div>
 
           <motion.h1
-            className="font-[family-name:var(--font-serif)] font-bold text-white tracking-tight mb-3 lg:mb-4"
-            style={{
-              fontSize: "clamp(2.5rem, 5vw, 5rem)",
-              lineHeight: 1.08,
-            }}
+            className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-4"
             {...fadeUp(0.4)}
           >
             {heroContent.headline}
@@ -168,7 +156,7 @@ export default function HeroVideo() {
 
           {/* Stat badges */}
           <motion.div
-            className="flex flex-wrap justify-center lg:justify-start gap-2 lg:gap-3 mb-4 lg:mb-6"
+            className="flex flex-wrap justify-center justify-center gap-2 lg:gap-3 mb-4 lg:mb-6"
             {...fadeUp(0.6)}
           >
             {heroContent.stats.map((stat) => (
@@ -188,7 +176,7 @@ export default function HeroVideo() {
 
           {/* Service pills — hidden on small mobile to save space */}
           <motion.div
-            className="hidden sm:flex flex-wrap justify-center lg:justify-start gap-2 mb-8 lg:mb-10"
+            className="hidden sm:flex flex-wrap justify-center justify-center gap-2 mb-8 lg:mb-10"
             {...fadeUp(0.6)}
           >
             {heroContent.pills.map((pill) => (
@@ -203,7 +191,7 @@ export default function HeroVideo() {
 
           {/* CTAs */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 lg:gap-4 mb-4 lg:mb-6"
+            className="flex flex-col sm:flex-row items-center justify-center justify-center gap-3 lg:gap-4 mb-4 lg:mb-6"
             {...fadeUp(0.7)}
           >
             <a
