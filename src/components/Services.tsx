@@ -65,8 +65,8 @@ export default function Services() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
-            <AnimateOnScroll key={s.title} animation="fade-up" delay={i * 100}>
-              <div className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-lg hover:border-gold/30 transition-all duration-300">
+            <AnimateOnScroll key={s.title} animation="fade-up" delay={i * 100} className="h-full">
+              <div className="bg-card rounded-xl border border-border overflow-hidden group hover:shadow-lg hover:border-gold/30 transition-all duration-300 h-full">
                 <div className="relative h-44 overflow-hidden">
                   <Image
                     src={s.img}
