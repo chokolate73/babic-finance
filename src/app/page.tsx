@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import VideoHero from "@/components/VideoHero";
+import HeroVideo from "@/components/HeroVideo";
 import Trust from "@/components/Trust";
 import Benefits from "@/components/Benefits";
 import About from "@/components/About";
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <VideoHero />
+      <HeroVideo />
       <Trust />
       <Benefits />
       <About />
