@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -23,7 +22,7 @@ const heroContent = {
   scrollLabel: "Прокрутить вниз",
 };
 
-export default function Hero() {
+export default function HeroVideo() {
   const prefersReduced = useReducedMotion();
   const [mounted, setMounted] = useState(false);
 
@@ -49,27 +48,26 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-      {/* Background */}
-      {/* TODO: replace hero image with solo portrait of Vladislav against Frankfurt skyline — current team photo conflicts with personal-brand positioning */}
+      {/* Video Background */}
       <div className="absolute inset-0">
-        <Image
-          src="/hero.png"
-          alt="Финансовый консультант в Германии"
-          className="object-cover"
-          fill
-          priority
-          quality={85}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 via-40% to-black/25" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex items-center gap-12 lg:gap-16">
-          {/* Text — left side */}
-          <div className="max-w-2xl text-center lg:text-left flex-1">
+        <div>
+          <div className="max-w-2xl text-center">
             {/* Gold decorative line */}
             <motion.div
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
+              className="flex items-center justify-center gap-3 mb-6"
               {...fadeUp(0.2)}
             >
               <div className="h-px w-10 bg-gold" />
@@ -95,7 +93,7 @@ export default function Hero() {
 
             {/* Stat badges */}
             <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
+              className="flex flex-wrap justify-center gap-3 mb-6"
               {...fadeUp(0.6)}
             >
               {heroContent.stats.map((stat) => (
@@ -111,7 +109,7 @@ export default function Hero() {
 
             {/* Service pills */}
             <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10"
+              className="flex flex-wrap justify-center gap-2 mb-10"
               {...fadeUp(0.6)}
             >
               {heroContent.pills.map((pill) => (
@@ -126,7 +124,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
               {...fadeUp(0.7)}
             >
               <a
@@ -151,34 +149,6 @@ export default function Hero() {
               {heroContent.trustLine}
             </motion.p>
           </div>
-
-          {/* Portrait — right side, desktop only */}
-          <motion.div
-            className="hidden lg:block flex-shrink-0"
-            {...(prefersReduced
-              ? {}
-              : {
-                  initial: { opacity: 0, x: 40 },
-                  animate: mounted
-                    ? { opacity: 1, x: 0 }
-                    : { opacity: 0, x: 40 },
-                  transition: { duration: 0.8, delay: 0.5, ease: "easeOut" as const },
-                })}
-          >
-            <div className="relative w-72 xl:w-80">
-              <div className="absolute -inset-3 rounded-2xl border border-gold/20" />
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
-                <Image
-                  src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/c8c10b707_generated_318bd947.png"
-                  alt="Владислав Бабич"
-                  className="w-full h-auto object-cover"
-                  width={400}
-                  height={500}
-                  priority
-                />
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
 
