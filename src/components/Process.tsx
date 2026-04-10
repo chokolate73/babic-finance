@@ -30,7 +30,14 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-20 lg:py-28 bg-navy">
+    <section
+      id="process"
+      className="py-20 lg:py-28 bg-navy"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, #242a4e 0%, #1a1f3d 70%)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
@@ -44,7 +51,13 @@ export default function Process() {
         </AnimateOnScroll>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-white/20" />
+          <div
+            className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-0.5"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(201,168,76,0.2), rgba(201,168,76,0.4), rgba(201,168,76,0.2))",
+            }}
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
             {steps.map((s, i) => (
               <AnimateOnScroll key={s.num} animation="fade-up" delay={i * 150}>
@@ -63,6 +76,18 @@ export default function Process() {
             ))}
           </div>
         </div>
+
+        {/* CTA */}
+        <AnimateOnScroll animation="fade-up" delay={400}>
+          <div className="text-center mt-16 lg:mt-20">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-gold text-navy font-semibold rounded-full text-lg hover:opacity-90 transition-all"
+            >
+              Получить бесплатную консультацию
+            </a>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
