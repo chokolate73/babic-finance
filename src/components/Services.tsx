@@ -59,98 +59,83 @@ export default function Services() {
   return (
     <section id="services" className="py-20 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Desktop layout — reference style */}
-        <div className="hidden lg:flex gap-0 items-stretch">
-          {/* Left — image + details */}
-          <div className="w-[38%] flex-shrink-0">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
-              <Image
-                key={current.img}
-                src={current.img}
-                alt={current.title}
-                className="object-cover"
-                fill
-              />
-            </div>
-            <h3 className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy mt-5 mb-2">
-              {current.title}
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              {current.desc}
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 text-sm text-gold font-semibold hover:underline"
-            >
-              Подробнее &rarr;
-            </a>
-          </div>
-
-          {/* Middle — vertical numbered tabs */}
-          <div className="flex items-stretch mx-4 xl:mx-6">
-            {services.map((s, i) => (
-              <button
-                key={s.title}
-                onClick={() => setActive(i)}
-                className={`relative flex flex-col items-center group transition-all duration-300 ${
-                  i === active ? "w-14" : "w-10"
-                }`}
-              >
-                {/* Number at top */}
-                <span
-                  className={`font-[family-name:var(--font-serif)] text-sm font-bold mb-3 transition-colors duration-300 ${
-                    i === active
-                      ? "text-gold"
-                      : "text-border group-hover:text-gold/50"
-                  }`}
-                >
-                  {pad(i + 1)}.
-                </span>
-                {/* Vertical line */}
-                <div
-                  className={`w-px flex-grow transition-colors duration-300 ${
-                    i === active ? "bg-gold" : "bg-border group-hover:bg-gold/30"
-                  }`}
+        {/* Desktop layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 xl:gap-16 items-start">
+          {/* Left — active service image + details */}
+          <AnimateOnScroll animation="fade-left">
+            <div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                <Image
+                  key={current.img}
+                  src={current.img}
+                  alt={current.title}
+                  className="object-cover transition-opacity duration-500"
+                  fill
                 />
-                {/* Vertical title */}
-                <span
-                  className={`text-[11px] font-medium tracking-wide whitespace-nowrap transition-colors duration-300 mt-3 ${
-                    i === active
-                      ? "text-navy"
-                      : "text-muted-foreground group-hover:text-navy"
-                  }`}
-                  style={{
-                    writingMode: "vertical-rl",
-                    textOrientation: "mixed",
-                    transform: "rotate(180deg)",
-                    maxHeight: "140px",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {s.title}
-                </span>
-              </button>
-            ))}
-          </div>
+              </div>
+              <h3 className="font-[family-name:var(--font-serif)] text-2xl font-bold text-navy mb-3">
+                {current.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                {current.desc}
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
+              >
+                Узнать подробнее &rarr;
+              </a>
+            </div>
+          </AnimateOnScroll>
 
-          {/* Right — heading + description */}
-          <div className="flex-1 pl-6 xl:pl-10 flex flex-col justify-center">
-            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Услуги
-            </span>
-            <h2 className="font-[family-name:var(--font-serif)] text-3xl xl:text-4xl font-bold text-navy mt-3 mb-8">
-              Комплексное финансовое сопровождение
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              {current.desc}
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all self-start"
-            >
-              Записаться на бесплатную консультацию
-            </a>
+          {/* Right — heading + numbered list */}
+          <div>
+            <AnimateOnScroll animation="fade-right">
+              <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+                Услуги
+              </span>
+              <h2 className="font-[family-name:var(--font-serif)] text-3xl xl:text-4xl font-bold text-navy mt-3 mb-10">
+                Комплексное финансовое сопровождение
+              </h2>
+            </AnimateOnScroll>
+
+            <div className="space-y-0">
+              {services.map((s, i) => (
+                <button
+                  key={s.title}
+                  onClick={() => setActive(i)}
+                  className={`w-full text-left flex items-center gap-5 py-4 border-b border-border transition-all duration-300 group ${
+                    i === active
+                      ? "border-gold"
+                      : "hover:border-gold/40"
+                  }`}
+                >
+                  <span
+                    className={`font-[family-name:var(--font-serif)] text-2xl font-bold transition-colors duration-300 ${
+                      i === active ? "text-gold" : "text-border group-hover:text-gold/50"
+                    }`}
+                  >
+                    {pad(i + 1)}.
+                  </span>
+                  <span
+                    className={`text-base font-medium transition-colors duration-300 ${
+                      i === active ? "text-navy" : "text-muted-foreground group-hover:text-navy"
+                    }`}
+                  >
+                    {s.title}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-10">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"
+              >
+                Записаться на бесплатную консультацию
+              </a>
+            </div>
           </div>
         </div>
 
@@ -191,7 +176,7 @@ export default function Services() {
                       {s.title}
                     </span>
                     <svg
-                      className={`w-4 h-4 ml-auto text-muted-foreground transition-transform duration-200 flex-shrink-0 ${
+                      className={`w-4 h-4 ml-auto text-muted-foreground transition-transform duration-200 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                       fill="none"
