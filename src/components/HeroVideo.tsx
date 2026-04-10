@@ -72,6 +72,8 @@ export default function HeroVideo() {
             <source src="/hero.mp4" type="video/mp4" />
           </video>
         )}
+        {/* Base dimming layer */}
+        <div className="absolute inset-0 bg-black/25" />
         {/* Soft bottom-up gradient — full width, dark zone in lower half */}
         <div
           className="absolute inset-0"
