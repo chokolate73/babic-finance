@@ -11,14 +11,14 @@ const heroContent = {
   subtitle: "Владислав Бабич",
   stats: [
     { value: "21", label: "год опыта" },
-    { value: "391+", label: "клиентов" },
-    { value: "С 2005", label: "года", mobileHidden: true },
+    { value: "4\u00a0387", label: "клиентов" },
+    { value: "131+ млн €", label: "под управлением" },
   ],
   pills: [
-    { text: "Консультации" },
-    { text: "Инвестиции" },
-    { text: "Пенсия" },
-    { text: "Страхование", mobileHidden: true },
+    { text: "Immobilienfinanzierung" },
+    { text: "Versicherung" },
+    { text: "Investitionen & Fonds" },
+    { text: "Altersvorsorge", mobileHidden: true },
   ],
   cta: {
     primary: { text: "Бесплатная консультация", href: "https://wa.me/491784743490" },

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import { X } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const services = [
@@ -9,41 +10,90 @@ const services = [
     title: "Финансовые консультации",
     desc: "Полный анализ вашей финансовой ситуации и персональная стратегия развития. Разберём доходы, расходы, налоги и выстроим план действий.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    details: [
+      "Анализ доходов, расходов и налогов",
+      "Персональная финансовая стратегия",
+      "Оптимизация текущих договоров",
+      "Долгосрочное сопровождение",
+    ],
   },
   {
-    title: "Инвестиции и фонды",
+    title: "Investitionen & Fonds",
     desc: "Грамотное вложение средств с учётом ваших целей и допустимого уровня риска. Подберём инструменты, которые работают на вас.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    details: [
+      "Акции и облигации",
+      "ETF и инвестиционные фонды",
+      "Золото и серебро",
+      "Накопительные программы (Sparpläne)",
+    ],
   },
   {
-    title: "Пенсионное обеспечение",
+    title: "Altersvorsorge",
     desc: "Государственные и частные пенсионные программы для достойной жизни на пенсии. Riester, Rürup, betriebliche Altersvorsorge - разберёмся, что подходит именно вам.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    details: [
+      "Riester-Rente",
+      "Rürup-Rente (Basisrente)",
+      "bAV - betriebliche Altersvorsorge",
+      "Частные пенсионные планы",
+    ],
   },
   {
-    title: "Страхование",
+    title: "Versicherung",
     desc: "Защита вас и вашей семьи - здоровье, имущество, ответственность. Проверим текущие полисы и оптимизируем покрытие.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
+    details: [
+      "Krankenversicherung (медицинская)",
+      "Lebensversicherung (жизни)",
+      "Unfallversicherung (от несчастных случаев)",
+      "Haftpflicht (гражданская ответственность)",
+      "Rechtsschutz (юридическая защита)",
+    ],
   },
   {
-    title: "Ипотека",
+    title: "Immobilienfinanzierung",
     desc: "Подбор оптимальных условий финансирования вашей недвижимости в Германии. Сравним предложения и найдём лучший вариант.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
+    details: [
+      "Ипотечные кредиты (Baufinanzierung)",
+      "Bausparen с государственной поддержкой",
+      "Государственные дотации (KfW, Wohn-Riester)",
+      "Рефинансирование действующей ипотеки",
+    ],
   },
   {
     title: "Bausparen",
     desc: "Накопительные программы с государственной поддержкой для покупки жилья. Расскажу, как получить дотации и зафиксировать ставку.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
+    details: [
+      "Фиксация низкой процентной ставки",
+      "Государственные дотации (Wohnungsbauprämie)",
+      "Arbeitnehmer-Sparzulage для сотрудников",
+      "Гибкие накопительные тарифы",
+    ],
   },
   {
     title: "Консультации для фирм",
     desc: "Финансовые решения для бизнеса - от стартапов до устоявшихся компаний. Корпоративное страхование, пенсии для сотрудников.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/5e9da606e_generated_157ca161.png",
+    details: [
+      "Корпоративное страхование",
+      "bAV - пенсии для сотрудников",
+      "Страхование ответственности GmbH",
+      "Финансовое планирование для бизнеса",
+    ],
   },
   {
     title: "Бесплатные семинары",
     desc: "Образовательные мероприятия о финансовой грамотности на русском языке. Разбираем реальные вопросы в живом формате.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/d50888bf3_generated_35c01f2e.png",
+    details: [
+      "Финансовая грамотность для начинающих",
+      "Инвестиции и долгосрочные накопления",
+      "Налоги и Steuererklärung",
+      "Пенсия и страхование в Германии",
+    ],
   },
 ];
 
@@ -54,7 +104,24 @@ function pad(n: number) {
 export default function Services() {
   const [active, setActive] = useState(0);
   const [mobileOpen, setMobileOpen] = useState<number | null>(null);
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
   const current = services[active];
+
+  useEffect(() => {
+    if (modalIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setModalIndex(null);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [modalIndex]);
+
+  const modalService = modalIndex !== null ? services[modalIndex] : null;
 
   return (
     <section id="services" className="py-20 lg:py-28 bg-cream">
@@ -79,12 +146,12 @@ export default function Services() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {current.desc}
               </p>
-              <a
-                href="#contact"
+              <button
+                onClick={() => setModalIndex(active)}
                 className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
               >
                 Узнать подробнее &rarr;
-              </a>
+              </button>
             </div>
           </AnimateOnScroll>
 
@@ -194,7 +261,7 @@ export default function Services() {
                   <div
                     className="overflow-hidden transition-all duration-300"
                     style={{
-                      maxHeight: isOpen ? "500px" : "0",
+                      maxHeight: isOpen ? "600px" : "0",
                       opacity: isOpen ? 1 : 0,
                     }}
                   >
@@ -207,9 +274,15 @@ export default function Services() {
                           fill
                         />
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                         {s.desc}
                       </p>
+                      <button
+                        onClick={() => setModalIndex(i)}
+                        className="inline-flex items-center gap-2 text-gold font-semibold hover:underline text-sm"
+                      >
+                        Узнать подробнее &rarr;
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -227,6 +300,67 @@ export default function Services() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {modalService && (
+        <div
+          className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="service-modal-title"
+        >
+          {/* Backdrop */}
+          <button
+            aria-label="Закрыть"
+            onClick={() => setModalIndex(null)}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          />
+          {/* Content */}
+          <div className="relative w-full sm:max-w-lg bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                src={modalService.img}
+                alt={modalService.title}
+                className="object-cover"
+                fill
+              />
+              <button
+                onClick={() => setModalIndex(null)}
+                aria-label="Закрыть"
+                className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-navy flex items-center justify-center shadow-md transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-6 sm:p-7 overflow-y-auto">
+              <h3
+                id="service-modal-title"
+                className="font-[family-name:var(--font-serif)] text-2xl font-bold text-navy mb-2"
+              >
+                {modalService.title}
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                {modalService.desc}
+              </p>
+              <ul className="space-y-2.5 mb-6">
+                {modalService.details.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-navy">
+                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                    <span className="text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#contact"
+                onClick={() => setModalIndex(null)}
+                className="inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base hover:opacity-90 transition-all"
+              >
+                Записаться на консультацию
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

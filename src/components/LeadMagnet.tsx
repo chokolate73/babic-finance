@@ -5,6 +5,7 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function LeadMagnet() {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
@@ -14,6 +15,11 @@ export default function LeadMagnet() {
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Пожалуйста, введите корректный email");
+      return;
+    }
+
+    if (!consent) {
+      setError("Пожалуйста, подтвердите согласие с условиями обработки данных");
       return;
     }
 
@@ -114,14 +120,29 @@ export default function LeadMagnet() {
                       placeholder="Ваш email"
                       className="flex w-full border border-input bg-[#FAFAF8] px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-12 rounded-xl"
                     />
+                    <label className="flex items-start gap-2.5 mt-3 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
+                        className="mt-0.5 w-4 h-4 accent-gold flex-shrink-0"
+                      />
+                      <span className="text-muted-foreground text-xs leading-relaxed">
+                        Ich stimme der Verarbeitung meiner Daten gemäß der{" "}
+                        <a href="#" className="underline hover:text-navy">
+                          Datenschutzerklärung
+                        </a>{" "}
+                        zu.
+                      </span>
+                    </label>
                     {error && (
                       <p className="text-red-500 text-xs mt-1.5">{error}</p>
                     )}
                     <button
                       type="submit"
-                      className="w-full mt-2.5 h-12 bg-gold hover:opacity-90 text-navy font-semibold rounded-xl transition-all"
+                      className="w-full mt-3 h-12 bg-gold hover:opacity-90 text-navy font-semibold rounded-xl transition-all"
                     >
-                      Получить бесплатный гайд
+                      Kostenlos herunterladen
                     </button>
                     <p className="text-muted-foreground text-xs mt-2.5 text-center">
                       Без спама - только гайд на почту.
