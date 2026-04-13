@@ -105,7 +105,7 @@ export default function Hero() {
               {heroContent.stats.map((stat) => (
                 <span
                   key={stat.label}
-                  className={`inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90${stat.mobileHidden ? " hidden sm:inline-flex" : ""}`}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90"
                 >
                   <span className="font-bold text-white">{stat.value}</span>{" "}
                   {stat.label}
