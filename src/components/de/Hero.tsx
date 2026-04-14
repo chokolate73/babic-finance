@@ -53,25 +53,38 @@ export default function Hero() {
       };
 
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-start md:items-center overflow-hidden">
       {/* Background */}
-      {/* TODO: replace hero image with solo portrait of Vladislav against Frankfurt skyline - current team photo conflicts with personal-brand positioning */}
       <div className="absolute inset-0">
-        <Image
-          src="/hero.png"
-          alt="Finanzberater in Deutschland"
-          className="object-cover"
-          fill
-          priority
-          quality={85}
-        />
+        {/* Desktop background: Frankfurt skyline wide shot */}
+        <div className="hidden md:block absolute inset-0">
+          <Image
+            src="/hero.png"
+            alt="Finanzberater in Deutschland"
+            className="object-cover"
+            fill
+            priority
+            quality={85}
+          />
+        </div>
+        {/* Mobile background: chest-up portrait with city behind — anchored top so face stays in view */}
+        <div className="md:hidden absolute inset-0">
+          <Image
+            src="/vlad-face.png"
+            alt="Wladislaw Babitsch vor der Frankfurter Skyline"
+            className="object-cover object-top"
+            fill
+            priority
+            quality={85}
+          />
+        </div>
         {/* Desktop overlay: gradient with exposed right side (for bg image focal point) */}
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
-        {/* Mobile overlay: solid dark 50% for text legibility */}
-        <div className="md:hidden absolute inset-0 bg-black/50" />
+        {/* Mobile overlay: vertical gradient — top stays lighter so face reads, bottom darker for text legibility */}
+        <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[55vh] pb-12 md:py-20">
         <div>
           <div className="max-w-2xl text-center">
             {/* Gold decorative line */}
@@ -161,18 +174,6 @@ export default function Hero() {
             <motion.p className="text-white/60 text-sm" {...fadeUp(0.8)}>
               {heroContent.trustLine}
             </motion.p>
-
-            {/* Mobile-only portrait — hidden on desktop (where person is part of bg image) */}
-            <motion.div className="md:hidden mt-6 flex justify-center" {...fadeUp(0.9)}>
-              <Image
-                src="/vlad-face.png"
-                alt="Wladislaw Babitsch"
-                width={600}
-                height={600}
-                className="w-[70%] h-auto rounded-2xl"
-                priority
-              />
-            </motion.div>
           </div>
         </div>
       </div>
