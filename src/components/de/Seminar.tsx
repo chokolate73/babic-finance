@@ -127,7 +127,7 @@ export default function Seminar() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
               </span>
               <span className="text-xs font-bold uppercase tracking-wider text-red-600">
-                Live · Unterricht mit Dozent
+                Live · Unterricht mit Experten
               </span>
             </div>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
