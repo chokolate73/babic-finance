@@ -43,7 +43,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-20 lg:py-28 bg-cream">
+    <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
