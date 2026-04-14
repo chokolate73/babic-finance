@@ -1,6 +1,6 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
-const TELEGRAM_URL = "https://t.me/babicfinance"; // TODO: replace with actual channel link
+const TELEGRAM_URL = "https://t.me/babic_fin";
 
 const checklist = [
   "Налоги и Steuererklärung",
