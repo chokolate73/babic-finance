@@ -53,7 +53,7 @@ export default function Hero() {
       };
 
   return (
-    <section className="relative min-h-[100svh] flex items-start md:items-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         {/* Desktop background: Frankfurt skyline wide shot */}
@@ -83,7 +83,7 @@ export default function Hero() {
         <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[55vh] pb-12 md:py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div>
           <div className="max-w-2xl text-center">
             {/* Gold decorative line */}
