@@ -12,8 +12,12 @@ const credentials = [
     desc: "Одна из крупнейших финансовых компаний Германии",
   },
   {
-    title: "Более 391 клиента",
-    desc: "Доверие сотен русскоязычных семей в Германии",
+    title: "Более 4\u00a0387 клиентов",
+    desc: "Доверие тысяч семей в Германии",
+  },
+  {
+    title: "131+ млн € под управлением",
+    desc: "Капитал, который мои клиенты доверили мне в совокупности",
   },
   {
     title: "Финансовый коуч",
@@ -27,8 +31,8 @@ const credentials = [
 
 const stats = [
   { value: "21+", label: "лет опыта" },
-  { value: "391+", label: "клиентов" },
-  { value: "DVAG", label: "партнёр" },
+  { value: "4\u00a0387", label: "клиентов" },
+  { value: "131+ млн €", label: "под управлением" },
 ];
 
 export default function Trust() {
@@ -89,7 +93,7 @@ export default function Trust() {
                 {stats.map((s, i) => (
                   <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 150}>
                     <div className="text-center p-3 sm:p-6 bg-gray-50 rounded-xl border border-border h-full">
-                      <p className="font-[family-name:var(--font-serif)] text-xl sm:text-3xl font-bold text-gold">
+                      <p className="font-[family-name:var(--font-serif)] text-lg sm:text-2xl font-bold text-gold whitespace-nowrap">
                         {s.value}
                       </p>
                       <p className="text-xs sm:text-sm text-muted-foreground mt-1">

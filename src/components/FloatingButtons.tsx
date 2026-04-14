@@ -1,5 +1,4 @@
 import WhatsAppIcon from "./WhatsAppIcon";
-import TelegramIcon from "./TelegramIcon";
 
 export default function FloatingButtons() {
   return (

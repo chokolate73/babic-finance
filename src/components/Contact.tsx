@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
-import TelegramIcon from "./TelegramIcon";
+import FacebookIcon from "./FacebookIcon";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function Contact() {
@@ -168,14 +168,15 @@ export default function Contact() {
                 <WhatsAppIcon className="w-5 h-5" />
                 WhatsApp
               </a>
+              {/* TODO: заменить на m.me/<username>, когда клиент подтвердит Messenger-ID */}
               <a
-                href="https://t.me/+491784743490"
+                href="https://www.facebook.com/share/1ARmg3GGs7/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#229ED9] text-white font-semibold rounded-xl hover:opacity-90 transition-all"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#0084FF] text-white font-semibold rounded-xl hover:opacity-90 transition-all"
               >
-                <TelegramIcon className="w-5 h-5" />
-                Telegram
+                <FacebookIcon className="w-5 h-5" />
+                Messenger
               </a>
             </div>
           </div>

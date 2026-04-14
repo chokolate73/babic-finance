@@ -11,14 +11,14 @@ const heroContent = {
   subtitle: "Владислав Бабич",
   stats: [
     { value: "21", label: "год опыта" },
-    { value: "391+", label: "клиентов" },
-    { value: "С 2005", label: "года", mobileHidden: true },
+    { value: "4\u00a0387", label: "клиентов" },
+    { value: "131+ млн €", label: "под управлением" },
   ],
   pills: [
-    { text: "Консультации" },
-    { text: "Инвестиции" },
-    { text: "Пенсия" },
-    { text: "Страхование", mobileHidden: true },
+    { text: "Immobilienfinanzierung" },
+    { text: "Versicherung" },
+    { text: "Investitionen & Fonds" },
+    { text: "Altersvorsorge", mobileHidden: true },
   ],
   cta: {
     primary: { text: "Бесплатная консультация", href: "https://wa.me/491784743490" },
@@ -105,7 +105,7 @@ export default function Hero() {
               {heroContent.stats.map((stat) => (
                 <span
                   key={stat.label}
-                  className={`inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90${stat.mobileHidden ? " hidden sm:inline-flex" : ""}`}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90"
                 >
                   <span className="font-bold text-white">{stat.value}</span>{" "}
                   {stat.label}

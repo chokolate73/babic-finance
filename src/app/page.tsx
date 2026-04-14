@@ -21,8 +21,8 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <VideoHero />
-      <HeroVideo />
+      <div className="lg:hidden"><VideoHero /></div>
+      <div className="lg:hidden"><HeroVideo /></div>
       <PainPoints />
       <Trust />
       <Services />
