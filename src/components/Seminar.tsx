@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
-import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Calendar, Monitor, Send, X } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 // TODO: Add future event dates here. Update SEMINAR_DATE to the next upcoming seminar.
 const SEMINAR_DATE = new Date("2026-05-20T18:30:00+02:00");
@@ -17,7 +18,7 @@ function getSeminarDateString() {
 
 function getWhatsAppQuestionLink() {
   const dateStr = getSeminarDateString();
-  const text = `Здравствуйте, Владислав! У меня вопрос по семинару ${dateStr} "${SEMINAR_TITLE}"`;
+  const text = `Здравствуйте, Владислав! У меня вопрос по онлайн обучению ${dateStr} "${SEMINAR_TITLE}"`;
   return `https://wa.me/491784743490?text=${encodeURIComponent(text)}`;
 }
 
@@ -33,9 +34,111 @@ function getTimeLeft() {
   };
 }
 
+function RegistrationModal({ onClose }: { onClose: () => void }) {
+  const [form, setForm] = useState({ name: "", phone: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    // TODO: connect to API / CRM
+    console.log("Seminar registration:", form);
+    setSubmitted(true);
+  }
+
+  return (
+    <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center">
+      {/* Backdrop */}
+      <button
+        aria-label="Закрыть"
+        onClick={onClose}
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+      />
+      {/* Panel */}
+      <div className="relative w-full sm:max-w-md bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-hidden">
+        <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
+          <div>
+            <p className="text-xs text-gold font-semibold uppercase tracking-wider">Онлайн обучение</p>
+            <h3 className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy mt-0.5">
+              Регистрация
+            </h3>
+          </div>
+          <button
+            onClick={onClose}
+            aria-label="Закрыть"
+            className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-navy flex items-center justify-center transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        <div className="p-6">
+          {!submitted ? (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-navy mb-1.5 block">
+                  Имя и фамилия *
+                </label>
+                <input
+                  className="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-12 rounded-xl"
+                  placeholder="Ваше имя"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  required
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-navy mb-1.5 block">
+                  WhatsApp / Телефон *
+                </label>
+                <input
+                  className="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-12 rounded-xl"
+                  placeholder="+49 ..."
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:bg-gold/90 text-navy font-semibold rounded-full text-base shadow transition-colors"
+              >
+                <Send className="w-4 h-4" />
+                Отправить заявку
+              </button>
+            </form>
+          ) : (
+            <div className="py-8 text-center">
+              <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p className="font-semibold text-navy text-lg">Заявка отправлена!</p>
+              <p className="text-muted-foreground text-sm mt-1">Владислав свяжется с вами в ближайшее время.</p>
+              <button onClick={onClose} className="mt-5 text-gold text-sm hover:underline">Закрыть</button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Seminar() {
   const [time, setTime] = useState(getTimeLeft);
   const [mounted, setMounted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -60,12 +163,12 @@ export default function Seminar() {
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              {isPast ? "Мероприятие" : "Ближайший семинар"}
+              {isPast ? "Мероприятие" : "Ближайшее онлайн обучение"}
             </span>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               {isPast
-                ? "Семинар состоялся"
-                : "Присоединяйтесь к мероприятию"}
+                ? "Онлайн обучение состоялось"
+                : "Присоединяйтесь к онлайн обучению"}
             </h2>
             {isPast && (
               <p className="text-muted-foreground mt-3">
@@ -86,7 +189,7 @@ export default function Seminar() {
               {/* TODO: swap for real seminar photo when available */}
               <Image
                 src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/18a10eace_generated_e3868091.png"
-                alt="Семинар - Недвижимость в Германии"
+                alt="Онлайн обучение - Недвижимость в Германии"
                 className="object-cover"
                 fill
                 priority
@@ -94,7 +197,7 @@ export default function Seminar() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
               <div className="absolute top-4 left-4">
                 <span className="px-4 py-1.5 bg-gold text-navy text-sm font-semibold rounded-full">
-                  {isPast ? "Завершён" : "Очный семинар"}
+                  {isPast ? "Завершён" : "Онлайн обучение"}
                 </span>
               </div>
             </div>
@@ -153,28 +256,26 @@ export default function Seminar() {
                   <span>20.05.2026, 18:30</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-gold" />
-                  <span>Mottmannstra&szlig;e 8, 53842 Troisdorf</span>
+                  <Monitor className="w-4 h-4 text-gold" />
+                  <span>Онлайн</span>
                 </div>
               </div>
 
               {!isPast && (
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <a
-                    href="https://forms.office.com/e/GqjXvfPaSX"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-whatsapp text-white font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
+                  <button
+                    onClick={() => setShowModal(true)}
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
                   >
-                    <ExternalLink className="w-4 h-4" />
                     Зарегистрироваться
-                  </a>
+                  </button>
                   <a
                     href={getWhatsAppQuestionLink()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 border border-navy/20 text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:bg-navy/5 transition-all"
                   >
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                     Задать вопрос
                   </a>
                 </div>
@@ -188,7 +289,7 @@ export default function Seminar() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
                   >
-                    Следующий семинар
+                    Следующее обучение
                   </a>
                 </div>
               )}
@@ -196,6 +297,8 @@ export default function Seminar() {
           </div>
         </AnimateOnScroll>
       </div>
+
+      {showModal && <RegistrationModal onClose={() => setShowModal(false)} />}
     </section>
   );
 }
