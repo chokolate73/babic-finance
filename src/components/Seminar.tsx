@@ -2,23 +2,36 @@
 
 import { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
-import { Calendar, Monitor, Send, X } from "lucide-react";
+import { Calendar, Monitor, Send, X, Users } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-// TODO: Add future event dates here. Update SEMINAR_DATE to the next upcoming seminar.
-const SEMINAR_DATE = new Date("2026-05-20T18:30:00+02:00");
-const SEMINAR_TITLE = "Недвижимость в Германии";
+const SEMINAR_DATE = new Date("2026-04-15T18:30:00+02:00");
+const SEMINAR_TITLE = "Консультант по финансам в Германии";
 
-function getSeminarDateString() {
-  const d = SEMINAR_DATE.getDate().toString().padStart(2, "0");
-  const m = (SEMINAR_DATE.getMonth() + 1).toString().padStart(2, "0");
-  return `${d}.${m}`;
-}
+const COURSE_TOPICS = [
+  "Как работает система страхования в Германии",
+  "Пенсионные программы и накопления",
+  "Инвестиции и финансовые инструменты",
+  "Банковские продукты и кредиты",
+  "Основы финансового консультирования",
+];
+
+const COURSE_BENEFITS = [
+  "Онлайн-занятия раз в неделю в вечернее время",
+  "Доступ ко всем записям уроков",
+  "Обучение на русском языке с разбором немецкой терминологии",
+  "При необходимости — справка для Jobcenter",
+];
+
+const AFTER_COURSE = [
+  "Продолжить обучение на немецком языке",
+  "Подготовиться к получению лицензий IHK (GewO)",
+  "Использовать знания для работы или личного развития",
+];
 
 function getWhatsAppQuestionLink() {
-  const dateStr = getSeminarDateString();
-  const text = `Здравствуйте, Владислав! У меня вопрос по онлайн обучению ${dateStr} "${SEMINAR_TITLE}"`;
+  const text = `Здравствуйте, Владислав! Хочу узнать подробнее о курсе "${SEMINAR_TITLE}"`;
   return `https://wa.me/491784743490?text=${encodeURIComponent(text)}`;
 }
 
@@ -52,43 +65,28 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     // TODO: connect to API / CRM
-    console.log("Seminar registration:", form);
+    console.log("Course registration:", form);
     setSubmitted(true);
   }
 
   return (
     <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center">
-      {/* Backdrop */}
-      <button
-        aria-label="Закрыть"
-        onClick={onClose}
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-      />
-      {/* Panel */}
+      <button aria-label="Закрыть" onClick={onClose} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div className="relative w-full sm:max-w-md bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-hidden">
         <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
           <div>
             <p className="text-xs text-gold font-semibold uppercase tracking-wider">Онлайн обучение</p>
-            <h3 className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy mt-0.5">
-              Регистрация
-            </h3>
+            <h3 className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy mt-0.5">Регистрация</h3>
           </div>
-          <button
-            onClick={onClose}
-            aria-label="Закрыть"
-            className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-navy flex items-center justify-center transition-colors"
-          >
+          <button onClick={onClose} aria-label="Закрыть" className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-navy flex items-center justify-center transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
-
         <div className="p-6">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-sm font-medium text-navy mb-1.5 block">
-                  Имя и фамилия *
-                </label>
+                <label className="text-sm font-medium text-navy mb-1.5 block">Имя и фамилия *</label>
                 <input
                   className="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-12 rounded-xl"
                   placeholder="Ваше имя"
@@ -98,9 +96,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-navy mb-1.5 block">
-                  WhatsApp / Телефон *
-                </label>
+                <label className="text-sm font-medium text-navy mb-1.5 block">WhatsApp / Телефон *</label>
                 <input
                   className="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-12 rounded-xl"
                   placeholder="+49 ..."
@@ -109,12 +105,9 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
                   required
                 />
               </div>
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:bg-gold/90 text-navy font-semibold rounded-full text-base shadow transition-colors"
-              >
+              <button type="submit" className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:bg-gold/90 text-navy font-semibold rounded-full text-base shadow transition-colors">
                 <Send className="w-4 h-4" />
-                Отправить заявку
+                Зарегистрироваться
               </button>
             </form>
           ) : (
@@ -163,57 +156,47 @@ export default function Seminar() {
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              {isPast ? "Мероприятие" : "Ближайшее онлайн обучение"}
+              {isPast ? "Мероприятие" : "Открыта регистрация"}
             </span>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              {isPast
-                ? "Онлайн обучение состоялось"
-                : "Присоединяйтесь к онлайн обучению"}
+              {isPast ? "Обучение состоялось" : "Новый поток курса"}
             </h2>
             {isPast && (
-              <p className="text-muted-foreground mt-3">
-                Следующее мероприятие будет анонсировано скоро
-              </p>
+              <p className="text-muted-foreground mt-3">Следующий поток будет анонсирован скоро</p>
             )}
           </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="scale-in" className="max-w-4xl mx-auto">
-          <div
-            className="bg-white rounded-2xl overflow-hidden border-t-2 border-gold"
-            style={{
-              boxShadow: "0 20px 60px -15px rgba(26, 31, 61, 0.15)",
-            }}
-          >
+          <div className="bg-white rounded-2xl overflow-hidden border-t-2 border-gold" style={{ boxShadow: "0 20px 60px -15px rgba(26, 31, 61, 0.15)" }}>
             <div className="relative h-56 sm:h-72">
-              {/* TODO: swap for real seminar photo when available */}
               <Image
                 src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/18a10eace_generated_e3868091.png"
-                alt="Онлайн обучение - Недвижимость в Германии"
+                alt="Онлайн курс - Консультант по финансам в Германии"
                 className="object-cover"
                 fill
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 flex gap-2">
                 <span className="px-4 py-1.5 bg-gold text-navy text-sm font-semibold rounded-full">
                   {isPast ? "Завершён" : "Онлайн обучение"}
+                </span>
+                <span className="px-4 py-1.5 bg-green-500 text-white text-sm font-semibold rounded-full">
+                  Бесплатно
                 </span>
               </div>
             </div>
 
             <div className="p-6 sm:p-8">
-              {/* Countdown - only shown when event is upcoming */}
+              {/* Countdown */}
               {!isPast && mounted && (
                 <div className="flex justify-center gap-3 sm:gap-4 mb-8">
                   {countdown.map((c) => (
                     <div key={c.label} className="text-center">
                       <div
                         className="text-white w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center border border-gold/30"
-                        style={{
-                          background:
-                            "linear-gradient(to bottom, #242a4e, #1a1f3d)",
-                        }}
+                        style={{ background: "linear-gradient(to bottom, #242a4e, #1a1f3d)" }}
                       >
                         <span className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold">
                           {c.value}
@@ -227,39 +210,72 @@ export default function Seminar() {
                 </div>
               )}
 
-              <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mb-4 text-center">
-                {SEMINAR_TITLE} - простым языком
+              <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mb-2 text-center">
+                {SEMINAR_TITLE}
               </h3>
+              <p className="text-center text-muted-foreground text-sm mb-6">
+                Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
+              </p>
 
-              <div className="space-y-3 mb-6">
-                <p className="text-muted-foreground">Разберём:</p>
-                <ul className="space-y-2">
-                  {[
-                    "Поймёте, с чего начать покупку недвижимости - даже если делаете это впервые",
-                    "Узнаете, как работает Bauspar и подходит ли он именно вам",
-                    "Разберётесь, какие государственные дотации вы можете получить уже сейчас",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-foreground/80"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="grid sm:grid-cols-2 gap-6 mb-6">
+                {/* Topics */}
+                <div>
+                  <p className="font-semibold text-navy text-sm mb-3">Во время обучения вы узнаете:</p>
+                  <ul className="space-y-2">
+                    {COURSE_TOPICS.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-foreground/80 text-sm">
+                        <span className="text-gold font-bold mt-0.5">✔</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Benefits + After */}
+                <div className="space-y-5">
+                  <div>
+                    <p className="font-semibold text-navy text-sm mb-3">Преимущества курса:</p>
+                    <ul className="space-y-2">
+                      {COURSE_BENEFITS.map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-foreground/80 text-sm">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-navy text-sm mb-3">После курса вы сможете:</p>
+                    <ul className="space-y-2">
+                      {AFTER_COURSE.map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-foreground/80 text-sm">
+                          <span className="text-gold font-bold mt-0.5">✔</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground mb-8">
+              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-2">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-gold" />
-                  <span>20.05.2026, 18:30</span>
+                  <span>Старт: 15.04.2026</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Monitor className="w-4 h-4 text-gold" />
                   <span>Онлайн</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4 text-gold" />
+                  <span>Количество мест ограничено</span>
+                </div>
               </div>
+
+              <p className="text-xs text-muted-foreground mb-8">
+                Даже если у вас нет опыта в финансах — начать можно с нуля.
+              </p>
 
               {!isPast && (
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -289,7 +305,7 @@ export default function Seminar() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
                   >
-                    Следующее обучение
+                    Следующий поток
                   </a>
                 </div>
               )}
