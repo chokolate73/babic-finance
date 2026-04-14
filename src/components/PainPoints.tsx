@@ -64,7 +64,7 @@ export default function PainPoints() {
               <div className="flex items-end gap-2">
                 <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0">
                   <Image
-                    src="/vladislav-portrait.png"
+                    src="/vladislav-portrait.jpeg"
                     alt="Владислав"
                     width={28}
                     height={28}

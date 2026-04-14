@@ -90,7 +90,7 @@ export default function HeroVideo() {
       >
         {/* Desktop portrait */}
         <Image
-          src="/vladislav-portrait.png"
+          src="/vladislav-portrait.jpeg"
           alt="Владислав Бабич"
           className="hidden lg:block object-cover object-bottom"
           width={520}
@@ -104,7 +104,7 @@ export default function HeroVideo() {
         />
         {/* Mobile portrait - positioned from top */}
         <Image
-          src="/vladislav-portrait.png"
+          src="/vladislav-portrait.jpeg"
           alt="Владислав Бабич"
           className="lg:hidden object-cover object-top"
           width={300}
