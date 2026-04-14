@@ -120,14 +120,24 @@ export default function Seminar() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-10">
-            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Открыта регистрация
-            </span>
+            {/* LIVE indicator — replaces 'Открыта регистрация' eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+              </span>
+              <span className="text-xs font-bold uppercase tracking-wider text-red-600">
+                Live · занятия с преподавателем
+              </span>
+            </div>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Консультант по финансам в Германии
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
               Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
+            </p>
+            <p className="text-navy/70 text-sm mt-2 max-w-lg mx-auto">
+              Раз в неделю встречаемся вживую — разбираем темы и отвечаю на вопросы. Запись каждого занятия остаётся у вас.
             </p>
 
             {/* Free badge — primary emphasis */}
@@ -139,7 +149,7 @@ export default function Seminar() {
 
             {/* Format badges */}
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {["Онлайн-курс", "3 месяца", "Доступ к записям", "Подключиться можно в любой момент"].map((b) => (
+              {["Live раз в неделю", "3 месяца", "Доступ к записям", "Подключиться можно в любой момент"].map((b) => (
                 <span key={b} className="px-4 py-1.5 text-sm font-semibold rounded-full border border-gold/30 bg-gold/10 text-gold">
                   {b}
                 </span>
