@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
+
+const FONT_SERIF = "var(--font-serif)";   // Montserrat
+const FONT_SANS  = "var(--font-sans)";    // Inter
 import { Send, X } from "lucide-react";
 
 const COURSE_END = new Date("2026-07-15T19:00:00+02:00");
@@ -25,7 +28,8 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
     <div style={{ textAlign: "center" }}>
       <div
         style={{
-          fontFamily: "'DM Mono', monospace",
+          fontFamily: FONT_SERIF,
+          fontVariantNumeric: "tabular-nums",
           fontSize: "2.6rem",
           fontWeight: 500,
           lineHeight: 1,
@@ -45,7 +49,7 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
       </div>
       <div
         style={{
-          fontFamily: "'Onest', sans-serif",
+          fontFamily: FONT_SANS,
           fontSize: "0.6rem",
           textTransform: "uppercase",
           letterSpacing: "0.15em",
@@ -81,7 +85,7 @@ function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boole
           <path d="M2.5 6L5 8.5L9.5 3.5" stroke={gold ? "#A0895C" : "#1A3C5E"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <span style={{ fontFamily: "'Onest', sans-serif", fontSize: "0.92rem", lineHeight: 1.55, color: "#3A3A3A" }}>
+      <span style={{ fontFamily: FONT_SANS, fontSize: "0.92rem", lineHeight: 1.55, color: "#3A3A3A" }}>
         {children}
       </span>
     </div>
@@ -92,7 +96,7 @@ function BulletItem({ children, icon }: { children: React.ReactNode; icon: strin
   return (
     <div style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 12 }}>
       <span style={{ fontSize: "0.95rem", flexShrink: 0, marginTop: 1 }}>{icon}</span>
-      <span style={{ fontFamily: "'Onest', sans-serif", fontSize: "0.88rem", lineHeight: 1.55, color: "#555" }}>
+      <span style={{ fontFamily: FONT_SANS, fontSize: "0.88rem", lineHeight: 1.55, color: "#555" }}>
         {children}
       </span>
     </div>
@@ -189,9 +193,6 @@ export default function Seminar() {
 
   return (
     <section id="seminar">
-      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-      <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
-
       <div
         style={{
           background: "#F5F0E8",
@@ -225,7 +226,7 @@ export default function Seminar() {
           <div style={{ textAlign: "center", marginBottom: 28 }}>
             <span
               style={{
-                fontFamily: "'Onest', sans-serif",
+                fontFamily: FONT_SANS,
                 fontSize: "0.68rem",
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
@@ -245,7 +246,7 @@ export default function Seminar() {
           {/* Heading */}
           <h2
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: FONT_SERIF,
               fontSize: "clamp(1.9rem, 4.5vw, 3rem)",
               fontWeight: 700,
               color: "#1A3C5E",
@@ -261,7 +262,7 @@ export default function Seminar() {
 
           <p
             style={{
-              fontFamily: "'Onest', sans-serif",
+              fontFamily: FONT_SANS,
               fontSize: "1rem",
               color: "#7A7A7A",
               textAlign: "center",
@@ -291,7 +292,7 @@ export default function Seminar() {
           </div>
           <p
             style={{
-              fontFamily: "'Onest', sans-serif",
+              fontFamily: FONT_SANS,
               fontSize: "0.72rem",
               color: "#aaa",
               textAlign: "center",
@@ -302,7 +303,7 @@ export default function Seminar() {
           </p>
           <p
             style={{
-              fontFamily: "'Onest', sans-serif",
+              fontFamily: FONT_SANS,
               fontSize: "0.85rem",
               color: "#A0895C",
               textAlign: "center",
@@ -334,7 +335,7 @@ export default function Seminar() {
             >
               <h3
                 style={{
-                  fontFamily: "'Onest', sans-serif",
+                  fontFamily: FONT_SANS,
                   fontSize: "0.68rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.14em",
@@ -365,7 +366,7 @@ export default function Seminar() {
             >
               <h3
                 style={{
-                  fontFamily: "'Onest', sans-serif",
+                  fontFamily: FONT_SANS,
                   fontSize: "0.68rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.14em",
@@ -396,7 +397,7 @@ export default function Seminar() {
           >
             <h3
               style={{
-                fontFamily: "'Onest', sans-serif",
+                fontFamily: FONT_SANS,
                 fontSize: "0.68rem",
                 textTransform: "uppercase",
                 letterSpacing: "0.14em",
@@ -421,7 +422,7 @@ export default function Seminar() {
           {/* Italic note */}
           <p
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: FONT_SERIF,
               fontStyle: "italic",
               fontSize: "1.05rem",
               color: "#999",
@@ -440,7 +441,7 @@ export default function Seminar() {
               onMouseEnter={() => setHoveredBtn("reg")}
               onMouseLeave={() => setHoveredBtn(null)}
               style={{
-                fontFamily: "'Onest', sans-serif",
+                fontFamily: FONT_SANS,
                 fontSize: "0.95rem",
                 fontWeight: 600,
                 color: "#fff",
@@ -465,7 +466,7 @@ export default function Seminar() {
               onMouseEnter={() => setHoveredBtn("wa")}
               onMouseLeave={() => setHoveredBtn(null)}
               style={{
-                fontFamily: "'Onest', sans-serif",
+                fontFamily: FONT_SANS,
                 fontSize: "0.95rem",
                 fontWeight: 500,
                 color: "#1A3C5E",
