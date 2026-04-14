@@ -128,11 +128,11 @@ export default function LeadMagnet() {
                         className="mt-0.5 w-4 h-4 accent-gold flex-shrink-0"
                       />
                       <span className="text-muted-foreground text-xs leading-relaxed">
-                        Ich stimme der Verarbeitung meiner Daten gemäß der{" "}
+                        Я согласен(а) на обработку моих персональных данных в соответствии с{" "}
                         <a href="#" className="underline hover:text-navy">
-                          Datenschutzerklärung
-                        </a>{" "}
-                        zu.
+                          политикой конфиденциальности
+                        </a>
+                        .
                       </span>
                     </label>
                     {error && (
@@ -142,7 +142,7 @@ export default function LeadMagnet() {
                       type="submit"
                       className="w-full mt-3 h-12 bg-gold hover:opacity-90 text-navy font-semibold rounded-xl transition-all"
                     >
-                      Kostenlos herunterladen
+                      Получить бесплатно
                     </button>
                     <p className="text-muted-foreground text-xs mt-2.5 text-center">
                       Без спама - только гайд на почту.
