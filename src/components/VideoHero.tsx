@@ -42,14 +42,18 @@ export default function VideoHero() {
           <span className="text-gold">по финансам в Германии</span>
         </h1>
 
-        <p
-          className={`text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-medium mt-4 mb-6 transition-all duration-1000 ease-out ${
+        <div
+          className={`flex items-center justify-center gap-4 mt-4 mb-6 transition-all duration-1000 ease-out ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          Владислав Бабич
-        </p>
+          <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+          <span className="text-white not-italic font-medium uppercase text-[1.1rem] tracking-[0.15em]">
+            Владислав Бабич
+          </span>
+          <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+        </div>
 
         <div
           className={`flex flex-wrap justify-center gap-2 mb-10 transition-all duration-1000 ease-out ${

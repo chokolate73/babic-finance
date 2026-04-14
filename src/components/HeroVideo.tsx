@@ -96,6 +96,8 @@ export default function HeroVideo() {
           width={520}
           height={650}
           priority
+          quality={90}
+          sizes="(min-width: 1280px) 40vw, 38vw"
           style={{
             height: "80vh",
             width: "auto",
@@ -144,12 +146,16 @@ export default function HeroVideo() {
             <span className="text-gold">{heroContent.headlineAccent}</span>
           </motion.h1>
 
-          <motion.p
-            className="text-gold font-[family-name:var(--font-serif)] text-base sm:text-xl lg:text-2xl font-medium mt-2 mb-3 lg:mb-6"
+          <motion.div
+            className="flex items-center justify-center gap-4 mt-2 mb-3 lg:mb-6"
             {...fadeUp(0.5)}
           >
-            {heroContent.subtitle}
-          </motion.p>
+            <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+            <span className="text-white not-italic font-medium uppercase text-[1.1rem] tracking-[0.15em]">
+              {heroContent.subtitle}
+            </span>
+            <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+          </motion.div>
 
           {/* Stat badges */}
           <motion.div
