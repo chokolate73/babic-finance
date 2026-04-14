@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
-
-const FONT_SERIF = "var(--font-serif)";   // Montserrat
-const FONT_SANS  = "var(--font-sans)";    // Inter
 import { Send, X } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const COURSE_END = new Date("2026-07-15T19:00:00+02:00");
 
@@ -25,80 +24,37 @@ function useCountdown() {
 
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
-    <div style={{ textAlign: "center" }}>
-      <div
-        style={{
-          fontFamily: FONT_SERIF,
-          fontVariantNumeric: "tabular-nums",
-          fontSize: "2.6rem",
-          fontWeight: 500,
-          lineHeight: 1,
-          color: "#1A3C5E",
-          letterSpacing: "-0.03em",
-          background: "#fff",
-          borderRadius: 14,
-          width: 72,
-          height: 78,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: "0 2px 12px rgba(26,60,94,0.08), 0 0 0 1px rgba(26,60,94,0.06)",
-        }}
-      >
-        {String(value).padStart(2, "0")}
+    <div className="text-center">
+      <div className="w-[72px] h-[78px] bg-navy rounded-xl flex items-center justify-center border border-gold/30 shadow-sm">
+        <span className="font-[family-name:var(--font-serif)] text-3xl font-bold text-white tabular-nums">
+          {String(value).padStart(2, "0")}
+        </span>
       </div>
-      <div
-        style={{
-          fontFamily: FONT_SANS,
-          fontSize: "0.6rem",
-          textTransform: "uppercase",
-          letterSpacing: "0.15em",
-          color: "#A0895C",
-          marginTop: 8,
-          fontWeight: 500,
-        }}
-      >
+      <span className="block text-[10px] uppercase tracking-widest text-gold font-semibold mt-2">
         {label}
-      </div>
+      </span>
     </div>
   );
 }
 
 function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boolean }) {
   return (
-    <div style={{ display: "flex", gap: 12, alignItems: "flex-start", marginBottom: 14 }}>
-      <div
-        style={{
-          width: 22,
-          height: 22,
-          borderRadius: 6,
-          background: gold ? "rgba(180,148,60,0.1)" : "rgba(26,60,94,0.06)",
-          border: gold ? "1px solid rgba(180,148,60,0.2)" : "1px solid rgba(26,60,94,0.1)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-          marginTop: 1,
-        }}
-      >
+    <div className="flex gap-3 items-start mb-3.5">
+      <div className={`w-[22px] h-[22px] rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 border ${gold ? "bg-gold/10 border-gold/20" : "bg-navy/5 border-navy/10"}`}>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2.5 6L5 8.5L9.5 3.5" stroke={gold ? "#A0895C" : "#1A3C5E"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M2.5 6L5 8.5L9.5 3.5" stroke={gold ? "var(--color-gold)" : "var(--color-navy)"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <span style={{ fontFamily: FONT_SANS, fontSize: "0.92rem", lineHeight: 1.55, color: "#3A3A3A" }}>
-        {children}
-      </span>
+      <span className="text-sm leading-relaxed text-foreground/80">{children}</span>
     </div>
   );
 }
 
 function BulletItem({ children, icon }: { children: React.ReactNode; icon: string }) {
   return (
-    <div style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 12 }}>
-      <span style={{ fontSize: "0.95rem", flexShrink: 0, marginTop: 1 }}>{icon}</span>
-      <span style={{ fontFamily: FONT_SANS, fontSize: "0.88rem", lineHeight: 1.55, color: "#555" }}>
-        {children}
-      </span>
+    <div className="flex gap-2.5 items-start mb-3">
+      <span className="text-base flex-shrink-0 mt-0.5">{icon}</span>
+      <span className="text-sm leading-relaxed text-muted-foreground">{children}</span>
     </div>
   );
 }
@@ -161,7 +117,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
                   required
                 />
               </div>
-              <button type="submit" className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:bg-gold/90 text-navy font-semibold rounded-full text-base shadow transition-colors">
+              <button type="submit" className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:opacity-90 text-navy font-semibold rounded-full text-base shadow transition-all">
                 <Send className="w-4 h-4" />
                 Зарегистрироваться
               </button>
@@ -184,278 +140,103 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Здравствуйте, Владислав! Хочу узнать подробнее о курсе "Консультант по финансам в Германии"')}`;
+
 export default function Seminar() {
   const t = useCountdown();
-  const [hoveredBtn, setHoveredBtn] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
 
-  const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Здравствуйте, Владислав! Хочу узнать подробнее о курсе "Консультант по финансам в Германии"')}`;
-
   return (
-    <section id="seminar">
-      <div
-        style={{
-          background: "#F5F0E8",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Subtle warm radial */}
-        <div
-          style={{
-            position: "absolute",
-            top: "10%",
-            right: "-5%",
-            width: "40%",
-            height: "50%",
-            background: "radial-gradient(circle, rgba(180,148,60,0.05) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div
-          style={{
-            maxWidth: 920,
-            margin: "0 auto",
-            padding: "56px 24px 72px",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          {/* Top badge */}
-          <div style={{ textAlign: "center", marginBottom: 28 }}>
-            <span
-              style={{
-                fontFamily: FONT_SANS,
-                fontSize: "0.68rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.18em",
-                color: "#A0895C",
-                background: "rgba(180,148,60,0.1)",
-                border: "1px solid rgba(180,148,60,0.18)",
-                padding: "6px 20px",
-                borderRadius: 100,
-                display: "inline-block",
-                fontWeight: 500,
-              }}
-            >
-              Онлайн-курс · 3 месяца · Доступ к записям
+    <section id="seminar" className="py-20 lg:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll animation="fade-up">
+          <div className="text-center mb-14">
+            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+              Открыта регистрация
             </span>
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
+              Консультант по финансам в Германии
+            </h2>
+            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+              Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
+            </p>
+
+            {/* Badges */}
+            <div className="flex flex-wrap justify-center gap-2 mt-5">
+              {["Онлайн-курс", "3 месяца", "Доступ к записям", "Бесплатно"].map((b) => (
+                <span key={b} className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full border border-gold/30 bg-gold/10 text-gold">
+                  {b}
+                </span>
+              ))}
+            </div>
           </div>
+        </AnimateOnScroll>
 
-          {/* Heading */}
-          <h2
-            style={{
-              fontFamily: FONT_SERIF,
-              fontSize: "clamp(1.9rem, 4.5vw, 3rem)",
-              fontWeight: 700,
-              color: "#1A3C5E",
-              textAlign: "center",
-              lineHeight: 1.2,
-              margin: "0 0 12px",
-            }}
-          >
-            Консультант по финансам
-            <br />
-            <span style={{ color: "#A0895C" }}>в Германии</span>
-          </h2>
-
-          <p
-            style={{
-              fontFamily: FONT_SANS,
-              fontSize: "1rem",
-              color: "#7A7A7A",
-              textAlign: "center",
-              maxWidth: 500,
-              margin: "0 auto 36px",
-              lineHeight: 1.6,
-            }}
-          >
-            Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
-          </p>
-
-          {/* Countdown */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: 14,
-              marginBottom: 8,
-              maxWidth: 400,
-              margin: "0 auto 8px",
-            }}
-          >
+        {/* Countdown */}
+        <AnimateOnScroll animation="fade-up">
+          <div className="flex justify-center gap-3 sm:gap-4 mb-3">
             <TimeUnit value={t.d} label="дней" />
             <TimeUnit value={t.h} label="часов" />
             <TimeUnit value={t.m} label="минут" />
             <TimeUnit value={t.s} label="секунд" />
           </div>
-          <p
-            style={{
-              fontFamily: FONT_SANS,
-              fontSize: "0.72rem",
-              color: "#aaa",
-              textAlign: "center",
-              margin: "0 0 12px",
-            }}
-          >
-            до окончания набора на курс
-          </p>
-          <p
-            style={{
-              fontFamily: FONT_SANS,
-              fontSize: "0.85rem",
-              color: "#A0895C",
-              textAlign: "center",
-              margin: "0 0 44px",
-              fontWeight: 500,
-            }}
-          >
-            Подключиться можно в любой момент
-          </p>
+          <p className="text-center text-xs text-muted-foreground mb-1">до окончания набора на курс</p>
+          <p className="text-center text-sm text-gold font-semibold mb-14">Подключиться можно в любой момент</p>
+        </AnimateOnScroll>
 
-          {/* Two-column content */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: 20,
-              marginBottom: 24,
-            }}
-          >
-            {/* Left — what you'll learn */}
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: 16,
-                border: "1px solid rgba(26,60,94,0.07)",
-                padding: "28px 26px",
-                boxShadow: "0 1px 8px rgba(26,60,94,0.04)",
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: FONT_SANS,
-                  fontSize: "0.68rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.14em",
-                  color: "#1A3C5E",
-                  marginBottom: 22,
-                  fontWeight: 600,
-                  opacity: 0.5,
-                }}
-              >
+        {/* Two-column cards */}
+        <div className="grid sm:grid-cols-2 gap-6 mb-6 max-w-4xl mx-auto">
+          <AnimateOnScroll animation="fade-left">
+            <div className="bg-card p-7 rounded-2xl border border-border h-full">
+              <p className="text-xs font-semibold uppercase tracking-wider text-navy/50 mb-5">
                 Во время обучения вы узнаете
-              </h3>
+              </p>
               <CheckItem>Как работает система страхования в Германии</CheckItem>
               <CheckItem>Пенсионные программы и накопления</CheckItem>
               <CheckItem>Инвестиции и финансовые инструменты</CheckItem>
               <CheckItem>Банковские продукты и кредиты</CheckItem>
               <CheckItem>Основы финансового консультирования</CheckItem>
             </div>
+          </AnimateOnScroll>
 
-            {/* Right — advantages */}
-            <div
-              style={{
-                background: "#fff",
-                borderRadius: 16,
-                border: "1px solid rgba(26,60,94,0.07)",
-                padding: "28px 26px",
-                boxShadow: "0 1px 8px rgba(26,60,94,0.04)",
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: FONT_SANS,
-                  fontSize: "0.68rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.14em",
-                  color: "#1A3C5E",
-                  marginBottom: 22,
-                  fontWeight: 600,
-                  opacity: 0.5,
-                }}
-              >
+          <AnimateOnScroll animation="fade-right">
+            <div className="bg-card p-7 rounded-2xl border border-border h-full">
+              <p className="text-xs font-semibold uppercase tracking-wider text-navy/50 mb-5">
                 Преимущества курса
-              </h3>
+              </p>
               <BulletItem icon="🎥">Онлайн-занятия раз в неделю в вечернее время</BulletItem>
               <BulletItem icon="📂">Доступ ко всем записям уроков</BulletItem>
               <BulletItem icon="🇷🇺">Обучение на русском с разбором немецкой терминологии</BulletItem>
               <BulletItem icon="📄">При необходимости — справка для Jobcenter</BulletItem>
             </div>
-          </div>
+          </AnimateOnScroll>
+        </div>
 
-          {/* After the course */}
-          <div
-            style={{
-              background: "linear-gradient(135deg, rgba(180,148,60,0.07), rgba(180,148,60,0.02))",
-              borderRadius: 16,
-              border: "1px solid rgba(180,148,60,0.15)",
-              padding: "26px 28px",
-              marginBottom: 44,
-            }}
-          >
-            <h3
-              style={{
-                fontFamily: FONT_SANS,
-                fontSize: "0.68rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                color: "#A0895C",
-                marginBottom: 18,
-                fontWeight: 600,
-              }}
-            >
+        {/* After course — gold panel */}
+        <AnimateOnScroll animation="fade-up">
+          <div className="max-w-4xl mx-auto rounded-2xl border border-gold/20 bg-gold/5 p-7 mb-10">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gold mb-5">
               После курса вы сможете
-            </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14 }}>
-              {[
-                "Продолжить обучение на немецком языке",
-                "Подготовиться к получению лицензий IHK (GewO)",
-                "Использовать знания для работы или личного развития",
-              ].map((text, i) => (
-                <CheckItem key={i} gold>{text}</CheckItem>
-              ))}
+            </p>
+            <div className="grid sm:grid-cols-3 gap-x-8">
+              <CheckItem gold>Продолжить обучение на немецком языке</CheckItem>
+              <CheckItem gold>Подготовиться к получению лицензий IHK (GewO)</CheckItem>
+              <CheckItem gold>Использовать знания для работы или личного развития</CheckItem>
             </div>
           </div>
+        </AnimateOnScroll>
 
-          {/* Italic note */}
-          <p
-            style={{
-              fontFamily: FONT_SERIF,
-              fontStyle: "italic",
-              fontSize: "1.05rem",
-              color: "#999",
-              textAlign: "center",
-              marginBottom: 28,
-              lineHeight: 1.6,
-            }}
-          >
+        {/* Italic note */}
+        <AnimateOnScroll animation="fade-up">
+          <p className="font-[family-name:var(--font-serif)] italic text-muted-foreground text-center mb-10">
             Даже если у вас нет опыта в финансах — начать можно с нуля
           </p>
 
           {/* CTAs */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap" }}>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => setShowModal(true)}
-              onMouseEnter={() => setHoveredBtn("reg")}
-              onMouseLeave={() => setHoveredBtn(null)}
-              style={{
-                fontFamily: FONT_SANS,
-                fontSize: "0.95rem",
-                fontWeight: 600,
-                color: "#fff",
-                background: hoveredBtn === "reg" ? "#1F4A72" : "#1A3C5E",
-                border: "none",
-                padding: "16px 40px",
-                borderRadius: 12,
-                cursor: "pointer",
-                transition: "all 0.25s ease",
-                transform: hoveredBtn === "reg" ? "translateY(-2px)" : "none",
-                boxShadow: hoveredBtn === "reg"
-                  ? "0 8px 28px rgba(26,60,94,0.25)"
-                  : "0 4px 14px rgba(26,60,94,0.12)",
-              }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-navy font-semibold rounded-full text-base hover:opacity-90 transition-all shadow-lg shadow-gold/20"
             >
               Хочу на курс
             </button>
@@ -463,33 +244,13 @@ export default function Seminar() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              onMouseEnter={() => setHoveredBtn("wa")}
-              onMouseLeave={() => setHoveredBtn(null)}
-              style={{
-                fontFamily: FONT_SANS,
-                fontSize: "0.95rem",
-                fontWeight: 500,
-                color: "#1A3C5E",
-                background: hoveredBtn === "wa" ? "rgba(26,60,94,0.06)" : "transparent",
-                border: "1px solid rgba(26,60,94,0.18)",
-                padding: "16px 32px",
-                borderRadius: 12,
-                cursor: "pointer",
-                transition: "all 0.25s ease",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                textDecoration: "none",
-              }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-navy/20 text-navy font-semibold rounded-full text-base hover:bg-navy/5 transition-all"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#1A3C5E" opacity={0.5}>
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.146.565 4.158 1.55 5.897L.053 23.511a.5.5 0 00.607.607l5.614-1.497A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.94 0-3.757-.556-5.293-1.517l-.38-.228-3.327.887.887-3.327-.228-.38A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
-              </svg>
+              <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
               Задать вопрос
             </a>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
 
       {showModal && <RegistrationModal onClose={() => setShowModal(false)} />}
