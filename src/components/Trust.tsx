@@ -93,7 +93,7 @@ export default function Trust() {
                 {stats.map((s, i) => (
                   <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 150}>
                     <div className="text-center p-3 sm:p-6 bg-gray-50 rounded-xl border border-border h-full">
-                      <p className="font-[family-name:var(--font-serif)] text-xl sm:text-3xl font-bold text-gold">
+                      <p className="font-[family-name:var(--font-serif)] text-lg sm:text-2xl font-bold text-gold whitespace-nowrap">
                         {s.value}
                       </p>
                       <p className="text-xs sm:text-sm text-muted-foreground mt-1">
