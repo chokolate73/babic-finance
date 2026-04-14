@@ -96,6 +96,8 @@ export default function HeroVideo() {
           width={520}
           height={650}
           priority
+          quality={90}
+          sizes="(min-width: 1280px) 40vw, 38vw"
           style={{
             height: "80vh",
             width: "auto",
