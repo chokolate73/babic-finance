@@ -30,7 +30,7 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
           {String(value).padStart(2, "0")}
         </span>
       </div>
-      <span className="block text-[10px] uppercase tracking-widest text-gold font-semibold mt-2">
+      <span className="block text-xs uppercase tracking-widest text-gold font-semibold mt-2">
         {label}
       </span>
     </div>
@@ -45,7 +45,7 @@ function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boole
           <path d="M2.5 6L5 8.5L9.5 3.5" stroke={gold ? "var(--color-gold)" : "var(--color-navy)"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <span className="text-sm leading-relaxed text-foreground/80">{children}</span>
+      <span className="text-base leading-relaxed text-foreground/80">{children}</span>
     </div>
   );
 }
@@ -54,7 +54,7 @@ function BulletItem({ children, icon }: { children: React.ReactNode; icon: strin
   return (
     <div className="flex gap-2.5 items-start mb-3">
       <span className="text-base flex-shrink-0 mt-0.5">{icon}</span>
-      <span className="text-sm leading-relaxed text-muted-foreground">{children}</span>
+      <span className="text-base leading-relaxed text-muted-foreground">{children}</span>
     </div>
   );
 }
@@ -164,7 +164,7 @@ export default function Seminar() {
             {/* Badges */}
             <div className="flex flex-wrap justify-center gap-2 mt-5">
               {["Онлайн-курс", "3 месяца", "Доступ к записям", "Бесплатно"].map((b) => (
-                <span key={b} className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full border border-gold/30 bg-gold/10 text-gold">
+                <span key={b} className="px-4 py-1.5 text-sm font-semibold rounded-full border border-gold/30 bg-gold/10 text-gold">
                   {b}
                 </span>
               ))}
@@ -180,15 +180,15 @@ export default function Seminar() {
             <TimeUnit value={t.m} label="минут" />
             <TimeUnit value={t.s} label="секунд" />
           </div>
-          <p className="text-center text-xs text-muted-foreground mb-1">до окончания набора на курс</p>
-          <p className="text-center text-sm text-gold font-semibold mb-14">Подключиться можно в любой момент</p>
+          <p className="text-center text-sm text-muted-foreground mb-1">до окончания набора на курс</p>
+          <p className="text-center text-base text-gold font-semibold mb-14">Подключиться можно в любой момент</p>
         </AnimateOnScroll>
 
         {/* Two-column cards */}
         <div className="grid sm:grid-cols-2 gap-6 mb-6 max-w-4xl mx-auto">
           <AnimateOnScroll animation="fade-left">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
-              <p className="text-xs font-semibold uppercase tracking-wider text-navy/50 mb-5">
+              <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
                 Во время обучения вы узнаете
               </p>
               <CheckItem>Как работает система страхования в Германии</CheckItem>
@@ -201,7 +201,7 @@ export default function Seminar() {
 
           <AnimateOnScroll animation="fade-right">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
-              <p className="text-xs font-semibold uppercase tracking-wider text-navy/50 mb-5">
+              <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
                 Преимущества курса
               </p>
               <BulletItem icon="🎥">Онлайн-занятия раз в неделю в вечернее время</BulletItem>
@@ -215,7 +215,7 @@ export default function Seminar() {
         {/* After course — gold panel */}
         <AnimateOnScroll animation="fade-up">
           <div className="max-w-4xl mx-auto rounded-2xl border border-gold/20 bg-gold/5 p-7 mb-10">
-            <p className="text-xs font-semibold uppercase tracking-wider text-gold mb-5">
+            <p className="text-sm font-semibold uppercase tracking-wider text-gold mb-5">
               После курса вы сможете
             </p>
             <div className="grid sm:grid-cols-3 gap-x-8">
