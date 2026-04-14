@@ -1,7 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import VideoHero from "@/components/VideoHero";
-import HeroVideo from "@/components/HeroVideo";
 import PainPoints from "@/components/PainPoints";
 import Trust from "@/components/Trust";
 import Benefits from "@/components/Benefits";
@@ -21,8 +19,6 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <div className="lg:hidden"><VideoHero /></div>
-      <div className="lg:hidden"><HeroVideo /></div>
       <PainPoints />
       <Trust />
       <Services />

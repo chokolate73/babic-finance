@@ -1,41 +1,9 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
-import { Send, X } from "lucide-react";
+import { Send, X, Video, FolderOpen, Languages, FileText } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 import WhatsAppIcon from "./WhatsAppIcon";
-
-const COURSE_END = new Date("2026-07-15T19:00:00+02:00");
-
-function useCountdown() {
-  const [now, setNow] = useState(Date.now());
-  useEffect(() => {
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, []);
-  const diff = Math.max(0, COURSE_END.getTime() - now);
-  return {
-    d: Math.floor(diff / 86400000),
-    h: Math.floor((diff % 86400000) / 3600000),
-    m: Math.floor((diff % 3600000) / 60000),
-    s: Math.floor((diff % 60000) / 1000),
-  };
-}
-
-function TimeUnit({ value, label }: { value: number; label: string }) {
-  return (
-    <div className="text-center">
-      <div className="w-[72px] h-[78px] bg-navy rounded-xl flex items-center justify-center border border-gold/30 shadow-sm">
-        <span className="font-[family-name:var(--font-serif)] text-3xl font-bold text-white tabular-nums">
-          {String(value).padStart(2, "0")}
-        </span>
-      </div>
-      <span className="block text-xs uppercase tracking-widest text-gold font-semibold mt-2">
-        {label}
-      </span>
-    </div>
-  );
-}
 
 function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boolean }) {
   return (
@@ -50,11 +18,13 @@ function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boole
   );
 }
 
-function BulletItem({ children, icon }: { children: React.ReactNode; icon: string }) {
+function BulletItem({ children, icon: Icon }: { children: React.ReactNode; icon: React.ComponentType<{ className?: string }> }) {
   return (
-    <div className="flex gap-2.5 items-start mb-3">
-      <span className="text-base flex-shrink-0 mt-0.5">{icon}</span>
-      <span className="text-base leading-relaxed text-muted-foreground">{children}</span>
+    <div className="flex gap-3 items-start mb-3.5">
+      <div className="w-[22px] h-[22px] rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 bg-gold/10 border border-gold/20">
+        <Icon className="w-3 h-3 text-gold" />
+      </div>
+      <span className="text-base leading-relaxed text-foreground/80">{children}</span>
     </div>
   );
 }
@@ -143,27 +113,43 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
 const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Здравствуйте, Владислав! Хочу узнать подробнее о курсе "Консультант по финансам в Германии"')}`;
 
 export default function Seminar() {
-  const t = useCountdown();
   const [showModal, setShowModal] = useState(false);
 
   return (
     <section id="seminar" className="py-12 lg:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-8">
-            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Открыта регистрация
-            </span>
+          <div className="text-center mb-10">
+            {/* LIVE indicator — replaces 'Открыта регистрация' eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+              </span>
+              <span className="text-xs font-bold uppercase tracking-wider text-red-600">
+                Live · занятия с преподавателем
+              </span>
+            </div>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
               Консультант по финансам в Германии
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
               Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
             </p>
+            <p className="text-navy/70 text-sm mt-2 max-w-lg mx-auto">
+              Раз в неделю встречаемся вживую — разбираем темы и отвечаю на вопросы. Запись каждого занятия остаётся у вас.
+            </p>
 
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center gap-2 mt-5">
-              {["Онлайн-курс", "3 месяца", "Доступ к записям", "Бесплатно"].map((b) => (
+            {/* Free badge — primary emphasis */}
+            <div className="mt-6 flex justify-center">
+              <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold text-navy text-sm font-bold shadow-md shadow-gold/20">
+                100% бесплатно
+              </span>
+            </div>
+
+            {/* Format badges */}
+            <div className="flex flex-wrap justify-center gap-2 mt-4">
+              {["Live раз в неделю", "3 месяца", "Доступ к записям", "Подключиться можно в любой момент"].map((b) => (
                 <span key={b} className="px-4 py-1.5 text-sm font-semibold rounded-full border border-gold/30 bg-gold/10 text-gold">
                   {b}
                 </span>
@@ -172,20 +158,8 @@ export default function Seminar() {
           </div>
         </AnimateOnScroll>
 
-        {/* Countdown */}
-        <AnimateOnScroll animation="fade-up">
-          <div className="flex justify-center gap-3 sm:gap-4 mb-3">
-            <TimeUnit value={t.d} label="дней" />
-            <TimeUnit value={t.h} label="часов" />
-            <TimeUnit value={t.m} label="минут" />
-            <TimeUnit value={t.s} label="секунд" />
-          </div>
-          <p className="text-center text-sm text-muted-foreground mb-10">до окончания набора на курс</p>
-        </AnimateOnScroll>
-
         {/* Two-column cards */}
         <div className="max-w-4xl mx-auto">
-          <p className="text-center text-lg font-semibold text-gold mb-6">Подключиться можно в любой момент</p>
         <div className="grid sm:grid-cols-2 gap-6 mb-6">
           <AnimateOnScroll animation="fade-left">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
@@ -205,10 +179,10 @@ export default function Seminar() {
               <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
                 Преимущества курса
               </p>
-              <BulletItem icon="🎥">Онлайн-занятия раз в неделю в вечернее время</BulletItem>
-              <BulletItem icon="📂">Доступ ко всем записям уроков</BulletItem>
-              <BulletItem icon="🇷🇺">Обучение на русском с разбором немецкой терминологии</BulletItem>
-              <BulletItem icon="📄">При необходимости — справка для Jobcenter</BulletItem>
+              <BulletItem icon={Video}>Онлайн-занятия раз в неделю в вечернее время</BulletItem>
+              <BulletItem icon={FolderOpen}>Доступ ко всем записям уроков</BulletItem>
+              <BulletItem icon={Languages}>Обучение на русском с разбором немецкой терминологии</BulletItem>
+              <BulletItem icon={FileText}>При необходимости — справка для Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>
         </div>
