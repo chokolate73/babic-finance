@@ -67,14 +67,15 @@ export default function Hero() {
             quality={85}
           />
         </div>
-        {/* Mobile background: crop of /hero.png zoomed to chest-up of Vladislav */}
-        <div
-          className="md:hidden absolute inset-0 bg-no-repeat"
-          style={{
-            backgroundImage: "url('/hero.png')",
-            backgroundSize: "auto 220%",
-            backgroundPosition: "center top",
-          }}
+        {/* Mobile background: looping hero video */}
+        <video
+          className="md:hidden absolute inset-0 w-full h-full object-cover"
+          src="/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
         />
         {/* Desktop overlay: gradient with exposed right side (for bg image focal point) */}
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
