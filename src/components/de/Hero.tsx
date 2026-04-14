@@ -67,17 +67,15 @@ export default function Hero() {
             quality={85}
           />
         </div>
-        {/* Mobile background: chest-up portrait with city behind — anchored top so face stays in view */}
-        <div className="md:hidden absolute inset-0">
-          <Image
-            src="/vlad-face.png"
-            alt="Wladislaw Babitsch vor der Frankfurter Skyline"
-            className="object-cover object-top"
-            fill
-            priority
-            quality={85}
-          />
-        </div>
+        {/* Mobile background: crop of /hero.png zoomed to chest-up of Vladislav */}
+        <div
+          className="md:hidden absolute inset-0 bg-no-repeat"
+          style={{
+            backgroundImage: "url('/hero.png')",
+            backgroundSize: "auto 220%",
+            backgroundPosition: "center top",
+          }}
+        />
         {/* Desktop overlay: gradient with exposed right side (for bg image focal point) */}
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
         {/* Mobile overlay: vertical gradient — top stays lighter so face reads, bottom darker for text legibility */}
