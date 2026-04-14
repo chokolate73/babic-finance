@@ -29,7 +29,7 @@ export default function About() {
         <div className="space-y-3 lg:space-y-4">
           {/* Paragraph 1 - left */}
           <AnimateOnScroll animation="fade-up" delay={100}>
-            <div className="lg:w-[44%] lg:mr-auto text-center lg:text-left">
+            <div className="lg:w-[44%] lg:mr-auto text-left md:text-center lg:text-left">
               <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:mx-0">
                 Я приехал в Германию в 2003 году из Эстонии. Без языка, без
                 связей, без поддержки. Единственное, что у меня было - желание
@@ -40,7 +40,7 @@ export default function About() {
 
           {/* Paragraph 2 - right */}
           <AnimateOnScroll animation="fade-up" delay={200}>
-            <div className="lg:w-[44%] lg:ml-auto text-center lg:text-right">
+            <div className="lg:w-[44%] lg:ml-auto text-left md:text-center lg:text-right">
               <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:ml-auto lg:mx-0">
                 В конце 2004 года я впервые познакомился с финансовым бизнесом.
                 Мне говорили: «Сначала выучи язык», «Разберись в законах». Я
@@ -52,7 +52,7 @@ export default function About() {
 
           {/* Paragraph 3 - left */}
           <AnimateOnScroll animation="fade-up" delay={300}>
-            <div className="lg:w-[44%] lg:mr-auto text-center lg:text-left">
+            <div className="lg:w-[44%] lg:mr-auto text-left md:text-center lg:text-left">
               <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:mx-0">
                 Сегодня я помогаю людям не только выстраивать финансовое будущее,
                 но и показываю, что в Германии возможно реализовать себя с нуля.

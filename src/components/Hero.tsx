@@ -65,7 +65,10 @@ export default function Hero() {
           priority
           quality={85}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
+        {/* Desktop overlay: gradient with exposed right side (for bg image focal point) */}
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
+        {/* Mobile overlay: solid dark 50% for text legibility */}
+        <div className="md:hidden absolute inset-0 bg-black/50" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -158,6 +161,18 @@ export default function Hero() {
             <motion.p className="text-white/60 text-sm" {...fadeUp(0.8)}>
               {heroContent.trustLine}
             </motion.p>
+
+            {/* Mobile-only portrait — hidden on desktop (where person is part of bg image) */}
+            <motion.div className="md:hidden mt-6 flex justify-center" {...fadeUp(0.9)}>
+              <Image
+                src="/vlad-face.png"
+                alt="Владислав Бабич"
+                width={600}
+                height={600}
+                className="w-[70%] h-auto rounded-2xl"
+                priority
+              />
+            </motion.div>
           </div>
         </div>
       </div>
