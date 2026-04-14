@@ -1,50 +1,102 @@
 "use client";
 
-import { useEffect, useState, FormEvent } from "react";
-import Image from "next/image";
-import { Calendar, Monitor, Send, X, Users } from "lucide-react";
-import AnimateOnScroll from "./AnimateOnScroll";
-import WhatsAppIcon from "./WhatsAppIcon";
+import { useState, useEffect, FormEvent } from "react";
+import { Send, X } from "lucide-react";
 
-const SEMINAR_DATE = new Date("2026-04-15T18:30:00+02:00");
-const SEMINAR_TITLE = "Консультант по финансам в Германии";
+const COURSE_END = new Date("2026-07-15T19:00:00+02:00");
 
-const COURSE_TOPICS = [
-  "Как работает система страхования в Германии",
-  "Пенсионные программы и накопления",
-  "Инвестиции и финансовые инструменты",
-  "Банковские продукты и кредиты",
-  "Основы финансового консультирования",
-];
-
-const COURSE_BENEFITS = [
-  "Онлайн-занятия раз в неделю в вечернее время",
-  "Доступ ко всем записям уроков",
-  "Обучение на русском языке с разбором немецкой терминологии",
-  "При необходимости — справка для Jobcenter",
-];
-
-const AFTER_COURSE = [
-  "Продолжить обучение на немецком языке",
-  "Подготовиться к получению лицензий IHK (GewO)",
-  "Использовать знания для работы или личного развития",
-];
-
-function getWhatsAppQuestionLink() {
-  const text = `Здравствуйте, Владислав! Хочу узнать подробнее о курсе "${SEMINAR_TITLE}"`;
-  return `https://wa.me/491784743490?text=${encodeURIComponent(text)}`;
+function useCountdown() {
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const diff = Math.max(0, COURSE_END.getTime() - now);
+  return {
+    d: Math.floor(diff / 86400000),
+    h: Math.floor((diff % 86400000) / 3600000),
+    m: Math.floor((diff % 3600000) / 60000),
+    s: Math.floor((diff % 60000) / 1000),
+  };
 }
 
-function getTimeLeft() {
-  const now = new Date();
-  const diff = SEMINAR_DATE.getTime() - now.getTime();
-  if (diff <= 0) return null;
-  return {
-    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / (1000 * 60)) % 60),
-    seconds: Math.floor((diff / 1000) % 60),
-  };
+function TimeUnit({ value, label }: { value: number; label: string }) {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <div
+        style={{
+          fontFamily: "'DM Mono', monospace",
+          fontSize: "2.6rem",
+          fontWeight: 500,
+          lineHeight: 1,
+          color: "#1A3C5E",
+          letterSpacing: "-0.03em",
+          background: "#fff",
+          borderRadius: 14,
+          width: 72,
+          height: 78,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 2px 12px rgba(26,60,94,0.08), 0 0 0 1px rgba(26,60,94,0.06)",
+        }}
+      >
+        {String(value).padStart(2, "0")}
+      </div>
+      <div
+        style={{
+          fontFamily: "'Onest', sans-serif",
+          fontSize: "0.6rem",
+          textTransform: "uppercase",
+          letterSpacing: "0.15em",
+          color: "#A0895C",
+          marginTop: 8,
+          fontWeight: 500,
+        }}
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boolean }) {
+  return (
+    <div style={{ display: "flex", gap: 12, alignItems: "flex-start", marginBottom: 14 }}>
+      <div
+        style={{
+          width: 22,
+          height: 22,
+          borderRadius: 6,
+          background: gold ? "rgba(180,148,60,0.1)" : "rgba(26,60,94,0.06)",
+          border: gold ? "1px solid rgba(180,148,60,0.2)" : "1px solid rgba(26,60,94,0.1)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          marginTop: 1,
+        }}
+      >
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2.5 6L5 8.5L9.5 3.5" stroke={gold ? "#A0895C" : "#1A3C5E"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <span style={{ fontFamily: "'Onest', sans-serif", fontSize: "0.92rem", lineHeight: 1.55, color: "#3A3A3A" }}>
+        {children}
+      </span>
+    </div>
+  );
+}
+
+function BulletItem({ children, icon }: { children: React.ReactNode; icon: string }) {
+  return (
+    <div style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 12 }}>
+      <span style={{ fontSize: "0.95rem", flexShrink: 0, marginTop: 1 }}>{icon}</span>
+      <span style={{ fontFamily: "'Onest', sans-serif", fontSize: "0.88rem", lineHeight: 1.55, color: "#555" }}>
+        {children}
+      </span>
+    </div>
+  );
 }
 
 function RegistrationModal({ onClose }: { onClose: () => void }) {
@@ -129,189 +181,314 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
 }
 
 export default function Seminar() {
-  const [time, setTime] = useState(getTimeLeft);
-  const [mounted, setMounted] = useState(false);
+  const t = useCountdown();
+  const [hoveredBtn, setHoveredBtn] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    const id = setInterval(() => setTime(getTimeLeft()), 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  const isPast = time === null;
-
-  const countdown = isPast
-    ? []
-    : [
-        { value: time.days, label: "дней" },
-        { value: time.hours, label: "часов" },
-        { value: time.minutes, label: "минут" },
-        { value: time.seconds, label: "секунд" },
-      ];
+  const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Здравствуйте, Владислав! Хочу узнать подробнее о курсе "Консультант по финансам в Германии"')}`;
 
   return (
-    <section id="seminar" className="pt-20 pb-10 lg:pt-28 lg:pb-14 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-14">
-            <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              {isPast ? "Мероприятие" : "Открыта регистрация"}
+    <section id="seminar">
+      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+      <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Onest:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
+
+      <div
+        style={{
+          background: "#F5F0E8",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Subtle warm radial */}
+        <div
+          style={{
+            position: "absolute",
+            top: "10%",
+            right: "-5%",
+            width: "40%",
+            height: "50%",
+            background: "radial-gradient(circle, rgba(180,148,60,0.05) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <div
+          style={{
+            maxWidth: 920,
+            margin: "0 auto",
+            padding: "56px 24px 72px",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          {/* Top badge */}
+          <div style={{ textAlign: "center", marginBottom: 28 }}>
+            <span
+              style={{
+                fontFamily: "'Onest', sans-serif",
+                fontSize: "0.68rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.18em",
+                color: "#A0895C",
+                background: "rgba(180,148,60,0.1)",
+                border: "1px solid rgba(180,148,60,0.18)",
+                padding: "6px 20px",
+                borderRadius: 100,
+                display: "inline-block",
+                fontWeight: 500,
+              }}
+            >
+              Онлайн-курс · 3 месяца · Доступ к записям
             </span>
-            <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              {isPast ? "Обучение состоялось" : "Новый поток курса"}
-            </h2>
-            {isPast && (
-              <p className="text-muted-foreground mt-3">Следующий поток будет анонсирован скоро</p>
-            )}
           </div>
-        </AnimateOnScroll>
 
-        <AnimateOnScroll animation="scale-in" className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl overflow-hidden border-t-2 border-gold" style={{ boxShadow: "0 20px 60px -15px rgba(26, 31, 61, 0.15)" }}>
-            <div className="relative h-56 sm:h-72">
-              <Image
-                src="https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/18a10eace_generated_e3868091.png"
-                alt="Онлайн курс - Консультант по финансам в Германии"
-                className="object-cover"
-                fill
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
-              <div className="absolute top-4 left-4 flex gap-2">
-                <span className="px-4 py-1.5 bg-gold text-navy text-sm font-semibold rounded-full">
-                  {isPast ? "Завершён" : "Онлайн обучение"}
-                </span>
-                <span className="px-4 py-1.5 bg-green-500 text-white text-sm font-semibold rounded-full">
-                  Бесплатно
-                </span>
-              </div>
-            </div>
+          {/* Heading */}
+          <h2
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "clamp(1.9rem, 4.5vw, 3rem)",
+              fontWeight: 700,
+              color: "#1A3C5E",
+              textAlign: "center",
+              lineHeight: 1.2,
+              margin: "0 0 12px",
+            }}
+          >
+            Консультант по финансам
+            <br />
+            <span style={{ color: "#A0895C" }}>в Германии</span>
+          </h2>
 
-            <div className="p-6 sm:p-8">
-              {/* Countdown */}
-              {!isPast && mounted && (
-                <div className="flex justify-center gap-3 sm:gap-4 mb-8">
-                  {countdown.map((c) => (
-                    <div key={c.label} className="text-center">
-                      <div
-                        className="text-white w-16 h-16 sm:w-20 sm:h-20 rounded-xl flex items-center justify-center border border-gold/30"
-                        style={{ background: "linear-gradient(to bottom, #242a4e, #1a1f3d)" }}
-                      >
-                        <span className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold">
-                          {c.value}
-                        </span>
-                      </div>
-                      <span className="text-[10px] sm:text-xs text-gold font-semibold uppercase tracking-wider mt-2 block">
-                        {c.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              )}
+          <p
+            style={{
+              fontFamily: "'Onest', sans-serif",
+              fontSize: "1rem",
+              color: "#7A7A7A",
+              textAlign: "center",
+              maxWidth: 500,
+              margin: "0 auto 36px",
+              lineHeight: 1.6,
+            }}
+          >
+            Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
+          </p>
 
-              <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mb-2 text-center">
-                {SEMINAR_TITLE}
+          {/* Countdown */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 14,
+              marginBottom: 8,
+              maxWidth: 400,
+              margin: "0 auto 8px",
+            }}
+          >
+            <TimeUnit value={t.d} label="дней" />
+            <TimeUnit value={t.h} label="часов" />
+            <TimeUnit value={t.m} label="минут" />
+            <TimeUnit value={t.s} label="секунд" />
+          </div>
+          <p
+            style={{
+              fontFamily: "'Onest', sans-serif",
+              fontSize: "0.72rem",
+              color: "#aaa",
+              textAlign: "center",
+              margin: "0 0 12px",
+            }}
+          >
+            до окончания набора на курс
+          </p>
+          <p
+            style={{
+              fontFamily: "'Onest', sans-serif",
+              fontSize: "0.85rem",
+              color: "#A0895C",
+              textAlign: "center",
+              margin: "0 0 44px",
+              fontWeight: 500,
+            }}
+          >
+            Подключиться можно в любой момент
+          </p>
+
+          {/* Two-column content */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 20,
+              marginBottom: 24,
+            }}
+          >
+            {/* Left — what you'll learn */}
+            <div
+              style={{
+                background: "#fff",
+                borderRadius: 16,
+                border: "1px solid rgba(26,60,94,0.07)",
+                padding: "28px 26px",
+                boxShadow: "0 1px 8px rgba(26,60,94,0.04)",
+              }}
+            >
+              <h3
+                style={{
+                  fontFamily: "'Onest', sans-serif",
+                  fontSize: "0.68rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.14em",
+                  color: "#1A3C5E",
+                  marginBottom: 22,
+                  fontWeight: 600,
+                  opacity: 0.5,
+                }}
+              >
+                Во время обучения вы узнаете
               </h3>
-              <p className="text-center text-muted-foreground text-sm mb-6">
-                Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
-              </p>
+              <CheckItem>Как работает система страхования в Германии</CheckItem>
+              <CheckItem>Пенсионные программы и накопления</CheckItem>
+              <CheckItem>Инвестиции и финансовые инструменты</CheckItem>
+              <CheckItem>Банковские продукты и кредиты</CheckItem>
+              <CheckItem>Основы финансового консультирования</CheckItem>
+            </div>
 
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                {/* Topics */}
-                <div>
-                  <p className="font-semibold text-navy text-sm mb-3">Во время обучения вы узнаете:</p>
-                  <ul className="space-y-2">
-                    {COURSE_TOPICS.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-foreground/80 text-sm">
-                        <span className="text-gold font-bold mt-0.5">✔</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Benefits + After */}
-                <div className="space-y-5">
-                  <div>
-                    <p className="font-semibold text-navy text-sm mb-3">Преимущества курса:</p>
-                    <ul className="space-y-2">
-                      {COURSE_BENEFITS.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-foreground/80 text-sm">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-navy text-sm mb-3">После курса вы сможете:</p>
-                    <ul className="space-y-2">
-                      {AFTER_COURSE.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-foreground/80 text-sm">
-                          <span className="text-gold font-bold mt-0.5">✔</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-2">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-gold" />
-                  <span>Старт: 15.04.2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Monitor className="w-4 h-4 text-gold" />
-                  <span>Онлайн</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-gold" />
-                  <span>Количество мест ограничено</span>
-                </div>
-              </div>
-
-              <p className="text-xs text-muted-foreground mb-8">
-                Даже если у вас нет опыта в финансах — начать можно с нуля.
-              </p>
-
-              {!isPast && (
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <button
-                    onClick={() => setShowModal(true)}
-                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
-                  >
-                    Зарегистрироваться
-                  </button>
-                  <a
-                    href={getWhatsAppQuestionLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 border border-navy/20 text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:bg-navy/5 transition-all"
-                  >
-                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                    Задать вопрос
-                  </a>
-                </div>
-              )}
-
-              {isPast && (
-                <div className="text-center">
-                  <a
-                    href="https://wa.me/491784743490"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
-                  >
-                    Следующий поток
-                  </a>
-                </div>
-              )}
+            {/* Right — advantages */}
+            <div
+              style={{
+                background: "#fff",
+                borderRadius: 16,
+                border: "1px solid rgba(26,60,94,0.07)",
+                padding: "28px 26px",
+                boxShadow: "0 1px 8px rgba(26,60,94,0.04)",
+              }}
+            >
+              <h3
+                style={{
+                  fontFamily: "'Onest', sans-serif",
+                  fontSize: "0.68rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.14em",
+                  color: "#1A3C5E",
+                  marginBottom: 22,
+                  fontWeight: 600,
+                  opacity: 0.5,
+                }}
+              >
+                Преимущества курса
+              </h3>
+              <BulletItem icon="🎥">Онлайн-занятия раз в неделю в вечернее время</BulletItem>
+              <BulletItem icon="📂">Доступ ко всем записям уроков</BulletItem>
+              <BulletItem icon="🇷🇺">Обучение на русском с разбором немецкой терминологии</BulletItem>
+              <BulletItem icon="📄">При необходимости — справка для Jobcenter</BulletItem>
             </div>
           </div>
-        </AnimateOnScroll>
+
+          {/* After the course */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, rgba(180,148,60,0.07), rgba(180,148,60,0.02))",
+              borderRadius: 16,
+              border: "1px solid rgba(180,148,60,0.15)",
+              padding: "26px 28px",
+              marginBottom: 44,
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "'Onest', sans-serif",
+                fontSize: "0.68rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                color: "#A0895C",
+                marginBottom: 18,
+                fontWeight: 600,
+              }}
+            >
+              После курса вы сможете
+            </h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14 }}>
+              {[
+                "Продолжить обучение на немецком языке",
+                "Подготовиться к получению лицензий IHK (GewO)",
+                "Использовать знания для работы или личного развития",
+              ].map((text, i) => (
+                <CheckItem key={i} gold>{text}</CheckItem>
+              ))}
+            </div>
+          </div>
+
+          {/* Italic note */}
+          <p
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontStyle: "italic",
+              fontSize: "1.05rem",
+              color: "#999",
+              textAlign: "center",
+              marginBottom: 28,
+              lineHeight: 1.6,
+            }}
+          >
+            Даже если у вас нет опыта в финансах — начать можно с нуля
+          </p>
+
+          {/* CTAs */}
+          <div style={{ display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap" }}>
+            <button
+              onClick={() => setShowModal(true)}
+              onMouseEnter={() => setHoveredBtn("reg")}
+              onMouseLeave={() => setHoveredBtn(null)}
+              style={{
+                fontFamily: "'Onest', sans-serif",
+                fontSize: "0.95rem",
+                fontWeight: 600,
+                color: "#fff",
+                background: hoveredBtn === "reg" ? "#1F4A72" : "#1A3C5E",
+                border: "none",
+                padding: "16px 40px",
+                borderRadius: 12,
+                cursor: "pointer",
+                transition: "all 0.25s ease",
+                transform: hoveredBtn === "reg" ? "translateY(-2px)" : "none",
+                boxShadow: hoveredBtn === "reg"
+                  ? "0 8px 28px rgba(26,60,94,0.25)"
+                  : "0 4px 14px rgba(26,60,94,0.12)",
+              }}
+            >
+              Хочу на курс
+            </button>
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onMouseEnter={() => setHoveredBtn("wa")}
+              onMouseLeave={() => setHoveredBtn(null)}
+              style={{
+                fontFamily: "'Onest', sans-serif",
+                fontSize: "0.95rem",
+                fontWeight: 500,
+                color: "#1A3C5E",
+                background: hoveredBtn === "wa" ? "rgba(26,60,94,0.06)" : "transparent",
+                border: "1px solid rgba(26,60,94,0.18)",
+                padding: "16px 32px",
+                borderRadius: 12,
+                cursor: "pointer",
+                transition: "all 0.25s ease",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                textDecoration: "none",
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#1A3C5E" opacity={0.5}>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.146.565 4.158 1.55 5.897L.053 23.511a.5.5 0 00.607.607l5.614-1.497A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.94 0-3.757-.556-5.293-1.517l-.38-.228-3.327.887.887-3.327-.228-.38A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+              </svg>
+              Задать вопрос
+            </a>
+          </div>
+        </div>
       </div>
 
       {showModal && <RegistrationModal onClose={() => setShowModal(false)} />}
