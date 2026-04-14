@@ -2,8 +2,8 @@
 
 import { useState, useEffect, FormEvent } from "react";
 import { Send, X, Video, FolderOpen, Languages, FileText } from "lucide-react";
-import AnimateOnScroll from "./AnimateOnScroll";
-import WhatsAppIcon from "./WhatsAppIcon";
+import AnimateOnScroll from "../AnimateOnScroll";
+import WhatsAppIcon from "../WhatsAppIcon";
 
 function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boolean }) {
   return (
@@ -53,14 +53,14 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center">
-      <button aria-label="Закрыть" onClick={onClose} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <button aria-label="Schließen" onClick={onClose} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div className="relative w-full sm:max-w-md bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-hidden">
         <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
           <div>
-            <p className="text-xs text-gold font-semibold uppercase tracking-wider">Онлайн обучение</p>
-            <h3 className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy mt-0.5">Регистрация</h3>
+            <p className="text-xs text-gold font-semibold uppercase tracking-wider">Online-Schulung</p>
+            <h3 className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy mt-0.5">Anmeldung</h3>
           </div>
-          <button onClick={onClose} aria-label="Закрыть" className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-navy flex items-center justify-center transition-colors">
+          <button onClick={onClose} aria-label="Schließen" className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-navy flex items-center justify-center transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -68,17 +68,17 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-sm font-medium text-navy mb-1.5 block">Имя и фамилия *</label>
+                <label className="text-sm font-medium text-navy mb-1.5 block">Vor- und Nachname *</label>
                 <input
                   className="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-12 rounded-xl"
-                  placeholder="Ваше имя"
+                  placeholder="Ihr Name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-navy mb-1.5 block">WhatsApp / Телефон *</label>
+                <label className="text-sm font-medium text-navy mb-1.5 block">WhatsApp / Telefon *</label>
                 <input
                   className="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-12 rounded-xl"
                   placeholder="+49 ..."
@@ -89,7 +89,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
               </div>
               <button type="submit" className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:opacity-90 text-navy font-semibold rounded-full text-base shadow transition-all">
                 <Send className="w-4 h-4" />
-                Зарегистрироваться
+                Jetzt anmelden
               </button>
             </form>
           ) : (
@@ -99,9 +99,9 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p className="font-semibold text-navy text-lg">Заявка отправлена!</p>
-              <p className="text-muted-foreground text-sm mt-1">Владислав свяжется с вами в ближайшее время.</p>
-              <button onClick={onClose} className="mt-5 text-gold text-sm hover:underline">Закрыть</button>
+              <p className="font-semibold text-navy text-lg">Anfrage gesendet!</p>
+              <p className="text-muted-foreground text-sm mt-1">Wladislaw meldet sich in Kürze bei Ihnen.</p>
+              <button onClick={onClose} className="mt-5 text-gold text-sm hover:underline">Schließen</button>
             </div>
           )}
         </div>
@@ -110,7 +110,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Здравствуйте, Владислав! Хочу узнать подробнее о курсе "Консультант по финансам в Германии"')}`;
+const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Guten Tag, Wladislaw! Ich möchte mehr über den Kurs „Finanzberater in Deutschland" erfahren.')}`;
 
 export default function Seminar() {
   const [showModal, setShowModal] = useState(false);
@@ -127,29 +127,29 @@ export default function Seminar() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
               </span>
               <span className="text-xs font-bold uppercase tracking-wider text-red-600">
-                Live · занятия с экспертом
+                Live · Unterricht mit Experten
               </span>
             </div>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              Консультант по финансам в Германии
+              Finanzberater in Deutschland
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-              Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
+              Einzigartiger Kurs für alle, die das deutsche Finanzsystem verstehen möchten
             </p>
             <p className="text-navy/70 text-sm mt-2 max-w-lg mx-auto">
-              Раз в неделю встречаемся вживую — разбираем темы и отвечаю на вопросы. Запись каждого занятия остаётся у вас.
+              Einmal pro Woche treffen wir uns live - wir behandeln Themen und ich beantworte Fragen. Die Aufzeichnung jeder Sitzung bleibt Ihnen erhalten.
             </p>
 
             {/* Free badge — primary emphasis */}
             <div className="mt-6 flex justify-center">
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold text-navy text-sm font-bold shadow-md shadow-gold/20">
-                100% бесплатно
+                100% kostenlos
               </span>
             </div>
 
             {/* Format badges */}
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {["Live раз в неделю", "3 месяца", "Доступ к записям", "Подключиться можно в любой момент"].map((b) => (
+              {["Live einmal pro Woche", "3 Monate", "Zugriff auf Aufzeichnungen", "Einstieg jederzeit möglich"].map((b) => (
                 <span key={b} className="px-4 py-1.5 text-sm font-semibold rounded-full border border-gold/30 bg-gold/10 text-gold">
                   {b}
                 </span>
@@ -164,25 +164,25 @@ export default function Seminar() {
           <AnimateOnScroll animation="fade-left">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
               <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
-                Во время обучения вы узнаете
+                Im Kurs lernen Sie
               </p>
-              <CheckItem>Как работает система страхования в Германии</CheckItem>
-              <CheckItem>Пенсионные программы и накопления</CheckItem>
-              <CheckItem>Инвестиции и финансовые инструменты</CheckItem>
-              <CheckItem>Банковские продукты и кредиты</CheckItem>
-              <CheckItem>Основы финансового консультирования</CheckItem>
+              <CheckItem>Wie das Versicherungssystem in Deutschland funktioniert</CheckItem>
+              <CheckItem>Altersvorsorge und Vermögensaufbau</CheckItem>
+              <CheckItem>Investitionen und Finanzinstrumente</CheckItem>
+              <CheckItem>Bankprodukte und Kredite</CheckItem>
+              <CheckItem>Grundlagen der Finanzberatung</CheckItem>
             </div>
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-right">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
               <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
-                Преимущества курса
+                Vorteile des Kurses
               </p>
-              <BulletItem icon={Video}>Онлайн-занятия раз в неделю в вечернее время</BulletItem>
-              <BulletItem icon={FolderOpen}>Доступ ко всем записям уроков</BulletItem>
-              <BulletItem icon={Languages}>Обучение на русском с разбором немецкой терминологии</BulletItem>
-              <BulletItem icon={FileText}>При необходимости — справка для Jobcenter</BulletItem>
+              <BulletItem icon={Video}>Online-Unterricht einmal pro Woche am Abend</BulletItem>
+              <BulletItem icon={FolderOpen}>Zugriff auf alle Aufzeichnungen der Sitzungen</BulletItem>
+              <BulletItem icon={Languages}>Unterricht auf Russisch mit Erklärung der deutschen Fachbegriffe</BulletItem>
+              <BulletItem icon={FileText}>Bei Bedarf - Bescheinigung für das Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>
         </div>
@@ -192,12 +192,12 @@ export default function Seminar() {
         <AnimateOnScroll animation="fade-up">
           <div className="max-w-4xl mx-auto rounded-2xl border border-gold/20 bg-gold/5 p-7 mb-10">
             <p className="text-sm font-semibold uppercase tracking-wider text-gold mb-5">
-              После курса вы сможете
+              Nach dem Kurs können Sie
             </p>
             <div className="grid sm:grid-cols-3 gap-x-8">
-              <CheckItem gold>Продолжить обучение на немецком языке</CheckItem>
-              <CheckItem gold>Подготовиться к получению лицензий IHK (GewO)</CheckItem>
-              <CheckItem gold>Использовать знания для работы или личного развития</CheckItem>
+              <CheckItem gold>Die Ausbildung auf Deutsch fortsetzen</CheckItem>
+              <CheckItem gold>Sich auf die IHK-Lizenzen (GewO) vorbereiten</CheckItem>
+              <CheckItem gold>Das Wissen beruflich oder für die persönliche Entwicklung nutzen</CheckItem>
             </div>
           </div>
         </AnimateOnScroll>
@@ -205,7 +205,7 @@ export default function Seminar() {
         {/* Italic note */}
         <AnimateOnScroll animation="fade-up">
           <p className="font-[family-name:var(--font-serif)] italic text-muted-foreground text-center mb-10">
-            Даже если у вас нет опыта в финансах — начать можно с нуля
+            Auch ohne Erfahrung im Finanzbereich können Sie bei null anfangen
           </p>
 
           {/* CTAs */}
@@ -214,7 +214,7 @@ export default function Seminar() {
               onClick={() => setShowModal(true)}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-navy font-semibold rounded-full text-base hover:opacity-90 transition-all shadow-lg shadow-gold/20"
             >
-              Хочу на курс
+              Zum Kurs anmelden
             </button>
             <a
               href={waLink}
@@ -223,7 +223,7 @@ export default function Seminar() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-navy/20 text-navy font-semibold rounded-full text-base hover:bg-navy/5 transition-all"
             >
               <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
-              Задать вопрос
+              Frage stellen
             </a>
           </div>
         </AnimateOnScroll>

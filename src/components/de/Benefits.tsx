@@ -6,39 +6,39 @@ import {
   Globe,
   GraduationCap,
 } from "lucide-react";
-import AnimateOnScroll from "./AnimateOnScroll";
+import AnimateOnScroll from "../AnimateOnScroll";
 
 const benefits = [
   {
     icon: Shield,
-    title: "Надёжность и прозрачность",
-    desc: "Работаю через DVAG - одну из крупнейших финансовых компаний Германии. Все продукты лицензированы и проверены.",
-    link: { href: "https://unternehmensbericht.dvag/", label: "Отчёт компании" },
+    title: "Zuverlässigkeit und Transparenz",
+    desc: "Ich arbeite über die DVAG - eines der größten Finanzunternehmen Deutschlands. Alle Produkte sind lizenziert und geprüft.",
+    link: { href: "https://unternehmensbericht.dvag/", label: "Unternehmensbericht" },
   },
   {
     icon: TrendingUp,
-    title: "Индивидуальный подход",
-    desc: "Каждое решение подбирается под вашу ситуацию, цели и возможности. Никаких шаблонов.",
+    title: "Individuelle Betreuung",
+    desc: "Jede Lösung wird auf Ihre Situation, Ihre Ziele und Möglichkeiten zugeschnitten. Keine Schablonen.",
   },
   {
     icon: Landmark,
-    title: "131+ млн € под управлением",
-    desc: "Мои клиенты доверили мне в совокупности более 131 миллиона евро капитала - лучшее подтверждение качества моей работы.",
+    title: "131+ Mio. € unter Verwaltung",
+    desc: "Meine Kunden haben mir insgesamt mehr als 131 Millionen Euro an Kapital anvertraut - der beste Beleg für die Qualität meiner Arbeit.",
   },
   {
     icon: HeartHandshake,
-    title: "Поддержка на каждом этапе",
-    desc: "От первой консультации до долгосрочного сопровождения. Вы всегда можете обратиться с вопросами.",
+    title: "Begleitung in jeder Phase",
+    desc: "Von der Erstberatung bis zur langfristigen Betreuung. Sie können sich jederzeit mit Fragen an mich wenden.",
   },
   {
     icon: Globe,
-    title: "Без языкового барьера",
-    desc: "Консультирую на русском языке. Объясняю сложные вещи просто и понятно.",
+    title: "Ohne Sprachbarriere",
+    desc: "Ich berate auf Russisch und Deutsch. Komplexe Themen erkläre ich einfach und verständlich.",
   },
   {
     icon: GraduationCap,
-    title: "21+ год опыта",
-    desc: "Знаю немецкую финансовую систему изнутри. Помогу избежать ошибок, которые совершают многие.",
+    title: "21+ Jahre Erfahrung",
+    desc: "Ich kenne das deutsche Finanzsystem von innen. Ich helfe Ihnen, die Fehler zu vermeiden, die viele andere machen.",
   },
 ];
 
@@ -49,10 +49,10 @@ export default function Benefits() {
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Преимущества
+              Vorteile
             </span>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              Что вы получаете, работая со мной
+              Was Sie erhalten, wenn Sie mit mir arbeiten
             </h2>
           </div>
         </AnimateOnScroll>
