@@ -10,6 +10,10 @@ const faqs = [
     a: "Да, первая консультация абсолютно бесплатная и ни к чему не обязывает. Мы обсудим вашу ситуацию и я расскажу, как могу помочь.",
   },
   {
+    q: "Сколько стоят ваши услуги?",
+    a: "Для вас — бесплатно. Я работаю как консультант DVAG, и моё вознаграждение выплачивается компаниями-партнёрами. Вы получаете независимый анализ и подбор лучших решений без дополнительных расходов.",
+  },
+  {
     q: "Я не разбираюсь в финансах - это нормально?",
     a: "Абсолютно нормально. Большинство моих клиентов приходят без специальных знаний. Моя задача - объяснить всё простым языком и помочь принять правильное решение.",
   },
@@ -75,7 +79,7 @@ export default function FAQ() {
               <AnimateOnScroll key={i} animation="fade-up" delay={i * 80}>
               <div
                 className={`border rounded-xl px-6 transition-colors ${
-                  isOpen ? "bg-white/10 border-gold/40" : "bg-white/5 border-white/10 hover:border-white/20"
+                  isOpen ? "bg-white/[0.05] border-gold/40" : "bg-transparent border-white/10 hover:border-white/20"
                 }`}
               >
                 <button
@@ -97,7 +101,7 @@ export default function FAQ() {
                     opacity: isOpen ? 1 : 0,
                   }}
                 >
-                  <p className="pb-5 text-sm text-white/65 leading-relaxed">
+                  <p className="pb-5 text-base text-white/85 leading-[1.7]">
                     {faq.a}
                   </p>
                 </div>
