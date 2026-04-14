@@ -5,39 +5,6 @@ import { Send, X, Video, FolderOpen, Languages, FileText } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-const COURSE_END = new Date("2026-07-15T19:00:00+02:00");
-
-function useCountdown() {
-  const [now, setNow] = useState(Date.now());
-  useEffect(() => {
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, []);
-  const diff = Math.max(0, COURSE_END.getTime() - now);
-  return {
-    d: Math.floor(diff / 86400000),
-    h: Math.floor((diff % 86400000) / 3600000),
-    m: Math.floor((diff % 3600000) / 60000),
-    s: Math.floor((diff % 60000) / 1000),
-    expired: diff === 0,
-  };
-}
-
-function TimeUnit({ value, label }: { value: number; label: string }) {
-  return (
-    <div className="text-center">
-      <div className="w-[60px] h-[66px] sm:w-[64px] sm:h-[70px] bg-navy/[0.04] rounded-xl flex items-center justify-center border border-navy/10">
-        <span className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy tabular-nums">
-          {String(value).padStart(2, "0")}
-        </span>
-      </div>
-      <span className="block text-xs uppercase tracking-widest text-gold font-semibold mt-2">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boolean }) {
   return (
     <div className="flex gap-3 items-start mb-3.5">
@@ -146,14 +113,13 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
 const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Здравствуйте, Владислав! Хочу узнать подробнее о курсе "Консультант по финансам в Германии"')}`;
 
 export default function Seminar() {
-  const t = useCountdown();
   const [showModal, setShowModal] = useState(false);
 
   return (
     <section id="seminar" className="py-12 lg:py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Открыта регистрация
             </span>
@@ -164,9 +130,16 @@ export default function Seminar() {
               Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
             </p>
 
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center gap-2 mt-5">
-              {["Онлайн-курс", "3 месяца", "Доступ к записям", "Бесплатно"].map((b) => (
+            {/* Free badge — primary emphasis */}
+            <div className="mt-6 flex justify-center">
+              <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold text-navy text-sm font-bold shadow-md shadow-gold/20">
+                100% бесплатно
+              </span>
+            </div>
+
+            {/* Format badges */}
+            <div className="flex flex-wrap justify-center gap-2 mt-4">
+              {["Онлайн-курс", "3 месяца", "Доступ к записям", "Подключиться можно в любой момент"].map((b) => (
                 <span key={b} className="px-4 py-1.5 text-sm font-semibold rounded-full border border-gold/30 bg-gold/10 text-gold">
                   {b}
                 </span>
@@ -175,28 +148,8 @@ export default function Seminar() {
           </div>
         </AnimateOnScroll>
 
-        {/* Countdown */}
-        <AnimateOnScroll animation="fade-up">
-          {t.expired ? (
-            <p className="text-center text-base font-semibold text-navy mb-10">
-              Набор на текущий поток завершён — напишите, чтобы попасть в следующий
-            </p>
-          ) : (
-            <>
-              <div className="flex justify-center gap-3 sm:gap-4 mb-3">
-                <TimeUnit value={t.d} label="дней" />
-                <TimeUnit value={t.h} label="часов" />
-                <TimeUnit value={t.m} label="минут" />
-                <TimeUnit value={t.s} label="секунд" />
-              </div>
-              <p className="text-center text-sm text-muted-foreground mb-10">до окончания набора на курс</p>
-            </>
-          )}
-        </AnimateOnScroll>
-
         {/* Two-column cards */}
         <div className="max-w-4xl mx-auto">
-          <p className="text-center text-lg font-semibold text-gold mb-6">Подключиться можно в любой момент</p>
         <div className="grid sm:grid-cols-2 gap-6 mb-6">
           <AnimateOnScroll animation="fade-left">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
