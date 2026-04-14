@@ -13,6 +13,7 @@ const benefits = [
     icon: Shield,
     title: "Надёжность и прозрачность",
     desc: "Работаю через DVAG - одну из крупнейших финансовых компаний Германии. Все продукты лицензированы и проверены.",
+    link: { href: "https://unternehmensbericht.dvag/", label: "Отчёт компании" },
   },
   {
     icon: TrendingUp,
@@ -71,6 +72,17 @@ export default function Benefits() {
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {b.desc}
                   </p>
+                  {b.link && (
+                    <a
+                      href={b.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 mt-3 text-xs font-semibold text-gold hover:underline"
+                    >
+                      {b.link.label}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                 </div>
               </AnimateOnScroll>
             );
