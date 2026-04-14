@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
-import { Send, X } from "lucide-react";
+import { Send, X, Video, FolderOpen, Languages, FileText } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -19,14 +19,15 @@ function useCountdown() {
     h: Math.floor((diff % 86400000) / 3600000),
     m: Math.floor((diff % 3600000) / 60000),
     s: Math.floor((diff % 60000) / 1000),
+    expired: diff === 0,
   };
 }
 
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="text-center">
-      <div className="w-[72px] h-[78px] bg-navy rounded-xl flex items-center justify-center border border-gold/30 shadow-sm">
-        <span className="font-[family-name:var(--font-serif)] text-3xl font-bold text-white tabular-nums">
+      <div className="w-[60px] h-[66px] sm:w-[64px] sm:h-[70px] bg-navy/[0.04] rounded-xl flex items-center justify-center border border-navy/10">
+        <span className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy tabular-nums">
           {String(value).padStart(2, "0")}
         </span>
       </div>
@@ -50,11 +51,13 @@ function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boole
   );
 }
 
-function BulletItem({ children, icon }: { children: React.ReactNode; icon: string }) {
+function BulletItem({ children, icon: Icon }: { children: React.ReactNode; icon: React.ComponentType<{ className?: string }> }) {
   return (
-    <div className="flex gap-2.5 items-start mb-3">
-      <span className="text-base flex-shrink-0 mt-0.5">{icon}</span>
-      <span className="text-base leading-relaxed text-muted-foreground">{children}</span>
+    <div className="flex gap-3 items-start mb-3.5">
+      <div className="w-[22px] h-[22px] rounded-md flex items-center justify-center flex-shrink-0 mt-0.5 bg-gold/10 border border-gold/20">
+        <Icon className="w-3 h-3 text-gold" />
+      </div>
+      <span className="text-base leading-relaxed text-foreground/80">{children}</span>
     </div>
   );
 }
@@ -148,7 +151,7 @@ export default function Seminar() {
 
   return (
     <section id="seminar" className="py-12 lg:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-8">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
@@ -174,13 +177,21 @@ export default function Seminar() {
 
         {/* Countdown */}
         <AnimateOnScroll animation="fade-up">
-          <div className="flex justify-center gap-3 sm:gap-4 mb-3">
-            <TimeUnit value={t.d} label="дней" />
-            <TimeUnit value={t.h} label="часов" />
-            <TimeUnit value={t.m} label="минут" />
-            <TimeUnit value={t.s} label="секунд" />
-          </div>
-          <p className="text-center text-sm text-muted-foreground mb-10">до окончания набора на курс</p>
+          {t.expired ? (
+            <p className="text-center text-base font-semibold text-navy mb-10">
+              Набор на текущий поток завершён — напишите, чтобы попасть в следующий
+            </p>
+          ) : (
+            <>
+              <div className="flex justify-center gap-3 sm:gap-4 mb-3">
+                <TimeUnit value={t.d} label="дней" />
+                <TimeUnit value={t.h} label="часов" />
+                <TimeUnit value={t.m} label="минут" />
+                <TimeUnit value={t.s} label="секунд" />
+              </div>
+              <p className="text-center text-sm text-muted-foreground mb-10">до окончания набора на курс</p>
+            </>
+          )}
         </AnimateOnScroll>
 
         {/* Two-column cards */}
@@ -205,10 +216,10 @@ export default function Seminar() {
               <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
                 Преимущества курса
               </p>
-              <BulletItem icon="🎥">Онлайн-занятия раз в неделю в вечернее время</BulletItem>
-              <BulletItem icon="📂">Доступ ко всем записям уроков</BulletItem>
-              <BulletItem icon="🇷🇺">Обучение на русском с разбором немецкой терминологии</BulletItem>
-              <BulletItem icon="📄">При необходимости — справка для Jobcenter</BulletItem>
+              <BulletItem icon={Video}>Онлайн-занятия раз в неделю в вечернее время</BulletItem>
+              <BulletItem icon={FolderOpen}>Доступ ко всем записям уроков</BulletItem>
+              <BulletItem icon={Languages}>Обучение на русском с разбором немецкой терминологии</BulletItem>
+              <BulletItem icon={FileText}>При необходимости — справка для Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>
         </div>
