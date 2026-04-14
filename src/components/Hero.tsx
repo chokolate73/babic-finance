@@ -90,12 +90,16 @@ export default function Hero() {
               <span className="text-gold">{heroContent.headlineAccent}</span>
             </motion.h1>
 
-            <motion.p
-              className="text-gold font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-medium mt-4 mb-6"
+            <motion.div
+              className="flex items-center justify-center gap-4 mt-4 mb-6"
               {...fadeUp(0.5)}
             >
-              {heroContent.subtitle}
-            </motion.p>
+              <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+              <span className="text-white not-italic font-medium uppercase text-[1.1rem] tracking-[0.15em]">
+                {heroContent.subtitle}
+              </span>
+              <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+            </motion.div>
 
             {/* Stat badges */}
             <motion.div
