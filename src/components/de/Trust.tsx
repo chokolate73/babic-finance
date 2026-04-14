@@ -92,11 +92,11 @@ export default function Trust() {
               <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-8">
                 {stats.map((s, i) => (
                   <AnimateOnScroll key={s.label} animation="fade-up" delay={i * 150}>
-                    <div className="text-center p-3 sm:p-6 bg-gray-50 rounded-xl border border-border h-full">
+                    <div className="text-center p-2 sm:p-6 bg-gray-50 rounded-xl border border-border h-full">
                       <p className="font-[family-name:var(--font-serif)] text-lg sm:text-2xl font-bold text-gold whitespace-nowrap">
                         {s.value}
                       </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+                      <p className="text-[11px] sm:text-sm leading-tight text-muted-foreground mt-1 whitespace-nowrap">
                         {s.label}
                       </p>
                     </div>
