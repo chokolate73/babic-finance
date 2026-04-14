@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
-const faqs = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "Консультация действительно бесплатная?",
     a: "Да, первая консультация абсолютно бесплатная и ни к чему не обязывает. Мы обсудим вашу ситуацию и я расскажу, как могу помочь.",
@@ -19,7 +19,20 @@ const faqs = [
   },
   {
     q: "Что такое DVAG?",
-    a: "Deutsche Vermögensberatung (DVAG) - это крупнейшая финансовая консалтинговая компания в Германии. Работая через DVAG, я предлагаю только лицензированные и проверенные финансовые продукты.",
+    a: (
+      <>
+        Deutsche Vermögensberatung (DVAG) - это крупнейшая финансовая консалтинговая компания в Германии. Работая через DVAG, я предлагаю только лицензированные и проверенные финансовые продукты. Подробнее о результатах компании — в{" "}
+        <a
+          href="https://unternehmensbericht.dvag/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#D4AF55] hover:underline"
+        >
+          официальном отчёте DVAG
+        </a>
+        .
+      </>
+    ),
   },
   {
     q: "С какими страховыми и банками вы работаете?",
@@ -97,7 +110,7 @@ export default function FAQ() {
                 <div
                   className="overflow-hidden transition-all duration-300"
                   style={{
-                    maxHeight: isOpen ? "200px" : "0",
+                    maxHeight: isOpen ? "400px" : "0",
                     opacity: isOpen ? 1 : 0,
                   }}
                 >
