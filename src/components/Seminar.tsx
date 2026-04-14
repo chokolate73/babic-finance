@@ -180,12 +180,13 @@ export default function Seminar() {
             <TimeUnit value={t.m} label="минут" />
             <TimeUnit value={t.s} label="секунд" />
           </div>
-          <p className="text-center text-sm text-muted-foreground mb-1">до окончания набора на курс</p>
-          <p className="text-center text-base text-gold font-semibold mb-14">Подключиться можно в любой момент</p>
+          <p className="text-center text-sm text-muted-foreground mb-10">до окончания набора на курс</p>
         </AnimateOnScroll>
 
         {/* Two-column cards */}
-        <div className="grid sm:grid-cols-2 gap-6 mb-6 max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg font-semibold text-gold mb-6">Подключиться можно в любой момент</p>
+        <div className="grid sm:grid-cols-2 gap-6 mb-6">
           <AnimateOnScroll animation="fade-left">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
               <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
@@ -210,6 +211,7 @@ export default function Seminar() {
               <BulletItem icon="📄">При необходимости — справка для Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>
+        </div>
         </div>
 
         {/* After course — gold panel */}
