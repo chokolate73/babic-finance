@@ -147,10 +147,10 @@ export default function Seminar() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <section id="seminar" className="py-20 lg:py-28 bg-white">
+    <section id="seminar" className="py-12 lg:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
               Открыта регистрация
             </span>
