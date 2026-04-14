@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";
 import AnimateOnScroll from "../AnimateOnScroll";
 
-const faqs = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "Ist die Beratung wirklich kostenlos?",
     a: "Ja, die Erstberatung ist absolut kostenlos und völlig unverbindlich. Wir besprechen Ihre Situation und ich zeige Ihnen, wie ich Ihnen helfen kann.",
@@ -19,7 +19,20 @@ const faqs = [
   },
   {
     q: "Was ist die DVAG?",
-    a: "Die Deutsche Vermögensberatung (DVAG) ist das größte Finanzberatungsunternehmen Deutschlands. Über die DVAG biete ich ausschließlich lizenzierte und geprüfte Finanzprodukte an.",
+    a: (
+      <>
+        Die Deutsche Vermögensberatung (DVAG) ist das größte Finanzberatungsunternehmen Deutschlands. Über die DVAG biete ich ausschließlich lizenzierte und geprüfte Finanzprodukte an. Mehr über die Ergebnisse des Unternehmens — im{" "}
+        <a
+          href="https://unternehmensbericht.dvag/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#D4AF55] hover:underline"
+        >
+          offiziellen DVAG-Bericht
+        </a>
+        .
+      </>
+    ),
   },
   {
     q: "Mit welchen Versicherungen und Banken arbeiten Sie zusammen?",
@@ -97,7 +110,7 @@ export default function FAQ() {
                 <div
                   className="overflow-hidden transition-all duration-300"
                   style={{
-                    maxHeight: isOpen ? "200px" : "0",
+                    maxHeight: isOpen ? "400px" : "0",
                     opacity: isOpen ? 1 : 0,
                   }}
                 >
