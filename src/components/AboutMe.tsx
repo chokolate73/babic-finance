@@ -77,7 +77,7 @@ export default function AboutMe() {
               <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-gold rounded-br-2xl" />
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/vladislav-portrait.png"
+                  src="/vladislav-portrait.jpeg"
                   alt="Владислав Бабич - финансовый консультант"
                   className="w-full h-auto object-cover"
                   width={800}

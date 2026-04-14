@@ -49,7 +49,7 @@ export default function Trust() {
 
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/vladislav-portrait.png"
+                  src="/vladislav-portrait.jpeg"
                   alt="Владислав Бабич - финансовый консультант"
                   className="w-full h-auto object-cover"
                   width={800}
