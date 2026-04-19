@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-const navLinks = [
+const klientyLinks = [
   { href: "#about", label: "Обо мне" },
   { href: "#services", label: "Услуги" },
   { href: "#seminar", label: "Семинар" },
@@ -14,9 +15,19 @@ const navLinks = [
   { href: "#contact", label: "Контакт" },
 ];
 
+const defaultLinks = [
+  { href: "/klienty", label: "Для клиентов" },
+  { href: "/blog", label: "Блог" },
+  { href: "/klienty#contact", label: "Контакт" },
+];
+
 export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isKlienty = pathname?.startsWith("/klienty") ?? false;
+  const navLinks = isKlienty ? klientyLinks : defaultLinks;
+  const logoHref = isKlienty ? "#" : "/";
 
   useEffect(() => {
     function onScroll() {
@@ -36,7 +47,7 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center gap-2">
+          <a href={logoHref} className="flex items-center gap-2">
             <span
               className={`font-[family-name:var(--font-serif)] text-xl font-bold transition-colors duration-300 ${
                 scrolled || forceDark ? "text-navy" : "text-white"
