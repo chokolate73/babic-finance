@@ -9,9 +9,9 @@ import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
 import Transparenz from "@/components/recruitment/Transparenz";
-import MenteeStories from "@/components/recruitment/MenteeStories";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
-import FinalCTA from "@/components/recruitment/FinalCTA";
+import Seminar from "@/components/Seminar";
+import Contact from "@/components/Contact";
 import {
   homeHero,
   homePainPoints,
@@ -19,7 +19,6 @@ import {
   transparenzItems,
   homeFAQContent,
   homeFAQItems,
-  finalCtaContent,
 } from "@/data/recruitment";
 
 const SITE_URL = "https://babic-wealth-guide.base44.app";
@@ -74,18 +73,13 @@ export default function Home() {
       />
       <IncomeRange />
       <Transparenz items={transparenzItems} />
-      <MenteeStories />
+      <Seminar />
       <RecruitmentFAQ
         eyebrow={homeFAQContent.eyebrow}
         title={homeFAQContent.title}
         items={homeFAQItems}
       />
-      <FinalCTA
-        title={finalCtaContent.title}
-        description={finalCtaContent.description}
-        primary={finalCtaContent.primary}
-        secondary={finalCtaContent.secondary}
-      />
+      <Contact />
       <Footer />
     </div>
   );

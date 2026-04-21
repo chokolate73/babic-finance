@@ -22,7 +22,7 @@ export default function IncomeRange() {
         {/* Main range card */}
         <AnimateOnScroll animation="scale-in">
           <div className="max-w-2xl mx-auto rounded-2xl bg-gradient-to-br from-navy to-[#242a4e] text-white p-8 sm:p-10 text-center shadow-xl shadow-navy/10">
-            <p className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl lg:text-6xl font-bold text-gold tracking-tight">
+            <p className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold text-gold tracking-tight">
               {incomeContent.mainRange.value}
             </p>
             <p className="text-white/85 mt-3 text-base sm:text-lg">

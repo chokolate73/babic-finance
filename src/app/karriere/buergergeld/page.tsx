@@ -69,28 +69,33 @@ export default function BuergergeldPage() {
         items={buergergeldHelp.items}
         background="white"
       />
+      <div aria-hidden className="h-12 bg-gradient-to-b from-white to-navy" />
       <CareerPath
         id="path"
         eyebrow="Путь"
         title="Пошаговый план для Bürgergeld / ALG I"
         steps={buergergeldPathSteps}
       />
+      <div aria-hidden className="h-12 bg-gradient-to-b from-navy to-secondary" />
       <Transparenz
         eyebrow="Честно"
         title="Что важно знать заранее"
         subtitle="Программы господдержки — это возможность, но не гарантия. Вот что реально стоит понимать"
         items={buergergeldTransparenzItems}
       />
+      <div aria-hidden className="h-12 bg-gradient-to-b from-secondary to-navy" />
       <RecruitmentFAQ
         eyebrow="Вопросы"
         title="Вопросы про Jobcenter и Bürgergeld"
         items={buergergeldFAQItems}
       />
+      <div aria-hidden className="h-12 bg-gradient-to-b from-navy to-white" />
 
       <p className="bg-white px-4 sm:px-6 lg:px-8 py-6 max-w-4xl mx-auto text-muted-foreground/80 text-xs italic text-center leading-relaxed">
         Einstiegsgeld und Gründungszuschuss sind Ermessensleistungen. Gewährung
         erfolgt durch Jobcenter / Arbeitsagentur im Einzelfall.
       </p>
+      <div aria-hidden className="h-12 bg-gradient-to-b from-white to-navy" />
 
       <FinalCTA
         title={buergergeldFinalCTA.title}

@@ -6,24 +6,18 @@ import type { HeroContent } from "@/data/recruitment";
 
 type Props = {
   content: HeroContent;
-  /**
-   * Optional scroll target id (used by the scroll-indicator arrow).
-   * Defaults to "recognize".
-   */
   scrollTargetId?: string;
-  /**
-   * Background image — falls back to existing portrait.
-   * TODO: replace with a recruitment-context photo (Vladislav with team/seminar).
-   */
   backgroundSrc?: string;
   backgroundAlt?: string;
+  videoSrc?: string;
 };
 
 export default function RecruitmentHero({
   content,
   scrollTargetId = "recognize",
-  backgroundSrc = "/vladislav-portrait.jpeg",
-  backgroundAlt = "Vladislav Babic — team recruitment context (photo pending)",
+  backgroundSrc = "/hero.png",
+  backgroundAlt = "Babic Finance — карьера финансового консультанта в Германии",
+  videoSrc = "/hero.mp4",
 }: Props) {
   const prefersReduced = useReducedMotion();
 
@@ -51,73 +45,125 @@ export default function RecruitmentHero({
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <Image
-          src={backgroundSrc}
-          alt={backgroundAlt}
-          className="object-cover"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
+        {/* Desktop background */}
+        <div className="hidden md:block absolute inset-0">
+          <Image
+            src={backgroundSrc}
+            alt={backgroundAlt}
+            className="object-cover"
+            fill
+            priority
+            quality={85}
+          />
+        </div>
+        {/* Mobile background: looping video */}
+        <video
+          className="md:hidden absolute inset-0 w-full h-full object-cover"
+          src={videoSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
         />
-        {/* Recruitment overlay — darker and more centered than /klienty hero */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/75 to-navy/60" />
-        <div className="absolute inset-0 bg-black/25" />
+        {/* Desktop overlay */}
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
+        {/* Mobile overlay */}
+        <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Gold decorative line */}
-          <motion.div
-            className="flex items-center justify-center gap-3 mb-6"
-            {...fadeUp(0.2)}
-          >
-            <div className="h-px w-10 bg-gold" />
-            <div className="w-2 h-2 rotate-45 bg-gold" />
-            <div className="h-px w-10 bg-gold" />
-          </motion.div>
-
-          <motion.h1
-            className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-5"
-            {...fadeUp(0.4)}
-          >
-            {content.headline}
-            <br />
-            <span className="text-gold">{content.headlineAccent}</span>
-          </motion.h1>
-
-          <motion.p
-            className="text-base sm:text-xl text-white font-medium mb-4 max-w-2xl mx-auto leading-relaxed"
-            {...fadeUp(0.5)}
-          >
-            {content.subtitle}
-          </motion.p>
-
-          <motion.p
-            className="text-sm text-white/70 mb-10 max-w-xl mx-auto"
-            {...fadeUp(0.55)}
-          >
-            {content.trustLine}
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            {...fadeUp(0.7)}
-          >
-            <a
-              href={content.primaryCTA.href}
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-4 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-normal sm:whitespace-nowrap hover:brightness-105 transition-all shadow-lg shadow-gold/25 min-h-[44px] text-center"
+        <div>
+          <div className="max-w-2xl text-center">
+            {/* Gold decorative line */}
+            <motion.div
+              className="flex items-center justify-center gap-3 mb-6"
+              {...fadeUp(0.2)}
             >
-              {content.primaryCTA.text}
-            </a>
-            <a
-              href={content.secondaryCTA.href}
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 border border-white/30 text-white font-medium rounded-full text-base hover:bg-white/10 transition-all min-h-[44px]"
+              <div className="h-px w-10 bg-gold" />
+              <div className="w-2 h-2 rotate-45 bg-gold" />
+              <div className="h-px w-10 bg-gold" />
+            </motion.div>
+
+            <motion.h1
+              className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-4"
+              {...fadeUp(0.4)}
             >
-              {content.secondaryCTA.text}
-            </a>
-          </motion.div>
+              {content.headline}
+              <br />
+              <span className="text-gold">{content.headlineAccent}</span>
+            </motion.h1>
+
+            {/* Subtitle with gold rules */}
+            <motion.div
+              className="flex items-center justify-center gap-4 mt-4 mb-6"
+              {...fadeUp(0.5)}
+            >
+              <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+              <span className="text-white/90 font-medium text-sm sm:text-base">
+                {content.subtitle}
+              </span>
+              <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+            </motion.div>
+
+            {/* Stat badges */}
+            {content.stats && (
+              <motion.div
+                className="flex flex-wrap justify-center gap-3 mb-6"
+                {...fadeUp(0.6)}
+              >
+                {content.stats.map((stat) => (
+                  <span
+                    key={stat.label}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90"
+                  >
+                    <span className="font-bold text-white">{stat.value}</span>{" "}
+                    {stat.label}
+                  </span>
+                ))}
+              </motion.div>
+            )}
+
+            {/* Benefit pills */}
+            {content.pills && (
+              <motion.div
+                className="flex flex-wrap justify-center gap-2 mb-10"
+                {...fadeUp(0.65)}
+              >
+                {content.pills.map((pill) => (
+                  <span
+                    key={pill.text}
+                    className={`px-4 py-1.5 text-sm text-white/90 border border-white/25 rounded-full${pill.mobileHidden ? " hidden sm:inline-flex" : ""}`}
+                  >
+                    {pill.text}
+                  </span>
+                ))}
+              </motion.div>
+            )}
+
+            {/* CTAs */}
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+              {...fadeUp(0.7)}
+            >
+              <a
+                href={content.primaryCTA.href}
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-4 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-normal sm:whitespace-nowrap hover:brightness-105 transition-all shadow-lg shadow-gold/25 min-h-[44px] text-center"
+              >
+                {content.primaryCTA.text}
+              </a>
+              <a
+                href={content.secondaryCTA.href}
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 border border-white/30 text-white font-medium rounded-full text-base hover:bg-white/10 transition-all min-h-[44px]"
+              >
+                {content.secondaryCTA.text}
+              </a>
+            </motion.div>
+
+            <motion.p className="text-white/60 text-sm" {...fadeUp(0.8)}>
+              {content.trustLine}
+            </motion.p>
+          </div>
         </div>
       </div>
 

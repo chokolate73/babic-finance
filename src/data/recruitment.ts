@@ -23,21 +23,32 @@ export type HeroContent = {
   trustLine: string;
   primaryCTA: { text: string; href: string };
   secondaryCTA: { text: string; href: string };
+  stats?: { value: string; label: string }[];
+  pills?: { text: string; mobileHidden?: boolean }[];
 };
 
 export const homeHero: HeroContent = {
   headline: "Построй карьеру финансового",
   headlineAccent: "консультанта в Германии",
   subtitle: "На русском. Без опыта. С полной поддержкой команды.",
-  trustLine:
-    "4 387 клиентов в моей сети · 131+ млн € под управлением · 21 год в финансах",
+  trustLine: "Отвечаем в течение часа в рабочее время",
   primaryCTA: {
-    text: "Пройти 10 вопросов — подходит ли мне эта работа",
+    text: "Узнать подходит ли мне эта работа",
     href: QUIZ_URL,
   },
   secondaryCTA: { text: "Узнать подробнее", href: "#recognize" },
+  stats: [
+    { value: "21", label: "год в финансах" },
+    { value: "4 387", label: "клиентов в сети" },
+    { value: "131+ млн €", label: "под управлением" },
+  ],
+  pills: [
+    { text: "Без опыта" },
+    { text: "На русском" },
+    { text: "Полная поддержка" },
+    { text: "DVAG", mobileHidden: true },
+  ],
 };
-
 export const homePainPoints = {
   eyebrow: "Ситуация",
   title: "Знакомая ситуация?",
@@ -590,11 +601,6 @@ export const buergergeldHelp = {
       title: "Gewerbeanmeldung",
       description:
         "Помогаем с регистрацией предпринимательской деятельности и первыми формальностями.",
-    },
-    {
-      title: "Команда с первого дня",
-      description:
-        "С первого дня после старта — ты в команде, не один. Коуч, структура, обучение, первые клиенты — всё сопровождается.",
     },
   ],
 };
