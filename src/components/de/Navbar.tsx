@@ -36,7 +36,7 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center gap-2">
+          <a href="/de" className="flex items-center gap-2">
             <span
               className={`font-[family-name:var(--font-serif)] text-xl font-bold transition-colors duration-300 ${
                 scrolled || forceDark ? "text-navy" : "text-white"

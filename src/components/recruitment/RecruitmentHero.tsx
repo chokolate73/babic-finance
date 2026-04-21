@@ -10,6 +10,7 @@ type Props = {
   backgroundSrc?: string;
   backgroundAlt?: string;
   videoSrc?: string;
+  scrollLabel?: string;
 };
 
 export default function RecruitmentHero({
@@ -18,6 +19,7 @@ export default function RecruitmentHero({
   backgroundSrc = "/hero.png",
   backgroundAlt = "Babic Finance — карьера финансового консультанта в Германии",
   videoSrc = "/hero.mp4",
+  scrollLabel = "Прокрутить вниз",
 }: Props) {
   const prefersReduced = useReducedMotion();
 
@@ -172,7 +174,7 @@ export default function RecruitmentHero({
         <a
           href={`#${scrollTargetId}`}
           className="flex flex-col items-center gap-2 text-white/50 hover:text-white/80 transition-colors"
-          aria-label="Прокрутить вниз"
+          aria-label={scrollLabel}
         >
           <motion.svg
             className="w-5 h-5"

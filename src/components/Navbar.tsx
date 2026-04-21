@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 type NavLink = {
@@ -48,19 +48,71 @@ const karriereLinks: NavLink[] = [
   { href: "#apply", label: "Оставить заявку" },
 ];
 
+const deRecruitmentLinks: NavLink[] = [
+  { href: "#recognize", label: "Für wen" },
+  { href: "#qualifications", label: "Was du bekommst" },
+  { href: "#path", label: "So läuft's" },
+  { href: "#faq", label: "FAQ" },
+  {
+    href: "/de/karriere",
+    label: "Karriere",
+    children: [
+      { href: "/de/karriere/quereinstieg", label: "Quereinsteiger" },
+      { href: "/de/karriere/buergergeld", label: "Aus Bürgergeld" },
+    ],
+  },
+  { href: "/de/klienty", label: "Für Kunden" },
+  { href: "/blog", label: "Blog" },
+  { href: "#apply", label: "Jetzt bewerben" },
+];
+
+const deKarriereLinks: NavLink[] = [
+  { href: "/de", label: "Startseite" },
+  { href: "/de/karriere/quereinstieg", label: "Quereinsteiger" },
+  { href: "/de/karriere/buergergeld", label: "Aus Bürgergeld" },
+  { href: "/de/klienty", label: "Für Kunden" },
+  { href: "/blog", label: "Blog" },
+  { href: "#apply", label: "Jetzt bewerben" },
+];
+
+function getAltLocalePath(pathname: string): string {
+  if (pathname === "/de") return "/";
+  if (pathname.startsWith("/de/")) return pathname.slice(3); // strip "/de"
+  if (pathname === "/") return "/de";
+  return `/de${pathname}`;
+}
+
 export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
-  const pathname = usePathname();
-  const isKlienty = pathname?.startsWith("/klienty") ?? false;
-  const isKarriere = pathname?.startsWith("/karriere") ?? false;
-  const navLinks = isKlienty
-    ? klientyLinks
-    : isKarriere
-      ? karriereLinks
-      : recruitmentLinks;
-  const logoHref = isKlienty || isKarriere ? "/" : "#";
+  const pathname = usePathname() ?? "/";
+  const isDe = pathname === "/de" || pathname.startsWith("/de/");
+  const isKlienty = pathname.startsWith("/klienty");
+  const isKarriere = pathname.startsWith("/karriere");
+  const isDeKarriere = pathname.startsWith("/de/karriere");
+
+  const navLinks = isDe
+    ? isDeKarriere
+      ? deKarriereLinks
+      : deRecruitmentLinks
+    : isKlienty
+      ? klientyLinks
+      : isKarriere
+        ? karriereLinks
+        : recruitmentLinks;
+
+  const logoHref = isDe
+    ? "/de"
+    : isKlienty || isKarriere
+      ? "/"
+      : "#";
+
+  const altLocalePath = getAltLocalePath(pathname);
+  const altLocaleLabel = isDe ? "RU" : "DE";
+  const altLocaleAria = isDe
+    ? "На русский язык / Switch to Russian"
+    : "Auf Deutsch / Switch to German";
 
   useEffect(() => {
     function onScroll() {
@@ -69,6 +121,8 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const toggleMenuAria = isDe ? "Menü umschalten" : "Toggle menu";
 
   return (
     <nav
@@ -153,6 +207,19 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
 
           <div className="hidden lg:flex items-center gap-3">
             <a
+              href={altLocalePath}
+              hrefLang={isDe ? "ru" : "de"}
+              aria-label={altLocaleAria}
+              className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold transition-colors border ${
+                scrolled || forceDark
+                  ? "border-border text-muted-foreground hover:text-navy hover:border-gold"
+                  : "border-white/30 text-white/90 hover:text-white hover:border-white/60"
+              }`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              {altLocaleLabel}
+            </a>
+            <a
               href="https://wa.me/491784743490"
               target="_blank"
               rel="noopener noreferrer"
@@ -168,7 +235,7 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
               scrolled || forceDark ? "text-navy" : "text-white"
             }`}
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label={toggleMenuAria}
           >
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -208,6 +275,16 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
                 </a>
               ),
             )}
+            <a
+              href={altLocalePath}
+              hrefLang={isDe ? "ru" : "de"}
+              aria-label={altLocaleAria}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold border border-border text-muted-foreground"
+              onClick={() => setOpen(false)}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              {altLocaleLabel}
+            </a>
             <a
               href="https://wa.me/491784743490"
               target="_blank"

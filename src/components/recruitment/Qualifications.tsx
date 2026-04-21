@@ -1,30 +1,46 @@
 import AnimateOnScroll from "../AnimateOnScroll";
 import {
-  qualifications,
-  qualificationsCallout,
+  qualifications as qualificationsRu,
+  qualificationsCallout as qualificationsCalloutRu,
 } from "@/data/recruitment";
 
-export default function Qualifications() {
+type QualificationItem = (typeof qualificationsRu)[number];
+type Callout = typeof qualificationsCalloutRu;
+
+type Props = {
+  items?: readonly QualificationItem[];
+  callout?: Callout;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export default function Qualifications({
+  items = qualificationsRu,
+  callout = qualificationsCalloutRu,
+  eyebrow = "Квалификации",
+  title = "Четыре квалификации в одной программе",
+  description = "DVAG берёт на себя обучение, экзамены и лицензии — а ты получаешь профессию, которую ищут по всей Германии",
+}: Props = {}) {
   return (
     <section id="qualifications" className="py-20 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14 max-w-3xl mx-auto">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Квалификации
+              {eyebrow}
             </span>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              Четыре квалификации в одной программе
+              {title}
             </h2>
             <p className="text-muted-foreground mt-3">
-              DVAG берёт на себя обучение, экзамены и лицензии — а ты получаешь
-              профессию, которую ищут по всей Германии
+              {description}
             </p>
           </div>
         </AnimateOnScroll>
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {qualifications.map((q, i) => (
+          {items.map((q, i) => (
             <AnimateOnScroll
               key={q.id}
               animation="fade-up"
@@ -58,13 +74,13 @@ export default function Qualifications() {
         <AnimateOnScroll animation="fade-up">
           <div className="max-w-4xl mx-auto rounded-2xl border border-gold/30 bg-gold/5 p-6 sm:p-8 text-center">
             <p className="text-navy text-lg sm:text-xl font-semibold leading-snug">
-              {qualificationsCallout.text}
+              {callout.text}
             </p>
             <p className="text-muted-foreground text-sm mt-3">
-              {qualificationsCallout.sub}
+              {callout.sub}
             </p>
             <p className="text-muted-foreground/80 text-xs mt-4 italic">
-              {qualificationsCallout.source}
+              {callout.source}
             </p>
           </div>
         </AnimateOnScroll>

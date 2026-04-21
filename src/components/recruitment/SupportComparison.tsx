@@ -1,21 +1,37 @@
 import AnimateOnScroll from "../AnimateOnScroll";
-import { supportTable } from "@/data/recruitment";
+import { supportTable as supportTableRu } from "@/data/recruitment";
 
-export default function SupportComparison() {
+type SupportTable = typeof supportTableRu;
+
+type Props = {
+  table?: SupportTable;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  parameterHeader?: string;
+};
+
+export default function SupportComparison({
+  table = supportTableRu,
+  eyebrow = "Поддержка государства",
+  title = "Einstiegsgeld vs Gründungszuschuss",
+  description = "Две программы государственной поддержки перехода в самозанятость — одна для получателей Bürgergeld, другая для ALG I",
+  parameterHeader = "Параметр",
+}: Props = {}) {
+  const supportTable = table;
   return (
     <section id="support" className="py-20 lg:py-28 bg-cream">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Поддержка государства
+              {eyebrow}
             </span>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              Einstiegsgeld vs Gründungszuschuss
+              {title}
             </h2>
             <p className="text-muted-foreground mt-3">
-              Две программы государственной поддержки перехода в самозанятость —
-              одна для получателей Bürgergeld, другая для ALG I
+              {description}
             </p>
           </div>
         </AnimateOnScroll>
@@ -25,7 +41,7 @@ export default function SupportComparison() {
           <div className="hidden md:block bg-white rounded-2xl border border-border overflow-hidden shadow-sm">
             <div className="grid grid-cols-3 bg-navy text-white">
               <div className="p-5 text-sm font-semibold uppercase tracking-wider text-white/60">
-                Параметр
+                {parameterHeader}
               </div>
               <div className="p-5 text-base font-semibold border-l border-white/10">
                 Einstiegsgeld

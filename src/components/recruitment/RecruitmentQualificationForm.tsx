@@ -9,48 +9,247 @@ import WhatsAppIcon from "../WhatsAppIcon";
 import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
 
 export type SourcePage = "homepage" | "quereinstieg" | "buergergeld";
+export type Locale = "ru" | "de";
 
-const MOTIVATIONS: { value: string; label: string }[] = [
-  { value: "working_not_in_field", label: "Работаю не по специальности" },
-  { value: "diploma_not_recognized", label: "Диплом с родины не признаётся" },
-  { value: "buergergeld", label: "Я сейчас на Bürgergeld или ALG I" },
-  { value: "own_business", label: "Хочу своё дело, а не работать на кого-то" },
-  { value: "russian_language", label: "Ищу профессию, где пригодится русский язык" },
-  { value: "just_curious", label: "Пока просто интересно узнать больше" },
-  { value: "other", label: "Другое" },
-];
+type Option = { value: string; label: string };
 
-const FORMATS: { value: string; label: string }[] = [
-  { value: "full_change", label: "Готов полностью сменить работу" },
-  { value: "parallel", label: "Хочу начать параллельно с текущей работой" },
-  { value: "unemployed_ready", label: "Сейчас без работы — готов начать сразу" },
-  { value: "exploring", label: "Ещё не решил, смотрю варианты" },
-];
-
-const TIMELINES: { value: string; label: string }[] = [
-  { value: "asap", label: "Как можно скорее" },
-  { value: "1_3_months", label: "В ближайшие 1–3 месяца" },
-  { value: "6_plus_months", label: "Через полгода или позже" },
-  { value: "just_info", label: "Пока только собираю информацию" },
-];
-
-const PAGE_LABELS: Record<SourcePage, string> = {
-  homepage: "Главная",
-  quereinstieg: "Квереинштайгер",
-  buergergeld: "Из Bürgergeld",
+const MOTIVATIONS: Record<Locale, Option[]> = {
+  ru: [
+    { value: "working_not_in_field", label: "Работаю не по специальности" },
+    { value: "diploma_not_recognized", label: "Диплом с родины не признаётся" },
+    { value: "buergergeld", label: "Я сейчас на Bürgergeld или ALG I" },
+    { value: "own_business", label: "Хочу своё дело, а не работать на кого-то" },
+    { value: "russian_language", label: "Ищу профессию, где пригодится русский язык" },
+    { value: "just_curious", label: "Пока просто интересно узнать больше" },
+    { value: "other", label: "Другое" },
+  ],
+  de: [
+    { value: "working_not_in_field", label: "Arbeite nicht in meinem Beruf" },
+    { value: "diploma_not_recognized", label: "Mein Diplom wird nicht anerkannt" },
+    { value: "buergergeld", label: "Ich beziehe Bürgergeld oder ALG I" },
+    { value: "own_business", label: "Ich will selbstständig sein" },
+    { value: "russian_language", label: "Ich suche einen Beruf, in dem Russisch gefragt ist" },
+    { value: "just_curious", label: "Bin erstmal neugierig" },
+    { value: "other", label: "Anderes" },
+  ],
 };
 
-const WHATSAPP_FALLBACK =
-  "https://wa.me/491784743490?text=" +
-  encodeURIComponent(
-    "Здравствуйте, Владислав! Не смог отправить форму с сайта — хочу узнать про работу финансового консультанта.",
+const FORMATS: Record<Locale, Option[]> = {
+  ru: [
+    { value: "full_change", label: "Готов полностью сменить работу" },
+    { value: "parallel", label: "Хочу начать параллельно с текущей работой" },
+    { value: "unemployed_ready", label: "Сейчас без работы — готов начать сразу" },
+    { value: "exploring", label: "Ещё не решил, смотрю варианты" },
+  ],
+  de: [
+    { value: "full_change", label: "Bereit, den Beruf komplett zu wechseln" },
+    { value: "parallel", label: "Will parallel zum aktuellen Job starten" },
+    { value: "unemployed_ready", label: "Bin aktuell ohne Job — starte sofort" },
+    { value: "exploring", label: "Noch nicht entschieden, schaue mich um" },
+  ],
+};
+
+const TIMELINES: Record<Locale, Option[]> = {
+  ru: [
+    { value: "asap", label: "Как можно скорее" },
+    { value: "1_3_months", label: "В ближайшие 1–3 месяца" },
+    { value: "6_plus_months", label: "Через полгода или позже" },
+    { value: "just_info", label: "Пока только собираю информацию" },
+  ],
+  de: [
+    { value: "asap", label: "So früh wie möglich" },
+    { value: "1_3_months", label: "In den nächsten 1–3 Monaten" },
+    { value: "6_plus_months", label: "In einem halben Jahr oder später" },
+    { value: "just_info", label: "Sammle nur Informationen" },
+  ],
+};
+
+const PAGE_LABELS: Record<Locale, Record<SourcePage, string>> = {
+  ru: {
+    homepage: "Главная",
+    quereinstieg: "Квереинштайгер",
+    buergergeld: "Из Bürgergeld",
+  },
+  de: {
+    homepage: "Startseite",
+    quereinstieg: "Quereinsteiger",
+    buergergeld: "Aus Bürgergeld",
+  },
+};
+
+const FALLBACK_MESSAGES: Record<Locale, string> = {
+  ru: "Здравствуйте, Владислав! Не смог отправить форму с сайта — хочу узнать про работу финансового консультанта.",
+  de: "Hallo Wladislaw! Das Formular auf der Website ließ sich nicht absenden — ich möchte mehr über den Beruf des Finanzberaters erfahren.",
+};
+
+function whatsappFallback(locale: Locale) {
+  return (
+    "https://wa.me/491784743490?text=" +
+    encodeURIComponent(FALLBACK_MESSAGES[locale])
   );
+}
+
+const SUBJECT_PREFIX: Record<Locale, string> = {
+  ru: "🎯 Новый кандидат в консультанты",
+  de: "🎯 Neuer Kandidat als Berater",
+};
 
 const TOTAL_STEPS = 5;
 
-function buildSubject(name: string, sourcePage: SourcePage): string {
-  return `🎯 Новый кандидат в консультанты — ${name} (${PAGE_LABELS[sourcePage]})`;
+function buildSubject(
+  name: string,
+  sourcePage: SourcePage,
+  locale: Locale,
+): string {
+  return `${SUBJECT_PREFIX[locale]} — ${name} (${PAGE_LABELS[locale][sourcePage]})`;
 }
+
+type UiStrings = {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  stepOf: (n: number, total: number) => string;
+  back: string;
+  next: string;
+  submit: string;
+  submitting: string;
+  dsgvo: string;
+  networkError: string;
+  errors: {
+    name: string;
+    motivations: string;
+    format: string;
+    timeline: string;
+    phone: string;
+    email: string;
+  };
+  step0: { heading: string; hint: string; placeholder: string };
+  step1: { heading: string; hint: string; otherPlaceholder: string };
+  step2: { heading: string; hint: string };
+  step3: { heading: string; hint: string };
+  step4: {
+    heading: (name: string) => string;
+    intro: string;
+    openLabel: string;
+    openOptional: string;
+    openPlaceholder: string;
+    phoneLabel: string;
+    emailLabel: string;
+    emailOptional: string;
+    emailPlaceholder: string;
+  };
+};
+
+const STRINGS: Record<Locale, UiStrings> = {
+  ru: {
+    eyebrow: "5 вопросов · 2 минуты",
+    heading: "Подходит ли мне эта работа?",
+    intro: "Ответы приходят лично Владиславу — он свяжется в течение дня.",
+    stepOf: (n, total) => `Шаг ${n} из ${total}`,
+    back: "Назад",
+    next: "Дальше",
+    submit: "Отправить Владиславу",
+    submitting: "Отправка…",
+    dsgvo:
+      "Твои данные уходят только Владиславу. Никаких рассылок, никакого спама. Соблюдаем DSGVO.",
+    networkError:
+      "Не удалось отправить. Попробуй ещё раз или напиши в WhatsApp напрямую:",
+    errors: {
+      name: "Имя, пожалуйста",
+      motivations: "Выбери хотя бы один пункт",
+      format: "Выбери формат",
+      timeline: "Выбери срок",
+      phone: "Нужен номер для связи",
+      email: "Проверь формат email",
+    },
+    step0: {
+      heading: "Как тебя зовут?",
+      hint: "Владислав обращается к кандидатам на «ты» — так теплее.",
+      placeholder: "Твоё имя",
+    },
+    step1: {
+      heading: "Что подтолкнуло задуматься о смене профессии?",
+      hint: "Можно выбрать несколько.",
+      otherPlaceholder: "Опиши своими словами",
+    },
+    step2: {
+      heading: "Какой формат тебе ближе?",
+      hint: "Выбери одно.",
+    },
+    step3: {
+      heading: "Когда хотел бы начать?",
+      hint: "Выбери одно.",
+    },
+    step4: {
+      heading: (name) => `Почти готово, ${name || "друг"}!`,
+      intro: "Оставь контакт — Владислав свяжется в течение дня.",
+      openLabel:
+        "Что для тебя важнее всего получить в разговоре с Владиславом?",
+      openOptional: "(необязательно)",
+      openPlaceholder:
+        "Например: понять, реально ли совместить с работой / узнать про Bürgergeld...",
+      phoneLabel: "WhatsApp или телефон",
+      emailLabel: "Email",
+      emailOptional: "(если удобнее по email)",
+      emailPlaceholder: "you@example.com",
+    },
+  },
+  de: {
+    eyebrow: "5 Fragen · 2 Minuten",
+    heading: "Passt dieser Beruf zu mir?",
+    intro:
+      "Die Antworten gehen direkt an Wladislaw — er meldet sich noch am selben Tag.",
+    stepOf: (n, total) => `Schritt ${n} von ${total}`,
+    back: "Zurück",
+    next: "Weiter",
+    submit: "An Wladislaw senden",
+    submitting: "Wird gesendet…",
+    dsgvo:
+      "Deine Daten gehen nur an Wladislaw. Keine Newsletter, kein Spam. Wir halten die DSGVO ein.",
+    networkError:
+      "Senden ist fehlgeschlagen. Versuch es erneut oder schreib direkt auf WhatsApp:",
+    errors: {
+      name: "Bitte gib deinen Namen ein",
+      motivations: "Wähle mindestens eine Option",
+      format: "Bitte wähle ein Format",
+      timeline: "Bitte wähle einen Zeitraum",
+      phone: "Wir brauchen eine Nummer zum Kontakt",
+      email: "Prüf bitte das Email-Format",
+    },
+    step0: {
+      heading: "Wie heißt du?",
+      hint: `Wladislaw spricht Kandidaten mit „Du" an — so ist es persönlicher.`,
+      placeholder: "Dein Name",
+    },
+    step1: {
+      heading: "Was bringt dich dazu, über einen Berufswechsel nachzudenken?",
+      hint: "Mehrfachauswahl möglich.",
+      otherPlaceholder: "Beschreib es in eigenen Worten",
+    },
+    step2: {
+      heading: "Welches Format passt dir besser?",
+      hint: "Wähle eines.",
+    },
+    step3: {
+      heading: "Wann möchtest du starten?",
+      hint: "Wähle eines.",
+    },
+    step4: {
+      heading: (name) => `Fast geschafft, ${name || "Freund"}!`,
+      intro:
+        "Hinterlass einen Kontakt — Wladislaw meldet sich noch am selben Tag.",
+      openLabel:
+        "Was ist dir im Gespräch mit Wladislaw am wichtigsten?",
+      openOptional: "(optional)",
+      openPlaceholder:
+        "Zum Beispiel: verstehen, ob es sich mit der Arbeit vereinbaren lässt / mehr über Bürgergeld wissen…",
+      phoneLabel: "WhatsApp oder Telefon",
+      emailLabel: "E-Mail",
+      emailOptional: "(wenn E-Mail bequemer ist)",
+      emailPlaceholder: "du@beispiel.de",
+    },
+  },
+};
 
 function countDigits(s: string): number {
   let c = 0;
@@ -72,12 +271,21 @@ type Errors = Partial<Record<FieldKey, string>>;
 
 export default function RecruitmentQualificationForm({
   sourcePage,
+  locale = "ru",
 }: {
   sourcePage: SourcePage;
+  locale?: Locale;
 }) {
   const router = useRouter();
   const uid = useId();
   const prefersReduced = useReducedMotion();
+  const t = STRINGS[locale];
+  const motivationOptions = MOTIVATIONS[locale];
+  const formatOptions = FORMATS[locale];
+  const timelineOptions = TIMELINES[locale];
+  const thankYouHref =
+    locale === "de" ? "/de/karriere/thank-you" : "/karriere/thank-you";
+  const whatsappFallbackHref = whatsappFallback(locale);
 
   const [step, setStep] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -99,23 +307,22 @@ export default function RecruitmentQualificationForm({
     const e: Errors = {};
     switch (s) {
       case 0:
-        if (name.trim().length < 2) e.name = "Имя, пожалуйста";
+        if (name.trim().length < 2) e.name = t.errors.name;
         break;
       case 1:
-        if (motivations.length === 0)
-          e.motivations = "Выбери хотя бы один пункт";
+        if (motivations.length === 0) e.motivations = t.errors.motivations;
         break;
       case 2:
-        if (!format) e.format = "Выбери формат";
+        if (!format) e.format = t.errors.format;
         break;
       case 3:
-        if (!timeline) e.timeline = "Выбери срок";
+        if (!timeline) e.timeline = t.errors.timeline;
         break;
       case 4: {
-        if (countDigits(phone) < 8) e.phone = "Нужен номер для связи";
+        if (countDigits(phone) < 8) e.phone = t.errors.phone;
         const trimmedEmail = email.trim();
         if (trimmedEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail))
-          e.email = "Проверь формат email";
+          e.email = t.errors.email;
         break;
       }
     }
@@ -186,9 +393,10 @@ export default function RecruitmentQualificationForm({
     if (openAnswer.trim()) body.append("openAnswer", openAnswer.trim());
     body.append("phone", phone.trim());
     if (email.trim()) body.append("email", email.trim());
-    body.append("_subject", buildSubject(trimmedName, sourcePage));
+    body.append("_subject", buildSubject(trimmedName, sourcePage, locale));
     body.append("formType", "recruitment");
     body.append("sourcePage", sourcePage);
+    body.append("locale", locale);
 
     const honeypotEl = e.currentTarget.elements.namedItem(
       "_gotcha",
@@ -205,7 +413,7 @@ export default function RecruitmentQualificationForm({
         body: body.toString(),
       });
       if (!response.ok) throw new Error(String(response.status));
-      router.push("/karriere/thank-you");
+      router.push(thankYouHref);
     } catch {
       setNetworkError(true);
       setSubmitting(false);
@@ -246,13 +454,13 @@ export default function RecruitmentQualificationForm({
               <div className="h-px w-10 bg-gold" />
             </div>
             <span className="text-gold font-semibold text-xs sm:text-sm uppercase tracking-wider">
-              5 вопросов · 2 минуты
+              {t.eyebrow}
             </span>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mt-3">
-              Подходит ли мне эта работа?
+              {t.heading}
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
-              Ответы приходят лично Владиславу — он свяжется в течение дня.
+              {t.intro}
             </p>
           </div>
         </AnimateOnScroll>
@@ -263,7 +471,7 @@ export default function RecruitmentQualificationForm({
             <div className="mb-8">
               <div className="flex items-center justify-between text-xs sm:text-sm mb-2.5">
                 <span className="text-muted-foreground font-medium">
-                  Шаг {step + 1} из {TOTAL_STEPS}
+                  {t.stepOf(step + 1, TOTAL_STEPS)}
                 </span>
                 <span className="text-gold font-semibold">
                   {Math.round(progressPct)}%
@@ -313,10 +521,10 @@ export default function RecruitmentQualificationForm({
                           htmlFor={`${uid}-name`}
                           className="block font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-bold text-navy mb-2 leading-snug"
                         >
-                          Как тебя зовут?
+                          {t.step0.heading}
                         </label>
                         <p className="text-sm text-muted-foreground mb-5">
-                          Владислав обращается к кандидатам на «ты» — так теплее.
+                          {t.step0.hint}
                         </p>
                         <input
                           id={`${uid}-name`}
@@ -333,7 +541,7 @@ export default function RecruitmentQualificationForm({
                               });
                             }
                           }}
-                          placeholder="Твоё имя"
+                          placeholder={t.step0.placeholder}
                           autoComplete="given-name"
                           autoFocus
                           aria-invalid={!!errors.name}
@@ -362,13 +570,13 @@ export default function RecruitmentQualificationForm({
                         }
                       >
                         <legend className="font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-bold text-navy mb-2 leading-snug">
-                          Что подтолкнуло задуматься о смене профессии?
+                          {t.step1.heading}
                         </legend>
                         <p className="text-sm text-muted-foreground mb-5">
-                          Можно выбрать несколько.
+                          {t.step1.hint}
                         </p>
                         <div className="space-y-2">
-                          {MOTIVATIONS.map((m) => {
+                          {motivationOptions.map((m) => {
                             const checked = motivations.includes(m.value);
                             return (
                               <label
@@ -403,7 +611,7 @@ export default function RecruitmentQualificationForm({
                               onChange={(e) =>
                                 setMotivationOther(e.target.value)
                               }
-                              placeholder="Опиши своими словами"
+                              placeholder={t.step1.otherPlaceholder}
                               maxLength={200}
                               className={inputBase}
                             />
@@ -427,13 +635,13 @@ export default function RecruitmentQualificationForm({
                         }
                       >
                         <legend className="font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-bold text-navy mb-2 leading-snug">
-                          Какой формат тебе ближе?
+                          {t.step2.heading}
                         </legend>
                         <p className="text-sm text-muted-foreground mb-5">
-                          Выбери одно.
+                          {t.step2.hint}
                         </p>
                         <div className="space-y-2">
-                          {FORMATS.map((opt) => {
+                          {formatOptions.map((opt) => {
                             const checked = format === opt.value;
                             return (
                               <label
@@ -486,13 +694,13 @@ export default function RecruitmentQualificationForm({
                         }
                       >
                         <legend className="font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-bold text-navy mb-2 leading-snug">
-                          Когда хотел бы начать?
+                          {t.step3.heading}
                         </legend>
                         <p className="text-sm text-muted-foreground mb-5">
-                          Выбери одно.
+                          {t.step3.hint}
                         </p>
                         <div className="space-y-2">
-                          {TIMELINES.map((opt) => {
+                          {timelineOptions.map((opt) => {
                             const checked = timeline === opt.value;
                             return (
                               <label
@@ -542,10 +750,10 @@ export default function RecruitmentQualificationForm({
                       <div className="space-y-5">
                         <div>
                           <h3 className="font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-bold text-navy mb-2 leading-snug">
-                            Почти готово, {name.trim() || "друг"}!
+                            {t.step4.heading(name.trim())}
                           </h3>
                           <p className="text-sm text-muted-foreground">
-                            Оставь контакт — Владислав свяжется в течение дня.
+                            {t.step4.intro}
                           </p>
                         </div>
 
@@ -554,10 +762,9 @@ export default function RecruitmentQualificationForm({
                             htmlFor={`${uid}-openAnswer`}
                             className="block text-sm font-semibold text-navy mb-2"
                           >
-                            Что для тебя важнее всего получить в разговоре с
-                            Владиславом?{" "}
+                            {t.step4.openLabel}{" "}
                             <span className="text-muted-foreground font-normal">
-                              (необязательно)
+                              {t.step4.openOptional}
                             </span>
                           </label>
                           <textarea
@@ -567,7 +774,7 @@ export default function RecruitmentQualificationForm({
                             onChange={(e) =>
                               setOpenAnswer(e.target.value.slice(0, 500))
                             }
-                            placeholder="Например: понять, реально ли совместить с работой / узнать про Bürgergeld..."
+                            placeholder={t.step4.openPlaceholder}
                             rows={3}
                             maxLength={500}
                             className={`${inputBase} resize-none min-h-[84px]`}
@@ -579,7 +786,7 @@ export default function RecruitmentQualificationForm({
                             htmlFor={`${uid}-phone`}
                             className="block text-sm font-semibold text-navy mb-2"
                           >
-                            WhatsApp или телефон{" "}
+                            {t.step4.phoneLabel}{" "}
                             <span className="text-gold">*</span>
                           </label>
                           <input
@@ -623,9 +830,9 @@ export default function RecruitmentQualificationForm({
                             htmlFor={`${uid}-email`}
                             className="block text-sm font-semibold text-navy mb-2"
                           >
-                            Email{" "}
+                            {t.step4.emailLabel}{" "}
                             <span className="text-muted-foreground font-normal">
-                              (если удобнее по email)
+                              {t.step4.emailOptional}
                             </span>
                           </label>
                           <input
@@ -643,7 +850,7 @@ export default function RecruitmentQualificationForm({
                                 });
                               }
                             }}
-                            placeholder="you@example.com"
+                            placeholder={t.step4.emailPlaceholder}
                             autoComplete="email"
                             inputMode="email"
                             aria-invalid={!!errors.email}
@@ -674,10 +881,9 @@ export default function RecruitmentQualificationForm({
                   role="alert"
                   className="mt-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
                 >
-                  Не удалось отправить. Попробуй ещё раз или напиши в WhatsApp
-                  напрямую:{" "}
+                  {t.networkError}{" "}
                   <a
-                    href={WHATSAPP_FALLBACK}
+                    href={whatsappFallbackHref}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline font-semibold inline-flex items-center gap-1.5"
@@ -698,7 +904,7 @@ export default function RecruitmentQualificationForm({
                     className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-navy transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full disabled:opacity-50"
                   >
                     <ArrowLeft className="w-4 h-4" />
-                    Назад
+                    {t.back}
                   </button>
                 ) : (
                   <span />
@@ -726,12 +932,12 @@ export default function RecruitmentQualificationForm({
                         >
                           ·
                         </span>
-                        <span className="ml-1">Отправка…</span>
+                        <span className="ml-1">{t.submitting}</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        Отправить Владиславу
+                        {t.submit}
                       </>
                     )}
                   </button>
@@ -741,15 +947,14 @@ export default function RecruitmentQualificationForm({
                     onClick={goNext}
                     className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 h-12 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base shadow-lg shadow-gold/25 hover:brightness-105 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
                   >
-                    Дальше
+                    {t.next}
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 )}
               </div>
 
               <p className="mt-5 text-xs text-muted-foreground text-center italic leading-relaxed">
-                Твои данные уходят только Владиславу. Никаких рассылок, никакого
-                спама. Соблюдаем DSGVO.
+                {t.dsgvo}
               </p>
             </form>
           </div>

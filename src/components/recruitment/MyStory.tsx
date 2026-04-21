@@ -1,7 +1,18 @@
 import AnimateOnScroll from "../AnimateOnScroll";
-import { myStoryContent } from "@/data/recruitment";
+import { myStoryContent as myStoryContentRu } from "@/data/recruitment";
 
-export default function MyStory() {
+type StoryContent = {
+  title: string;
+  paragraphs: readonly string[];
+  pullQuote: string;
+};
+
+export default function MyStory({
+  content = myStoryContentRu,
+}: {
+  content?: StoryContent;
+} = {}) {
+  const myStoryContent = content;
   return (
     <section id="story" className="relative overflow-hidden">
       <div

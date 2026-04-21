@@ -1,6 +1,6 @@
 import { GraduationCap, FileCheck2, TrendingUp } from "lucide-react";
 import AnimateOnScroll from "../AnimateOnScroll";
-import { segmentCards, type SegmentCard } from "@/data/recruitment";
+import { segmentCards as segmentCardsRu, type SegmentCard } from "@/data/recruitment";
 
 const iconMap = {
   GraduationCap,
@@ -35,26 +35,38 @@ function Card({ card, index }: { card: SegmentCard; index: number }) {
   );
 }
 
-export default function SegmentCards() {
+type Props = {
+  items?: readonly SegmentCard[];
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+};
+
+export default function SegmentCards({
+  items = segmentCardsRu,
+  eyebrow = "Для кого",
+  title = "Для тебя, если...",
+  subtitle = "Выбери ситуацию, которая ближе — и узнай путь в деталях",
+}: Props = {}) {
   return (
     <section id="segments" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Для кого
+              {eyebrow}
             </span>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              Для тебя, если...
+              {title}
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-              Выбери ситуацию, которая ближе — и узнай путь в деталях
+              {subtitle}
             </p>
           </div>
         </AnimateOnScroll>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {segmentCards.map((card, i) => (
+          {items.map((card, i) => (
             <Card key={card.id} card={card} index={i} />
           ))}
         </div>

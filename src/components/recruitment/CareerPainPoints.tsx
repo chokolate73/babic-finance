@@ -10,8 +10,10 @@ type Props = {
   subtitle: string;
   messages: readonly Message[];
   reply: string;
+  replyAuthor?: string;
   ctaLabel: string;
   ctaHref: string;
+  chatAriaLabel?: string;
 };
 
 export default function CareerPainPoints({
@@ -21,8 +23,10 @@ export default function CareerPainPoints({
   subtitle,
   messages,
   reply,
+  replyAuthor = "Владислав",
   ctaLabel,
   ctaHref,
+  chatAriaLabel = "Визуальное представление типичных карьерных вопросов в формате чата",
 }: Props) {
   return (
     <section id={id} className="py-12 sm:py-16 lg:py-24 bg-cream">
@@ -43,7 +47,7 @@ export default function CareerPainPoints({
 
         <div
           className="max-w-md mx-auto px-2 sm:px-0"
-          aria-label="Визуальное представление типичных карьерных вопросов в формате чата"
+          aria-label={chatAriaLabel}
         >
           <div className="flex flex-col gap-2.5">
             {messages.map((msg, i) => (
@@ -78,7 +82,7 @@ export default function CareerPainPoints({
                 <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0">
                   <Image
                     src="/vladislav-portrait.jpeg"
-                    alt="Владислав"
+                    alt={replyAuthor}
                     width={28}
                     height={28}
                     className="w-full h-full object-cover"
@@ -118,7 +122,7 @@ export default function CareerPainPoints({
                     {reply}
                   </p>
                   <span className="block text-[10px] text-white/40 mt-1">
-                    Владислав
+                    {replyAuthor}
                   </span>
                 </div>
               </div>

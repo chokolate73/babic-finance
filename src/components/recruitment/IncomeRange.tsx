@@ -1,7 +1,16 @@
 import AnimateOnScroll from "../AnimateOnScroll";
-import { incomeContent } from "@/data/recruitment";
+import { incomeContent as incomeContentRu } from "@/data/recruitment";
 
-export default function IncomeRange() {
+type IncomeContent = typeof incomeContentRu;
+
+export default function IncomeRange({
+  content = incomeContentRu,
+  thisMeansLabel = "Это значит две вещи:",
+}: {
+  content?: IncomeContent;
+  thisMeansLabel?: string;
+} = {}) {
+  const incomeContent = content;
   return (
     <section id="income" className="py-20 lg:py-28 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +70,7 @@ export default function IncomeRange() {
                 {p}
               </p>
             ))}
-            <p className="text-foreground/80 mb-3">Это значит две вещи:</p>
+            <p className="text-foreground/80 mb-3">{thisMeansLabel}</p>
             <ul className="space-y-3">
               {incomeContent.bullets.map((b, i) => (
                 <li key={i} className="flex gap-3 text-foreground/85">
