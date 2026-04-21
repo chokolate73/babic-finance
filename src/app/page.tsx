@@ -11,7 +11,7 @@ import IncomeRange from "@/components/recruitment/IncomeRange";
 import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import Seminar from "@/components/Seminar";
-import Contact from "@/components/Contact";
+import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import {
   homeHero,
   homePainPoints,
@@ -79,7 +79,7 @@ export default function Home() {
         title={homeFAQContent.title}
         items={homeFAQItems}
       />
-      <Contact />
+      <RecruitmentQualificationForm sourcePage="homepage" />
       <Footer />
     </div>
   );

@@ -2,16 +2,15 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
-import CareerPainPoints from "@/components/recruitment/CareerPainPoints";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
 import CareerPath from "@/components/recruitment/CareerPath";
 import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import FinalCTA from "@/components/recruitment/FinalCTA";
+import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import {
   buergergeldHero,
-  buergergeldPainPoints,
   buergergeldHelp,
   buergergeldPathSteps,
   buergergeldTransparenzItems,
@@ -50,17 +49,7 @@ export default function BuergergeldPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <RecruitmentHero content={buergergeldHero} scrollTargetId="recognize" />
-      <CareerPainPoints
-        id="recognize"
-        eyebrow={buergergeldPainPoints.eyebrow}
-        title={buergergeldPainPoints.title}
-        subtitle={buergergeldPainPoints.subtitle}
-        messages={buergergeldPainPoints.messages}
-        reply={buergergeldPainPoints.reply}
-        ctaLabel={buergergeldPainPoints.ctaLabel}
-        ctaHref={buergergeldPainPoints.ctaHref}
-      />
+      <RecruitmentHero content={buergergeldHero} scrollTargetId="support" />
       <SupportComparison />
       <BenefitsList
         id="help"
@@ -103,6 +92,7 @@ export default function BuergergeldPage() {
         primary={buergergeldFinalCTA.primary}
         secondary={buergergeldFinalCTA.secondary}
       />
+      <RecruitmentQualificationForm sourcePage="buergergeld" />
       <Footer />
     </div>
   );

@@ -36,7 +36,7 @@ const recruitmentLinks: NavLink[] = [
   },
   { href: "/klienty", label: "Для клиентов" },
   { href: "/blog", label: "Блог" },
-  { href: "#contact", label: "Контакт" },
+  { href: "#apply", label: "Оставить заявку" },
 ];
 
 const karriereLinks: NavLink[] = [
@@ -45,7 +45,7 @@ const karriereLinks: NavLink[] = [
   { href: "/karriere/buergergeld", label: "Из Bürgergeld" },
   { href: "/klienty", label: "Для клиентов" },
   { href: "/blog", label: "Блог" },
-  { href: "#contact", label: "Контакт" },
+  { href: "#apply", label: "Оставить заявку" },
 ];
 
 export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {

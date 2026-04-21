@@ -8,7 +8,7 @@ export const UTM = {
   buergergeld: "utm_source=site&utm_medium=hero&utm_campaign=buergergeld",
 } as const;
 
-export const QUIZ_URL = "#quiz";
+export const QUIZ_URL = "#apply";
 
 export function waLink(utm: string, message: string) {
   const base = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -122,7 +122,7 @@ export const segmentCards: SegmentCard[] = [
     description:
       "Работу можно не бросать сразу — можно начать параллельно. Подходит тем, кто уже встроен в жизнь в Германии и ищет долгосрочную перспективу.",
     ctaLabel: "Узнать больше →",
-    ctaHref: "#contact",
+    ctaHref: QUIZ_URL,
   },
 ];
 
@@ -500,10 +500,7 @@ export const buergergeldHero: HeroContent = {
     "Помогаем оформить Tragfähigkeitsbescheinigung · Сопровождаем встречу с Jobcenter · Начинаешь с поддержкой команды",
   primaryCTA: {
     text: "Записаться на бесплатную консультацию",
-    href: waLink(
-      UTM.buergergeld,
-      "Здравствуйте, Владислав! Я получаю Bürgergeld / ALG I и хочу обсудить путь в профессию.",
-    ),
+    href: QUIZ_URL,
   },
   secondaryCTA: { text: "Узнать подробнее", href: "#recognize" },
 };

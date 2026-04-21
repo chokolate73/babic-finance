@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
-import CareerPainPoints from "@/components/recruitment/CareerPainPoints";
 import BenefitsList from "@/components/recruitment/BenefitsList";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
@@ -10,9 +9,9 @@ import IncomeRange from "@/components/recruitment/IncomeRange";
 import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import FinalCTA from "@/components/recruitment/FinalCTA";
+import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import {
   quereinstiegHero,
-  quereinstiegPainPoints,
   quereinstiegBenefits,
   pathSteps,
   transparenzItems,
@@ -51,17 +50,7 @@ export default function QuereinstiegPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <RecruitmentHero content={quereinstiegHero} scrollTargetId="recognize" />
-      <CareerPainPoints
-        id="recognize"
-        eyebrow={quereinstiegPainPoints.eyebrow}
-        title={quereinstiegPainPoints.title}
-        subtitle={quereinstiegPainPoints.subtitle}
-        messages={quereinstiegPainPoints.messages}
-        reply={quereinstiegPainPoints.reply}
-        ctaLabel={quereinstiegPainPoints.ctaLabel}
-        ctaHref={quereinstiegPainPoints.ctaHref}
-      />
+      <RecruitmentHero content={quereinstiegHero} scrollTargetId="why" />
       <BenefitsList
         id="why"
         eyebrow={quereinstiegBenefits.eyebrow}
@@ -89,6 +78,7 @@ export default function QuereinstiegPage() {
         primary={quereinstiegFinalCTA.primary}
         secondary={quereinstiegFinalCTA.secondary}
       />
+      <RecruitmentQualificationForm sourcePage="quereinstieg" />
       <Footer />
     </div>
   );
