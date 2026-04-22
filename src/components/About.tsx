@@ -1,15 +1,21 @@
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden bg-navy"
     >
       {/* Full-bleed background image */}
-      <div
-        className="absolute inset-0 bg-navy bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/wmremove-transformed (2).png')" }}
+      <Image
+        src="/wmremove-transformed (2).png"
+        alt=""
+        fill
+        loading="lazy"
+        quality={90}
+        sizes="100vw"
+        className="object-cover"
       />
       {/* Overlay - 55% opacity to keep text readable over image */}
       <div className="absolute inset-0 bg-navy/55" />
