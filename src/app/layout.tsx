@@ -20,7 +20,7 @@ const siteDescription =
   "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://babic-wealth-guide.base44.app"),
+  metadataBase: new URL("https://fin-1.de"),
   title: "Babic Finance",
   description: siteDescription,
   manifest: "/site.webmanifest",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Babic Finance",
     description: siteDescription,
-    url: "https://babic-wealth-guide.base44.app",
+    url: "https://fin-1.de",
     siteName: "Babic Finance",
     type: "website",
     images: [

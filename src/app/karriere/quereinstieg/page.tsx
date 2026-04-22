@@ -20,7 +20,7 @@ import {
 } from "@/data/recruitment";
 
 const URL_PATH = "/karriere/quereinstieg";
-const SITE_URL = "https://babic-wealth-guide.base44.app";
+const SITE_URL = "https://fin-1.de";
 
 export const metadata: Metadata = {
   title:
