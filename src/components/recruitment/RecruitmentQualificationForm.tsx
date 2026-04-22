@@ -479,9 +479,9 @@ export default function RecruitmentQualificationForm({
               </div>
               <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-gold rounded-full"
+                  className="h-full w-full bg-gold rounded-full origin-left"
                   initial={false}
-                  animate={{ width: `${progressPct}%` }}
+                  animate={{ scaleX: progressPct / 100 }}
                   transition={{ duration: 0.45, ease: "easeOut" }}
                 />
               </div>
