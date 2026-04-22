@@ -543,7 +543,6 @@ export default function RecruitmentQualificationForm({
                           }}
                           placeholder={t.step0.placeholder}
                           autoComplete="given-name"
-                          autoFocus
                           aria-invalid={!!errors.name}
                           aria-describedby={
                             errors.name ? fieldErrorId("name") : undefined
