@@ -50,6 +50,7 @@ export const metadata: Metadata = {
     siteName: "Babic Finance",
     type: "website",
     locale: "de_DE",
+    images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -57,6 +58,7 @@ export const metadata: Metadata = {
       "Karriere als Finanzberater in Deutschland — russischsprachiges DVAG-Team",
     description:
       "Auf Russisch. Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
+    images: ["/preview.webp"],
   },
 };
 

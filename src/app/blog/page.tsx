@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: "Блог - Babic Finance",
     description:
       "Полезные статьи о финансах в Германии от Владислава Бабича.",
+    images: ["/preview.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Блог - Babic Finance",
+    description:
+      "Полезные статьи о финансах в Германии от Владислава Бабича.",
+    images: ["/preview.webp"],
   },
 };
 
