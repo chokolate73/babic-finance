@@ -16,23 +16,44 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+const siteDescription =
+  "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://babic-wealth-guide.base44.app"),
   title: "Babic Finance",
-  description:
-    "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.",
+  description: siteDescription,
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
   openGraph: {
     title: "Babic Finance",
-    description:
-      "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.",
+    description: siteDescription,
     url: "https://babic-wealth-guide.base44.app",
     siteName: "Babic Finance",
     type: "website",
+    images: [
+      {
+        url: "/preview.webp",
+        type: "image/webp",
+        alt: "Babic Finance",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Babic Finance",
-    description:
-      "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.",
+    description: siteDescription,
+    images: ["/preview.webp"],
   },
 };
 
