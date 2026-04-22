@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
+    images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
       "Карьера финансового консультанта в Германии для квереинштайгеров",
     description:
       "Смени профессию в Германии на ту, которая нужна. Обучение на русском.",
+    images: ["/preview.webp"],
   },
 };
 

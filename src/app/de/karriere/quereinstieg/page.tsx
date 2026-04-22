@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     siteName: "Babic Finance",
     type: "website",
     locale: "de_DE",
+    images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -54,6 +55,7 @@ export const metadata: Metadata = {
       "Karriere als Finanzberater in Deutschland für Quereinsteiger",
     description:
       "Wechsle in Deutschland den Beruf. Ausbildung auf Russisch.",
+    images: ["/preview.webp"],
   },
 };
 

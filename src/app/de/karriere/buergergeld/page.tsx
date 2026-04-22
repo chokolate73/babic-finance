@@ -44,12 +44,14 @@ export const metadata: Metadata = {
     siteName: "Babic Finance",
     type: "website",
     locale: "de_DE",
+    images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vom Bürgergeld in den Beruf als Finanzberater",
     description:
       "Einstiegsgeld bis zu 24 Monate + volle Begleitung von den Unterlagen bis zum ersten Kunden.",
+    images: ["/preview.webp"],
   },
 };
 

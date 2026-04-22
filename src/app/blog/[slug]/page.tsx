@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: "summary_large_image",
       title: article.title,
       description: article.metaDescription,
+      images: [article.image],
     },
   };
 }

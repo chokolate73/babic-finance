@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "Babic Finance",
     type: "website",
+    images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
       "Карьера финансового консультанта в Германии — русскоязычная команда DVAG",
     description:
       "На русском. Без опыта. С полной поддержкой команды DVAG.",
+    images: ["/preview.webp"],
   },
 };
 

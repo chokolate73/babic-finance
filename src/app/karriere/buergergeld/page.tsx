@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
+    images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -42,6 +43,7 @@ export const metadata: Metadata = {
       "Путь из Bürgergeld в профессию финансового консультанта",
     description:
       "Einstiegsgeld до 24 месяцев + полное сопровождение от документов до первого клиента.",
+    images: ["/preview.webp"],
   },
 };
 
