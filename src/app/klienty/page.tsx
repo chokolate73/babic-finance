@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Babic Finance",
     description:
       "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.",
-    url: "https://babic-wealth-guide.base44.app/klienty",
+    url: "https://fin-1.de/klienty",
     siteName: "Babic Finance",
     type: "website",
     images: ["/preview.webp"],

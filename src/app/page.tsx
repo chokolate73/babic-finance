@@ -21,7 +21,7 @@ import {
   homeFAQItems,
 } from "@/data/recruitment";
 
-const SITE_URL = "https://babic-wealth-guide.base44.app";
+const SITE_URL = "https://fin-1.de";
 
 export const metadata: Metadata = {
   title:

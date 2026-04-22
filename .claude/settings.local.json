@@ -6,7 +6,10 @@
       "Bash(node -e ' *)",
       "Bash(node *)",
       "Bash(npx next *)",
-      "Bash(ls C:\\\\Users\\\\Lenovo\\\\Desktop\\\\gitrepo\\\\babic-finance *)"
+      "Bash(ls C:\\\\Users\\\\Lenovo\\\\Desktop\\\\gitrepo\\\\babic-finance *)",
+      "mcp__1a9cc5b0-ab39-4706-b3b0-b0506c4f0bff__list_teams",
+      "mcp__1a9cc5b0-ab39-4706-b3b0-b0506c4f0bff__list_projects",
+      "mcp__1a9cc5b0-ab39-4706-b3b0-b0506c4f0bff__get_project"
     ]
   }
 }
