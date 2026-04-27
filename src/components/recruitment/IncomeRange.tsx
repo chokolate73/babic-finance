@@ -1,7 +1,11 @@
 import AnimateOnScroll from "../AnimateOnScroll";
 import { incomeContent as incomeContentRu } from "@/data/recruitment";
 
-type IncomeContent = typeof incomeContentRu;
+type IncomeContent = Omit<typeof incomeContentRu, "mainRange"> & {
+  mainRange: Omit<(typeof incomeContentRu)["mainRange"], "sourceHref"> & {
+    sourceHref?: string;
+  };
+};
 
 export default function IncomeRange({
   content = incomeContentRu,
@@ -38,7 +42,18 @@ export default function IncomeRange({
               {incomeContent.mainRange.label}
             </p>
             <p className="text-white/50 text-xs mt-3 italic">
-              {incomeContent.mainRange.source}
+              {incomeContent.mainRange.sourceHref ? (
+                <a
+                  href={incomeContent.mainRange.sourceHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:no-underline"
+                >
+                  {incomeContent.mainRange.source}
+                </a>
+              ) : (
+                incomeContent.mainRange.source
+              )}
             </p>
           </div>
         </AnimateOnScroll>

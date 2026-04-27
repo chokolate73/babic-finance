@@ -134,6 +134,10 @@ export type Qualification = {
   title: string;
   subtitle: string;
   description: string;
+  link?: {
+    href: string;
+    label: string;
+  };
 };
 
 export const qualifications: Qualification[] = [
@@ -143,6 +147,10 @@ export const qualifications: Qualification[] = [
     subtitle: "Признанная государством профессия",
     description:
       "Диплом от торгово-промышленной палаты. Открывает двери в любую финансовую компанию Германии.",
+    link: {
+      href: "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/ihk-ausbildung.html#vladislav.babic",
+      label: "Подробнее на DVAG",
+    },
   },
   {
     id: "34f",
@@ -167,10 +175,19 @@ export const qualifications: Qualification[] = [
   },
 ];
 
-export const qualificationsCallout = {
+export const qualificationsCallout: {
+  text: string;
+  sub: string;
+  source: string;
+  link?: { href: string; label: string };
+} = {
   text: "DVAG инвестирует более 80 миллионов евро в год в обучение своих консультантов.",
   sub: "Для тебя это значит: ты не платишь за экзамены, курсы и страховки — а сразу учишься у лучших.",
   source: "Источник: Unternehmensbericht DVAG, dvag-karriere.de",
+  link: {
+    href: "https://www.dvag.de/dvag/allfinanzberatung/produkte.html",
+    label: "Какие продукты я буду консультировать?",
+  },
 };
 
 export type PathStep = {
@@ -226,6 +243,8 @@ export const incomeContent = {
     value: "35 000 € — 62 200 €",
     label: "Диапазон годового дохода консультантов DVAG",
     source: "Источник: Kununu, 200+ отзывов",
+    sourceHref:
+      "https://www.kununu.com/de/deutsche-vermoegensberatung/gehalt/vermoegensberater-in-45577",
   },
   smallBlocks: [
     {
@@ -617,7 +636,19 @@ export const berufseinsteigerBenefits = {
 export const berufseinsteigerFAQItems: FAQItem[] = [
   {
     q: "Что такое дуальное обучение в DVAG?",
-    a: "Программа, в которой ты совмещаешь учёбу в Berufsakademie или университете с практикой в DVAG. Получаешь признанный диплом + опыт + зарплату на всём протяжении обучения.",
+    a: (
+      <>
+        Программа, в которой ты совмещаешь учёбу в Berufsakademie или университете с практикой в DVAG. Получаешь признанный диплом + опыт + зарплату на всём протяжении обучения.{" "}
+        <a
+          href="https://www.dvag-karriere.de/einstiegsmoeglichkeiten/duales-studium.html#vladislav.babic"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:no-underline"
+        >
+          Подробнее на DVAG →
+        </a>
+      </>
+    ),
   },
   {
     q: "Можно ли начать без Abitur?",

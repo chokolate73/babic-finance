@@ -65,6 +65,23 @@ export default function Home() {
         ctaHref={homePainPoints.ctaHref}
       />
       <MyStory />
+      <section className="bg-cream py-16 lg:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+            Девиз DVAG с 1975 года
+          </span>
+          <p className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl lg:text-6xl font-bold text-navy mt-4 leading-tight">
+            Menschen brauchen Menschen.
+          </p>
+          <span
+            aria-hidden="true"
+            className="block w-[60px] h-[2px] bg-gold mx-auto mt-6"
+          />
+          <p className="text-muted-foreground mt-6 max-w-xl mx-auto">
+            Людям нужны люди. На этом построена работа DVAG — и моя личная философия консультирования.
+          </p>
+        </div>
+      </section>
       <SegmentCards />
       <Qualifications />
       <CareerPath
