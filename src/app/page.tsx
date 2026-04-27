@@ -8,7 +8,6 @@ import SegmentCards from "@/components/recruitment/SegmentCards";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import Seminar from "@/components/Seminar";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
@@ -16,7 +15,6 @@ import {
   homeHero,
   homePainPoints,
   pathSteps,
-  transparenzItems,
   homeFAQContent,
   homeFAQItems,
 } from "@/data/recruitment";
@@ -91,7 +89,6 @@ export default function Home() {
         steps={pathSteps}
       />
       <IncomeRange />
-      <Transparenz items={transparenzItems} />
       <Seminar />
       <RecruitmentFAQ
         eyebrow={homeFAQContent.eyebrow}

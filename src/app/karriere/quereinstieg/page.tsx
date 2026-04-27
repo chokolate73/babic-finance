@@ -5,21 +5,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import BenefitsList from "@/components/recruitment/BenefitsList";
-import Qualifications from "@/components/recruitment/Qualifications";
-import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
-import Transparenz from "@/components/recruitment/Transparenz";
-import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
-import FinalCTA from "@/components/recruitment/FinalCTA";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import {
   quereinstiegIntro,
   quereinstiegTasks,
   quereinstiegProfile,
-  pathSteps,
-  transparenzItems,
-  quereinstiegFAQItems,
-  quereinstiegFinalCTA,
 } from "@/data/recruitment";
 
 const URL_PATH = "/karriere/quereinstieg";
@@ -163,26 +154,7 @@ export default function QuereinstiegPage() {
         </div>
       </section>
 
-      <Qualifications />
-      <CareerPath
-        id="path"
-        eyebrow="Путь"
-        title="Как это работает"
-        steps={pathSteps}
-      />
       <IncomeRange />
-      <Transparenz items={transparenzItems} />
-      <RecruitmentFAQ
-        eyebrow="Вопросы"
-        title="Часто задаваемые вопросы квереинштайгеров"
-        items={quereinstiegFAQItems}
-      />
-      <FinalCTA
-        title={quereinstiegFinalCTA.title}
-        description={quereinstiegFinalCTA.description}
-        primary={quereinstiegFinalCTA.primary}
-        secondary={quereinstiegFinalCTA.secondary}
-      />
       <RecruitmentQualificationForm sourcePage="quereinstieg" />
       <Footer />
     </div>
