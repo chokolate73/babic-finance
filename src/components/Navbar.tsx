@@ -6,7 +6,7 @@ import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 type NavLink = {
-  href: string;
+  href?: string;
   label: string;
   children?: { href: string; label: string }[];
 };
@@ -27,11 +27,11 @@ const recruitmentLinks: NavLink[] = [
   { href: "#path", label: "Как это работает" },
   { href: "#faq", label: "FAQ" },
   {
-    href: "/karriere",
     label: "Карьера",
     children: [
-      { href: "/karriere/quereinstieg", label: "Квереинштайгер" },
-      { href: "/karriere/buergergeld", label: "Из Bürgergeld" },
+      { href: "/karriere/nebenberuf", label: "Параллельно с работой" },
+      { href: "/karriere/berufseinsteiger", label: "После школы или учёбы" },
+      { href: "/karriere/quereinstieg", label: "Смена профессии" },
     ],
   },
   { href: "/klienty", label: "Для клиентов" },
@@ -41,8 +41,9 @@ const recruitmentLinks: NavLink[] = [
 
 const karriereLinks: NavLink[] = [
   { href: "/", label: "Главная" },
-  { href: "/karriere/quereinstieg", label: "Квереинштайгер" },
-  { href: "/karriere/buergergeld", label: "Из Bürgergeld" },
+  { href: "/karriere/nebenberuf", label: "Параллельно с работой" },
+  { href: "/karriere/berufseinsteiger", label: "После школы или учёбы" },
+  { href: "/karriere/quereinstieg", label: "Смена профессии" },
   { href: "/klienty", label: "Для клиентов" },
   { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Оставить заявку" },
