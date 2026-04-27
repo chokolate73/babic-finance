@@ -230,15 +230,30 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
             </a>
           </div>
 
-          <button
-            className={`lg:hidden p-2 transition-colors duration-300 ${
-              scrolled || forceDark ? "text-navy" : "text-white"
-            }`}
-            onClick={() => setOpen(!open)}
-            aria-label={toggleMenuAria}
-          >
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <a
+              href={altLocalePath}
+              hrefLang={isDe ? "ru" : "de"}
+              aria-label={altLocaleAria}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors border ${
+                scrolled || forceDark
+                  ? "border-border text-muted-foreground hover:text-navy hover:border-gold"
+                  : "border-white/30 text-white/90 hover:text-white hover:border-white/60"
+              }`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              {altLocaleLabel}
+            </a>
+            <button
+              className={`p-2 transition-colors duration-300 ${
+                scrolled || forceDark ? "text-navy" : "text-white"
+              }`}
+              onClick={() => setOpen(!open)}
+              aria-label={toggleMenuAria}
+            >
+              {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -275,16 +290,6 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
                 </a>
               ),
             )}
-            <a
-              href={altLocalePath}
-              hrefLang={isDe ? "ru" : "de"}
-              aria-label={altLocaleAria}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold border border-border text-muted-foreground"
-              onClick={() => setOpen(false)}
-            >
-              <Globe className="w-3.5 h-3.5" />
-              {altLocaleLabel}
-            </a>
             <a
               href="https://wa.me/491784743490"
               target="_blank"
