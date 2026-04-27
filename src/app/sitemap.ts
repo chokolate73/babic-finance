@@ -60,12 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/karriere/berufseinsteiger`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
       url: `${BASE_URL}/karriere/buergergeld`,
       lastModified,
       changeFrequency: "monthly",
@@ -118,6 +112,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "weekly",
       priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/impressum`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/datenschutz`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 }

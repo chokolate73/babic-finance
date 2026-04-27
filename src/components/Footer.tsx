@@ -107,13 +107,13 @@ export default function Footer() {
                 Профиль на DVAG
               </a>
               <a
-                href="#"
+                href="/impressum"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Impressum
               </a>
               <a
-                href="#"
+                href="/datenschutz"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Datenschutz

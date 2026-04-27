@@ -12,8 +12,7 @@ export type SourcePage =
   | "homepage"
   | "quereinstieg"
   | "buergergeld"
-  | "nebenberuf"
-  | "berufseinsteiger";
+  | "nebenberuf";
 export type Locale = "ru" | "de";
 
 type Option = { value: string; label: string };
@@ -75,14 +74,12 @@ const PAGE_LABELS: Record<Locale, Record<SourcePage, string>> = {
     quereinstieg: "Квереинштайгер",
     buergergeld: "Из Bürgergeld",
     nebenberuf: "Параллельный старт",
-    berufseinsteiger: "Старт карьеры",
   },
   de: {
     homepage: "Startseite",
     quereinstieg: "Quereinsteiger",
     buergergeld: "Aus Bürgergeld",
     nebenberuf: "Nebenberuflicher Einstieg",
-    berufseinsteiger: "Berufseinsteiger",
   },
 };
 
