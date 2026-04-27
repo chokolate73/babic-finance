@@ -30,7 +30,6 @@ const recruitmentLinks: NavLink[] = [
     label: "Карьера",
     children: [
       { href: "/karriere/nebenberuf", label: "Параллельно с работой" },
-      { href: "/karriere/berufseinsteiger", label: "После школы или учёбы" },
       { href: "/karriere/quereinstieg", label: "Смена профессии" },
     ],
   },
@@ -42,7 +41,6 @@ const recruitmentLinks: NavLink[] = [
 const karriereLinks: NavLink[] = [
   { href: "/", label: "Главная" },
   { href: "/karriere/nebenberuf", label: "Параллельно с работой" },
-  { href: "/karriere/berufseinsteiger", label: "После школы или учёбы" },
   { href: "/karriere/quereinstieg", label: "Смена профессии" },
   { href: "/klienty", label: "Для клиентов" },
   { href: "/blog", label: "Блог" },
