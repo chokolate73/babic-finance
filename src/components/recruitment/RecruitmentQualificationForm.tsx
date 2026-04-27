@@ -8,7 +8,12 @@ import AnimateOnScroll from "../AnimateOnScroll";
 import WhatsAppIcon from "../WhatsAppIcon";
 import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
 
-export type SourcePage = "homepage" | "quereinstieg" | "buergergeld";
+export type SourcePage =
+  | "homepage"
+  | "quereinstieg"
+  | "buergergeld"
+  | "nebenberuf"
+  | "berufseinsteiger";
 export type Locale = "ru" | "de";
 
 type Option = { value: string; label: string };
@@ -69,11 +74,15 @@ const PAGE_LABELS: Record<Locale, Record<SourcePage, string>> = {
     homepage: "Главная",
     quereinstieg: "Квереинштайгер",
     buergergeld: "Из Bürgergeld",
+    nebenberuf: "Параллельный старт",
+    berufseinsteiger: "Старт карьеры",
   },
   de: {
     homepage: "Startseite",
     quereinstieg: "Quereinsteiger",
     buergergeld: "Aus Bürgergeld",
+    nebenberuf: "Nebenberuflicher Einstieg",
+    berufseinsteiger: "Berufseinsteiger",
   },
 };
 

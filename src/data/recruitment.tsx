@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 
 export const WHATSAPP_NUMBER = "491784743490";
 
@@ -6,6 +7,8 @@ export const UTM = {
   home: "utm_source=site&utm_medium=hero&utm_campaign=recruitment",
   quereinstieg: "utm_source=site&utm_medium=hero&utm_campaign=quereinstieg",
   buergergeld: "utm_source=site&utm_medium=hero&utm_campaign=buergergeld",
+  nebenberuf: "utm_source=site&utm_medium=hero&utm_campaign=nebenberuf",
+  berufseinsteiger: "utm_source=site&utm_medium=hero&utm_campaign=berufseinsteiger",
 } as const;
 
 export const QUIZ_URL = "#apply";
@@ -98,31 +101,31 @@ export type SegmentCard = {
 
 export const segmentCards: SegmentCard[] = [
   {
-    id: "quereinsteiger",
-    iconName: "GraduationCap",
-    title: "Если у тебя есть образование",
-    description:
-      "Диплом с родины не признаётся, или работаешь не по специальности? Эта профессия использует твой опыт и языки — без необходимости получать новое образование в Германии.",
-    ctaLabel: "Квереинштайгер →",
-    ctaHref: "/karriere/quereinstieg",
-  },
-  {
-    id: "buergergeld",
+    id: "nebenberuf",
     iconName: "FileCheck2",
-    title: "Если ты на Bürgergeld или ALG I",
+    title: "Если ты уже работаешь",
     description:
-      "Государство поддерживает переход в самозанятость — до 24 месяцев доплат. Мы помогаем оформить документы для Jobcenter и пройти путь от получателя до консультанта.",
-    ctaLabel: "Путь с Jobcenter →",
-    ctaHref: "/karriere/buergergeld",
+      "DVAG официально поддерживает старт параллельно с основной работой. Можешь проверить себя в новой профессии, не бросая текущую — переход в полную занятость, когда сам почувствуешь готовность.",
+    ctaLabel: "Старт параллельно →",
+    ctaHref: "/karriere/nebenberuf",
   },
   {
-    id: "side-start",
-    iconName: "TrendingUp",
-    title: "Если ты уже работаешь, но хочешь своё дело",
+    id: "berufseinsteiger",
+    iconName: "GraduationCap",
+    title: "Если ты после школы или учишься",
     description:
-      "Работу можно не бросать сразу — можно начать параллельно. Подходит тем, кто уже встроен в жизнь в Германии и ищет долгосрочную перспективу.",
-    ctaLabel: "Узнать больше →",
-    ctaHref: QUIZ_URL,
+      "После Abitur, во время учёбы или сразу после. DVAG предлагает дуальное обучение, стажировки и подработку — построй карьеру в финансах с самого старта, с зарплатой уже на этапе обучения.",
+    ctaLabel: "Старт карьеры →",
+    ctaHref: "/karriere/berufseinsteiger",
+  },
+  {
+    id: "quereinstieg",
+    iconName: "TrendingUp",
+    title: "Если ты меняешь профессию",
+    description:
+      "Опыт в банке, страховой, продажах или из совсем другой сферы — это твоё преимущество, а не препятствие. Профессионалы DVAG помогут переобучиться быстро, без потери темпа.",
+    ctaLabel: "Сменить профессию →",
+    ctaHref: "/karriere/quereinstieg",
   },
 ];
 
@@ -146,7 +149,7 @@ export const qualifications: Qualification[] = [
     title: "Finanzanlagenfachmann (§34f GewO)",
     subtitle: "Лицензия на инвестиции и фонды",
     description:
-      "Обычно — собственная стоимость 490–890 € + экзамен + обязательная страховка на 1,27 млн €. В DVAG — всё включено.",
+      "Лицензия на инвестиции и фонды — DVAG берёт обучение, экзамен и страховку на себя.",
   },
   {
     id: "34i",
@@ -352,7 +355,14 @@ export const homeFAQItems: FAQItem[] = [
   },
   {
     q: "Что такое справка для Jobcenter?",
-    a: "Если ты на Bürgergeld и переходишь в самозанятость, Jobcenter требует Tragfähigkeitsbescheinigung — документ, подтверждающий, что твой план бизнеса жизнеспособен. Мы помогаем подготовить этот документ через IHK-партнёров. Это не DVAG выдаёт, а независимые эксперты — но мы сопровождаем весь процесс. Подробнее на странице про Bürgergeld.",
+    a: (
+      <>
+        Если ты на Bürgergeld и переходишь в самозанятость, Jobcenter требует Tragfähigkeitsbescheinigung — документ, подтверждающий, что твой план бизнеса жизнеспособен. Мы помогаем подготовить этот документ через IHK-партнёров. Это не DVAG выдаёт, а независимые эксперты — но мы сопровождаем весь процесс.{" "}
+        <Link href="/karriere/buergergeld" className="underline hover:no-underline">
+          Подробнее на странице про Bürgergeld →
+        </Link>
+      </>
+    ),
   },
   {
     q: "Сколько стоит обучение и экзамены?",
@@ -484,6 +494,150 @@ export const quereinstiegFinalCTA = {
     href: waLink(
       UTM.quereinstieg,
       "Здравствуйте, Владислав! Я квереинштайгер — хочу сменить профессию. Можем обсудить?",
+    ),
+  },
+  secondary: { text: "Пройти 10 вопросов", href: QUIZ_URL },
+};
+
+// --- Nebenberuf page ---
+
+export const nebenberufHero: HeroContent = {
+  headline: "Старт без потери",
+  headlineAccent: "стабильности",
+  subtitle:
+    "DVAG официально поддерживает nebenberuflichen Einstieg — ты можешь начать карьеру финансового консультанта, не уходя с текущей работы. Это идеальный путь для тех, кто хочет проверить себя в новой профессии без финансового риска.",
+  trustLine:
+    "Параллельно с основной работой · Обучение на русском · Переход в полную занятость, когда сам решишь",
+  primaryCTA: { text: "Пройти 10 вопросов", href: QUIZ_URL },
+  secondaryCTA: {
+    text: "Подробнее на dvag-karriere.de",
+    href: "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/nebenberuf.html#vladislav.babic",
+  },
+};
+
+export const nebenberufBenefits = {
+  eyebrow: "Почему подходит",
+  title: "Почему параллельный старт работает",
+  items: [
+    {
+      title: "Не нужно бросать работу",
+      description:
+        "Начинаешь с подработки — несколько часов в неделю. Пока не убедишься, что профессия твоя, никаких резких решений.",
+    },
+    {
+      title: "Полное обучение и поддержка",
+      description:
+        "DVAG берёт на себя обучение, экзамены и лицензии — точно так же, как для тех, кто переходит в полную занятость.",
+    },
+    {
+      title: "Постепенный переход",
+      description:
+        "Многие консультанты в команде начинали именно так. Когда доход стабилен и ты готов — переход в полную занятость без стресса.",
+    },
+    {
+      title: "Поддержка на русском",
+      description:
+        "Личный коуч, обучение и материалы — на русском. Немецкий подтягиваешь параллельно, к экзаменам будешь готов.",
+    },
+  ],
+};
+
+export const nebenberufFAQItems: FAQItem[] = [
+  {
+    q: "Можно ли реально совмещать с полной занятостью?",
+    a: "Да. DVAG официально поддерживает nebenberuflichen Einstieg. Многие консультанты в моей команде начинали по 5–10 часов в неделю и переходили в полную занятость через 6–18 месяцев.",
+  },
+  {
+    q: "Нужно ли уведомлять текущего работодателя?",
+    a: "В большинстве случаев — да, по немецкому трудовому праву (Nebentätigkeit). Если у тебя в трудовом договоре нет прямого запрета на конкурирующую деятельность — конфликта не будет. Это разберём на встрече.",
+  },
+  {
+    q: "Сколько времени нужно вкладывать в начале?",
+    a: "Зависит от тебя. Минимум — 5 часов в неделю на обучение и встречи. Чем больше вложишь, тем быстрее будет результат — но никаких жёстких требований по часам нет.",
+  },
+];
+
+export const nebenberufFinalCTA = {
+  title: "Готов попробовать?",
+  description:
+    "Расскажу честно — подходит ли тебе параллельный старт, какой формат выбрать и с чего начать.",
+  primary: {
+    text: "Написать в WhatsApp",
+    href: waLink(
+      UTM.nebenberuf,
+      "Здравствуйте, Владислав! Хочу начать параллельно с основной работой. Можем обсудить?",
+    ),
+  },
+  secondary: { text: "Пройти 10 вопросов", href: QUIZ_URL },
+};
+
+// --- Berufseinsteiger page ---
+
+export const berufseinsteigerHero: HeroContent = {
+  headline: "Старт карьеры в финансах",
+  headlineAccent: "после школы или учёбы",
+  subtitle:
+    "После Abitur, во время учёбы или сразу после — DVAG предлагает несколько вариантов входа: дуальное обучение, стажировку или подработку. Получи признанную профессию и зарплату с самого старта.",
+  trustLine:
+    "Дуальное обучение · Стажировка · Подработка · Зарплата на этапе обучения",
+  primaryCTA: { text: "Пройти 10 вопросов", href: QUIZ_URL },
+  secondaryCTA: {
+    text: "Подробнее на dvag-karriere.de",
+    href: "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/berufseinsteiger.html#vladislav.babic",
+  },
+};
+
+export const berufseinsteigerBenefits = {
+  eyebrow: "Почему подходит",
+  title: "Почему стоит начать карьеру с DVAG",
+  items: [
+    {
+      title: "Дуальное обучение или стажировка",
+      description:
+        "Совмещение учёбы и реальной практики. Получаешь зарплату на этапе обучения и признанные квалификации в конце.",
+    },
+    {
+      title: "Признанные государством квалификации",
+      description:
+        "IHK-диплом, лицензии §34d, §34f, §34i — четыре квалификации, которые остаются с тобой навсегда и нужны по всей Германии.",
+    },
+    {
+      title: "Никаких затрат на учёбу",
+      description:
+        "DVAG инвестирует более 80 миллионов евро в год в обучение. Курсы, экзамены и страховка — за счёт компании.",
+    },
+    {
+      title: "Менторство с первого дня",
+      description:
+        "Не остаёшься один. Личный коуч, опыт команды, готовая программа — учишься у тех, кто уже прошёл этот путь.",
+    },
+  ],
+};
+
+export const berufseinsteigerFAQItems: FAQItem[] = [
+  {
+    q: "Что такое дуальное обучение в DVAG?",
+    a: "Программа, в которой ты совмещаешь учёбу в Berufsakademie или университете с практикой в DVAG. Получаешь признанный диплом + опыт + зарплату на всём протяжении обучения.",
+  },
+  {
+    q: "Можно ли начать без Abitur?",
+    a: "Зависит от пути. Для дуального обучения обычно требуется Mittlere Reife или Abitur. Для подработки и стажировки требования мягче — обсудим на встрече.",
+  },
+  {
+    q: "Сколько лет занимает полное обучение?",
+    a: "Дуальное обучение IHK — 2,5–3 года. После него ты уже работаешь как самостоятельный консультант. Лицензии §34d/§34f/§34i можно получить параллельно.",
+  },
+];
+
+export const berufseinsteigerFinalCTA = {
+  title: "Хочешь узнать, какой путь подходит тебе?",
+  description:
+    "Расскажу про варианты после школы, как работает дуальное обучение и с какого шага начать.",
+  primary: {
+    text: "Написать в WhatsApp",
+    href: waLink(
+      UTM.berufseinsteiger,
+      "Здравствуйте, Владислав! Я после школы / студент — хочу обсудить старт карьеры в DVAG.",
     ),
   },
   secondary: { text: "Пройти 10 вопросов", href: QUIZ_URL },
