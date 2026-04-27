@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Send } from "lucide-react";
 import WhatsAppIcon from "../WhatsAppIcon";
 import FacebookIcon from "../FacebookIcon";
 import AnimateOnScroll from "../AnimateOnScroll";
+import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -13,14 +14,49 @@ export default function Contact() {
     phone: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // In production, send to an API endpoint
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setForm({ name: "", email: "", phone: "", message: "" });
+    if (submitting) return;
+
+    if (!isFormspreeConfigured()) {
+      setErrorMsg("Senden fehlgeschlagen. Bitte schreiben Sie uns auf WhatsApp.");
+      return;
+    }
+
+    setSubmitting(true);
+    setErrorMsg("");
+
+    const body = new URLSearchParams();
+    body.append("name", form.name.trim());
+    if (form.email.trim()) body.append("email", form.email.trim());
+    body.append("phone", form.phone.trim());
+    if (form.message.trim()) body.append("message", form.message.trim());
+    body.append("_subject", `📩 Anfrage von der Website — ${form.name.trim()}`);
+    body.append("formType", "contact");
+    body.append("locale", "de");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: body.toString(),
+      });
+      if (!response.ok) throw new Error(String(response.status));
+      setSubmitted(true);
+      setForm({ name: "", email: "", phone: "", message: "" });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch {
+      setErrorMsg("Senden fehlgeschlagen. Bitte erneut versuchen oder auf WhatsApp schreiben.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -95,10 +131,20 @@ export default function Contact() {
             <button
               className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:bg-gold/90 text-navy font-semibold rounded-full text-base shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               type="submit"
+              disabled={submitting}
             >
               <Send className="w-4 h-4 mr-2" />
-              {submitted ? "Gesendet!" : "Anfrage absenden"}
+              {submitting
+                ? "Wird gesendet…"
+                : submitted
+                  ? "Gesendet!"
+                  : "Anfrage absenden"}
             </button>
+            {errorMsg && (
+              <p className="text-sm text-red-600 text-center" role="alert">
+                {errorMsg}
+              </p>
+            )}
           </form>
           </AnimateOnScroll>
 

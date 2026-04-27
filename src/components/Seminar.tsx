@@ -4,6 +4,7 @@ import { useState, useEffect, FormEvent } from "react";
 import { Send, X, Video, FolderOpen, Languages, FileText } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
 
 function CheckItem({ children, gold }: { children: React.ReactNode; gold?: boolean }) {
   return (
@@ -31,7 +32,9 @@ function BulletItem({ children, icon: Icon }: { children: React.ReactNode; icon:
 
 function RegistrationModal({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({ name: "", phone: "" });
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -44,11 +47,41 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
     };
   }, [onClose]);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // TODO: connect to API / CRM
-    console.log("Course registration:", form);
-    setSubmitted(true);
+    if (submitting) return;
+
+    if (!isFormspreeConfigured()) {
+      setErrorMsg("Не удалось отправить. Напишите, пожалуйста, в WhatsApp.");
+      return;
+    }
+
+    setSubmitting(true);
+    setErrorMsg("");
+
+    const body = new URLSearchParams();
+    body.append("name", form.name.trim());
+    body.append("phone", form.phone.trim());
+    body.append("_subject", `🎓 Регистрация на курс — ${form.name.trim()}`);
+    body.append("formType", "seminar");
+    body.append("locale", "ru");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: body.toString(),
+      });
+      if (!response.ok) throw new Error(String(response.status));
+      setSubmitted(true);
+    } catch {
+      setErrorMsg("Не удалось отправить. Попробуйте ещё раз или напишите в WhatsApp.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -87,10 +120,19 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
                   required
                 />
               </div>
-              <button type="submit" className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:opacity-90 text-navy font-semibold rounded-full text-base shadow transition-all">
+              <button
+                type="submit"
+                disabled={submitting}
+                className="inline-flex items-center justify-center gap-2 w-full h-12 bg-gold hover:opacity-90 text-navy font-semibold rounded-full text-base shadow transition-all disabled:opacity-60 disabled:pointer-events-none"
+              >
                 <Send className="w-4 h-4" />
-                Зарегистрироваться
+                {submitting ? "Отправляем…" : "Зарегистрироваться"}
               </button>
+              {errorMsg && (
+                <p className="text-sm text-red-600 text-center" role="alert">
+                  {errorMsg}
+                </p>
+              )}
             </form>
           ) : (
             <div className="py-8 text-center">
