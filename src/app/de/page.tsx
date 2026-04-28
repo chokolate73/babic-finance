@@ -80,8 +80,6 @@ export default function DeHomePage() {
         messages={homePainPoints.messages}
         reply={homePainPoints.reply}
         replyAuthor={ui.replyAuthor}
-        ctaLabel={homePainPoints.ctaLabel}
-        ctaHref={homePainPoints.ctaHref}
         chatAriaLabel={ui.chatAriaLabel}
       />
       <MyStory content={myStoryContent} />

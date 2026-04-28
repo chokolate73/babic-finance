@@ -1,8 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, Globe } from "lucide-react";
 import WhatsAppIcon from "../WhatsAppIcon";
+
+function getRuPath(pathname: string): string {
+  if (pathname === "/de") return "/";
+  if (pathname.startsWith("/de/")) return pathname.slice(3);
+  return "/";
+}
 
 const navLinks = [
   { href: "#about", label: "Über mich" },
@@ -17,6 +24,8 @@ const navLinks = [
 export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname() ?? "/de";
+  const ruPath = getRuPath(pathname);
 
   useEffect(() => {
     function onScroll() {
@@ -77,15 +86,30 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
             </a>
           </div>
 
-          <button
-            className={`lg:hidden p-2 transition-colors duration-300 ${
-              scrolled || forceDark ? "text-navy" : "text-white"
-            }`}
-            onClick={() => setOpen(!open)}
-            aria-label="Menü umschalten"
-          >
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <a
+              href={ruPath}
+              hrefLang="ru"
+              aria-label="Auf Russisch / Switch to Russian"
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors border ${
+                scrolled || forceDark
+                  ? "border-border text-muted-foreground hover:text-navy hover:border-gold"
+                  : "border-white/30 text-white/90 hover:text-white hover:border-white/60"
+              }`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              RU
+            </a>
+            <button
+              className={`p-2 transition-colors duration-300 ${
+                scrolled || forceDark ? "text-navy" : "text-white"
+              }`}
+              onClick={() => setOpen(!open)}
+              aria-label="Menü umschalten"
+            >
+              {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 

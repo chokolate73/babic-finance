@@ -61,8 +61,6 @@ export default function Home() {
         subtitle={homePainPoints.subtitle}
         messages={homePainPoints.messages}
         reply={homePainPoints.reply}
-        ctaLabel={homePainPoints.ctaLabel}
-        ctaHref={homePainPoints.ctaHref}
       />
       <MyStory />
       <section className="bg-cream py-16 lg:py-24">
