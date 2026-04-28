@@ -74,8 +74,6 @@ export const homePainPoints = {
   ],
   reply:
     "Я прошёл тот же путь. И могу показать, как построить профессию в Германии — даже если кажется, что поздно.",
-  ctaLabel: "Узнать подробнее",
-  ctaHref: "#recognize",
 } as const;
 
 export const myStoryContent = {

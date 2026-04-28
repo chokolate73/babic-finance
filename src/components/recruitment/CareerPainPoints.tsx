@@ -11,8 +11,6 @@ type Props = {
   messages: readonly Message[];
   reply: string;
   replyAuthor?: string;
-  ctaLabel: string;
-  ctaHref: string;
   chatAriaLabel?: string;
 };
 
@@ -24,8 +22,6 @@ export default function CareerPainPoints({
   messages,
   reply,
   replyAuthor = "Владислав",
-  ctaLabel,
-  ctaHref,
   chatAriaLabel = "Визуальное представление типичных карьерных вопросов в формате чата",
 }: Props) {
   return (
@@ -129,17 +125,6 @@ export default function CareerPainPoints({
             </AnimateOnScroll>
           </div>
         </div>
-
-        <AnimateOnScroll animation="fade-up" delay={800}>
-          <div className="text-center mt-10 lg:mt-14">
-            <a
-              href={ctaHref}
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 sm:px-8 py-3.5 bg-gold text-navy font-semibold rounded-full text-sm sm:text-base whitespace-nowrap hover:opacity-90 transition-all"
-            >
-              {ctaLabel}
-            </a>
-          </div>
-        </AnimateOnScroll>
       </div>
     </section>
   );

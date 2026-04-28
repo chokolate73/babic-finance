@@ -66,8 +66,6 @@ export const homePainPoints = {
   ],
   reply:
     "Ich habe diesen Weg selbst gemacht. Ich zeige dir, wie du in Deutschland einen Beruf aufbauen kannst — auch wenn es zu spät scheint.",
-  ctaLabel: "Mehr erfahren",
-  ctaHref: "#recognize",
 } as const;
 
 export const myStoryContent = {
