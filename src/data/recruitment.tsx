@@ -258,15 +258,15 @@ export const incomeContent = {
   title: "Сколько зарабатывают консультанты",
   subtitle: "Честно, без обещаний — по данным открытых источников",
   mainRange: {
-    value: "35 000 € — 62 200 €",
+    value: "46 800 € — 119 700 €",
     label: "Диапазон годового дохода консультантов DVAG",
-    source: "Источник: Kununu, 200+ отзывов",
+    source: "Источник: Kununu, 133 отзыва",
     sourceHref:
       "https://www.kununu.com/de/deutsche-vermoegensberatung/gehalt/vermoegensberater-in-45577",
   },
   smallBlocks: [
     {
-      value: "~88 600 € / год",
+      value: "~80 200 € / год",
       label: "Среднее значение по Kununu",
     },
     {
