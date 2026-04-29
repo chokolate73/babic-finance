@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   title: "Параллельный старт в финансах — Babic Finance",
   description:
     "Подработка с минимальными усилиями — без рисков. Vertrauensmitarbeiter или Vermögensberater-Assistent параллельно с основной работой или учёбой.",
-  alternates: { canonical: `${SITE_URL}${URL_PATH}` },
+  alternates: {
+    canonical: `${SITE_URL}${URL_PATH}`,
+    languages: {
+      ru: `${SITE_URL}${URL_PATH}`,
+      uk: `${SITE_URL}/ua${URL_PATH}`,
+    },
+  },
   openGraph: {
     title: "Параллельный старт в финансах — Babic Finance",
     description:
@@ -22,6 +28,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
+    locale: "ru_RU",
     images: ["/preview.webp"],
   },
   twitter: {

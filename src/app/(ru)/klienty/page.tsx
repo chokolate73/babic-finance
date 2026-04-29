@@ -14,17 +14,29 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
+const SITE_URL = "https://fin-1.de";
+const URL_PATH = "/klienty";
+
 export const metadata: Metadata = {
   title: "Babic Finance",
   description:
     "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.",
+  alternates: {
+    canonical: `${SITE_URL}${URL_PATH}`,
+    languages: {
+      ru: `${SITE_URL}${URL_PATH}`,
+      de: `${SITE_URL}/de${URL_PATH}`,
+      uk: `${SITE_URL}/ua${URL_PATH}`,
+    },
+  },
   openGraph: {
     title: "Babic Finance",
     description:
       "Персональная платформа финансового планирования и экспертной поддержки для русскоязычных клиентов в Германии от Владислава Бабича.",
-    url: "https://fin-1.de/klienty",
+    url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
+    locale: "ru_RU",
     images: ["/preview.webp"],
   },
   twitter: {

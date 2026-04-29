@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     url: "https://fin-1.de",
     siteName: "Babic Finance",
     type: "website",
+    locale: "ru_RU",
     images: [
       {
         url: "/preview.webp",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function RuRootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
