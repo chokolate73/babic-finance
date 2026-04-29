@@ -99,13 +99,21 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-sm">
               <a
-                href="#"
+                href="https://www.dvag.de/vladislav.babic/karriere.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white/50 hover:text-white transition-colors"
+              >
+                Профиль на DVAG
+              </a>
+              <a
+                href="/impressum"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Impressum
               </a>
               <a
-                href="#"
+                href="/datenschutz"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Datenschutz

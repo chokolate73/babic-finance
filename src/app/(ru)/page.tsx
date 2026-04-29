@@ -28,7 +28,14 @@ export const metadata: Metadata = {
     "Карьера финансового консультанта в Германии — русскоязычная команда DVAG | Babic Finance",
   description:
     "Построй карьеру финансового консультанта в Германии. На русском, без опыта, с полной поддержкой команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      ru: `${SITE_URL}/`,
+      de: `${SITE_URL}/de`,
+      uk: `${SITE_URL}/ua`,
+    },
+  },
   openGraph: {
     title:
       "Карьера финансового консультанта в Германии — русскоязычная команда DVAG",
@@ -37,6 +44,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "Babic Finance",
     type: "website",
+    locale: "ru_RU",
     images: ["/preview.webp"],
   },
   twitter: {
@@ -53,7 +61,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <RecruitmentHero content={homeHero} scrollTargetId="recognize" />
+      <RecruitmentHero
+        content={homeHero}
+        scrollTargetId="recognize"
+        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+      />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}
@@ -61,10 +73,25 @@ export default function Home() {
         subtitle={homePainPoints.subtitle}
         messages={homePainPoints.messages}
         reply={homePainPoints.reply}
-        ctaLabel={homePainPoints.ctaLabel}
-        ctaHref={homePainPoints.ctaHref}
       />
       <MyStory />
+      <section className="bg-cream py-16 lg:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+            Девиз DVAG с 1975 года
+          </span>
+          <p className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl lg:text-6xl font-bold text-navy mt-4 leading-tight">
+            Menschen brauchen Menschen.
+          </p>
+          <span
+            aria-hidden="true"
+            className="block w-[60px] h-[2px] bg-gold mx-auto mt-6"
+          />
+          <p className="text-muted-foreground mt-6 max-w-xl mx-auto">
+            Людям нужны люди. На этом построена работа DVAG — и моя личная философия консультирования.
+          </p>
+        </div>
+      </section>
       <SegmentCards />
       <Qualifications />
       <CareerPath

@@ -66,6 +66,17 @@ export default function Qualifications({
                 <p className="text-muted-foreground text-sm leading-relaxed pl-14">
                   {q.description}
                 </p>
+                {q.link && (
+                  <a
+                    href={q.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-4 ml-14 px-4 py-2 border border-[#D4AF55] rounded-full text-sm font-semibold text-[#D4AF55] hover:bg-[#D4AF55] hover:text-white transition-colors self-start"
+                  >
+                    {q.link.label}
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
               </div>
             </AnimateOnScroll>
           ))}
@@ -82,6 +93,17 @@ export default function Qualifications({
             <p className="text-muted-foreground/80 text-xs mt-4 italic">
               {callout.source}
             </p>
+            {callout.link && (
+              <a
+                href={callout.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-6 px-4 py-2 border border-[#D4AF55] rounded-full text-sm font-semibold text-[#D4AF55] hover:bg-[#D4AF55] hover:text-white transition-colors"
+              >
+                {callout.link.label}
+                <span aria-hidden="true">→</span>
+              </a>
+            )}
           </div>
         </AnimateOnScroll>
       </div>

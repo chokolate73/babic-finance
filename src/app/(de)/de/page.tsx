@@ -2,47 +2,50 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/de/Footer";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
-import BenefitsList from "@/components/recruitment/BenefitsList";
+import CareerPainPoints from "@/components/recruitment/CareerPainPoints";
+import MyStory from "@/components/recruitment/MyStory";
+import SegmentCards from "@/components/recruitment/SegmentCards";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
 import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
-import FinalCTA from "@/components/recruitment/FinalCTA";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import {
-  quereinstiegHero,
-  quereinstiegBenefits,
+  homeHero,
+  homePainPoints,
+  myStoryContent,
+  segmentCards,
   qualifications,
   qualificationsCallout,
   pathSteps,
   incomeContent,
   transparenzItems,
-  quereinstiegFAQItems,
-  quereinstiegFinalCTA,
+  homeFAQContent,
+  homeFAQItems,
   ui,
 } from "@/data/recruitment.de";
 
-const URL_PATH = "/de/karriere/quereinstieg";
 const SITE_URL = "https://fin-1.de";
+const URL_PATH = "/de";
 
 export const metadata: Metadata = {
   title:
-    "Karriere als Finanzberater in Deutschland für Quereinsteiger | Babic Finance",
+    "Karriere als Finanzberater in Deutschland — russischsprachiges DVAG-Team | Babic Finance",
   description:
-    "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit russischsprachigem Mentor.",
+    "Baue deine Karriere als Finanzberater in Deutschland auf. Auf Russisch, ohne Vorerfahrung, mit voller Unterstützung des DVAG-Teams und persönlicher Begleitung von Wladislaw Babitsch in Troisdorf.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
-      ru: `${SITE_URL}/karriere/quereinstieg`,
+      ru: `${SITE_URL}/`,
       de: `${SITE_URL}${URL_PATH}`,
     },
   },
   openGraph: {
     title:
-      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
+      "Karriere als Finanzberater in Deutschland — russischsprachiges DVAG-Team",
     description:
-      "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Ausbildung auf Russisch, mit DVAG-Team-Support.",
+      "Auf Russisch. Ohne Vorerfahrung. Mit voller Team-Unterstützung. Vom ersten Kennenlernen bis zum selbstständigen Berater mit vier anerkannten Qualifikationen.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -52,28 +55,39 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
+      "Karriere als Finanzberater in Deutschland — russischsprachiges DVAG-Team",
     description:
-      "Wechsle in Deutschland den Beruf. Ausbildung auf Russisch.",
+      "Auf Russisch. Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
     images: ["/preview.webp"],
   },
 };
 
-export default function DeQuereinstiegPage() {
+export default function DeHomePage() {
   return (
     <div className="min-h-screen" lang="de">
       <Navbar />
       <RecruitmentHero
-        content={quereinstiegHero}
-        scrollTargetId="why"
+        content={homeHero}
+        scrollTargetId="recognize"
+        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
         scrollLabel={ui.heroScrollLabel}
       />
-      <BenefitsList
-        id="why"
-        eyebrow={quereinstiegBenefits.eyebrow}
-        title={quereinstiegBenefits.title}
-        items={quereinstiegBenefits.items}
-        background="white"
+      <CareerPainPoints
+        id="recognize"
+        eyebrow={homePainPoints.eyebrow}
+        title={homePainPoints.title}
+        subtitle={homePainPoints.subtitle}
+        messages={homePainPoints.messages}
+        reply={homePainPoints.reply}
+        replyAuthor={ui.replyAuthor}
+        chatAriaLabel={ui.chatAriaLabel}
+      />
+      <MyStory content={myStoryContent} />
+      <SegmentCards
+        items={segmentCards}
+        eyebrow={ui.segmentsEyebrow}
+        title={ui.segmentsTitle}
+        subtitle={ui.segmentsSubtitle}
       />
       <Qualifications
         items={qualifications}
@@ -96,17 +110,11 @@ export default function DeQuereinstiegPage() {
         subtitle={ui.transparenzSubtitleHome}
       />
       <RecruitmentFAQ
-        eyebrow={ui.faqEyebrow}
-        title={ui.faqTitleQuereinstieg}
-        items={quereinstiegFAQItems}
+        eyebrow={homeFAQContent.eyebrow}
+        title={homeFAQContent.title}
+        items={homeFAQItems}
       />
-      <FinalCTA
-        title={quereinstiegFinalCTA.title}
-        description={quereinstiegFinalCTA.description}
-        primary={quereinstiegFinalCTA.primary}
-        secondary={quereinstiegFinalCTA.secondary}
-      />
-      <RecruitmentQualificationForm sourcePage="quereinstieg" locale="de" />
+      <RecruitmentQualificationForm sourcePage="homepage" locale="de" />
       <Footer />
     </div>
   );

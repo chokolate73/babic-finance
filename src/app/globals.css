@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --color-navy: #1a1f3d;
-  --color-gold: #c9a84c;
+  --color-gold: #F0C040;
   --color-whatsapp: #25D366;
   --color-background: #ffffff;
   --color-foreground: #1a1f3d;
@@ -12,9 +12,17 @@
   --color-secondary: #f9fafb;
   --color-border: #e5e7eb;
   --color-input: #e5e7eb;
-  --color-ring: #c9a84c;
+  --color-ring: #F0C040;
   --font-serif: var(--font-montserrat), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+/* Cream-background sections use the previous (darker, less saturated) gold —
+   the bright gold (#F0C040) reads harsh on light cream surfaces but pops on
+   dark hero backgrounds where it's intended. */
+.bg-cream {
+  --color-gold: #c9a84c;
+  --color-ring: #c9a84c;
 }
 
 html {

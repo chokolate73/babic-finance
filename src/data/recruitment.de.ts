@@ -66,8 +66,6 @@ export const homePainPoints = {
   ],
   reply:
     "Ich habe diesen Weg selbst gemacht. Ich zeige dir, wie du in Deutschland einen Beruf aufbauen kannst — auch wenn es zu spät scheint.",
-  ctaLabel: "Mehr erfahren",
-  ctaHref: "#recognize",
 } as const;
 
 export const myStoryContent = {
@@ -192,13 +190,15 @@ export const incomeContent = {
   title: "Was verdienen Berater",
   subtitle: "Ehrlich, ohne Versprechen — auf Basis offener Quellen",
   mainRange: {
-    value: "35 000 € — 62 200 €",
+    value: "46 800 € — 119 700 €",
     label: "Jahresverdienst-Bandbreite von DVAG-Beratern",
-    source: "Quelle: Kununu, 200+ Bewertungen",
+    source: "Quelle: Kununu, 133 Bewertungen",
+    sourceHref:
+      "https://www.kununu.com/de/deutsche-vermoegensberatung/gehalt/vermoegensberater-in-45577",
   },
   smallBlocks: [
     {
-      value: "~88 600 € / Jahr",
+      value: "~80 200 € / Jahr",
       label: "Durchschnitt laut Kununu",
     },
     {

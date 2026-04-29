@@ -8,8 +8,12 @@ import AnimateOnScroll from "../AnimateOnScroll";
 import WhatsAppIcon from "../WhatsAppIcon";
 import { FORMSPREE_ENDPOINT, isFormspreeConfigured } from "@/lib/formspree";
 
-export type SourcePage = "homepage" | "quereinstieg" | "buergergeld";
-export type Locale = "ru" | "de";
+export type SourcePage =
+  | "homepage"
+  | "quereinstieg"
+  | "buergergeld"
+  | "nebenberuf";
+export type Locale = "ru" | "de" | "ua";
 
 type Option = { value: string; label: string };
 
@@ -32,6 +36,15 @@ const MOTIVATIONS: Record<Locale, Option[]> = {
     { value: "just_curious", label: "Bin erstmal neugierig" },
     { value: "other", label: "Anderes" },
   ],
+  ua: [
+    { value: "working_not_in_field", label: "Працюю не за фахом" },
+    { value: "diploma_not_recognized", label: "Диплом із батьківщини не визнають" },
+    { value: "buergergeld", label: "Я зараз на Bürgergeld або ALG I" },
+    { value: "own_business", label: "Хочу свою справу, а не працювати на когось" },
+    { value: "russian_language", label: "Шукаю професію, де знадобиться українська/російська" },
+    { value: "just_curious", label: "Поки просто цікаво дізнатися більше" },
+    { value: "other", label: "Інше" },
+  ],
 };
 
 const FORMATS: Record<Locale, Option[]> = {
@@ -46,6 +59,12 @@ const FORMATS: Record<Locale, Option[]> = {
     { value: "parallel", label: "Will parallel zum aktuellen Job starten" },
     { value: "unemployed_ready", label: "Bin aktuell ohne Job — starte sofort" },
     { value: "exploring", label: "Noch nicht entschieden, schaue mich um" },
+  ],
+  ua: [
+    { value: "full_change", label: "Готовий повністю змінити роботу" },
+    { value: "parallel", label: "Хочу почати паралельно з поточною роботою" },
+    { value: "unemployed_ready", label: "Зараз без роботи — готовий почати одразу" },
+    { value: "exploring", label: "Ще не вирішив, дивлюся варіанти" },
   ],
 };
 
@@ -62,6 +81,12 @@ const TIMELINES: Record<Locale, Option[]> = {
     { value: "6_plus_months", label: "In einem halben Jahr oder später" },
     { value: "just_info", label: "Sammle nur Informationen" },
   ],
+  ua: [
+    { value: "asap", label: "Якомога швидше" },
+    { value: "1_3_months", label: "У найближчі 1–3 місяці" },
+    { value: "6_plus_months", label: "Через пів року або пізніше" },
+    { value: "just_info", label: "Поки лише збираю інформацію" },
+  ],
 };
 
 const PAGE_LABELS: Record<Locale, Record<SourcePage, string>> = {
@@ -69,17 +94,26 @@ const PAGE_LABELS: Record<Locale, Record<SourcePage, string>> = {
     homepage: "Главная",
     quereinstieg: "Квереинштайгер",
     buergergeld: "Из Bürgergeld",
+    nebenberuf: "Параллельный старт",
   },
   de: {
     homepage: "Startseite",
     quereinstieg: "Quereinsteiger",
     buergergeld: "Aus Bürgergeld",
+    nebenberuf: "Nebenberuflicher Einstieg",
+  },
+  ua: {
+    homepage: "Головна",
+    quereinstieg: "Зміна професії",
+    buergergeld: "Із Bürgergeld",
+    nebenberuf: "Паралельний старт",
   },
 };
 
 const FALLBACK_MESSAGES: Record<Locale, string> = {
   ru: "Здравствуйте, Владислав! Не смог отправить форму с сайта — хочу узнать про работу финансового консультанта.",
   de: "Hallo Wladislaw! Das Formular auf der Website ließ sich nicht absenden — ich möchte mehr über den Beruf des Finanzberaters erfahren.",
+  ua: "Вітаю, Владиславе! Не вдалося надіслати форму з сайту — хочу дізнатися про роботу фінансового консультанта.",
 };
 
 function whatsappFallback(locale: Locale) {
@@ -92,6 +126,7 @@ function whatsappFallback(locale: Locale) {
 const SUBJECT_PREFIX: Record<Locale, string> = {
   ru: "🎯 Новый кандидат в консультанты",
   de: "🎯 Neuer Kandidat als Berater",
+  ua: "🎯 Новий кандидат у консультанти",
 };
 
 const TOTAL_STEPS = 5;
@@ -249,6 +284,59 @@ const STRINGS: Record<Locale, UiStrings> = {
       emailPlaceholder: "du@beispiel.de",
     },
   },
+  ua: {
+    eyebrow: "5 запитань · 2 хвилини",
+    heading: "Чи підходить мені ця робота?",
+    intro: "Відповіді приходять особисто Владиславу — він зв'яжеться протягом дня.",
+    stepOf: (n, total) => `Крок ${n} з ${total}`,
+    back: "Назад",
+    next: "Далі",
+    submit: "Надіслати Владиславу",
+    submitting: "Надсилання…",
+    dsgvo:
+      "Твої дані надходять лише Владиславу. Жодних розсилок, жодного спаму. Дотримуємося DSGVO.",
+    networkError:
+      "Не вдалося надіслати. Спробуй ще раз або напиши у WhatsApp напряму:",
+    errors: {
+      name: "Ім'я, будь ласка",
+      motivations: "Обери хоча б один пункт",
+      format: "Обери формат",
+      timeline: "Обери термін",
+      phone: "Потрібен номер для зв'язку",
+      email: "Перевір формат email",
+    },
+    step0: {
+      heading: "Як тебе звати?",
+      hint: "Владислав звертається до кандидатів на «ти» — так тепліше.",
+      placeholder: "Твоє ім'я",
+    },
+    step1: {
+      heading: "Що змусило задуматися про зміну професії?",
+      hint: "Можна обрати кілька.",
+      otherPlaceholder: "Опиши своїми словами",
+    },
+    step2: {
+      heading: "Який формат тобі ближчий?",
+      hint: "Обери одне.",
+    },
+    step3: {
+      heading: "Коли хотів би почати?",
+      hint: "Обери одне.",
+    },
+    step4: {
+      heading: (name) => `Майже готово, ${name || "друже"}!`,
+      intro: "Залиш контакт — Владислав зв'яжеться протягом дня.",
+      openLabel:
+        "Що для тебе найважливіше отримати в розмові з Владиславом?",
+      openOptional: "(необов'язково)",
+      openPlaceholder:
+        "Наприклад: зрозуміти, чи реально поєднати з роботою / дізнатися про Bürgergeld...",
+      phoneLabel: "WhatsApp або телефон",
+      emailLabel: "Email",
+      emailOptional: "(якщо зручніше через email)",
+      emailPlaceholder: "you@example.com",
+    },
+  },
 };
 
 function countDigits(s: string): number {
@@ -284,7 +372,11 @@ export default function RecruitmentQualificationForm({
   const formatOptions = FORMATS[locale];
   const timelineOptions = TIMELINES[locale];
   const thankYouHref =
-    locale === "de" ? "/de/karriere/thank-you" : "/karriere/thank-you";
+    locale === "de"
+      ? "/de/karriere/thank-you"
+      : locale === "ua"
+        ? "/ua/karriere/thank-you"
+        : "/karriere/thank-you";
   const whatsappFallbackHref = whatsappFallback(locale);
 
   const [step, setStep] = useState(0);
