@@ -48,11 +48,11 @@ export default function VideoHero() {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+          <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
           <span className="text-white not-italic font-medium uppercase text-[1.1rem] tracking-[0.15em]">
             Владислав Бабич
           </span>
-          <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+          <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
         </div>
 
         <div

@@ -26,7 +26,7 @@ const faqs: { q: string; a: ReactNode }[] = [
           href="https://unternehmensbericht.dvag/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#D4AF55] hover:underline"
+          className="text-[#F5CD55] hover:underline"
         >
           официальном отчёте DVAG
         </a>

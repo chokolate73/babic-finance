@@ -77,7 +77,7 @@ export default function Benefits() {
                       href={b.link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 mt-4 px-4 py-2 border border-[#D4AF55] rounded-full text-sm font-semibold text-[#D4AF55] hover:bg-[#D4AF55] hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 mt-4 px-4 py-2 border border-[#F5CD55] rounded-full text-sm font-semibold text-[#F5CD55] hover:bg-[#F5CD55] hover:text-white transition-colors"
                     >
                       {b.link.label}
                       <span aria-hidden="true">→</span>
