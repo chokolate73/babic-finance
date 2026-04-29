@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
@@ -74,44 +74,112 @@ const deKarriereLinks: NavLink[] = [
   { href: "#apply", label: "Jetzt bewerben" },
 ];
 
-function getAltLocalePath(pathname: string): string {
-  if (pathname === "/de") return "/";
-  if (pathname.startsWith("/de/")) return pathname.slice(3); // strip "/de"
-  if (pathname === "/") return "/de";
-  return `/de${pathname}`;
+const uaRecruitmentLinks: NavLink[] = [
+  { href: "#recognize", label: "Для кого" },
+  { href: "#qualifications", label: "Що отримаю" },
+  { href: "#path", label: "Як це працює" },
+  { href: "#faq", label: "FAQ" },
+  {
+    href: "/ua/karriere",
+    label: "Кар'єра",
+    children: [
+      { href: "/ua/karriere/quereinstieg", label: "Зміна професії" },
+      { href: "/ua/karriere/buergergeld", label: "Із Bürgergeld" },
+    ],
+  },
+  { href: "/blog", label: "Блог" },
+  { href: "#apply", label: "Залишити заявку" },
+];
+
+const uaKarriereLinks: NavLink[] = [
+  { href: "/ua", label: "Головна" },
+  { href: "/ua/karriere/quereinstieg", label: "Зміна професії" },
+  { href: "/ua/karriere/buergergeld", label: "Із Bürgergeld" },
+  { href: "/blog", label: "Блог" },
+  { href: "#apply", label: "Залишити заявку" },
+];
+
+const uaKlientyLinks: NavLink[] = [
+  { href: "#about", label: "Про мене" },
+  { href: "#services", label: "Послуги" },
+  { href: "#seminar", label: "Семінар" },
+  { href: "#process", label: "Як працюю" },
+  { href: "#faq", label: "FAQ" },
+  { href: "/blog", label: "Блог" },
+  { href: "#contact", label: "Контакт" },
+];
+
+type Locale = "ru" | "de" | "ua";
+
+const LOCALES: { code: Locale; label: string; hrefLang: string; aria: string }[] = [
+  { code: "ru", label: "RU", hrefLang: "ru", aria: "На русский язык / Switch to Russian" },
+  { code: "de", label: "DE", hrefLang: "de", aria: "Auf Deutsch / Switch to German" },
+  { code: "ua", label: "UA", hrefLang: "uk", aria: "Українською / Switch to Ukrainian" },
+];
+
+function getCurrentLocale(pathname: string): Locale {
+  if (pathname === "/de" || pathname.startsWith("/de/")) return "de";
+  if (pathname === "/ua" || pathname.startsWith("/ua/")) return "ua";
+  return "ru";
+}
+
+function pathForLocale(pathname: string, target: Locale): string {
+  const current = getCurrentLocale(pathname);
+  if (current === target) return pathname;
+
+  // Strip current prefix to get the "tail"
+  let tail = pathname;
+  if (current === "de") tail = pathname.slice(3) || "/"; // strip "/de"
+  else if (current === "ua") tail = pathname.slice(3) || "/"; // strip "/ua"
+
+  if (target === "ru") return tail === "/" ? "/" : tail;
+  const prefix = target === "de" ? "/de" : "/ua";
+  return tail === "/" ? prefix : `${prefix}${tail}`;
 }
 
 export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
+  const [localeOpen, setLocaleOpen] = useState(false);
+  const [mobileLocaleOpen, setMobileLocaleOpen] = useState(false);
+  const localeRef = useRef<HTMLDivElement | null>(null);
+  const mobileLocaleRef = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname() ?? "/";
-  const isDe = pathname === "/de" || pathname.startsWith("/de/");
-  const isKlienty = pathname.startsWith("/klienty");
+  const currentLocale = getCurrentLocale(pathname);
+  const isDe = currentLocale === "de";
+  const isUa = currentLocale === "ua";
+  const isKlienty = pathname === "/klienty" || pathname.startsWith("/klienty/");
   const isKarriere = pathname.startsWith("/karriere");
   const isDeKarriere = pathname.startsWith("/de/karriere");
+  const isUaKarriere = pathname.startsWith("/ua/karriere");
+  const isUaKlienty = pathname === "/ua/klienty" || pathname.startsWith("/ua/klienty/");
 
   const navLinks = isDe
     ? isDeKarriere
       ? deKarriereLinks
       : deRecruitmentLinks
-    : isKlienty
-      ? klientyLinks
-      : isKarriere
-        ? karriereLinks
-        : recruitmentLinks;
+    : isUa
+      ? isUaKlienty
+        ? uaKlientyLinks
+        : isUaKarriere
+          ? uaKarriereLinks
+          : uaRecruitmentLinks
+      : isKlienty
+        ? klientyLinks
+        : isKarriere
+          ? karriereLinks
+          : recruitmentLinks;
 
   const logoHref = isDe
     ? "/de"
-    : isKlienty || isKarriere
-      ? "/"
-      : "#";
+    : isUa
+      ? "/ua"
+      : isKlienty || isKarriere
+        ? "/"
+        : "#";
 
-  const altLocalePath = getAltLocalePath(pathname);
-  const altLocaleLabel = isDe ? "RU" : "DE";
-  const altLocaleAria = isDe
-    ? "На русский язык / Switch to Russian"
-    : "Auf Deutsch / Switch to German";
+  const currentLocaleLabel = LOCALES.find((l) => l.code === currentLocale)!.label;
 
   useEffect(() => {
     function onScroll() {
@@ -121,7 +189,30 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const toggleMenuAria = isDe ? "Menü umschalten" : "Toggle menu";
+  useEffect(() => {
+    function onClick(e: MouseEvent) {
+      if (
+        localeRef.current &&
+        !localeRef.current.contains(e.target as Node)
+      ) {
+        setLocaleOpen(false);
+      }
+      if (
+        mobileLocaleRef.current &&
+        !mobileLocaleRef.current.contains(e.target as Node)
+      ) {
+        setMobileLocaleOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, []);
+
+  const toggleMenuAria = isDe
+    ? "Menü umschalten"
+    : isUa
+      ? "Перемкнути меню"
+      : "Toggle menu";
 
   return (
     <nav
@@ -205,19 +296,53 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href={altLocalePath}
-              hrefLang={isDe ? "ru" : "de"}
-              aria-label={altLocaleAria}
-              className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold transition-colors border ${
-                scrolled || forceDark
-                  ? "border-border text-muted-foreground hover:text-navy hover:border-gold"
-                  : "border-white/30 text-white/90 hover:text-white hover:border-white/60"
-              }`}
-            >
-              <Globe className="w-3.5 h-3.5" />
-              {altLocaleLabel}
-            </a>
+            <div ref={localeRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setLocaleOpen((o) => !o)}
+                aria-haspopup="true"
+                aria-expanded={localeOpen}
+                aria-label="Сменить язык / Change language"
+                className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold transition-colors border ${
+                  scrolled || forceDark
+                    ? "border-border text-muted-foreground hover:text-navy hover:border-gold"
+                    : "border-white/30 text-white/90 hover:text-white hover:border-white/60"
+                }`}
+              >
+                <Globe className="w-3.5 h-3.5" />
+                {currentLocaleLabel}
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              {localeOpen && (
+                <div
+                  role="menu"
+                  className="absolute right-0 top-full pt-2 min-w-[120px]"
+                >
+                  <div className="bg-white rounded-xl border border-border shadow-lg py-1.5">
+                    {LOCALES.map((l) => (
+                      <a
+                        key={l.code}
+                        href={pathForLocale(pathname, l.code)}
+                        hrefLang={l.hrefLang}
+                        aria-label={l.aria}
+                        aria-current={
+                          l.code === currentLocale ? "true" : undefined
+                        }
+                        role="menuitem"
+                        onClick={() => setLocaleOpen(false)}
+                        className={`block px-4 py-2 text-xs font-semibold transition-colors ${
+                          l.code === currentLocale
+                            ? "text-gold bg-cream"
+                            : "text-muted-foreground hover:text-navy hover:bg-cream"
+                        }`}
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
             <a
               href="https://wa.me/491784743490"
               target="_blank"
@@ -230,19 +355,53 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
           </div>
 
           <div className="lg:hidden flex items-center gap-2">
-            <a
-              href={altLocalePath}
-              hrefLang={isDe ? "ru" : "de"}
-              aria-label={altLocaleAria}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors border ${
-                scrolled || forceDark
-                  ? "border-border text-muted-foreground hover:text-navy hover:border-gold"
-                  : "border-white/30 text-white/90 hover:text-white hover:border-white/60"
-              }`}
-            >
-              <Globe className="w-3.5 h-3.5" />
-              {altLocaleLabel}
-            </a>
+            <div ref={mobileLocaleRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setMobileLocaleOpen((o) => !o)}
+                aria-haspopup="true"
+                aria-expanded={mobileLocaleOpen}
+                aria-label="Сменить язык / Change language"
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors border ${
+                  scrolled || forceDark
+                    ? "border-border text-muted-foreground hover:text-navy hover:border-gold"
+                    : "border-white/30 text-white/90 hover:text-white hover:border-white/60"
+                }`}
+              >
+                <Globe className="w-3.5 h-3.5" />
+                {currentLocaleLabel}
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              {mobileLocaleOpen && (
+                <div
+                  role="menu"
+                  className="absolute right-0 top-full pt-2 min-w-[120px] z-50"
+                >
+                  <div className="bg-white rounded-xl border border-border shadow-lg py-1.5">
+                    {LOCALES.map((l) => (
+                      <a
+                        key={l.code}
+                        href={pathForLocale(pathname, l.code)}
+                        hrefLang={l.hrefLang}
+                        aria-label={l.aria}
+                        aria-current={
+                          l.code === currentLocale ? "true" : undefined
+                        }
+                        role="menuitem"
+                        onClick={() => setMobileLocaleOpen(false)}
+                        className={`block px-4 py-2 text-xs font-semibold transition-colors ${
+                          l.code === currentLocale
+                            ? "text-gold bg-cream"
+                            : "text-muted-foreground hover:text-navy hover:bg-cream"
+                        }`}
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
             <button
               className={`p-2 transition-colors duration-300 ${
                 scrolled || forceDark ? "text-navy" : "text-white"
