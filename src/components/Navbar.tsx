@@ -17,12 +17,10 @@ const klientyLinks: NavLink[] = [
   { href: "#seminar", label: "Семинар" },
   { href: "#process", label: "Как работаю" },
   { href: "#faq", label: "FAQ" },
-  { href: "/blog", label: "Блог" },
   { href: "#contact", label: "Контакт" },
 ];
 
 const recruitmentLinks: NavLink[] = [
-  { href: "#recognize", label: "Для кого" },
   { href: "#qualifications", label: "Что получу" },
   { href: "#path", label: "Как это работает" },
   { href: "#faq", label: "FAQ" },
@@ -34,7 +32,6 @@ const recruitmentLinks: NavLink[] = [
     ],
   },
   { href: "/klienty", label: "Для клиентов" },
-  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Оставить заявку" },
 ];
 
@@ -43,12 +40,10 @@ const karriereLinks: NavLink[] = [
   { href: "/karriere/nebenberuf", label: "Параллельно с работой" },
   { href: "/karriere/quereinstieg", label: "Смена профессии" },
   { href: "/klienty", label: "Для клиентов" },
-  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Оставить заявку" },
 ];
 
 const deRecruitmentLinks: NavLink[] = [
-  { href: "#recognize", label: "Für wen" },
   { href: "#qualifications", label: "Was du bekommst" },
   { href: "#path", label: "So läuft's" },
   { href: "#faq", label: "FAQ" },
@@ -61,7 +56,6 @@ const deRecruitmentLinks: NavLink[] = [
     ],
   },
   { href: "/de/klienty", label: "Für Kunden" },
-  { href: "/blog", label: "Blog" },
   { href: "#apply", label: "Jetzt bewerben" },
 ];
 
@@ -70,12 +64,10 @@ const deKarriereLinks: NavLink[] = [
   { href: "/de/karriere/quereinstieg", label: "Quereinsteiger" },
   { href: "/de/karriere/buergergeld", label: "Aus Bürgergeld" },
   { href: "/de/klienty", label: "Für Kunden" },
-  { href: "/blog", label: "Blog" },
   { href: "#apply", label: "Jetzt bewerben" },
 ];
 
 const uaRecruitmentLinks: NavLink[] = [
-  { href: "#recognize", label: "Для кого" },
   { href: "#qualifications", label: "Що отримаю" },
   { href: "#path", label: "Як це працює" },
   { href: "#faq", label: "FAQ" },
@@ -87,7 +79,6 @@ const uaRecruitmentLinks: NavLink[] = [
       { href: "/ua/karriere/buergergeld", label: "Із Bürgergeld" },
     ],
   },
-  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Залишити заявку" },
 ];
 
@@ -95,7 +86,6 @@ const uaKarriereLinks: NavLink[] = [
   { href: "/ua", label: "Головна" },
   { href: "/ua/karriere/quereinstieg", label: "Зміна професії" },
   { href: "/ua/karriere/buergergeld", label: "Із Bürgergeld" },
-  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Залишити заявку" },
 ];
 
@@ -105,7 +95,6 @@ const uaKlientyLinks: NavLink[] = [
   { href: "#seminar", label: "Семінар" },
   { href: "#process", label: "Як працюю" },
   { href: "#faq", label: "FAQ" },
-  { href: "/blog", label: "Блог" },
   { href: "#contact", label: "Контакт" },
 ];
 
