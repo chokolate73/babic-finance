@@ -1,0 +1,114 @@
+import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/ua/Footer";
+import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
+import BenefitsList from "@/components/recruitment/BenefitsList";
+import Qualifications from "@/components/recruitment/Qualifications";
+import CareerPath from "@/components/recruitment/CareerPath";
+import IncomeRange from "@/components/recruitment/IncomeRange";
+import Transparenz from "@/components/recruitment/Transparenz";
+import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
+import FinalCTA from "@/components/recruitment/FinalCTA";
+import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import {
+  quereinstiegHero,
+  quereinstiegBenefits,
+  qualifications,
+  qualificationsCallout,
+  pathSteps,
+  incomeContent,
+  transparenzItems,
+  quereinstiegFAQItems,
+  quereinstiegFinalCTA,
+  ui,
+} from "@/data/recruitment.ua";
+
+const URL_PATH = "/ua/karriere/quereinstieg";
+const SITE_URL = "https://fin-1.de";
+
+export const metadata: Metadata = {
+  title:
+    "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію | Babic Finance",
+  description:
+    "Зміни професію в Німеччині — на ту, що потрібна. Фінансовий консультант DVAG використовує твій досвід і мови, стартуй паралельно з роботою з україномовним ментором.",
+  alternates: {
+    canonical: `${SITE_URL}${URL_PATH}`,
+    languages: {
+      ru: `${SITE_URL}/karriere/quereinstieg`,
+      de: `${SITE_URL}/de/karriere/quereinstieg`,
+      uk: `${SITE_URL}${URL_PATH}`,
+    },
+  },
+  openGraph: {
+    title:
+      "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію",
+    description:
+      "Зміни професію в Німеччині — на ту, що потрібна. Навчання українською, з підтримкою команди DVAG.",
+    url: `${SITE_URL}${URL_PATH}`,
+    siteName: "Babic Finance",
+    type: "website",
+    locale: "uk_UA",
+    images: ["/preview.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію",
+    description:
+      "Зміни професію в Німеччині. Навчання українською.",
+    images: ["/preview.webp"],
+  },
+};
+
+export default function UaQuereinstiegPage() {
+  return (
+    <div className="min-h-screen" lang="uk">
+      <Navbar />
+      <RecruitmentHero
+        content={quereinstiegHero}
+        scrollTargetId="why"
+        scrollLabel={ui.heroScrollLabel}
+      />
+      <BenefitsList
+        id="why"
+        eyebrow={quereinstiegBenefits.eyebrow}
+        title={quereinstiegBenefits.title}
+        items={quereinstiegBenefits.items}
+        background="white"
+      />
+      <Qualifications
+        items={qualifications}
+        callout={qualificationsCallout}
+        eyebrow={ui.qualificationsEyebrow}
+        title={ui.qualificationsTitle}
+        description={ui.qualificationsDescription}
+      />
+      <CareerPath
+        id="path"
+        eyebrow={ui.pathEyebrow}
+        title={ui.pathTitleHome}
+        steps={pathSteps}
+      />
+      <IncomeRange content={incomeContent} thisMeansLabel={ui.incomeThisMeans} />
+      <Transparenz
+        items={transparenzItems}
+        eyebrow={ui.transparenzEyebrow}
+        title={ui.transparenzTitleHome}
+        subtitle={ui.transparenzSubtitleHome}
+      />
+      <RecruitmentFAQ
+        eyebrow={ui.faqEyebrow}
+        title={ui.faqTitleQuereinstieg}
+        items={quereinstiegFAQItems}
+      />
+      <FinalCTA
+        title={quereinstiegFinalCTA.title}
+        description={quereinstiegFinalCTA.description}
+        primary={quereinstiegFinalCTA.primary}
+        secondary={quereinstiegFinalCTA.secondary}
+      />
+      <RecruitmentQualificationForm sourcePage="quereinstieg" locale="ua" />
+      <Footer />
+    </div>
+  );
+}
