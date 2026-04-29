@@ -94,7 +94,7 @@ function PopupCard({ card, index }: { card: SegmentCard; index: number }) {
                 href={popup.externalLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-7 px-4 py-2 border border-[#F5CD55] rounded-full text-sm font-semibold text-[#F5CD55] hover:bg-[#F5CD55] hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 mt-7 px-4 py-2 border border-[#D4AF55] rounded-full text-sm font-semibold text-[#D4AF55] hover:bg-[#D4AF55] hover:text-white transition-colors"
               >
                 {popup.externalLink.label}
                 <span aria-hidden="true">→</span>
@@ -145,7 +145,16 @@ export default function SegmentCards({
   subtitle = "Выбери ситуацию, которая ближе — и узнай путь в деталях",
 }: Props = {}) {
   return (
-    <section id="segments" className="py-20 lg:py-28 bg-white">
+    <section
+      id="segments"
+      className="py-20 lg:py-28 bg-white"
+      style={
+        {
+          ["--color-gold" as string]: "#c9a84c",
+          ["--color-ring" as string]: "#c9a84c",
+        } as React.CSSProperties
+      }
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">
