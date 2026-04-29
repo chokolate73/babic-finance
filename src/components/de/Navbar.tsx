@@ -10,7 +10,7 @@ const navLinks = [
   { href: "#seminar", label: "Seminar" },
   { href: "#process", label: "Arbeitsweise" },
   { href: "#faq", label: "FAQ" },
-  { href: "/blog", label: "Blog" },
+  { href: "/de/blog", label: "Blog" },
   { href: "#contact", label: "Kontakt" },
 ];
 

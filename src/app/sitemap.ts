@@ -1,9 +1,16 @@
 import type { MetadataRoute } from "next";
+import { articlesDe } from "@/data/blog.de";
 
 const BASE_URL = "https://fin-1.de";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+  const deBlogArticles: MetadataRoute.Sitemap = articlesDe.map((a) => ({
+    url: `${BASE_URL}/de/blog/${a.slug}`,
+    lastModified: new Date(a.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
   return [
     {
       url: `${BASE_URL}/`,
@@ -107,5 +114,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    {
+      url: `${BASE_URL}/de/blog`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    ...deBlogArticles,
   ];
 }
