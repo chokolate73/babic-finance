@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/ua/Footer";
+import Footer from "@/components/de/Footer";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import BenefitsList from "@/components/recruitment/BenefitsList";
 import Qualifications from "@/components/recruitment/Qualifications";
@@ -21,53 +21,53 @@ import {
   quereinstiegFAQItems,
   quereinstiegFinalCTA,
   ui,
-} from "@/data/recruitment.ua";
+} from "@/data/recruitment.de";
 
-const URL_PATH = "/ua/karriere/quereinstieg";
+const URL_PATH = "/de/karriere/quereinstieg";
 const SITE_URL = "https://fin-1.de";
 
 export const metadata: Metadata = {
   title:
-    "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію | Babic Finance",
+    "Karriere als Finanzberater in Deutschland für Quereinsteiger | Babic Finance",
   description:
-    "Зміни професію в Німеччині — на ту, що потрібна. Фінансовий консультант DVAG використовує твій досвід і мови, стартуй паралельно з роботою з україномовним ментором.",
+    "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit russischsprachigem Mentor.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
       ru: `${SITE_URL}/karriere/quereinstieg`,
-      de: `${SITE_URL}/de/karriere/quereinstieg`,
-      uk: `${SITE_URL}${URL_PATH}`,
+      de: `${SITE_URL}${URL_PATH}`,
     },
   },
   openGraph: {
     title:
-      "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію",
+      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
     description:
-      "Зміни професію в Німеччині — на ту, що потрібна. Навчання українською, з підтримкою команди DVAG.",
+      "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Ausbildung auf Russisch, mit DVAG-Team-Support.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
-    locale: "uk_UA",
+    locale: "de_DE",
     images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію",
+      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
     description:
-      "Зміни професію в Німеччині. Навчання українською.",
+      "Wechsle in Deutschland den Beruf. Ausbildung auf Russisch.",
     images: ["/preview.webp"],
   },
 };
 
-export default function UaQuereinstiegPage() {
+export default function DeQuereinstiegPage() {
   return (
-    <div className="min-h-screen" lang="uk">
+    <div className="min-h-screen" lang="de">
       <Navbar />
       <RecruitmentHero
         content={quereinstiegHero}
         scrollTargetId="why"
         scrollLabel={ui.heroScrollLabel}
+        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
       />
       <BenefitsList
         id="why"
@@ -107,7 +107,7 @@ export default function UaQuereinstiegPage() {
         primary={quereinstiegFinalCTA.primary}
         secondary={quereinstiegFinalCTA.secondary}
       />
-      <RecruitmentQualificationForm sourcePage="quereinstieg" locale="ua" />
+      <RecruitmentQualificationForm sourcePage="quereinstieg" locale="de" />
       <Footer />
     </div>
   );

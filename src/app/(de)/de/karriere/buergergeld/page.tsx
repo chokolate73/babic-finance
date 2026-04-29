@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/ua/Footer";
+import Footer from "@/components/de/Footer";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
@@ -19,51 +19,51 @@ import {
   supportTable,
   ui,
   legalDisclaimers,
-} from "@/data/recruitment.ua";
+} from "@/data/recruitment.de";
 
-const URL_PATH = "/ua/karriere/buergergeld";
+const URL_PATH = "/de/karriere/buergergeld";
 const SITE_URL = "https://fin-1.de";
 
 export const metadata: Metadata = {
   title:
-    "Із Bürgergeld у професію фінансового консультанта | Babic Finance",
+    "Vom Bürgergeld in den Beruf als Finanzberater | Babic Finance",
   description:
-    "З підтримкою держави — Einstiegsgeld до 24 місяців. Допомагаємо з Tragfähigkeitsbescheinigung, супроводжуємо зустріч у Jobcenter і шлях до першого клієнта.",
+    "Mit staatlicher Unterstützung — Einstiegsgeld bis zu 24 Monate. Wir helfen bei der Tragfähigkeitsbescheinigung, begleiten den Jobcenter-Termin und den Weg bis zum ersten Kunden.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
       ru: `${SITE_URL}/karriere/buergergeld`,
-      de: `${SITE_URL}/de/karriere/buergergeld`,
-      uk: `${SITE_URL}${URL_PATH}`,
+      de: `${SITE_URL}${URL_PATH}`,
     },
   },
   openGraph: {
-    title: "Із Bürgergeld у професію фінансового консультанта",
+    title: "Vom Bürgergeld in den Beruf als Finanzberater",
     description:
-      "З підтримкою держави, Einstiegsgeld до 24 місяців, і супроводом від документів до першого клієнта.",
+      "Mit staatlicher Unterstützung, Einstiegsgeld bis zu 24 Monate, und Begleitung von den Unterlagen bis zum ersten Kunden.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
-    locale: "uk_UA",
+    locale: "de_DE",
     images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Із Bürgergeld у професію фінансового консультанта",
+    title: "Vom Bürgergeld in den Beruf als Finanzberater",
     description:
-      "Einstiegsgeld до 24 місяців + повний супровід від документів до першого клієнта.",
+      "Einstiegsgeld bis zu 24 Monate + volle Begleitung von den Unterlagen bis zum ersten Kunden.",
     images: ["/preview.webp"],
   },
 };
 
-export default function UaBuergergeldPage() {
+export default function DeBuergergeldPage() {
   return (
-    <div className="min-h-screen" lang="uk">
+    <div className="min-h-screen" lang="de">
       <Navbar />
       <RecruitmentHero
         content={buergergeldHero}
         scrollTargetId="support"
         scrollLabel={ui.heroScrollLabel}
+        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
       />
       <SupportComparison
         table={supportTable}
@@ -112,7 +112,7 @@ export default function UaBuergergeldPage() {
         primary={buergergeldFinalCTA.primary}
         secondary={buergergeldFinalCTA.secondary}
       />
-      <RecruitmentQualificationForm sourcePage="buergergeld" locale="ua" />
+      <RecruitmentQualificationForm sourcePage="buergergeld" locale="de" />
       <Footer />
     </div>
   );

@@ -28,7 +28,14 @@ export const metadata: Metadata = {
     "Карьера финансового консультанта в Германии — русскоязычная команда DVAG | Babic Finance",
   description:
     "Построй карьеру финансового консультанта в Германии. На русском, без опыта, с полной поддержкой команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      ru: `${SITE_URL}/`,
+      de: `${SITE_URL}/de`,
+      uk: `${SITE_URL}/ua`,
+    },
+  },
   openGraph: {
     title:
       "Карьера финансового консультанта в Германии — русскоязычная команда DVAG",
@@ -37,6 +44,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "Babic Finance",
     type: "website",
+    locale: "ru_RU",
     images: ["/preview.webp"],
   },
   twitter: {
@@ -53,7 +61,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <RecruitmentHero content={homeHero} scrollTargetId="recognize" />
+      <RecruitmentHero
+        content={homeHero}
+        scrollTargetId="recognize"
+        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+      />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}

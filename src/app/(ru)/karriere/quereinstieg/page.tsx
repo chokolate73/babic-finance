@@ -29,7 +29,14 @@ export const metadata: Metadata = {
   title: "Смена профессии — финансовый консультант — Babic Finance",
   description:
     "Сменить профессию и стать финансовым консультантом. Полное обучение, персональный коуч, старт параллельно с текущей работой возможен.",
-  alternates: { canonical: `${SITE_URL}${URL_PATH}` },
+  alternates: {
+    canonical: `${SITE_URL}${URL_PATH}`,
+    languages: {
+      ru: `${SITE_URL}${URL_PATH}`,
+      de: `${SITE_URL}/de${URL_PATH}`,
+      uk: `${SITE_URL}/ua${URL_PATH}`,
+    },
+  },
   openGraph: {
     title: "Смена профессии — финансовый консультант — Babic Finance",
     description:
@@ -37,6 +44,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
+    locale: "ru_RU",
     images: ["/preview.webp"],
   },
   twitter: {

@@ -1,63 +1,63 @@
 import type { Metadata } from "next";
 import { Pin, Wallet, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/ua/Footer";
+import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 
-const URL_PATH = "/ua/karriere/nebenberuf";
+const URL_PATH = "/karriere/nebenberuf";
 const SITE_URL = "https://fin-1.de";
 const DVAG_NEBENBERUF =
   "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/nebenberuf.html#vladislav.babic";
 
 export const metadata: Metadata = {
-  title: "Паралельний старт у фінансах — Babic Finance",
+  title: "Параллельный старт в финансах — Babic Finance",
   description:
-    "Підробіток із мінімальними зусиллями — без ризиків. Vertrauensmitarbeiter або Vermögensberater-Assistent паралельно з основною роботою чи навчанням.",
+    "Подработка с минимальными усилиями — без рисков. Vertrauensmitarbeiter или Vermögensberater-Assistent параллельно с основной работой или учёбой.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
-      ru: `${SITE_URL}/karriere/nebenberuf`,
-      uk: `${SITE_URL}${URL_PATH}`,
+      ru: `${SITE_URL}${URL_PATH}`,
+      uk: `${SITE_URL}/ua${URL_PATH}`,
     },
   },
   openGraph: {
-    title: "Паралельний старт у фінансах — Babic Finance",
+    title: "Параллельный старт в финансах — Babic Finance",
     description:
-      "Підробіток із мінімальними зусиллями — без ризиків. Vertrauensmitarbeiter або Vermögensberater-Assistent паралельно з основною роботою чи навчанням.",
+      "Подработка с минимальными усилиями — без рисков. Vertrauensmitarbeiter или Vermögensberater-Assistent параллельно с основной работой или учёбой.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
-    locale: "uk_UA",
+    locale: "ru_RU",
     images: ["/preview.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Паралельний старт у фінансах — Babic Finance",
+    title: "Параллельный старт в финансах — Babic Finance",
     description:
-      "Підробіток із мінімальними зусиллями — без ризиків. Паралельно з основною роботою чи навчанням.",
+      "Подработка с минимальными усилиями — без рисков. Параллельно с основной работой или учёбой.",
     images: ["/preview.webp"],
   },
 };
 
 const profileItems = [
-  "відкритий, мотивований, надійний",
-  "любиш спілкуватися з людьми й легко знайомишся",
-  "хочеш збільшити дохід без зайвих складнощів",
-  "цікавишся фінансовими темами (плюс, але не обов'язково)",
+  "открытый, мотивированный, надёжный",
+  "любишь общаться с людьми и легко заводишь новые знакомства",
+  "хочешь увеличить свой доход без сложностей",
+  "интересуешься финансовыми темами (плюс, но не обязательно)",
 ];
 
 const benefitItems = [
-  "цікавий підробіток із можливістю знайти професію мрії",
-  "вільний графік і максимальну гнучкість",
-  "хороші умови оплати, прив'язані до результату",
-  "персональну підтримку досвідченого фінансового коуча",
-  "осмислену справу — ти реально допомагаєш іншим людям",
+  "интересную подработку с возможностью найти профессию мечты",
+  "свободный график и максимум гибкости",
+  "хорошие условия оплаты, привязанные к результату",
+  "персональную поддержку опытного финансового коуча",
+  "осмысленное дело — ты реально помогаешь другим людям",
 ];
 
-export default function UaNebenberufPage() {
+export default function NebenberufPage() {
   return (
-    <div className="min-h-screen" lang="uk">
+    <div className="min-h-screen">
       <Navbar />
 
       {/* Hero / Header */}
@@ -65,15 +65,15 @@ export default function UaNebenberufPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimateOnScroll animation="fade-up">
             <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-              Паралельно з роботою або навчанням
+              Параллельно с работой или учёбой
             </span>
             <h1 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 leading-tight">
-              Підробіток із мінімальними зусиллями — без ризиків
+              Подработка с минимальными усилиями — без рисков
             </h1>
             <p className="text-white/80 mt-6 text-lg leading-relaxed">
-              Якщо хочеш підзаробити й без зобов'язань познайомитися з професією
-              фінансового консультанта — формат підробітку ідеально підходить.
-              Навіть без досвіду у фінансах.
+              Если хочешь подзаработать и без обязательств познакомиться с
+              профессией финансового консультанта — формат подработки идеально
+              подходит. Даже без опыта в финансах.
             </p>
           </AnimateOnScroll>
         </div>
@@ -89,8 +89,8 @@ export default function UaNebenberufPage() {
                 className="w-6 h-6 text-gold flex-shrink-0 mt-1"
               />
               <p className="text-foreground/90 text-base leading-relaxed">
-                Ти працюєш звідки хочеш і коли хочеш — паралельно зі своєю
-                основною діяльністю. Підходить і студентам, і школярам.
+                Ты работаешь откуда хочешь и когда хочешь — параллельно со своей
+                основной деятельностью. Подходит и студентам, и школьникам.
               </p>
             </div>
           </AnimateOnScroll>
@@ -98,10 +98,10 @@ export default function UaNebenberufPage() {
           <AnimateOnScroll animation="fade-up" delay={80}>
             <div>
               <p className="text-foreground/85 text-base leading-relaxed">
-                <strong className="text-navy">Бонус:</strong> ти без ризику
-                вивчаєш цікаву професію зсередини. Через якийсь час сам
-                вирішуєш — чи хочеш перейти у фінансовий консалтинг як основну
-                діяльність.
+                <strong className="text-navy">Бонус:</strong> ты без риска
+                изучаешь интересную профессию изнутри. Через какое-то время сам
+                решаешь — хочешь ли перейти в финансовый консалтинг как основную
+                деятельность.
               </p>
               <a
                 href={DVAG_NEBENBERUF}
@@ -109,7 +109,7 @@ export default function UaNebenberufPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 mt-4 px-4 py-2 border border-[#D4AF55] rounded-full text-sm font-semibold text-[#D4AF55] hover:bg-[#D4AF55] hover:text-white transition-colors"
               >
-                Детальніше про професію фінансового коуча
+                Подробнее о профессии финансового коуча
                 <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -123,10 +123,10 @@ export default function UaNebenberufPage() {
           <AnimateOnScroll animation="fade-up">
             <div className="text-center mb-12">
               <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-                Формати
+                Форматы
               </span>
               <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-                Два формати підробітку
+                Два формата подработки
               </h2>
             </div>
           </AnimateOnScroll>
@@ -138,12 +138,12 @@ export default function UaNebenberufPage() {
                   Vertrauensmitarbeiter
                 </h3>
                 <p className="text-sm text-gold mt-1 font-medium">
-                  Довірена особа
+                  Доверенное лицо
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-4">
-                  Розширюєш коло знайомих, рекомендуєш консультацію свого
-                  фінансового коуча. Якщо з твоєї рекомендації виходить новий
-                  клієнт — ти отримуєш грошову премію.
+                  Расширяешь круг знакомых, рекомендуешь консультацию своего
+                  финансового коуча. Если из твоей рекомендации получается новый
+                  клиент — ты получаешь денежную премию.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -154,13 +154,13 @@ export default function UaNebenberufPage() {
                   Vermögensberater-Assistent
                 </h3>
                 <p className="text-sm text-gold mt-1 font-medium">
-                  Асистент консультанта
+                  Ассистент консультанта
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-4">
-                  Допомагаєш своєму особистому коучу в його роботі — наприклад,
-                  із заповненням клієнтських даних. Саму консультацію проводить
-                  коуч. У будь-який момент можеш вирішити — залишатися на
-                  підробітку чи переходити в повну зайнятість.
+                  Помогаешь своему личному коучу в его работе — например, с
+                  заполнением клиентских данных. Саму консультацию проводит
+                  коуч. В любой момент можешь решить — оставаться на подработке
+                  или переходить в полную занятость.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -178,12 +178,12 @@ export default function UaNebenberufPage() {
                   <Wallet className="w-6 h-6 text-gold" />
                 </div>
                 <h3 className="font-semibold text-navy text-lg">
-                  Привабливий підробіток
+                  Привлекательная подработка
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-3">
-                  Твій дохід залежить від того, зі скількома зацікавленими
-                  людьми пройшла успішна консультація. Кілька сотень євро
-                  додаткового доходу на місяць — реально.
+                  Твой доход зависит от того, со сколькими заинтересованными
+                  людьми прошла успешная консультация. Несколько сотен евро
+                  дополнительного дохода в месяц — реально.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -194,12 +194,12 @@ export default function UaNebenberufPage() {
                   <Clock className="w-6 h-6 text-gold" />
                 </div>
                 <h3 className="font-semibold text-navy text-lg">
-                  Максимальна гнучкість
+                  Максимальная гибкость
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-3">
-                  Працюєш тоді, коли є час — ввечері, на вихідних, паралельно
-                  з основною діяльністю. Якщо виникають питання — твій
-                  персональний коуч на зв'язку будь-коли.
+                  Работаешь тогда, когда есть время — вечером, по выходным,
+                  параллельно с основной деятельностью. Если возникают вопросы —
+                  твой персональный коуч на связи в любой момент.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -214,10 +214,10 @@ export default function UaNebenberufPage() {
             <AnimateOnScroll animation="fade-up">
               <div>
                 <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-                  Профіль
+                  Профиль
                 </span>
                 <h2 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mt-3">
-                  Це для тебе, якщо ти:
+                  Это для тебя, если ты:
                 </h2>
                 <ul className="mt-6 space-y-3">
                   {profileItems.map((item) => (
@@ -236,10 +236,10 @@ export default function UaNebenberufPage() {
             <AnimateOnScroll animation="fade-up" delay={100}>
               <div>
                 <span className="text-gold font-semibold text-sm uppercase tracking-wider">
-                  Що отримуєш
+                  Что получаешь
                 </span>
                 <h2 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-bold text-navy mt-3">
-                  Що ти отримуєш:
+                  Что ты получаешь:
                 </h2>
                 <ul className="mt-6 space-y-3">
                   {benefitItems.map((item) => (
@@ -258,7 +258,7 @@ export default function UaNebenberufPage() {
         </div>
       </section>
 
-      <RecruitmentQualificationForm sourcePage="nebenberuf" locale="ua" />
+      <RecruitmentQualificationForm sourcePage="nebenberuf" />
       <Footer />
     </div>
   );
