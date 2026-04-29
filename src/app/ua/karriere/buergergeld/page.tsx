@@ -64,6 +64,7 @@ export default function UaBuergergeldPage() {
         content={buergergeldHero}
         scrollTargetId="support"
         scrollLabel={ui.heroScrollLabel}
+        backgroundAlt="Babic Finance — кар'єра фінансового консультанта в Німеччині"
       />
       <SupportComparison
         table={supportTable}

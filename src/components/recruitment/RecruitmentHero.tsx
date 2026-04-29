@@ -6,18 +6,18 @@ import type { HeroContent } from "@/data/recruitment";
 
 type Props = {
   content: HeroContent;
+  backgroundAlt: string;
   scrollTargetId?: string;
   backgroundSrc?: string;
-  backgroundAlt?: string;
   videoSrc?: string;
   scrollLabel?: string;
 };
 
 export default function RecruitmentHero({
   content,
+  backgroundAlt,
   scrollTargetId = "recognize",
   backgroundSrc = "/hero.png",
-  backgroundAlt = "Babic Finance — карьера финансового консультанта в Германии",
   videoSrc = "/hero.mp4",
   scrollLabel = "Прокрутить вниз",
 }: Props) {

@@ -51,7 +51,11 @@ export default function BuergergeldPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <RecruitmentHero content={buergergeldHero} scrollTargetId="support" />
+      <RecruitmentHero
+        content={buergergeldHero}
+        scrollTargetId="support"
+        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+      />
       <SupportComparison />
       <BenefitsList
         id="help"

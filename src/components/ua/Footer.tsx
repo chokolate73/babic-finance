@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Особистий фінансовий консультант для клієнтів у Німеччині. DVAG.
+              Особистий фінансовий консультант для україномовних клієнтів у Німеччині. DVAG.
             </p>
           </div>
 
@@ -98,6 +98,14 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-sm">
               <a
+                href="https://www.dvag.de/vladislav.babic/karriere.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white/50 hover:text-white transition-colors"
+              >
+                Профіль на DVAG
+              </a>
+              <a
                 href="/impressum"
                 className="block text-white/50 hover:text-white transition-colors"
               >
@@ -115,7 +123,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-sm text-white/40">
-            &copy; 2026 Wladislaw Babitsch — Regionaldirektor, DVAG. Усі права захищені.
+            &copy; 2026 Владислав Бабіч — регіональний директор, DVAG. Усі права захищені.
           </p>
         </div>
       </div>

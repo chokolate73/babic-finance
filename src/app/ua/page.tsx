@@ -11,6 +11,7 @@ import IncomeRange from "@/components/recruitment/IncomeRange";
 import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import Seminar from "@/components/ua/Seminar";
 import {
   homeHero,
   homePainPoints,
@@ -84,6 +85,23 @@ export default function UaHomePage() {
         chatAriaLabel={ui.chatAriaLabel}
       />
       <MyStory content={myStoryContent} />
+      <section className="bg-cream py-16 lg:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-gold font-semibold text-sm uppercase tracking-wider">
+            Девіз DVAG з 1975 року
+          </span>
+          <p className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl lg:text-6xl font-bold text-navy mt-4 leading-tight">
+            Menschen brauchen Menschen.
+          </p>
+          <span
+            aria-hidden="true"
+            className="block w-[60px] h-[2px] bg-gold mx-auto mt-6"
+          />
+          <p className="text-muted-foreground mt-6 max-w-xl mx-auto">
+            Людям потрібні люди. На цьому побудована робота DVAG — і моя особиста філософія консультування.
+          </p>
+        </div>
+      </section>
       <SegmentCards
         items={segmentCards}
         eyebrow={ui.segmentsEyebrow}
@@ -110,6 +128,7 @@ export default function UaHomePage() {
         title={ui.transparenzTitleHome}
         subtitle={ui.transparenzSubtitleHome}
       />
+      <Seminar />
       <RecruitmentFAQ
         eyebrow={homeFAQContent.eyebrow}
         title={homeFAQContent.title}

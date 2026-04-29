@@ -63,6 +63,7 @@ export default function DeBuergergeldPage() {
         content={buergergeldHero}
         scrollTargetId="support"
         scrollLabel={ui.heroScrollLabel}
+        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
       />
       <SupportComparison
         table={supportTable}

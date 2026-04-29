@@ -68,6 +68,7 @@ export default function UaQuereinstiegPage() {
         content={quereinstiegHero}
         scrollTargetId="why"
         scrollLabel={ui.heroScrollLabel}
+        backgroundAlt="Babic Finance — кар'єра фінансового консультанта в Німеччині"
       />
       <BenefitsList
         id="why"

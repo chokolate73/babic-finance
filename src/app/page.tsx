@@ -53,7 +53,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <RecruitmentHero content={homeHero} scrollTargetId="recognize" />
+      <RecruitmentHero
+        content={homeHero}
+        scrollTargetId="recognize"
+        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+      />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}

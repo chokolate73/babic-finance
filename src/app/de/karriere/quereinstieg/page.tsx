@@ -67,6 +67,7 @@ export default function DeQuereinstiegPage() {
         content={quereinstiegHero}
         scrollTargetId="why"
         scrollLabel={ui.heroScrollLabel}
+        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
       />
       <BenefitsList
         id="why"

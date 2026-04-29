@@ -172,13 +172,16 @@ export default function Seminar() {
               </span>
             </div>
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mt-3">
-              Фінансовий консультант у Німеччині
+              Консультант із фінансів у Німеччині
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-              Унікальний курс для всіх, хто хоче зрозуміти німецьку фінансову систему
+              Унікальний курс для тих, хто хоче розібратися у фінансовій системі Німеччини
             </p>
             <p className="text-navy/70 text-sm mt-2 max-w-lg mx-auto">
-              Раз на тиждень зустрічаємося наживо — розглядаємо теми, я відповідаю на запитання. Запис кожної сесії залишається у вас.
+              Раз на тиждень зустрічаємося наживо — розбираємо теми та відповідаю на запитання. Запис кожного заняття залишається у вас.
+            </p>
+            <p className="text-navy/60 text-xs italic mt-3 max-w-lg mx-auto">
+              Курс ведеться російською мовою. Запитання можна ставити українською — у нашій команді спілкуємося обома мовами.
             </p>
 
             <div className="mt-6 flex justify-center">
@@ -188,7 +191,7 @@ export default function Seminar() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {["Live раз на тиждень", "3 місяці", "Доступ до записів", "Приєднатися можна будь-коли"].map((b) => (
+              {["Live раз на тиждень", "3 місяці", "Доступ до записів", "Підключитися можна будь-коли"].map((b) => (
                 <span key={b} className="px-4 py-1.5 text-sm font-semibold rounded-full border border-gold/30 bg-gold/10 text-gold">
                   {b}
                 </span>
@@ -202,12 +205,12 @@ export default function Seminar() {
           <AnimateOnScroll animation="fade-left">
             <div className="bg-card p-7 rounded-2xl border border-border h-full">
               <p className="text-sm font-semibold uppercase tracking-wider text-navy/50 mb-5">
-                На курсі ви дізнаєтесь
+                Під час навчання ви дізнаєтеся
               </p>
               <CheckItem>Як працює система страхування в Німеччині</CheckItem>
-              <CheckItem>Пенсійне забезпечення та накопичення капіталу</CheckItem>
+              <CheckItem>Пенсійні програми та накопичення</CheckItem>
               <CheckItem>Інвестиції та фінансові інструменти</CheckItem>
-              <CheckItem>Банківські продукти та кредити</CheckItem>
+              <CheckItem>Банківські продукти й кредити</CheckItem>
               <CheckItem>Основи фінансового консультування</CheckItem>
             </div>
           </AnimateOnScroll>
@@ -218,8 +221,8 @@ export default function Seminar() {
                 Переваги курсу
               </p>
               <BulletItem icon={Video}>Онлайн-заняття раз на тиждень увечері</BulletItem>
-              <BulletItem icon={FolderOpen}>Доступ до всіх записів сесій</BulletItem>
-              <BulletItem icon={Languages}>Заняття українською/російською з поясненням німецьких термінів</BulletItem>
+              <BulletItem icon={FolderOpen}>Доступ до всіх записів уроків</BulletItem>
+              <BulletItem icon={Languages}>Розбір німецької фінансової термінології</BulletItem>
               <BulletItem icon={FileText}>За потреби — довідка для Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>
@@ -231,25 +234,22 @@ export default function Seminar() {
             <p className="text-sm font-semibold uppercase tracking-wider text-gold mb-5">
               Після курсу ви зможете
             </p>
-            <div className="grid sm:grid-cols-3 gap-x-8">
-              <CheckItem gold>Продовжити навчання німецькою</CheckItem>
-              <CheckItem gold>Готуватися до IHK-ліцензій (GewO)</CheckItem>
-              <CheckItem gold>Використати знання професійно або для особистого розвитку</CheckItem>
+            <div className="grid sm:grid-cols-2 gap-x-8">
+              <CheckItem gold>Продовжити навчання німецькою мовою</CheckItem>
+              <CheckItem gold>Готуватися до отримання ліцензій IHK (GewO)</CheckItem>
+              <CheckItem gold>Використовувати знання для роботи або особистого розвитку</CheckItem>
+              <CheckItem gold>Навіть якщо у вас немає досвіду у фінансах — почати можна з нуля</CheckItem>
             </div>
           </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up">
-          <p className="font-[family-name:var(--font-serif)] italic text-muted-foreground text-center mb-10">
-            Навіть без досвіду у фінансах ви можете почати з нуля
-          </p>
-
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => setShowModal(true)}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-navy font-semibold rounded-full text-base hover:opacity-90 transition-all shadow-lg shadow-gold/20"
             >
-              Записатися на курс
+              Хочу на курс
             </button>
             <a
               href={waLink}
