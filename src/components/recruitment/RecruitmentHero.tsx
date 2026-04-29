@@ -101,11 +101,11 @@ export default function RecruitmentHero({
               className="flex items-center justify-center gap-4 mt-4 mb-6"
               {...fadeUp(0.5)}
             >
-              <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+              <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
               <span className="text-white/90 font-medium text-sm sm:text-base">
                 {content.subtitle}
               </span>
-              <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+              <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
             </motion.div>
 
             {/* Stat badges */}

@@ -78,7 +78,7 @@ export default function QuereinstiegPage() {
 
           {/* Block B — 📌 Bonus callout */}
           <AnimateOnScroll animation="fade-up" delay={80}>
-            <div className="mt-10 rounded-2xl border border-[#D4AF55]/40 bg-white p-6 lg:p-8">
+            <div className="mt-10 rounded-2xl border border-[#F5CD55]/40 bg-white p-6 lg:p-8">
               <p className="text-foreground/90 leading-relaxed">
                 <span aria-hidden="true">📌</span>{" "}
                 <strong className="text-navy">
@@ -89,7 +89,7 @@ export default function QuereinstiegPage() {
                 стартовать{" "}
                 <Link
                   href="/karriere/nebenberuf"
-                  className="underline hover:no-underline text-[#D4AF55] font-semibold"
+                  className="underline hover:no-underline text-[#F5CD55] font-semibold"
                 >
                   параллельно с основной работой
                 </Link>
@@ -98,7 +98,7 @@ export default function QuereinstiegPage() {
                   href="https://www.dvag-karriere.de/beruf-vermoegensberater/ausbildung.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:no-underline text-[#D4AF55] font-semibold"
+                  className="underline hover:no-underline text-[#F5CD55] font-semibold"
                 >
                   нашему обучению на топ-уровне
                 </a>{" "}
@@ -131,7 +131,7 @@ export default function QuereinstiegPage() {
                 работы. Начни параллельно — и пойми, твоё ли это направление.{" "}
                 <Link
                   href="/karriere/nebenberuf"
-                  className="not-italic underline hover:no-underline text-[#D4AF55] font-semibold"
+                  className="not-italic underline hover:no-underline text-[#F5CD55] font-semibold"
                 >
                   → Подробнее про подработку
                 </Link>

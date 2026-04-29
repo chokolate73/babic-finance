@@ -145,7 +145,16 @@ export default function SegmentCards({
   subtitle = "Выбери ситуацию, которая ближе — и узнай путь в деталях",
 }: Props = {}) {
   return (
-    <section id="segments" className="py-20 lg:py-28 bg-white">
+    <section
+      id="segments"
+      className="py-20 lg:py-28 bg-white"
+      style={
+        {
+          ["--color-gold" as string]: "#c9a84c",
+          ["--color-ring" as string]: "#c9a84c",
+        } as React.CSSProperties
+      }
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-14">

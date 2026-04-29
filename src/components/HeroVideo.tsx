@@ -150,11 +150,11 @@ export default function HeroVideo() {
             className="flex items-center justify-center gap-4 mt-2 mb-3 lg:mb-6"
             {...fadeUp(0.5)}
           >
-            <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+            <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
             <span className="text-white not-italic font-medium uppercase text-[1.1rem] tracking-[0.15em]">
               {heroContent.subtitle}
             </span>
-            <div className="h-px w-10 shrink-0 bg-[#D4AF55]" />
+            <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
           </motion.div>
 
           {/* Stat badges */}
