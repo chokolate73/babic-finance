@@ -145,6 +145,26 @@ export const qualificationsCallout = {
   text: "Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung ihrer Berater.",
   sub: "Für dich heißt das: du zahlst nichts für Prüfungen, Kurse und Versicherungen — und lernst sofort von den Besten.",
   source: "Quelle: Unternehmensbericht DVAG, dvag-karriere.de",
+  productsPopup: {
+    label: "Welche Produkte werde ich beraten?",
+    title: "Welche Produkte du berätst",
+    description:
+      "Aus dem umfangreichen Angebot der DVAG wählst du gemeinsam mit deinen Kunden die für sie passenden Produkte aus. Dank der engen Kooperation mit unseren Produktpartnern bieten wir leistungsstarke Konzepte, die einzigartig am Markt und flexibel auf die individuelle Lebenssituation abgestimmt sind.",
+    categories: [
+      "Absicherung",
+      "Altersvorsorge",
+      "Vermögensaufbau",
+      "Wohneigentum",
+      "Geld sparen & managen",
+      "Konzepte für Kinder",
+      "Firmenkunden",
+    ],
+    closeLabel: "Schließen",
+    link: {
+      href: "https://www.dvag.de/dvag/allfinanzberatung/produkte.html",
+      label: "Mehr auf dvag.de",
+    },
+  },
 };
 
 export const pathSteps: PathStep[] = [
@@ -152,37 +172,37 @@ export const pathSteps: PathStep[] = [
     num: 1,
     title: "Kennenlernen",
     description:
-      "Kostenloses Gespräch — wir besprechen deine Situation, Ziele, Zweifel. Ehrlich — ob dieser Beruf zu dir passt oder nicht.",
+      "Kostenloses Gespräch: Ziele, Zweifel, ehrliche Antwort — ob es zu dir passt.",
   },
   {
     num: 2,
     title: "10 Fragen",
     description:
-      `Der offizielle DVAG-Test „10 Fragen zum Traumberuf" — er hilft dir zu verstehen, wie sehr dieser Beruf zu dir passt. Das Ergebnis bekommen wir beide.`,
+      `Offizieller DVAG-Test „10 Fragen zum Traumberuf". Ergebnis sehen wir beide.`,
   },
   {
     num: 3,
     title: "Start der Ausbildung",
     description:
-      "Du beginnst zu lernen mit meiner persönlichen Unterstützung. Das Format wählst du selbst: Vollzeit oder parallel zur aktuellen Arbeit.",
+      "Lernen mit meiner persönlichen Begleitung — Vollzeit oder berufsbegleitend.",
   },
   {
     num: 4,
     title: "Erste Praxis",
     description:
-      `Schon in der Anfangsphase arbeitest du an echten Fällen — mit meiner Begleitung und der Unterstützung des Teams. Kein „allein im Feld".`,
+      "Echte Fälle von Anfang an — mit Mentor und Team im Rücken.",
   },
   {
     num: 5,
     title: "Lizenzprüfungen",
     description:
-      "Die IHK-Prüfungen (§34d / §34f / §34i) legst du während der Ausbildung ab. Alle Kosten und die Vorbereitung übernimmt die DVAG.",
+      "IHK-Prüfungen §34d / §34f / §34i — Kosten und Vorbereitung übernimmt die DVAG.",
   },
   {
     num: 6,
     title: "Selbstständigkeit",
     description:
-      "Bis du die Lizenzen hast, hast du schon erste Kunden, Erfahrung und ein Team im Rücken. Du bist dein eigener Chef.",
+      "Am Ende der Ausbildung: Kunden, Erfahrung, Team. Du bist dein eigener Chef.",
   },
 ];
 
