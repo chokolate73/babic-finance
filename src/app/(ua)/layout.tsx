@@ -20,7 +20,7 @@ const siteDescription =
   "Особистий фінансовий консультант у Німеччині — консультації українською та російською від Владислава Бабича.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fin-1.de"),
+  metadataBase: new URL("https://www.fin-1.de"),
   title: "Babic Finance",
   description: siteDescription,
   manifest: "/site.webmanifest",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Babic Finance",
     description: siteDescription,
-    url: "https://fin-1.de/ua",
+    url: "https://www.fin-1.de/ua",
     siteName: "Babic Finance",
     type: "website",
     locale: "uk_UA",

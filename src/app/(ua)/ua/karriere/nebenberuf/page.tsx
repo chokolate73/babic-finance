@@ -6,7 +6,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 
 const URL_PATH = "/ua/karriere/nebenberuf";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 const DVAG_NEBENBERUF =
   "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/nebenberuf.html#vladislav.babic";
 

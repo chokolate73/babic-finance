@@ -24,7 +24,7 @@ import {
 } from "@/data/recruitment.de";
 
 const URL_PATH = "/de/karriere/quereinstieg";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:
@@ -36,6 +36,8 @@ export const metadata: Metadata = {
     languages: {
       ru: `${SITE_URL}/karriere/quereinstieg`,
       de: `${SITE_URL}${URL_PATH}`,
+      uk: `${SITE_URL}/ua/karriere/quereinstieg`,
+      "x-default": `${SITE_URL}/karriere/quereinstieg`,
     },
   },
   openGraph: {

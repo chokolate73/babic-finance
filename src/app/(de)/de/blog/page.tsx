@@ -5,7 +5,7 @@ import Navbar from "@/components/de/Navbar";
 import Footer from "@/components/de/Footer";
 import { articlesDe, formatDateDe } from "@/data/blog.de";
 
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 const URL_PATH = "/de/blog";
 
 export const metadata: Metadata = {
