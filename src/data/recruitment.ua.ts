@@ -21,7 +21,7 @@ export function waLink(utm: string, message: string) {
 }
 
 export const homeHero: HeroContent = {
-  headline: "Побудуй кар'єру фінансового",
+  headline: "Побудуй кар'єру\nфінансового",
   headlineAccent: "консультанта в Німеччині",
   subtitle: "Без досвіду. З повною підтримкою команди.",
   personName: "Владислав Бабіч",
