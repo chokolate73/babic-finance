@@ -4,6 +4,8 @@ import Link from "next/link";
 import Navbar from "@/components/de/Navbar";
 import Footer from "@/components/de/Footer";
 import { articlesDe, formatDateDe } from "@/data/blog.de";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const SITE_URL = "https://www.fin-1.de";
 const URL_PATH = "/de/blog";
@@ -37,6 +39,12 @@ export const metadata: Metadata = {
 export default function BlogIndexDe() {
   return (
     <div className="min-h-screen" lang="de">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Startseite", url: `${SITE_URL}/de` },
+          { name: "Blog", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar forceDark />
       <main className="pt-24 lg:pt-32 pb-20 lg:pb-28 bg-white min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -20,6 +20,8 @@ import {
   ui,
   legalDisclaimers,
 } from "@/data/recruitment.de";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/de/karriere/buergergeld";
 const SITE_URL = "https://www.fin-1.de";
@@ -60,6 +62,13 @@ export const metadata: Metadata = {
 export default function DeBuergergeldPage() {
   return (
     <div className="min-h-screen" lang="de">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Startseite", url: `${SITE_URL}/de` },
+          { name: "Karriere", url: `${SITE_URL}/de/karriere/quereinstieg` },
+          { name: "Bürgergeld → Beruf", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar />
       <RecruitmentHero
         content={buergergeldHero}

@@ -14,6 +14,9 @@ import FAQ from "@/components/ua/FAQ";
 import Contact from "@/components/ua/Contact";
 import Footer from "@/components/ua/Footer";
 import FloatingButtons from "@/components/ua/FloatingButtons";
+import JsonLd from "@/components/JsonLd";
+import { faqs } from "@/data/faq.ua";
+import { getBreadcrumbLd, getFaqLd } from "@/lib/structuredData";
 
 const SITE_URL = "https://www.fin-1.de";
 const URL_PATH = "/ua/klienty";
@@ -47,6 +50,13 @@ export const metadata: Metadata = {
 export default function UaKlientyPage() {
   return (
     <div className="min-h-screen" lang="uk">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Головна", url: `${SITE_URL}/ua` },
+          { name: "Послуги", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
+      <JsonLd data={getFaqLd(faqs, "uk")} />
       <Navbar />
       <Hero />
       <PainPoints />
