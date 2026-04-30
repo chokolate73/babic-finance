@@ -8,7 +8,6 @@ import SegmentCards from "@/components/recruitment/SegmentCards";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import Seminar from "@/components/Seminar";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
@@ -16,7 +15,6 @@ import {
   homeHero,
   homePainPoints,
   pathSteps,
-  transparenzItems,
   homeFAQContent,
   homeFAQItems,
 } from "@/data/recruitment";
@@ -25,9 +23,9 @@ const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:
-    "Карьера финансового консультанта в Германии — русскоязычная команда DVAG | Babic Finance",
+    "Карьера финансового консультанта в Германии — команда DVAG | Babic Finance",
   description:
-    "Построй карьеру финансового консультанта в Германии. На русском, без опыта, с полной поддержкой команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
+    "Построй карьеру финансового консультанта в Германии. Без опыта, с полной поддержкой команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
   alternates: {
     canonical: `${SITE_URL}/`,
     languages: {
@@ -39,9 +37,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Карьера финансового консультанта в Германии — русскоязычная команда DVAG",
+      "Карьера финансового консультанта в Германии — команда DVAG",
     description:
-      "На русском. Без опыта. С полной поддержкой команды. Путь от первой встречи до самостоятельного консультанта с четырьмя признанными квалификациями.",
+      "Без опыта. С полной поддержкой команды. Путь от первой встречи до самостоятельного консультанта с четырьмя признанными квалификациями.",
     url: `${SITE_URL}/`,
     siteName: "Babic Finance",
     type: "website",
@@ -51,9 +49,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Карьера финансового консультанта в Германии — русскоязычная команда DVAG",
+      "Карьера финансового консультанта в Германии — команда DVAG",
     description:
-      "На русском. Без опыта. С полной поддержкой команды DVAG.",
+      "Без опыта. С полной поддержкой команды DVAG.",
     images: ["/preview.webp"],
   },
 };
@@ -102,7 +100,6 @@ export default function Home() {
         steps={pathSteps}
       />
       <IncomeRange />
-      <Transparenz items={transparenzItems} />
       <Seminar />
       <RecruitmentFAQ
         eyebrow={homeFAQContent.eyebrow}

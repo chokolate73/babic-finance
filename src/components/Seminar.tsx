@@ -176,7 +176,7 @@ export default function Seminar() {
               Консультант по финансам в Германии
             </h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-              Уникальный курс на русском языке для тех, кто хочет разобраться в финансовой системе Германии
+              Уникальный курс для тех, кто хочет разобраться в финансовой системе Германии
             </p>
             <p className="text-navy/70 text-sm mt-2 max-w-lg mx-auto">
               Раз в неделю встречаемся вживую — разбираем темы и отвечаю на вопросы. Запись каждого занятия остаётся у вас.
@@ -223,7 +223,7 @@ export default function Seminar() {
               </p>
               <BulletItem icon={Video}>Онлайн-занятия раз в неделю в вечернее время</BulletItem>
               <BulletItem icon={FolderOpen}>Доступ ко всем записям уроков</BulletItem>
-              <BulletItem icon={Languages}>Обучение на русском с разбором немецкой терминологии</BulletItem>
+              <BulletItem icon={Languages}>Подробный разбор немецкой финансовой терминологии</BulletItem>
               <BulletItem icon={FileText}>При необходимости — справка для Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>

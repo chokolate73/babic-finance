@@ -7,22 +7,22 @@ const reviews = [
   {
     name: "Alexander Kaschnikow",
     quote:
-      "Vielen Dank für die langjährige Zusammenarbeit! Wladislaw ist ein sehr verantwortungsbewusster und herzlicher Mensch! Ein Profi in seinem Fach! Immer erreichbar und bereit, in jeder Situation zu helfen. Wir empfehlen ihn als zuverlässigen Partner!",
+      "Vielen Dank für die langjährige Zusammenarbeit! Vladislav ist ein sehr verantwortungsbewusster und herzlicher Mensch! Ein Profi in seinem Fach! Immer erreichbar und bereit, in jeder Situation zu helfen. Wir empfehlen ihn als zuverlässigen Partner!",
   },
   {
     name: "Juri Martynenko",
     quote:
-      "Herzlichen Dank an Wladislaw für das Mentoring, das Coaching und die hervorragende Organisation der Lerngruppen!!!",
+      "Herzlichen Dank an Vladislav für das Mentoring, das Coaching und die hervorragende Organisation der Lerngruppen!!!",
   },
   {
     name: "Natalja Schefer",
     quote:
-      "Wladislaw Babitsch ist ein erfahrener Finanzberater und ein echter Profi! Er verfügt nicht nur über fundiertes Wissen, sondern kann es auch verständlich vermitteln. Bei Wladislaw geht es nicht nur um Finanzbildung, sondern auch um Verlässlichkeit, Stabilität und Sicherheit! In meiner schwierigen Situation hat er mir den Weg zur finanziellen Unabhängigkeit aufgezeigt. Ich bin aufrichtig dankbar und empfehle ihn von Herzen!",
+      "Vladislav Babic ist ein erfahrener Finanzberater und ein echter Profi! Er verfügt nicht nur über fundiertes Wissen, sondern kann es auch verständlich vermitteln. Bei Vladislav geht es nicht nur um Finanzbildung, sondern auch um Verlässlichkeit, Stabilität und Sicherheit! In meiner schwierigen Situation hat er mir den Weg zur finanziellen Unabhängigkeit aufgezeigt. Ich bin aufrichtig dankbar und empfehle ihn von Herzen!",
   },
   {
     name: "Alexej Saborski",
     quote:
-      "Ich bin sehr dankbar, Wladislaw Babitsch kennengelernt zu haben - jetzt ist er mein Mentor! Ich habe die Ausbildung durchlaufen und alle Produkte der DVAG sowie das Finanzwissen erlernt. Ich vertiefe das Wissen zu allen Produkten des Unternehmens und baue meine Finanzbildung weiter aus. Das ist für das Leben in Deutschland unglaublich wichtig!",
+      "Ich bin sehr dankbar, Vladislav Babic kennengelernt zu haben - jetzt ist er mein Mentor! Ich habe die Ausbildung durchlaufen und alle Produkte der DVAG sowie das Finanzwissen erlernt. Ich vertiefe das Wissen zu allen Produkten des Unternehmens und baue meine Finanzbildung weiter aus. Das ist für das Leben in Deutschland unglaublich wichtig!",
   },
   {
     name: "Elena Gaschenko",
@@ -32,7 +32,7 @@ const reviews = [
   {
     name: "Anna Leonowa",
     quote:
-      "Ich empfehle jedem, sich für eine Finanzberatung an Wladislaw zu wenden. Ein Mensch mit enormer Erfahrung - ein echter Profi in seinem Fach. Er antwortet schnell und kompetent auf alle Fragen, und was besonders wichtig ist - sogar außerhalb der Geschäftszeiten! Wladislaw hat mir alle Informationen strukturiert und verständlich vermittelt und mir geholfen, die richtige Entscheidung zu treffen.",
+      "Ich empfehle jedem, sich für eine Finanzberatung an Vladislav zu wenden. Ein Mensch mit enormer Erfahrung - ein echter Profi in seinem Fach. Er antwortet schnell und kompetent auf alle Fragen, und was besonders wichtig ist - sogar außerhalb der Geschäftszeiten! Vladislav hat mir alle Informationen strukturiert und verständlich vermittelt und mir geholfen, die richtige Entscheidung zu treffen.",
   },
 ];
 

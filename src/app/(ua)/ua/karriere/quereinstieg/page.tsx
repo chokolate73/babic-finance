@@ -6,7 +6,6 @@ import BenefitsList from "@/components/recruitment/BenefitsList";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import FinalCTA from "@/components/recruitment/FinalCTA";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
@@ -17,7 +16,6 @@ import {
   qualificationsCallout,
   pathSteps,
   incomeContent,
-  transparenzItems,
   quereinstiegFAQItems,
   quereinstiegFinalCTA,
   ui,
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію | Babic Finance",
   description:
-    "Зміни професію в Німеччині на фінансового консультанта DVAG. Використай свій досвід і мови. Можна паралельно з роботою. Підтримка українською.",
+    "Зміни професію в Німеччині на фінансового консультанта DVAG. Використай свій досвід і мови. Можна паралельно з роботою. Повна підтримка.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -45,7 +43,7 @@ export const metadata: Metadata = {
     title:
       "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію",
     description:
-      "Зміни професію в Німеччині — на ту, що потрібна. Навчання українською, з підтримкою команди DVAG.",
+      "Зміни професію в Німеччині — на ту, що потрібна. Повне навчання з підтримкою команди DVAG.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -57,7 +55,7 @@ export const metadata: Metadata = {
     title:
       "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію",
     description:
-      "Зміни професію в Німеччині. Навчання українською.",
+      "Зміни професію в Німеччині. Повне навчання.",
     images: ["/preview.webp"],
   },
 };
@@ -100,12 +98,6 @@ export default function UaQuereinstiegPage() {
         steps={pathSteps}
       />
       <IncomeRange content={incomeContent} thisMeansLabel={ui.incomeThisMeans} />
-      <Transparenz
-        items={transparenzItems}
-        eyebrow={ui.transparenzEyebrow}
-        title={ui.transparenzTitleHome}
-        subtitle={ui.transparenzSubtitleHome}
-      />
       <RecruitmentFAQ
         eyebrow={ui.faqEyebrow}
         title={ui.faqTitleQuereinstieg}

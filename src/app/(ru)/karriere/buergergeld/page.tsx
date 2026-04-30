@@ -5,7 +5,6 @@ import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
 import CareerPath from "@/components/recruitment/CareerPath";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import FinalCTA from "@/components/recruitment/FinalCTA";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
@@ -13,7 +12,6 @@ import {
   buergergeldHero,
   buergergeldHelp,
   buergergeldPathSteps,
-  buergergeldTransparenzItems,
   buergergeldFAQItems,
   buergergeldFinalCTA,
 } from "@/data/recruitment";
@@ -88,14 +86,6 @@ export default function BuergergeldPage() {
         title="Пошаговый план для Bürgergeld / ALG I"
         steps={buergergeldPathSteps}
       />
-      <div aria-hidden className="h-12 bg-gradient-to-b from-navy to-secondary" />
-      <Transparenz
-        eyebrow="Честно"
-        title="Что важно знать заранее"
-        subtitle="Программы господдержки — это возможность, но не гарантия. Вот что реально стоит понимать"
-        items={buergergeldTransparenzItems}
-      />
-      <div aria-hidden className="h-12 bg-gradient-to-b from-secondary to-navy" />
       <RecruitmentFAQ
         eyebrow="Вопросы"
         title="Вопросы про Jobcenter и Bürgergeld"

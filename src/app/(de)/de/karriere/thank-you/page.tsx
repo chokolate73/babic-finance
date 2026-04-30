@@ -8,7 +8,7 @@ import { Zap, BookOpen, Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Bewerbung gesendet | Babic Finance",
   description:
-    "Deine Bewerbung ist gesendet. Wladislaw meldet sich noch am selben Tag.",
+    "Deine Bewerbung ist gesendet. Vladislav meldet sich noch am selben Tag.",
   robots: { index: false, follow: false },
 };
 
@@ -26,7 +26,7 @@ const CARDS: Card[] = [
   {
     icon: "zap",
     title: "Willst du den Prozess beschleunigen?",
-    description: `Mach den offiziellen DVAG-Fragebogen „10 Fragen zum Traumberuf" — dann hat Wladislaw ein vollständiges Bild bis zum Gespräch.`,
+    description: `Mach den offiziellen DVAG-Fragebogen „10 Fragen zum Traumberuf" — dann hat Vladislav ein vollständiges Bild bis zum Gespräch.`,
     ctaText: "DVAG-Fragebogen starten",
     ctaHref: "https://dvag-karriere.de/10-fragen",
     external: true,
@@ -36,7 +36,7 @@ const CARDS: Card[] = [
     icon: "whatsapp",
     title: "Dringende Frage?",
     description:
-      "Schreib direkt auf WhatsApp — Wladislaw antwortet innerhalb einer Stunde während der Geschäftszeiten.",
+      "Schreib direkt auf WhatsApp — Vladislav antwortet innerhalb einer Stunde während der Geschäftszeiten.",
     ctaText: "Auf WhatsApp schreiben",
     ctaHref: "https://wa.me/491784743490",
     external: true,
@@ -75,7 +75,7 @@ export default function DeThankYouPage() {
                 Bewerbung gesendet!
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground mt-5 leading-relaxed">
-                Wladislaw hat deine Antworten erhalten und meldet sich noch am
+                Vladislav hat deine Antworten erhalten und meldet sich noch am
                 selben Tag per WhatsApp.
               </p>
             </div>

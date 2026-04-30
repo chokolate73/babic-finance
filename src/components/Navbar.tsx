@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 type NavLink = {
@@ -179,6 +180,15 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   }, []);
 
   useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
+  useEffect(() => {
     function onClick(e: MouseEvent) {
       if (
         localeRef.current &&
@@ -202,6 +212,8 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
     : isUa
       ? "Перемкнути меню"
       : "Toggle menu";
+
+  const closeLabel = isDe ? "SCHLIESSEN" : isUa ? "ЗАКРИТИ" : "ЗАКРЫТЬ";
 
   return (
     <nav
@@ -404,51 +416,54 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
         </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden bg-white border-t border-border">
-          <div className="px-4 py-4 space-y-3">
-            {navLinks.map((link) =>
-              link.children ? (
-                <div key={link.label} className="space-y-2">
-                  <div className="text-sm font-semibold text-navy">
-                    {link.label}
-                  </div>
-                  <div className="pl-4 space-y-2 border-l border-border">
-                    {link.children.map((child) => (
-                      <a
-                        key={child.href}
-                        href={child.href}
-                        className="block text-sm font-medium text-muted-foreground hover:text-navy transition-colors"
-                        onClick={() => setOpen(false)}
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="block text-sm font-medium text-muted-foreground hover:text-navy transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ),
-            )}
-            <a
-              href="https://wa.me/491784743490"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-whatsapp text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            className="lg:hidden fixed inset-0 z-[60] bg-navy/80 backdrop-blur-md"
+            role="dialog"
+            aria-modal="true"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          >
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label={toggleMenuAria}
+              className="absolute top-5 right-5 text-white text-sm font-semibold tracking-widest hover:text-gold transition-colors"
             >
-              <WhatsAppIcon className="w-4 h-4" />
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      )}
+              {closeLabel}
+            </button>
+            <div className="h-full w-full flex flex-col justify-center items-end pr-6 pl-12 pb-16">
+              <nav className="flex flex-col items-end gap-1">
+                {navLinks.map((link, i) => {
+                  const href = link.href ?? link.children?.[0]?.href ?? "#";
+                  return (
+                    <motion.a
+                      key={link.label}
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      initial={{ opacity: 0, x: 24 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 24 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.08 + i * 0.05,
+                        ease: "easeOut",
+                      }}
+                      className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-semibold text-white hover:text-gold transition-colors leading-[1.2] text-right"
+                    >
+                      {link.label}
+                    </motion.a>
+                  );
+                })}
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

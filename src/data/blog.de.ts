@@ -189,7 +189,7 @@ Eine Betrugsmasche, bei der Kriminelle als Subunternehmer auftreten, eine Ladung
 
 Eine Flottenversicherung ist kein Standardprodukt. Sie ist ein modularer Vertrag, dessen Wert davon abhängt, wie genau er zu Ihrem Fuhrpark, Ihrer Schadenhistorie und Ihrem Geschäftsmodell passt. Die größten Fehler in der Praxis sind nicht zu hohe Prämien — sondern unterversicherte Risiken, die im Schadenfall den Betrieb gefährden: zu niedrige Verkehrshaftungs-Summen, fehlende Werkverkehrsdeckung, vergessene Cyber-Risiken, lückenhafte Rechtsschutzbausteine.
 
-Wenn Sie Ihren Fuhrpark in Troisdorf, Bonn, im Rhein-Sieg-Kreis oder bundesweit absichern wollen und einen Berater suchen, der sich Zeit für die Details nimmt — gerne auch in russischer Sprache — sprechen Sie uns an. Ein erstes Gespräch ist unverbindlich und in 30 Minuten haben wir einen klaren Überblick über Ihre Ausgangslage.
+Wenn Sie Ihren Fuhrpark in Troisdorf, Bonn, im Rhein-Sieg-Kreis oder bundesweit absichern wollen und einen Berater suchen, der sich Zeit für die Details nimmt, sprechen Sie uns an. Ein erstes Gespräch ist unverbindlich und in 30 Minuten haben wir einen klaren Überblick über Ihre Ausgangslage.
 
 ---
 

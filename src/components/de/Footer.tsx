@@ -115,7 +115,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-sm text-white/40">
-            &copy; 2026 Wladislaw Babitsch - Regionaldirektor, DVAG. Alle Rechte vorbehalten.
+            &copy; 2026 Vladislav Babic - Regionaldirektor, DVAG. Alle Rechte vorbehalten.
           </p>
         </div>
       </div>

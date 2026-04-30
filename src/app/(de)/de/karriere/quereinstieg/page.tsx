@@ -6,7 +6,6 @@ import BenefitsList from "@/components/recruitment/BenefitsList";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import FinalCTA from "@/components/recruitment/FinalCTA";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
@@ -17,7 +16,6 @@ import {
   qualificationsCallout,
   pathSteps,
   incomeContent,
-  transparenzItems,
   quereinstiegFAQItems,
   quereinstiegFinalCTA,
   ui,
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Karriere als Finanzberater in Deutschland für Quereinsteiger | Babic Finance",
   description:
-    "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit russischsprachigem Mentor.",
+    "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit persönlichem Mentor.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
     title:
       "Karriere als Finanzberater in Deutschland für Quereinsteiger",
     description:
-      "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Ausbildung auf Russisch, mit DVAG-Team-Support.",
+      "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Vollständige Ausbildung mit DVAG-Team-Support.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -58,7 +56,7 @@ export const metadata: Metadata = {
     title:
       "Karriere als Finanzberater in Deutschland für Quereinsteiger",
     description:
-      "Wechsle in Deutschland den Beruf. Ausbildung auf Russisch.",
+      "Wechsle in Deutschland den Beruf. Vollständige Ausbildung.",
     images: ["/preview.webp"],
   },
 };
@@ -101,12 +99,6 @@ export default function DeQuereinstiegPage() {
         steps={pathSteps}
       />
       <IncomeRange content={incomeContent} thisMeansLabel={ui.incomeThisMeans} />
-      <Transparenz
-        items={transparenzItems}
-        eyebrow={ui.transparenzEyebrow}
-        title={ui.transparenzTitleHome}
-        subtitle={ui.transparenzSubtitleHome}
-      />
       <RecruitmentFAQ
         eyebrow={ui.faqEyebrow}
         title={ui.faqTitleQuereinstieg}
