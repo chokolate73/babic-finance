@@ -86,7 +86,7 @@ export const myStoryContent = {
     `Heute leite ich die DVAG-Direktion in Troisdorf. 4 387 Kunden im Netzwerk, über 131 Millionen Euro Kapital, ein Team, das genau diesen Weg geht. Und ich helfe anderen, ihn auch zu gehen — von „keine Ahnung von Finanzen" bis zum selbstständigen Berater mit eigenem Geschäft.`,
   ],
   pullQuote:
-    "Mir geht's darum, die Angst rauszunehmen. Du kannst in Deutschland einen Beruf von null aufbauen — auch ohne perfektes Deutsch, ohne Erfahrung, ohne das Gefühl, schon „bereit" zu sein.",
+    `Mir geht's darum, die Angst rauszunehmen. Du kannst in Deutschland einen Beruf von null aufbauen — auch ohne perfektes Deutsch, ohne Erfahrung, ohne das Gefühl, schon „bereit" zu sein.`,
 } as const;
 
 export const segmentCards: SegmentCard[] = [
