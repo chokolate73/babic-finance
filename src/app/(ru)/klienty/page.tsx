@@ -13,6 +13,9 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import JsonLd from "@/components/JsonLd";
+import { faqs } from "@/data/faq";
+import { getBreadcrumbLd, getFaqLd } from "@/lib/structuredData";
 
 const SITE_URL = "https://www.fin-1.de";
 const URL_PATH = "/klienty";
@@ -51,6 +54,13 @@ export const metadata: Metadata = {
 export default function KlientyPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Главная", url: SITE_URL },
+          { name: "Услуги", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
+      <JsonLd data={getFaqLd(faqs, "ru")} />
       <Navbar />
       <Hero />
       <PainPoints />

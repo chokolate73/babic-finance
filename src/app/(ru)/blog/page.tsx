@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { articles, formatDate } from "@/data/blog";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
+
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title: "Блог - Babic Finance",
@@ -25,6 +29,12 @@ export const metadata: Metadata = {
 export default function BlogIndex() {
   return (
     <main className="pt-24 lg:pt-32 pb-20 lg:pb-28 bg-white min-h-screen">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Главная", url: SITE_URL },
+          { name: "Блог", url: `${SITE_URL}/blog` },
+        ])}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <Link

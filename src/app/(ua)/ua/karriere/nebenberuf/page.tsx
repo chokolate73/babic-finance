@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/ua/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/ua/karriere/nebenberuf";
 const SITE_URL = "https://www.fin-1.de";
@@ -58,6 +60,13 @@ const benefitItems = [
 export default function UaNebenberufPage() {
   return (
     <div className="min-h-screen" lang="uk">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Головна", url: `${SITE_URL}/ua` },
+          { name: "Кар'єра", url: `${SITE_URL}/ua/karriere/quereinstieg` },
+          { name: "Підробіток", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar />
 
       {/* Hero / Header */}

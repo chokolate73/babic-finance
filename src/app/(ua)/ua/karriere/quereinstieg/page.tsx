@@ -22,6 +22,8 @@ import {
   quereinstiegFinalCTA,
   ui,
 } from "@/data/recruitment.ua";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/ua/karriere/quereinstieg";
 const SITE_URL = "https://www.fin-1.de";
@@ -63,6 +65,13 @@ export const metadata: Metadata = {
 export default function UaQuereinstiegPage() {
   return (
     <div className="min-h-screen" lang="uk">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Головна", url: `${SITE_URL}/ua` },
+          { name: "Кар'єра", url: `${SITE_URL}/ua/karriere/quereinstieg` },
+          { name: "Зміна професії", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar />
       <RecruitmentHero
         content={quereinstiegHero}
