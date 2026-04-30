@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "../globals.css";
+import JsonLd from "@/components/JsonLd";
+import {
+  getOrganizationLd,
+  getPersonLd,
+  getWebSiteLd,
+} from "@/lib/structuredData";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
@@ -20,7 +26,7 @@ const siteDescription =
   "Persönlicher Finanzberater in Deutschland — Finanzplanung und Beratung von Vladislav Babic.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fin-1.de"),
+  metadataBase: new URL("https://www.fin-1.de"),
   title: "Babic Finance",
   description: siteDescription,
   manifest: "/site.webmanifest",
@@ -38,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Babic Finance",
     description: siteDescription,
-    url: "https://fin-1.de/de",
+    url: "https://www.fin-1.de/de",
     siteName: "Babic Finance",
     type: "website",
     locale: "de_DE",
@@ -65,7 +71,12 @@ export default function DeRootLayout({
 }>) {
   return (
     <html lang="de" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <JsonLd data={getOrganizationLd("de")} />
+        <JsonLd data={getPersonLd()} />
+        <JsonLd data={getWebSiteLd("de")} />
+        {children}
+      </body>
     </html>
   );
 }

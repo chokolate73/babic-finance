@@ -25,7 +25,7 @@ import {
   ui,
 } from "@/data/recruitment.ua";
 
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 const URL_PATH = "/ua";
 
 export const metadata: Metadata = {

@@ -11,8 +11,10 @@ import {
   formatDateDe,
 } from "@/data/blog.de";
 import { renderMarkdown } from "@/lib/markdownRenderer";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       locale: "de_DE",
       publishedTime: article.date,
-      authors: ["Vladislav Babich"],
+      authors: ["Vladislav Babic"],
       images: [{ url: article.image }],
     },
     twitter: {
@@ -71,16 +73,18 @@ export default async function BlogArticlePageDe({ params }: PageProps) {
     dateModified: article.date,
     inLanguage: "de-DE",
     author: {
+      "@id": `${SITE_URL}/#person`,
       "@type": "Person",
-      name: "Vladislav Babich",
+      name: "Vladislav Babic",
       url: SITE_URL + "/de",
     },
     publisher: {
+      "@id": `${SITE_URL}/#organization`,
       "@type": "Organization",
       name: "Babic Finance",
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/android-chrome-512x512.png`,
+        url: `${SITE_URL}/preview.webp`,
       },
     },
     mainEntityOfPage: {
@@ -91,6 +95,13 @@ export default async function BlogArticlePageDe({ params }: PageProps) {
 
   return (
     <div className="min-h-screen" lang="de">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Startseite", url: `${SITE_URL}/de` },
+          { name: "Blog", url: `${SITE_URL}/de/blog` },
+          { name: article.title, url: `${SITE_URL}/de/blog/${article.slug}` },
+        ])}
+      />
       <Navbar forceDark />
       <main className="pt-24 lg:pt-32 pb-20 lg:pb-28 bg-white min-h-screen">
         <script
@@ -130,7 +141,7 @@ export default async function BlogArticlePageDe({ params }: PageProps) {
               <span className="text-gold font-bold text-sm">VB</span>
             </div>
             <div>
-              <p className="font-semibold text-navy text-sm">Vladislav Babich</p>
+              <p className="font-semibold text-navy text-sm">Vladislav Babic</p>
               <p className="text-xs text-muted-foreground">
                 Vermögensberater, Generali Vertriebspartner
               </p>

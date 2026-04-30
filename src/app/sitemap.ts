@@ -1,10 +1,32 @@
 import type { MetadataRoute } from "next";
 import { articlesDe } from "@/data/blog.de";
 
-const BASE_URL = "https://fin-1.de";
+const BASE_URL = "https://www.fin-1.de";
+
+const lastModByPath: Record<string, string> = {
+  "/": "2026-03-15",
+  "/de": "2026-03-15",
+  "/ua": "2026-03-15",
+  "/klienty": "2026-04-30",
+  "/de/klienty": "2026-04-30",
+  "/ua/klienty": "2026-04-30",
+  "/karriere/quereinstieg": "2026-02-10",
+  "/de/karriere/quereinstieg": "2026-02-10",
+  "/ua/karriere/quereinstieg": "2026-02-10",
+  "/karriere/buergergeld": "2026-02-10",
+  "/de/karriere/buergergeld": "2026-02-10",
+  "/ua/karriere/buergergeld": "2026-02-10",
+  "/karriere/nebenberuf": "2026-03-01",
+  "/ua/karriere/nebenberuf": "2026-03-01",
+  "/blog": "2026-03-01",
+  "/de/blog": "2026-04-30",
+  "/impressum": "2026-01-15",
+  "/datenschutz": "2026-01-15",
+};
+
+const lm = (path: string) => new Date(lastModByPath[path]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   const deBlogArticles: MetadataRoute.Sitemap = articlesDe.map((a) => ({
     url: `${BASE_URL}/de/blog/${a.slug}`,
     lastModified: new Date(a.date),
@@ -13,13 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   return [
     {
-      url: `${BASE_URL}/`,
-      lastModified,
+      url: `${BASE_URL}`,
+      lastModified: lm("/"),
       changeFrequency: "monthly",
       priority: 1,
       alternates: {
         languages: {
-          ru: `${BASE_URL}/`,
+          ru: `${BASE_URL}`,
           de: `${BASE_URL}/de`,
           uk: `${BASE_URL}/ua`,
         },
@@ -27,12 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/de`,
-      lastModified,
+      lastModified: lm("/de"),
       changeFrequency: "monthly",
       priority: 0.95,
       alternates: {
         languages: {
-          ru: `${BASE_URL}/`,
+          ru: `${BASE_URL}`,
           de: `${BASE_URL}/de`,
           uk: `${BASE_URL}/ua`,
         },
@@ -40,12 +62,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/ua`,
-      lastModified,
+      lastModified: lm("/ua"),
       changeFrequency: "monthly",
       priority: 0.95,
       alternates: {
         languages: {
-          ru: `${BASE_URL}/`,
+          ru: `${BASE_URL}`,
           de: `${BASE_URL}/de`,
           uk: `${BASE_URL}/ua`,
         },
@@ -53,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/karriere/quereinstieg`,
-      lastModified,
+      lastModified: lm("/karriere/quereinstieg"),
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
@@ -66,7 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/de/karriere/quereinstieg`,
-      lastModified,
+      lastModified: lm("/de/karriere/quereinstieg"),
       changeFrequency: "monthly",
       priority: 0.85,
       alternates: {
@@ -79,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/ua/karriere/quereinstieg`,
-      lastModified,
+      lastModified: lm("/ua/karriere/quereinstieg"),
       changeFrequency: "monthly",
       priority: 0.85,
       alternates: {
@@ -92,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/karriere/nebenberuf`,
-      lastModified,
+      lastModified: lm("/karriere/nebenberuf"),
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
@@ -104,7 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/ua/karriere/nebenberuf`,
-      lastModified,
+      lastModified: lm("/ua/karriere/nebenberuf"),
       changeFrequency: "monthly",
       priority: 0.85,
       alternates: {
@@ -116,7 +138,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/karriere/buergergeld`,
-      lastModified,
+      lastModified: lm("/karriere/buergergeld"),
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
@@ -129,7 +151,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/de/karriere/buergergeld`,
-      lastModified,
+      lastModified: lm("/de/karriere/buergergeld"),
       changeFrequency: "monthly",
       priority: 0.85,
       alternates: {
@@ -142,7 +164,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/ua/karriere/buergergeld`,
-      lastModified,
+      lastModified: lm("/ua/karriere/buergergeld"),
       changeFrequency: "monthly",
       priority: 0.85,
       alternates: {
@@ -155,7 +177,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/klienty`,
-      lastModified,
+      lastModified: lm("/klienty"),
       changeFrequency: "monthly",
       priority: 0.8,
       alternates: {
@@ -168,7 +190,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/de/klienty`,
-      lastModified,
+      lastModified: lm("/de/klienty"),
       changeFrequency: "monthly",
       priority: 0.75,
       alternates: {
@@ -181,7 +203,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/ua/klienty`,
-      lastModified,
+      lastModified: lm("/ua/klienty"),
       changeFrequency: "monthly",
       priority: 0.75,
       alternates: {
@@ -194,26 +216,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified,
+      lastModified: lm("/blog"),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/de/blog`,
-      lastModified,
+      lastModified: lm("/de/blog"),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     ...deBlogArticles,
     {
       url: `${BASE_URL}/impressum`,
-      lastModified,
+      lastModified: lm("/impressum"),
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${BASE_URL}/datenschutz`,
-      lastModified,
+      lastModified: lm("/datenschutz"),
       changeFrequency: "yearly",
       priority: 0.3,
     },

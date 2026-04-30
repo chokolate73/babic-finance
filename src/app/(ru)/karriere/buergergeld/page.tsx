@@ -15,9 +15,11 @@ import {
   buergergeldFAQItems,
   buergergeldFinalCTA,
 } from "@/data/recruitment";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/karriere/buergergeld";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:
@@ -56,6 +58,13 @@ export const metadata: Metadata = {
 export default function BuergergeldPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Главная", url: SITE_URL },
+          { name: "Карьера", url: `${SITE_URL}/karriere/quereinstieg` },
+          { name: "Bürgergeld → профессия", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar />
       <RecruitmentHero
         content={buergergeldHero}

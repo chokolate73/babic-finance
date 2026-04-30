@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "../globals.css";
+import JsonLd from "@/components/JsonLd";
+import {
+  getOrganizationLd,
+  getPersonLd,
+  getWebSiteLd,
+} from "@/lib/structuredData";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
@@ -20,7 +26,7 @@ const siteDescription =
   "Особистий фінансовий консультант у Німеччині — фінансове планування та консультації від Владислава Бабича.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fin-1.de"),
+  metadataBase: new URL("https://www.fin-1.de"),
   title: "Babic Finance",
   description: siteDescription,
   manifest: "/site.webmanifest",
@@ -38,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Babic Finance",
     description: siteDescription,
-    url: "https://fin-1.de/ua",
+    url: "https://www.fin-1.de/ua",
     siteName: "Babic Finance",
     type: "website",
     locale: "uk_UA",
@@ -65,7 +71,12 @@ export default function UaRootLayout({
 }>) {
   return (
     <html lang="uk" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <JsonLd data={getOrganizationLd("uk")} />
+        <JsonLd data={getPersonLd()} />
+        <JsonLd data={getWebSiteLd("uk")} />
+        {children}
+      </body>
     </html>
   );
 }

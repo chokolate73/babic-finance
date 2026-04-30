@@ -4,9 +4,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/karriere/nebenberuf";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 const DVAG_NEBENBERUF =
   "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/nebenberuf.html#vladislav.babic";
 
@@ -58,6 +60,13 @@ const benefitItems = [
 export default function NebenberufPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Главная", url: SITE_URL },
+          { name: "Карьера", url: `${SITE_URL}/karriere/quereinstieg` },
+          { name: "Подработка", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar />
 
       {/* Hero / Header */}
