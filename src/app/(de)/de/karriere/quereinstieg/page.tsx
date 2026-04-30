@@ -28,9 +28,9 @@ const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:
-    "Karriere als Finanzberater in Deutschland für Quereinsteiger | Babic Finance",
+    "Quereinstieg in die Finanzberatung — Karriere wechseln in Deutschland | Babic Finance",
   description:
-    "Wechsle in Deutschland den Beruf - in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit persönlichem Mentor.",
+    "Quereinstieg in die Finanzberatung — auch ohne Finanzhintergrund. Deine Erfahrung und deine Sprachen zählen. Start parallel zum Hauptjob möglich, persönliche Begleitung in Troisdorf.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
+      "Quereinstieg in die Finanzberatung — Karriere wechseln in Deutschland",
     description:
-      "Wechsle in Deutschland den Beruf - in einen, der gebraucht wird. Vollständige Ausbildung mit DVAG-Team-Support.",
+      "Quereinstieg in die Finanzberatung — auch ohne Finanzhintergrund. Vollständige Ausbildung mit Begleitung durch DVAG-Team.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
+      "Quereinstieg in die Finanzberatung — Karriere wechseln in Deutschland",
     description:
-      "Wechsle in Deutschland den Beruf. Vollständige Ausbildung.",
+      "Quereinstieg in die Finanzberatung — Karriere wechseln, ohne nochmal von vorn zu studieren.",
     images: ["/preview.webp"],
   },
 };
