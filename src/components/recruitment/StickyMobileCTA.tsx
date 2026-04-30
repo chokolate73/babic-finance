@@ -29,7 +29,7 @@ export default function StickyMobileCTA({
     >
       <a
         href={href}
-        className="flex items-center gap-2 px-6 py-3 rounded-full bg-navy/70 backdrop-blur-md text-white text-sm font-semibold tracking-wide uppercase shadow-xl shadow-black/30 border border-white/10 hover:bg-navy/85 transition-colors"
+        className="flex items-center gap-2 px-6 py-3 rounded-full bg-navy/70 backdrop-blur-md text-white text-sm font-semibold tracking-wide uppercase whitespace-nowrap shadow-xl shadow-black/30 border border-white/10 hover:bg-navy/85 transition-colors"
       >
         <svg
           className="w-4 h-4"
