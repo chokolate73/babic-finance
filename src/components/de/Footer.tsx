@@ -98,13 +98,13 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-sm">
               <a
-                href="/impressum"
+                href="/de/impressum"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Impressum
               </a>
               <a
-                href="/datenschutz"
+                href="/de/datenschutz"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Datenschutz

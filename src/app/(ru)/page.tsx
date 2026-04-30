@@ -21,6 +21,7 @@ import {
 } from "@/data/recruitment";
 
 const SITE_URL = "https://www.fin-1.de";
+const RU_HOME_URL = "https://www.fin-1.de/";
 
 export const metadata: Metadata = {
   title:
@@ -28,12 +29,12 @@ export const metadata: Metadata = {
   description:
     "Построй карьеру финансового консультанта в Германии. Без опыта, с полной поддержкой команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
   alternates: {
-    canonical: `${SITE_URL}/`,
+    canonical: RU_HOME_URL,
     languages: {
-      ru: `${SITE_URL}/`,
+      ru: RU_HOME_URL,
       de: `${SITE_URL}/de`,
       uk: `${SITE_URL}/ua`,
-      "x-default": `${SITE_URL}/`,
+      "x-default": RU_HOME_URL,
     },
   },
   openGraph: {
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
       "Карьера финансового консультанта в Германии - команда DVAG",
     description:
       "Без опыта. С полной поддержкой команды. Путь от первой встречи до самостоятельного консультанта с четырьмя признанными квалификациями.",
-    url: `${SITE_URL}/`,
+    url: RU_HOME_URL,
     siteName: "Babic Finance",
     type: "website",
     locale: "ru_RU",

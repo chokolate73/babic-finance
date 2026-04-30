@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title:
     "Із Bürgergeld у професію фінансового консультанта | Babic Finance",
   description:
-    "З підтримкою держави - Einstiegsgeld до 24 місяців. Допомагаємо з Tragfähigkeitsbescheinigung, супроводжуємо зустріч у Jobcenter і шлях до першого клієнта.",
+    "З підтримкою держави — Einstiegsgeld до 24 місяців. Допомагаємо з Tragfähigkeitsbescheinigung, супроводжуємо зустріч у Jobcenter і шлях до першого клієнта.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -71,7 +71,7 @@ export default function UaBuergergeldPage() {
         content={buergergeldHero}
         scrollTargetId="support"
         scrollLabel={ui.heroScrollLabel}
-        backgroundAlt="Babic Finance - кар'єра фінансового консультанта в Німеччині"
+        backgroundAlt="Babic Finance — кар'єра фінансового консультанта в Німеччині"
       />
       <SupportComparison
         table={supportTable}
