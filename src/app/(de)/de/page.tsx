@@ -10,6 +10,7 @@ import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
 import {
   homeHero,
   homePainPoints,
@@ -109,6 +110,7 @@ export default function DeHomePage() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="de" />
+      <StickyMobileCTA label="Passt das zu mir?" />
       <Footer />
     </div>
   );

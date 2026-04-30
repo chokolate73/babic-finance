@@ -10,6 +10,7 @@ import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
 import Seminar from "@/components/ua/Seminar";
 import {
   homeHero,
@@ -127,6 +128,7 @@ export default function UaHomePage() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="ua" />
+      <StickyMobileCTA label="Чи підходить це мені?" />
       <Footer />
     </div>
   );

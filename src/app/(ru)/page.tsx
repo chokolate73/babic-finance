@@ -11,6 +11,7 @@ import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import Seminar from "@/components/Seminar";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
 import {
   homeHero,
   homePainPoints,
@@ -107,6 +108,7 @@ export default function Home() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" />
+      <StickyMobileCTA label="Подходит ли мне?" />
       <Footer />
     </div>
   );
