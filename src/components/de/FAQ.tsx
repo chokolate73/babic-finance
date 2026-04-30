@@ -11,7 +11,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Was kosten Ihre Leistungen?",
-    a: "Für Sie sind sie kostenfrei. Ich bin als Vermögensberater der DVAG tätig, und meine Vergütung erhalte ich von den Partnergesellschaften. Sie erhalten eine unabhängige Analyse und die Auswahl der besten Lösungen ohne zusätzliche Kosten.",
+    a: "Für Sie kostenfrei. Ich arbeite als DVAG-Vermögensberater, meine Vergütung erhalte ich von den Partnergesellschaften. Sie erhalten eine umfassende Analyse und die Auswahl der passenden Lösungen aus dem DVAG-Sortiment ohne zusätzliche Kosten.",
   },
   {
     q: "Ich kenne mich mit Finanzen nicht aus - ist das ein Problem?",
@@ -36,7 +36,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Mit welchen Versicherungen und Banken arbeiten Sie zusammen?",
-    a: "Über die DVAG habe ich Zugang zu den Produkten der führenden Versicherungen und Banken in Deutschland. So kann ich für jeden Kunden die optimale Lösung auswählen.",
+    a: "Ich vermittle Produkte der DVAG-Gruppe — die Versicherungsgesellschaften der Generali (Generali Versicherung, Central Krankenversicherung, ADVOCARD Rechtsschutz u. a.) sowie Partnerbanken. Damit lässt sich für jede Lebenssituation eine passende Lösung finden.",
   },
   {
     q: "Ich bin erst kürzlich nach Deutschland gekommen. Können Sie mir helfen?",

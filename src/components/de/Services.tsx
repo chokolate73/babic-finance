@@ -53,7 +53,7 @@ const services = [
   },
   {
     title: "Immobilienfinanzierung",
-    desc: "Die passenden Konditionen für die Finanzierung Ihrer Immobilie in Deutschland. Wir vergleichen Angebote und finden die beste Lösung.",
+    desc: "Konditionen für Ihre Immobilienfinanzierung in Deutschland aus dem Angebot der DVAG-Partnerbanken. Ich begleite Sie vom Tilgungsplan bis zur Antragstellung.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
     details: [
       "Baufinanzierung",
