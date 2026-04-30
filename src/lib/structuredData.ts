@@ -97,6 +97,7 @@ export function getPersonLd() {
       "https://www.dvag.de/vladislav.babic/karriere.html",
       "https://www.google.com/maps/place/?q=place_id:ChIJYxNUvUrfvkcR9wFAfsljmig",
       "https://t.me/babic_fin",
+      "https://www.facebook.com/p/Vladislav-Babic-61574094595836/",
     ],
   };
 }

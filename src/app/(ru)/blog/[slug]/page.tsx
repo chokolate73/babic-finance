@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug, getAllSlugs, formatDate } from "@/data/blog";
+import JsonLd from "@/components/JsonLd";
+import { ORG_ID, PERSON_ID, SITE_URL } from "@/lib/structuredData";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -16,13 +18,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) return {};
+  const url = `${SITE_URL}/blog/${article.slug}`;
   return {
     title: `${article.title} - Babic Finance`,
     description: article.metaDescription,
+    alternates: {
+      canonical: url,
+      languages: {
+        ru: url,
+        "x-default": url,
+      },
+    },
     openGraph: {
       title: article.title,
       description: article.metaDescription,
       type: "article",
+      url,
       publishedTime: article.date,
       authors: ["Владислав Бабич"],
       images: [{ url: article.image }],
@@ -86,12 +97,31 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) notFound();
+  const url = `${SITE_URL}/blog/${article.slug}`;
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline: article.title,
+    description: article.excerpt,
+    image: article.image,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: { "@id": PERSON_ID },
+    publisher: { "@id": ORG_ID },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    inLanguage: "ru",
+  };
 
   const currentIndex = articles.findIndex((a) => a.slug === slug);
   const nextArticle = articles[(currentIndex + 1) % articles.length];
 
   return (
     <main className="pt-24 lg:pt-32 pb-20 lg:pb-28 bg-white min-h-screen">
+      <JsonLd data={articleLd} />
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back link */}
         <Link
