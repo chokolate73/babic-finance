@@ -114,9 +114,9 @@ export const qualifications: Qualification[] = [
   {
     id: "ihk",
     title: "Kaufmann/-frau für Versicherungen und Finanzanlagen (IHK)",
-    subtitle: "Staatlich anerkannter Beruf",
+    subtitle: "IHK-Ausbildung bei der Deutschen Vermögensberatung",
     description:
-      "Abschluss der Industrie- und Handelskammer. Öffnet dir Türen zu jedem Finanzunternehmen in Deutschland.",
+      "Vollwertige IHK-Ausbildung zum staatlich anerkannten Beruf — direkt bei der DVAG. Mit dem IHK-Abschluss öffnen sich dir Türen zu jedem Finanzunternehmen in Deutschland.",
   },
   {
     id: "34f",

@@ -110,7 +110,7 @@ export default function DeHomePage() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="de" />
-      <StickyMobileCTA label="Passt das zu mir?" />
+      <StickyMobileCTA label="Beratung anfragen" />
       <Footer />
     </div>
   );

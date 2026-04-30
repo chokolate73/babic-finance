@@ -128,7 +128,7 @@ export default function UaHomePage() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="ua" />
-      <StickyMobileCTA label="Чи підходить це мені?" />
+      <StickyMobileCTA label="Проконсультуватися" />
       <Footer />
     </div>
   );

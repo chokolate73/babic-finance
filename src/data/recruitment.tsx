@@ -164,9 +164,9 @@ export const qualifications: Qualification[] = [
   {
     id: "ihk",
     title: "Kaufmann/-frau für Versicherungen und Finanzanlagen (IHK)",
-    subtitle: "Признанная государством профессия",
+    subtitle: "Государственное обучение (Ausbildung) с дипломом IHK",
     description:
-      "Диплом от торгово-промышленной палаты. Открывает двери в любую финансовую компанию Германии.",
+      "Полноценное обучение (Ausbildung) от Deutsche Vermögensberatung с дипломом торгово-промышленной палаты — признанная государством профессия, которая открывает двери в любую финансовую компанию Германии.",
     link: {
       href: "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/ihk-ausbildung.html#vladislav.babic",
       label: "Подробнее на DVAG",
