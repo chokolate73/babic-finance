@@ -21,6 +21,8 @@ import {
   quereinstiegFAQItems,
   quereinstiegFinalCTA,
 } from "@/data/recruitment";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/karriere/quereinstieg";
 const SITE_URL = "https://www.fin-1.de";
@@ -59,6 +61,13 @@ export const metadata: Metadata = {
 export default function QuereinstiegPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Главная", url: SITE_URL },
+          { name: "Карьера", url: `${SITE_URL}/karriere/quereinstieg` },
+          { name: "Смена профессии", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar />
 
       {/* Block A — Intro */}

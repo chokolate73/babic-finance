@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/impressum";
 const SITE_URL = "https://www.fin-1.de";
@@ -16,6 +18,12 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd
+        data={getBreadcrumbLd([
+          { name: "Главная", url: SITE_URL },
+          { name: "Impressum", url: `${SITE_URL}${URL_PATH}` },
+        ])}
+      />
       <Navbar forceDark />
 
       <section className="pt-28 lg:pt-32 pb-16 lg:pb-24">
