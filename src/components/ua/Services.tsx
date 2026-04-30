@@ -148,7 +148,7 @@ export default function Services() {
                 onClick={() => setModalIndex(active)}
                 className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
               >
-                Дізнатися більше &rarr;
+                Дивитися деталі &rarr;
               </button>
             </div>
           </AnimateOnScroll>
@@ -277,7 +277,7 @@ export default function Services() {
                         onClick={() => setModalIndex(i)}
                         className="inline-flex items-center gap-2 text-gold font-semibold hover:underline text-sm"
                       >
-                        Дізнатися більше &rarr;
+                        Дивитися деталі &rarr;
                       </button>
                     </div>
                   </div>
