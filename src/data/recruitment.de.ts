@@ -145,6 +145,26 @@ export const qualificationsCallout = {
   text: "Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung ihrer Berater.",
   sub: "Für dich heißt das: du zahlst nichts für Prüfungen, Kurse und Versicherungen — und lernst sofort von den Besten.",
   source: "Quelle: Unternehmensbericht DVAG, dvag-karriere.de",
+  productsPopup: {
+    label: "Welche Produkte werde ich beraten?",
+    title: "Welche Produkte du berätst",
+    description:
+      "Aus dem umfangreichen Angebot der DVAG wählst du gemeinsam mit deinen Kunden die für sie passenden Produkte aus. Dank der engen Kooperation mit unseren Produktpartnern bieten wir leistungsstarke Konzepte, die einzigartig am Markt und flexibel auf die individuelle Lebenssituation abgestimmt sind.",
+    categories: [
+      "Absicherung",
+      "Altersvorsorge",
+      "Vermögensaufbau",
+      "Wohneigentum",
+      "Geld sparen & managen",
+      "Konzepte für Kinder",
+      "Firmenkunden",
+    ],
+    closeLabel: "Schließen",
+    link: {
+      href: "https://www.dvag.de/dvag/allfinanzberatung/produkte.html",
+      label: "Mehr auf dvag.de",
+    },
+  },
 };
 
 export const pathSteps: PathStep[] = [

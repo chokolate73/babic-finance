@@ -149,14 +149,37 @@ export const qualificationsCallout: {
   text: string;
   sub: string;
   source: string;
-  link?: { href: string; label: string };
+  productsPopup?: {
+    label: string;
+    title: string;
+    description: string;
+    categories: string[];
+    closeLabel: string;
+    link: { href: string; label: string };
+  };
 } = {
   text: "DVAG інвестує понад 80 мільйонів євро на рік у навчання своїх консультантів.",
   sub: "Для тебе це означає: ти не платиш за іспити, курси й страховки — і одразу вчишся в найкращих.",
   source: "Джерело: Unternehmensbericht DVAG, dvag-karriere.de",
-  link: {
-    href: "https://www.dvag.de/dvag/allfinanzberatung/produkte.html",
+  productsPopup: {
     label: "Які продукти я консультуватиму?",
+    title: "Що ти консультуватимеш",
+    description:
+      "З широкого асортименту DVAG ти разом із клієнтом підбираєш продукти, які підходять саме йому. Це можливо завдяки тісній співпраці з провідними страховими, банківськими та інвестиційними компаніями — концепції є унікальними на ринку й гнучко адаптуються під життєву ситуацію клієнта.",
+    categories: [
+      "Страхування",
+      "Пенсійне забезпечення",
+      "Накопичення та інвестиції",
+      "Нерухомість",
+      "Управління фінансами",
+      "Рішення для дітей",
+      "Корпоративні клієнти",
+    ],
+    closeLabel: "Закрити",
+    link: {
+      href: "https://www.dvag.de/dvag/allfinanzberatung/produkte.html",
+      label: "Детальніше на dvag.de",
+    },
   },
 };
 
