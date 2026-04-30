@@ -23,7 +23,7 @@ import {
 } from "@/data/recruitment";
 
 const URL_PATH = "/karriere/quereinstieg";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title: "Смена профессии — финансовый консультант — Babic Finance",

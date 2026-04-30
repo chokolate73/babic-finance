@@ -20,7 +20,7 @@ const siteDescription =
   "Persönlicher Finanzberater in Deutschland — Beratung auf Russisch und Deutsch von Wladislaw Babitsch.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fin-1.de"),
+  metadataBase: new URL("https://www.fin-1.de"),
   title: "Babic Finance",
   description: siteDescription,
   manifest: "/site.webmanifest",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Babic Finance",
     description: siteDescription,
-    url: "https://fin-1.de/de",
+    url: "https://www.fin-1.de/de",
     siteName: "Babic Finance",
     type: "website",
     locale: "de_DE",

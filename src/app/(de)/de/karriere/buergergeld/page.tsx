@@ -22,7 +22,7 @@ import {
 } from "@/data/recruitment.de";
 
 const URL_PATH = "/de/karriere/buergergeld";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     languages: {
       ru: `${SITE_URL}/karriere/buergergeld`,
       de: `${SITE_URL}${URL_PATH}`,
+      uk: `${SITE_URL}/ua/karriere/buergergeld`,
+      "x-default": `${SITE_URL}/karriere/buergergeld`,
     },
   },
   openGraph: {

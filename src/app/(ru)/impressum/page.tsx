@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const URL_PATH = "/impressum";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title: "Impressum — Babic Finance",

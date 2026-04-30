@@ -24,7 +24,7 @@ import {
 } from "@/data/recruitment.ua";
 
 const URL_PATH = "/ua/karriere/quereinstieg";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:

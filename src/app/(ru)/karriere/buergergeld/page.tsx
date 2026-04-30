@@ -19,7 +19,7 @@ import {
 } from "@/data/recruitment";
 
 const URL_PATH = "/karriere/buergergeld";
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:

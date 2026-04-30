@@ -12,7 +12,7 @@ import {
 } from "@/data/blog.de";
 import { renderMarkdown } from "@/lib/markdownRenderer";
 
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

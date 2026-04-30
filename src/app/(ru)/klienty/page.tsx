@@ -14,7 +14,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 const URL_PATH = "/klienty";
 
 export const metadata: Metadata = {

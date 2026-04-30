@@ -26,7 +26,7 @@ import {
   ui,
 } from "@/data/recruitment.de";
 
-const SITE_URL = "https://fin-1.de";
+const SITE_URL = "https://www.fin-1.de";
 const URL_PATH = "/de";
 
 export const metadata: Metadata = {
@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     languages: {
       ru: `${SITE_URL}/`,
       de: `${SITE_URL}${URL_PATH}`,
+      uk: `${SITE_URL}/ua`,
+      "x-default": `${SITE_URL}/`,
     },
   },
   openGraph: {
