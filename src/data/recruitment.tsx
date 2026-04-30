@@ -31,7 +31,7 @@ export type HeroContent = {
 };
 
 export const homeHero: HeroContent = {
-  headline: "Построй карьеру финансового",
+  headline: "Построй карьеру\nфинансового",
   headlineAccent: "консультанта в Германии",
   subtitle: "Без опыта. С полной поддержкой команды.",
   personName: "Владислав Бабич",

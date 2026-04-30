@@ -30,9 +30,9 @@ const URL_PATH = "/de";
 
 export const metadata: Metadata = {
   title:
-    "Karriere als Finanzberater in Deutschland - DVAG-Team | Babic Finance",
+    "Finanzberater werden in Deutschland — Quereinstieg mit DVAG | Babic Finance",
   description:
-    "Baue deine Karriere als Finanzberater in Deutschland auf. Ohne Vorerfahrung, mit voller Unterstützung des DVAG-Teams und persönlicher Begleitung von Vladislav Babic in Troisdorf.",
+    "Quereinstieg in die Finanzberatung — auch ohne Vorerfahrung. Persönliche Begleitung durch Vladislav Babic in Troisdorf, Ausbildung über die DVAG, IHK-Abschluss inklusive.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Karriere als Finanzberater in Deutschland - DVAG-Team",
+      "Finanzberater werden in Deutschland — Quereinstieg mit DVAG",
     description:
       "Ohne Vorerfahrung. Mit voller Team-Unterstützung. Vom ersten Kennenlernen bis zum selbstständigen Berater mit vier anerkannten Qualifikationen.",
     url: `${SITE_URL}${URL_PATH}`,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Karriere als Finanzberater in Deutschland - DVAG-Team",
+      "Finanzberater werden in Deutschland — Quereinstieg mit DVAG",
     description:
       "Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
     images: ["/preview.webp"],

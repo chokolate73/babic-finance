@@ -21,7 +21,7 @@ export function waLink(utm: string, message: string) {
 }
 
 export const homeHero: HeroContent = {
-  headline: "Побудуй кар'єру фінансового",
+  headline: "Побудуй кар'єру\nфінансового",
   headlineAccent: "консультанта в Німеччині",
   subtitle: "Без досвіду. З повною підтримкою команди.",
   personName: "Владислав Бабіч",
@@ -30,7 +30,7 @@ export const homeHero: HeroContent = {
     text: "Дізнатися, чи підходить мені ця робота",
     href: QUIZ_URL,
   },
-  secondaryCTA: { text: "Дізнатися детальніше", href: "#recognize" },
+  secondaryCTA: { text: "Як це працює", href: "#recognize" },
   stats: [
     { value: "21", label: "рік у фінансах" },
     { value: "4 387", label: "клієнтів у мережі" },
@@ -383,14 +383,14 @@ export const legalDisclaimers = {
 // --- Quereinstieg ---
 
 export const quereinstiegHero: HeroContent = {
-  headline: "Зміни професію в Німеччині -",
-  headlineAccent: "на ту, що потрібна",
+  headline: "Зміни професію в Німеччині —",
+  headlineAccent: "на ту, що справді потрібна",
   subtitle:
     "Фінансовий консультант DVAG - професія, яка використовує твій досвід і мови",
   trustLine:
     "З нуля або паралельно з роботою · Повне навчання · Чотири визнані кваліфікації",
   primaryCTA: { text: "Пройти 10 запитань", href: QUIZ_URL },
-  secondaryCTA: { text: "Дізнатися детальніше", href: "#recognize" },
+  secondaryCTA: { text: "Чому це підходить", href: "#recognize" },
 };
 
 export const quereinstiegPainPoints = {
