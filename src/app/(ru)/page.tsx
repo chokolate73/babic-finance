@@ -108,7 +108,7 @@ export default function Home() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" />
-      <StickyMobileCTA label="Подходит ли мне?" />
+      <StickyMobileCTA label="Проконсультироваться" />
       <Footer />
     </div>
   );
