@@ -51,19 +51,19 @@ const FORMATS: Record<Locale, Option[]> = {
   ru: [
     { value: "full_change", label: "Готов полностью сменить работу" },
     { value: "parallel", label: "Хочу начать параллельно с текущей работой" },
-    { value: "unemployed_ready", label: "Сейчас без работы — готов начать сразу" },
+    { value: "unemployed_ready", label: "Сейчас без работы - готов начать сразу" },
     { value: "exploring", label: "Ещё не решил, смотрю варианты" },
   ],
   de: [
     { value: "full_change", label: "Bereit, den Beruf komplett zu wechseln" },
     { value: "parallel", label: "Will parallel zum aktuellen Job starten" },
-    { value: "unemployed_ready", label: "Bin aktuell ohne Job — starte sofort" },
+    { value: "unemployed_ready", label: "Bin aktuell ohne Job - starte sofort" },
     { value: "exploring", label: "Noch nicht entschieden, schaue mich um" },
   ],
   ua: [
     { value: "full_change", label: "Готовий повністю змінити роботу" },
     { value: "parallel", label: "Хочу почати паралельно з поточною роботою" },
-    { value: "unemployed_ready", label: "Зараз без роботи — готовий почати одразу" },
+    { value: "unemployed_ready", label: "Зараз без роботи - готовий почати одразу" },
     { value: "exploring", label: "Ще не вирішив, дивлюся варіанти" },
   ],
 };
@@ -111,9 +111,9 @@ const PAGE_LABELS: Record<Locale, Record<SourcePage, string>> = {
 };
 
 const FALLBACK_MESSAGES: Record<Locale, string> = {
-  ru: "Здравствуйте, Владислав! Не смог отправить форму с сайта — хочу узнать про работу финансового консультанта.",
-  de: "Hallo Vladislav! Das Formular auf der Website ließ sich nicht absenden — ich möchte mehr über den Beruf des Finanzberaters erfahren.",
-  ua: "Вітаю, Владиславе! Не вдалося надіслати форму з сайту — хочу дізнатися про роботу фінансового консультанта.",
+  ru: "Здравствуйте, Владислав! Не смог отправить форму с сайта - хочу узнать про работу финансового консультанта.",
+  de: "Hallo Vladislav! Das Formular auf der Website ließ sich nicht absenden - ich möchte mehr über den Beruf des Finanzberaters erfahren.",
+  ua: "Вітаю, Владиславе! Не вдалося надіслати форму з сайту - хочу дізнатися про роботу фінансового консультанта.",
 };
 
 function whatsappFallback(locale: Locale) {
@@ -136,7 +136,7 @@ function buildSubject(
   sourcePage: SourcePage,
   locale: Locale,
 ): string {
-  return `${SUBJECT_PREFIX[locale]} — ${name} (${PAGE_LABELS[locale][sourcePage]})`;
+  return `${SUBJECT_PREFIX[locale]} - ${name} (${PAGE_LABELS[locale][sourcePage]})`;
 }
 
 type UiStrings = {
@@ -179,7 +179,7 @@ const STRINGS: Record<Locale, UiStrings> = {
   ru: {
     eyebrow: "5 вопросов · 2 минуты",
     heading: "Подходит ли мне эта работа?",
-    intro: "Ответы приходят лично Владиславу — он свяжется в течение дня.",
+    intro: "Ответы приходят лично Владиславу - он свяжется в течение дня.",
     stepOf: (n, total) => `Шаг ${n} из ${total}`,
     back: "Назад",
     next: "Дальше",
@@ -199,7 +199,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step0: {
       heading: "Как тебя зовут?",
-      hint: "Владислав обращается к кандидатам на «ты» — так теплее.",
+      hint: "Владислав обращается к кандидатам на «ты» - так теплее.",
       placeholder: "Твоё имя",
     },
     step1: {
@@ -217,7 +217,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step4: {
       heading: (name) => `Почти готово, ${name || "друг"}!`,
-      intro: "Оставь контакт — Владислав свяжется в течение дня.",
+      intro: "Оставь контакт - Владислав свяжется в течение дня.",
       openLabel:
         "Что для тебя важнее всего получить в разговоре с Владиславом?",
       openOptional: "(необязательно)",
@@ -233,7 +233,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     eyebrow: "5 Fragen · 2 Minuten",
     heading: "Passt dieser Beruf zu mir?",
     intro:
-      "Die Antworten gehen direkt an Vladislav — er meldet sich noch am selben Tag.",
+      "Die Antworten gehen direkt an Vladislav - er meldet sich noch am selben Tag.",
     stepOf: (n, total) => `Schritt ${n} von ${total}`,
     back: "Zurück",
     next: "Weiter",
@@ -253,7 +253,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step0: {
       heading: "Wie heißt du?",
-      hint: `Vladislav spricht Kandidaten mit „Du" an — so ist es persönlicher.`,
+      hint: `Vladislav spricht Kandidaten mit „Du" an - so ist es persönlicher.`,
       placeholder: "Dein Name",
     },
     step1: {
@@ -272,7 +272,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     step4: {
       heading: (name) => `Fast geschafft, ${name || "Freund"}!`,
       intro:
-        "Hinterlass einen Kontakt — Vladislav meldet sich noch am selben Tag.",
+        "Hinterlass einen Kontakt - Vladislav meldet sich noch am selben Tag.",
       openLabel:
         "Was ist dir im Gespräch mit Vladislav am wichtigsten?",
       openOptional: "(optional)",
@@ -287,7 +287,7 @@ const STRINGS: Record<Locale, UiStrings> = {
   ua: {
     eyebrow: "5 запитань · 2 хвилини",
     heading: "Чи підходить мені ця робота?",
-    intro: "Відповіді приходять особисто Владиславу — він зв'яжеться протягом дня.",
+    intro: "Відповіді приходять особисто Владиславу - він зв'яжеться протягом дня.",
     stepOf: (n, total) => `Крок ${n} з ${total}`,
     back: "Назад",
     next: "Далі",
@@ -307,7 +307,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step0: {
       heading: "Як тебе звати?",
-      hint: "Владислав звертається до кандидатів на «ти» — так тепліше.",
+      hint: "Владислав звертається до кандидатів на «ти» - так тепліше.",
       placeholder: "Твоє ім'я",
     },
     step1: {
@@ -325,7 +325,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step4: {
       heading: (name) => `Майже готово, ${name || "друже"}!`,
-      intro: "Залиш контакт — Владислав зв'яжеться протягом дня.",
+      intro: "Залиш контакт - Владислав зв'яжеться протягом дня.",
       openLabel:
         "Що для тебе найважливіше отримати в розмові з Владиславом?",
       openOptional: "(необов'язково)",

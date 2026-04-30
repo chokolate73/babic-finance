@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Karriere als Finanzberater in Deutschland für Quereinsteiger | Babic Finance",
   description:
-    "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit persönlichem Mentor.",
+    "Wechsle in Deutschland den Beruf - in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit persönlichem Mentor.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title:
       "Karriere als Finanzberater in Deutschland für Quereinsteiger",
     description:
-      "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Vollständige Ausbildung mit DVAG-Team-Support.",
+      "Wechsle in Deutschland den Beruf - in einen, der gebraucht wird. Vollständige Ausbildung mit DVAG-Team-Support.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -76,7 +76,7 @@ export default function DeQuereinstiegPage() {
         content={quereinstiegHero}
         scrollTargetId="why"
         scrollLabel={ui.heroScrollLabel}
-        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
+        backgroundAlt="Babic Finance - Karriere als Finanzberater in Deutschland"
       />
       <BenefitsList
         id="why"

@@ -23,7 +23,7 @@ const montserrat = Montserrat({
 });
 
 const siteDescription =
-  "Persönlicher Finanzberater in Deutschland — Finanzplanung und Beratung von Vladislav Babic.";
+  "Persönlicher Finanzberater in Deutschland - Finanzplanung und Beratung von Vladislav Babic.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fin-1.de"),

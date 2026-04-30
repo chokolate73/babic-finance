@@ -62,7 +62,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
     const body = new URLSearchParams();
     body.append("name", form.name.trim());
     body.append("phone", form.phone.trim());
-    body.append("_subject", `🎓 Регистрация на курс — ${form.name.trim()}`);
+    body.append("_subject", `🎓 Регистрация на курс - ${form.name.trim()}`);
     body.append("formType", "seminar");
     body.append("locale", "ru");
 
@@ -162,7 +162,7 @@ export default function Seminar() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-10">
-            {/* LIVE indicator — replaces 'Открыта регистрация' eyebrow */}
+            {/* LIVE indicator - replaces 'Открыта регистрация' eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping" />
@@ -179,10 +179,10 @@ export default function Seminar() {
               Уникальный курс для тех, кто хочет разобраться в финансовой системе Германии
             </p>
             <p className="text-navy/70 text-sm mt-2 max-w-lg mx-auto">
-              Раз в неделю встречаемся вживую — разбираем темы и отвечаю на вопросы. Запись каждого занятия остаётся у вас.
+              Раз в неделю встречаемся вживую - разбираем темы и отвечаю на вопросы. Запись каждого занятия остаётся у вас.
             </p>
 
-            {/* Free badge — primary emphasis */}
+            {/* Free badge - primary emphasis */}
             <div className="mt-6 flex justify-center">
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold text-navy text-sm font-bold shadow-md shadow-gold/20">
                 100% бесплатно
@@ -224,13 +224,13 @@ export default function Seminar() {
               <BulletItem icon={Video}>Онлайн-занятия раз в неделю в вечернее время</BulletItem>
               <BulletItem icon={FolderOpen}>Доступ ко всем записям уроков</BulletItem>
               <BulletItem icon={Languages}>Подробный разбор немецкой финансовой терминологии</BulletItem>
-              <BulletItem icon={FileText}>При необходимости — справка для Jobcenter</BulletItem>
+              <BulletItem icon={FileText}>При необходимости - справка для Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>
         </div>
         </div>
 
-        {/* After course — gold panel */}
+        {/* After course - gold panel */}
         <AnimateOnScroll animation="fade-up">
           <div className="max-w-4xl mx-auto rounded-2xl border border-gold/20 bg-gold/5 p-7 mb-10">
             <p className="text-sm font-semibold uppercase tracking-wider text-gold mb-5">
@@ -247,7 +247,7 @@ export default function Seminar() {
         {/* Italic note */}
         <AnimateOnScroll animation="fade-up">
           <p className="font-[family-name:var(--font-serif)] italic text-muted-foreground text-center mb-10">
-            Даже если у вас нет опыта в финансах — начать можно с нуля
+            Даже если у вас нет опыта в финансах - начать можно с нуля
           </p>
 
           {/* CTAs */}

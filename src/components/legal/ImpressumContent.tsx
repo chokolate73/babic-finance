@@ -99,8 +99,8 @@ export default function ImpressumContent() {
 
           <p>
             Die Anlageberatung und Anlagevermittlung zu Investmentfonds
-            erfolgen in deutscher und — soweit mit dem Vermögensberater
-            individuell vereinbart — in englischer Sprache. Detaillierte
+            erfolgen in deutscher und - soweit mit dem Vermögensberater
+            individuell vereinbart - in englischer Sprache. Detaillierte
             Informationen zu diesen Produkten können den Fondsunterlagen (z.B.
             Prospekt und wesentliche Anlegerinformationen) entnommen werden,
             die kostenlos in deutscher Sprache vom Vermögensberater oder auf

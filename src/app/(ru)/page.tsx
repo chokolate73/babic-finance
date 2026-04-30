@@ -24,7 +24,7 @@ const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:
-    "Карьера финансового консультанта в Германии — команда DVAG | Babic Finance",
+    "Карьера финансового консультанта в Германии - команда DVAG | Babic Finance",
   description:
     "Построй карьеру финансового консультанта в Германии. Без опыта, с полной поддержкой команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
   alternates: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Карьера финансового консультанта в Германии — команда DVAG",
+      "Карьера финансового консультанта в Германии - команда DVAG",
     description:
       "Без опыта. С полной поддержкой команды. Путь от первой встречи до самостоятельного консультанта с четырьмя признанными квалификациями.",
     url: `${SITE_URL}/`,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Карьера финансового консультанта в Германии — команда DVAG",
+      "Карьера финансового консультанта в Германии - команда DVAG",
     description:
       "Без опыта. С полной поддержкой команды DVAG.",
     images: ["/preview.webp"],
@@ -64,7 +64,7 @@ export default function Home() {
       <RecruitmentHero
         content={homeHero}
         scrollTargetId="recognize"
-        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+        backgroundAlt="Babic Finance - карьера финансового консультанта в Германии"
       />
       <CareerPainPoints
         id="recognize"
@@ -88,7 +88,7 @@ export default function Home() {
             className="block w-[60px] h-[2px] bg-gold mx-auto mt-6"
           />
           <p className="text-muted-foreground mt-6 max-w-xl mx-auto">
-            Людям нужны люди. На этом построена работа DVAG — и моя личная философия консультирования.
+            Людям нужны люди. На этом построена работа DVAG - и моя личная философия консультирования.
           </p>
         </div>
       </section>

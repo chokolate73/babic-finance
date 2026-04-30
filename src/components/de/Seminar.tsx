@@ -62,7 +62,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
     const body = new URLSearchParams();
     body.append("name", form.name.trim());
     body.append("phone", form.phone.trim());
-    body.append("_subject", `🎓 Kurs-Anmeldung — ${form.name.trim()}`);
+    body.append("_subject", `🎓 Kurs-Anmeldung - ${form.name.trim()}`);
     body.append("formType", "seminar");
     body.append("locale", "de");
 
@@ -162,7 +162,7 @@ export default function Seminar() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll animation="fade-up">
           <div className="text-center mb-10">
-            {/* LIVE indicator — replaces 'Открыта регистрация' eyebrow */}
+            {/* LIVE indicator - replaces 'Открыта регистрация' eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping" />
@@ -182,7 +182,7 @@ export default function Seminar() {
               Einmal pro Woche treffen wir uns live - wir behandeln Themen und ich beantworte Fragen. Die Aufzeichnung jeder Sitzung bleibt Ihnen erhalten.
             </p>
 
-            {/* Free badge — primary emphasis */}
+            {/* Free badge - primary emphasis */}
             <div className="mt-6 flex justify-center">
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gold text-navy text-sm font-bold shadow-md shadow-gold/20">
                 100% kostenlos
@@ -230,7 +230,7 @@ export default function Seminar() {
         </div>
         </div>
 
-        {/* After course — gold panel */}
+        {/* After course - gold panel */}
         <AnimateOnScroll animation="fade-up">
           <div className="max-w-4xl mx-auto rounded-2xl border border-gold/20 bg-gold/5 p-7 mb-10">
             <p className="text-sm font-semibold uppercase tracking-wider text-gold mb-5">

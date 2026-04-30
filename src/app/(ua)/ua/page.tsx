@@ -31,7 +31,7 @@ const URL_PATH = "/ua";
 
 export const metadata: Metadata = {
   title:
-    "Кар'єра фінансового консультанта в Німеччині — команда DVAG | Babic Finance",
+    "Кар'єра фінансового консультанта в Німеччині - команда DVAG | Babic Finance",
   description:
     "Побудуй кар'єру фінансового консультанта в Німеччині. Без досвіду, з повною підтримкою команди DVAG і супроводом Владислава Бабича в Troisdorf.",
   alternates: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Кар'єра фінансового консультанта в Німеччині — команда DVAG",
+      "Кар'єра фінансового консультанта в Німеччині - команда DVAG",
     description:
       "Без досвіду. З повною підтримкою команди. Шлях від першої зустрічі до самостійного консультанта з чотирма визнаними кваліфікаціями.",
     url: `${SITE_URL}${URL_PATH}`,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Кар'єра фінансового консультанта в Німеччині — команда DVAG",
+      "Кар'єра фінансового консультанта в Німеччині - команда DVAG",
     description:
       "Без досвіду. З повною підтримкою команди DVAG.",
     images: ["/preview.webp"],
@@ -70,7 +70,7 @@ export default function UaHomePage() {
       <RecruitmentHero
         content={homeHero}
         scrollTargetId="recognize"
-        backgroundAlt="Babic Finance — кар'єра фінансового консультанта в Німеччині"
+        backgroundAlt="Babic Finance - кар'єра фінансового консультанта в Німеччині"
         scrollLabel={ui.heroScrollLabel}
       />
       <CareerPainPoints
@@ -97,7 +97,7 @@ export default function UaHomePage() {
             className="block w-[60px] h-[2px] bg-gold mx-auto mt-6"
           />
           <p className="text-muted-foreground mt-6 max-w-xl mx-auto">
-            Людям потрібні люди. На цьому побудована робота DVAG — і моя особиста філософія консультування.
+            Людям потрібні люди. На цьому побудована робота DVAG - і моя особиста філософія консультування.
           </p>
         </div>
       </section>

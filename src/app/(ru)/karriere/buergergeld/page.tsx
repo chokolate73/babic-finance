@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title:
     "Путь из Bürgergeld в профессию финансового консультанта | Babic Finance",
   description:
-    "С поддержкой государства — Einstiegsgeld до 24 месяцев. Помогаем оформить Tragfähigkeitsbescheinigung, сопровождаем встречу с Jobcenter и путь до первого клиента.",
+    "С поддержкой государства - Einstiegsgeld до 24 месяцев. Помогаем оформить Tragfähigkeitsbescheinigung, сопровождаем встречу с Jobcenter и путь до первого клиента.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -69,7 +69,7 @@ export default function BuergergeldPage() {
       <RecruitmentHero
         content={buergergeldHero}
         scrollTargetId="support"
-        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+        backgroundAlt="Babic Finance - карьера финансового консультанта в Германии"
       />
       <SupportComparison />
       <BenefitsList

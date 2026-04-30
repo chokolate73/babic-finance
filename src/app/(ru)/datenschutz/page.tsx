@@ -8,9 +8,9 @@ const URL_PATH = "/datenschutz";
 const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
-  title: "Datenschutz — Babic Finance",
+  title: "Datenschutz - Babic Finance",
   description:
-    "Datenschutzerklärung — Informationen zur Verarbeitung personenbezogener Daten auf den Webseiten von Vladislav Babic, Vermögensberater DVAG.",
+    "Datenschutzerklärung - Informationen zur Verarbeitung personenbezogener Daten auf den Webseiten von Vladislav Babic, Vermögensberater DVAG.",
   alternates: { canonical: `${SITE_URL}${URL_PATH}` },
   robots: { index: true, follow: true },
 };

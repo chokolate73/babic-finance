@@ -21,7 +21,7 @@ export default function Qualifications({
   callout = qualificationsCalloutRu,
   eyebrow = "Квалификации",
   title = "Четыре квалификации в одной программе",
-  description = "DVAG берёт на себя обучение, экзамены и лицензии — а ты получаешь профессию, которую ищут по всей Германии",
+  description = "DVAG берёт на себя обучение, экзамены и лицензии - а ты получаешь профессию, которую ищут по всей Германии",
 }: Props = {}) {
   return (
     <section id="qualifications" className="py-20 lg:py-28 bg-cream">
