@@ -24,7 +24,7 @@ const credentials = [
     desc: "Ich erkläre das deutsche Finanzsystem verständlich und in einfachen Worten",
   },
   {
-    title: "Beratung auf Russisch und Deutsch",
+    title: "Beratung für Ausländer",
     desc: "Ohne Sprachbarrieren und komplizierte Formulierungen",
   },
 ];
@@ -50,7 +50,7 @@ export default function Trust() {
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
                   src="/vladislav-portrait.jpeg"
-                  alt="Wladislaw Babitsch - Finanzberater"
+                  alt="Vladislav Babic - Finanzberater"
                   className="w-full h-auto object-cover"
                   width={800}
                   height={600}
@@ -72,7 +72,7 @@ export default function Trust() {
               </div>
 
               <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-bold text-navy mb-8">
-                Wladislaw Babitsch
+                Vladislav Babic
               </h2>
               <div className="space-y-5">
                 {credentials.map((item) => (

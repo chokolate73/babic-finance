@@ -33,7 +33,7 @@ const benefits = [
   {
     icon: Globe,
     title: "Ohne Sprachbarriere",
-    desc: "Ich berate auf Russisch und Deutsch. Komplexe Themen erkläre ich einfach und verständlich.",
+    desc: "Komplexe Themen erkläre ich einfach und verständlich. Ohne Bürokratendeutsch.",
   },
   {
     icon: GraduationCap,

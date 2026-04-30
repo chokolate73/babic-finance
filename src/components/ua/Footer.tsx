@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Особистий фінансовий консультант для україномовних клієнтів у Німеччині. DVAG.
+              Особистий фінансовий консультант у Німеччині. DVAG.
             </p>
           </div>
 

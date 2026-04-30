@@ -34,7 +34,7 @@ export default function LeadMagnet() {
                         7 финансовых ошибок
                       </p>
                       <p className="text-[7px] md:text-[8px] text-muted-foreground leading-tight mb-3">
-                        которые совершают русскоязычные в Германии
+                        которые совершают иностранцы в Германии
                       </p>
                       <div className="space-y-[5px] flex-1">
                         <div className="h-[2px] bg-gray-200 w-full rounded" />
@@ -61,7 +61,7 @@ export default function LeadMagnet() {
                   Бесплатный гайд
                 </span>
                 <h3 className="font-[family-name:var(--font-serif)] text-xl sm:text-2xl font-bold text-navy mt-2 leading-snug">
-                  7 финансовых ошибок, которые совершают русскоязычные в Германии
+                  7 финансовых ошибок, которые совершают иностранцы в Германии
                 </h3>
                 <p className="text-muted-foreground text-sm mt-2">
                   Узнайте, какие типичные ошибки стоят вам сотни евро в год — и как их исправить.

@@ -142,7 +142,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
                 </svg>
               </div>
               <p className="font-semibold text-navy text-lg">Anfrage gesendet!</p>
-              <p className="text-muted-foreground text-sm mt-1">Wladislaw meldet sich in Kürze bei Ihnen.</p>
+              <p className="text-muted-foreground text-sm mt-1">Vladislav meldet sich in Kürze bei Ihnen.</p>
               <button onClick={onClose} className="mt-5 text-gold text-sm hover:underline">Schließen</button>
             </div>
           )}
@@ -152,7 +152,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Guten Tag, Wladislaw! Ich möchte mehr über den Kurs „Finanzberater in Deutschland" erfahren.')}`;
+const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Guten Tag, Vladislav! Ich möchte mehr über den Kurs „Finanzberater in Deutschland" erfahren.')}`;
 
 export default function Seminar() {
   const [showModal, setShowModal] = useState(false);
@@ -223,7 +223,7 @@ export default function Seminar() {
               </p>
               <BulletItem icon={Video}>Online-Unterricht einmal pro Woche am Abend</BulletItem>
               <BulletItem icon={FolderOpen}>Zugriff auf alle Aufzeichnungen der Sitzungen</BulletItem>
-              <BulletItem icon={Languages}>Unterricht auf Russisch mit Erklärung der deutschen Fachbegriffe</BulletItem>
+              <BulletItem icon={Languages}>Ausführliche Erklärung der deutschen Fachbegriffe</BulletItem>
               <BulletItem icon={FileText}>Bei Bedarf - Bescheinigung für das Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>

@@ -8,7 +8,6 @@ import BenefitsList from "@/components/recruitment/BenefitsList";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import FinalCTA from "@/components/recruitment/FinalCTA";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
@@ -17,7 +16,6 @@ import {
   quereinstiegTasks,
   quereinstiegProfile,
   pathSteps,
-  transparenzItems,
   quereinstiegFAQItems,
   quereinstiegFinalCTA,
 } from "@/data/recruitment";
@@ -179,7 +177,6 @@ export default function QuereinstiegPage() {
         steps={pathSteps}
       />
       <IncomeRange />
-      <Transparenz items={transparenzItems} />
       <RecruitmentFAQ
         eyebrow="Вопросы"
         title="Часто задаваемые вопросы квереинштайгеров"

@@ -8,7 +8,6 @@ import SegmentCards from "@/components/recruitment/SegmentCards";
 import Qualifications from "@/components/recruitment/Qualifications";
 import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import Seminar from "@/components/ua/Seminar";
@@ -21,7 +20,6 @@ import {
   qualificationsCallout,
   pathSteps,
   incomeContent,
-  transparenzItems,
   homeFAQContent,
   homeFAQItems,
   ui,
@@ -32,9 +30,9 @@ const URL_PATH = "/ua";
 
 export const metadata: Metadata = {
   title:
-    "Кар'єра фінансового консультанта в Німеччині — україномовна команда DVAG | Babic Finance",
+    "Кар'єра фінансового консультанта в Німеччині — команда DVAG | Babic Finance",
   description:
-    "Побудуй кар'єру фінансового консультанта в Німеччині. Українською, без досвіду, з повною підтримкою команди DVAG і супроводом Владислава Бабича в Troisdorf.",
+    "Побудуй кар'єру фінансового консультанта в Німеччині. Без досвіду, з повною підтримкою команди DVAG і супроводом Владислава Бабича в Troisdorf.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -45,9 +43,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Кар'єра фінансового консультанта в Німеччині — україномовна команда DVAG",
+      "Кар'єра фінансового консультанта в Німеччині — команда DVAG",
     description:
-      "Українською. Без досвіду. З повною підтримкою команди. Шлях від першої зустрічі до самостійного консультанта з чотирма визнаними кваліфікаціями.",
+      "Без досвіду. З повною підтримкою команди. Шлях від першої зустрічі до самостійного консультанта з чотирма визнаними кваліфікаціями.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -57,9 +55,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Кар'єра фінансового консультанта в Німеччині — україномовна команда DVAG",
+      "Кар'єра фінансового консультанта в Німеччині — команда DVAG",
     description:
-      "Українською. Без досвіду. З повною підтримкою команди DVAG.",
+      "Без досвіду. З повною підтримкою команди DVAG.",
     images: ["/preview.webp"],
   },
 };
@@ -122,12 +120,6 @@ export default function UaHomePage() {
         steps={pathSteps}
       />
       <IncomeRange content={incomeContent} thisMeansLabel={ui.incomeThisMeans} />
-      <Transparenz
-        items={transparenzItems}
-        eyebrow={ui.transparenzEyebrow}
-        title={ui.transparenzTitleHome}
-        subtitle={ui.transparenzSubtitleHome}
-      />
       <Seminar />
       <RecruitmentFAQ
         eyebrow={homeFAQContent.eyebrow}

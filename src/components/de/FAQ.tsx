@@ -48,7 +48,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Muss ich Deutsch sprechen können?",
-    a: "Nein, das ist nicht notwendig. Die Beratung kann auf Russisch oder auf Deutsch erfolgen. Die gesamte Kommunikation mit den deutschen Gesellschaften übernehme ich für Sie.",
+    a: "Nein, das ist nicht notwendig. Die gesamte Kommunikation mit den deutschen Gesellschaften übernehme ich für Sie und erkläre alles in einfacher Sprache.",
   },
   {
     q: "Sind die Seminare kostenlos?",

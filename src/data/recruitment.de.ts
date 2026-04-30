@@ -23,7 +23,8 @@ export function waLink(utm: string, message: string) {
 export const homeHero: HeroContent = {
   headline: "Starte deine Karriere als",
   headlineAccent: "Finanzberater in Deutschland",
-  subtitle: "Auf Russisch. Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
+  subtitle: "Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
+  personName: "Vladislav Babic",
   trustLine: "Wir antworten innerhalb einer Stunde während der Geschäftszeiten",
   primaryCTA: {
     text: "Passt dieser Beruf zu mir?",
@@ -37,7 +38,7 @@ export const homeHero: HeroContent = {
   ],
   pills: [
     { text: "Ohne Vorerfahrung" },
-    { text: "Auf Russisch" },
+    { text: "Kostenlose Ausbildung" },
     { text: "Volle Unterstützung" },
     { text: "DVAG", mobileHidden: true },
   ],
@@ -62,7 +63,7 @@ export const homePainPoints = {
       time: "18:19",
     },
     { text: "Ich bin nicht mehr jung — ist es zu spät, was zu ändern?", time: "18:22" },
-    { text: "Russisch ist mein Plus, aber wo wird das gebraucht?", time: "18:24" },
+    { text: "Meine Sprachen sind mein Plus, aber wo werden sie gebraucht?", time: "18:24" },
   ],
   reply:
     "Ich habe diesen Weg selbst gemacht. Ich zeige dir, wie du in Deutschland einen Beruf aufbauen kannst — auch wenn es zu spät scheint.",
@@ -163,7 +164,7 @@ export const pathSteps: PathStep[] = [
     num: 3,
     title: "Start der Ausbildung",
     description:
-      "Du beginnst zu lernen — auf Russisch, mit meiner persönlichen Unterstützung. Das Format wählst du selbst: Vollzeit oder parallel zur aktuellen Arbeit.",
+      "Du beginnst zu lernen mit meiner persönlichen Unterstützung. Das Format wählst du selbst: Vollzeit oder parallel zur aktuellen Arbeit.",
   },
   {
     num: 4,
@@ -260,7 +261,7 @@ export const homeFAQItems: FAQItem[] = [
   },
   {
     q: "Muss ich Deutsch können?",
-    a: "Für den Start — nicht zwingend. Mein gesamtes Team in Troisdorf betreut russischsprachige Kunden, und viele Berater starten mit Grundkenntnissen. Die Sprache wächst mit der Zeit — die IHK-Prüfungen sind auf Deutsch, aber bis dahin bist du bereit.",
+    a: "Für den Start — nicht zwingend. Mein gesamtes Team in Troisdorf betreut Ausländer, und viele Berater starten mit Grundkenntnissen. Die Sprache wächst mit der Zeit — die IHK-Prüfungen sind auf Deutsch, aber bis dahin bist du bereit.",
   },
   {
     q: "Kann ich neben meinem Hauptjob einsteigen?",
@@ -296,7 +297,7 @@ export const finalCtaContent = {
     text: "Schreib auf WhatsApp",
     href: waLink(
       UTM.home,
-      "Hallo Wladislaw! Ich möchte mehr über den Beruf des Finanzberaters bei der DVAG erfahren.",
+      "Hallo Vladislav! Ich möchte mehr über den Beruf des Finanzberaters bei der DVAG erfahren.",
     ),
   },
   secondary: { text: "10 Fragen durchgehen", href: QUIZ_URL },
@@ -310,7 +311,7 @@ export const quereinstiegHero: HeroContent = {
   subtitle:
     "Finanzberater DVAG — ein Beruf, der deine Erfahrung und Sprachen nutzt",
   trustLine:
-    "Von Null oder parallel zur Arbeit · Ausbildung auf Russisch · Vier anerkannte Qualifikationen",
+    "Von Null oder parallel zur Arbeit · Vollständige Ausbildung · Vier anerkannte Qualifikationen",
   primaryCTA: { text: "10 Fragen durchgehen", href: QUIZ_URL },
   secondaryCTA: { text: "Mehr erfahren", href: "#recognize" },
 };
@@ -344,7 +345,7 @@ export const quereinstiegBenefits = {
     {
       title: "Deine Sprache ist ein Asset, kein Problem",
       description:
-        "In Deutschland leben hunderttausende russischsprachige Familien, die einen Finanzberater in ihrer Sprache brauchen. Du startest in einer Nische fast ohne Konkurrenz.",
+        "In Deutschland leben Millionen ausländische Familien, die einen Finanzberater in ihrer Sprache brauchen. Du startest in einer Nische fast ohne Konkurrenz.",
     },
     {
       title: "Ausbildung aus jedem Bereich ist ein Plus",
@@ -403,7 +404,7 @@ export const quereinstiegFinalCTA = {
     text: "Schreib auf WhatsApp",
     href: waLink(
       UTM.quereinstieg,
-      "Hallo Wladislaw! Ich bin Quereinsteiger — will den Beruf wechseln. Können wir reden?",
+      "Hallo Vladislav! Ich bin Quereinsteiger — will den Beruf wechseln. Können wir reden?",
     ),
   },
   secondary: { text: "10 Fragen durchgehen", href: QUIZ_URL },
@@ -593,7 +594,7 @@ export const buergergeldFAQItems: FAQItem[] = [
   },
   {
     q: "Brauche ich Deutsch fürs Jobcenter?",
-    a: "Ich und das Team helfen auf Russisch. Beim Jobcenter selbst ist manchmal Deutsch nötig — aber wir gehen diese Hürde mit dir: wir erklären, was zu sagen ist, begleiten zum Termin und organisieren bei Bedarf Übersetzung.",
+    a: "Ich und das Team helfen dir mit dem gesamten Prozess. Beim Jobcenter selbst ist Deutsch nötig — aber wir gehen diese Hürde mit dir: wir erklären, was zu sagen ist, begleiten zum Termin und organisieren bei Bedarf Übersetzung.",
   },
   {
     q: "Wie lange dauert der gesamte Prozess bis zum Start?",
@@ -617,7 +618,7 @@ export const buergergeldFinalCTA = {
     text: "Schreib auf WhatsApp",
     href: waLink(
       UTM.buergergeld,
-      "Hallo Wladislaw! Ich bekomme Bürgergeld / ALG I — will den Weg in den Beruf besprechen.",
+      "Hallo Vladislav! Ich bekomme Bürgergeld / ALG I — will den Weg in den Beruf besprechen.",
     ),
   },
   secondary: { text: "Anrufen", href: "tel:+491784743490" },
@@ -656,7 +657,7 @@ export const ui = {
   heroScrollLabel: "Nach unten scrollen",
   chatAriaLabel:
     "Visuelle Darstellung typischer Karriere-Fragen im Chat-Format",
-  replyAuthor: "Wladislaw",
+  replyAuthor: "Vladislav",
 } as const;
 
 export const legalDisclaimers = {

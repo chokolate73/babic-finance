@@ -23,7 +23,7 @@ const MOTIVATIONS: Record<Locale, Option[]> = {
     { value: "diploma_not_recognized", label: "Диплом с родины не признаётся" },
     { value: "buergergeld", label: "Я сейчас на Bürgergeld или ALG I" },
     { value: "own_business", label: "Хочу своё дело, а не работать на кого-то" },
-    { value: "russian_language", label: "Ищу профессию, где пригодится русский язык" },
+    { value: "russian_language", label: "Ищу профессию, где пригодятся мои языки" },
     { value: "just_curious", label: "Пока просто интересно узнать больше" },
     { value: "other", label: "Другое" },
   ],
@@ -32,7 +32,7 @@ const MOTIVATIONS: Record<Locale, Option[]> = {
     { value: "diploma_not_recognized", label: "Mein Diplom wird nicht anerkannt" },
     { value: "buergergeld", label: "Ich beziehe Bürgergeld oder ALG I" },
     { value: "own_business", label: "Ich will selbstständig sein" },
-    { value: "russian_language", label: "Ich suche einen Beruf, in dem Russisch gefragt ist" },
+    { value: "russian_language", label: "Ich suche einen Beruf, in dem meine Sprachen gefragt sind" },
     { value: "just_curious", label: "Bin erstmal neugierig" },
     { value: "other", label: "Anderes" },
   ],
@@ -41,7 +41,7 @@ const MOTIVATIONS: Record<Locale, Option[]> = {
     { value: "diploma_not_recognized", label: "Диплом із батьківщини не визнають" },
     { value: "buergergeld", label: "Я зараз на Bürgergeld або ALG I" },
     { value: "own_business", label: "Хочу свою справу, а не працювати на когось" },
-    { value: "russian_language", label: "Шукаю професію, де знадобиться українська/російська" },
+    { value: "russian_language", label: "Шукаю професію, де знадобляться мої мови" },
     { value: "just_curious", label: "Поки просто цікаво дізнатися більше" },
     { value: "other", label: "Інше" },
   ],
@@ -112,7 +112,7 @@ const PAGE_LABELS: Record<Locale, Record<SourcePage, string>> = {
 
 const FALLBACK_MESSAGES: Record<Locale, string> = {
   ru: "Здравствуйте, Владислав! Не смог отправить форму с сайта — хочу узнать про работу финансового консультанта.",
-  de: "Hallo Wladislaw! Das Formular auf der Website ließ sich nicht absenden — ich möchte mehr über den Beruf des Finanzberaters erfahren.",
+  de: "Hallo Vladislav! Das Formular auf der Website ließ sich nicht absenden — ich möchte mehr über den Beruf des Finanzberaters erfahren.",
   ua: "Вітаю, Владиславе! Не вдалося надіслати форму з сайту — хочу дізнатися про роботу фінансового консультанта.",
 };
 
@@ -233,14 +233,14 @@ const STRINGS: Record<Locale, UiStrings> = {
     eyebrow: "5 Fragen · 2 Minuten",
     heading: "Passt dieser Beruf zu mir?",
     intro:
-      "Die Antworten gehen direkt an Wladislaw — er meldet sich noch am selben Tag.",
+      "Die Antworten gehen direkt an Vladislav — er meldet sich noch am selben Tag.",
     stepOf: (n, total) => `Schritt ${n} von ${total}`,
     back: "Zurück",
     next: "Weiter",
-    submit: "An Wladislaw senden",
+    submit: "An Vladislav senden",
     submitting: "Wird gesendet…",
     dsgvo:
-      "Deine Daten gehen nur an Wladislaw. Keine Newsletter, kein Spam. Wir halten die DSGVO ein.",
+      "Deine Daten gehen nur an Vladislav. Keine Newsletter, kein Spam. Wir halten die DSGVO ein.",
     networkError:
       "Senden ist fehlgeschlagen. Versuch es erneut oder schreib direkt auf WhatsApp:",
     errors: {
@@ -253,7 +253,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step0: {
       heading: "Wie heißt du?",
-      hint: `Wladislaw spricht Kandidaten mit „Du" an — so ist es persönlicher.`,
+      hint: `Vladislav spricht Kandidaten mit „Du" an — so ist es persönlicher.`,
       placeholder: "Dein Name",
     },
     step1: {
@@ -272,9 +272,9 @@ const STRINGS: Record<Locale, UiStrings> = {
     step4: {
       heading: (name) => `Fast geschafft, ${name || "Freund"}!`,
       intro:
-        "Hinterlass einen Kontakt — Wladislaw meldet sich noch am selben Tag.",
+        "Hinterlass einen Kontakt — Vladislav meldet sich noch am selben Tag.",
       openLabel:
-        "Was ist dir im Gespräch mit Wladislaw am wichtigsten?",
+        "Was ist dir im Gespräch mit Vladislav am wichtigsten?",
       openOptional: "(optional)",
       openPlaceholder:
         "Zum Beispiel: verstehen, ob es sich mit der Arbeit vereinbaren lässt / mehr über Bürgergeld wissen…",

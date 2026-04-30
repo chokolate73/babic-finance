@@ -144,8 +144,8 @@ export default async function BlogArticlePageDe({ params }: PageProps) {
               Persönliche Beratung anfragen
             </h3>
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              30 Minuten unverbindliches Erstgespräch — gerne auf Deutsch oder
-              Russisch.
+              30 Minuten unverbindliches Erstgespräch — vor Ort in Troisdorf
+              oder online.
             </p>
             <a
               href="https://wa.me/491784743490"

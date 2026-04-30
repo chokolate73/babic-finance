@@ -5,7 +5,6 @@ import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
 import CareerPath from "@/components/recruitment/CareerPath";
-import Transparenz from "@/components/recruitment/Transparenz";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import FinalCTA from "@/components/recruitment/FinalCTA";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
@@ -13,7 +12,6 @@ import {
   buergergeldHero,
   buergergeldHelp,
   buergergeldPathSteps,
-  buergergeldTransparenzItems,
   buergergeldFAQItems,
   buergergeldFinalCTA,
   supportTable,
@@ -86,14 +84,6 @@ export default function DeBuergergeldPage() {
         title={ui.pathTitleBuergergeld}
         steps={buergergeldPathSteps}
       />
-      <div aria-hidden className="h-12 bg-gradient-to-b from-navy to-secondary" />
-      <Transparenz
-        eyebrow={ui.transparenzEyebrow}
-        title={ui.transparenzTitleBuergergeld}
-        subtitle={ui.transparenzSubtitleBuergergeld}
-        items={buergergeldTransparenzItems}
-      />
-      <div aria-hidden className="h-12 bg-gradient-to-b from-secondary to-navy" />
       <RecruitmentFAQ
         eyebrow={ui.faqEyebrow}
         title={ui.faqTitleBuergergeld}

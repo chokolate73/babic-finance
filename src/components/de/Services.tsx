@@ -86,7 +86,7 @@ const services = [
   },
   {
     title: "Kostenlose Seminare",
-    desc: "Bildungsveranstaltungen zur Finanzbildung auf Russisch und Deutsch. Wir besprechen reale Fragen in einem lebendigen Format.",
+    desc: "Bildungsveranstaltungen zur Finanzbildung. Wir besprechen reale Fragen in einem lebendigen Format.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/d50888bf3_generated_35c01f2e.png",
     details: [
       "Finanzbildung für Einsteiger",

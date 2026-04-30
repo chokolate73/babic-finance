@@ -65,7 +65,7 @@ export default function PainPoints() {
                 <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0">
                   <Image
                     src="/vladislav-portrait.jpeg"
-                    alt="Wladislaw"
+                    alt="Vladislav"
                     width={28}
                     height={28}
                     className="w-full h-full object-cover"
@@ -103,7 +103,7 @@ export default function PainPoints() {
                     Lassen Sie uns das gemeinsam klären - kostenlos und unverbindlich.
                   </p>
                   <span className="block text-[10px] text-white/40 mt-1">
-                    Wladislaw · 22:54
+                    Vladislav · 22:54
                   </span>
                 </div>
               </div>

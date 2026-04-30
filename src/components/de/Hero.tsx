@@ -8,7 +8,7 @@ import WhatsAppIcon from "../WhatsAppIcon";
 const heroContent = {
   headline: "Persönlicher Experte",
   headlineAccent: "für Finanzen in Deutschland",
-  subtitle: "Wladislaw Babitsch",
+  subtitle: "Vladislav Babic",
   stats: [
     { value: "21", label: "Jahre Erfahrung" },
     { value: "4\u00a0387", label: "Kunden" },

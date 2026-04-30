@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 });
 
 const siteDescription =
-  "Persönlicher Finanzberater in Deutschland — Beratung auf Russisch und Deutsch von Wladislaw Babitsch.";
+  "Persönlicher Finanzberater in Deutschland — Finanzplanung und Beratung von Vladislav Babic.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fin-1.de"),

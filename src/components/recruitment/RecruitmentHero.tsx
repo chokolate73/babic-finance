@@ -74,12 +74,12 @@ export default function RecruitmentHero({
         <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div>
           <div className="max-w-2xl text-center">
             {/* Gold decorative line */}
             <motion.div
-              className="flex items-center justify-center gap-3 mb-6"
+              className="flex items-center justify-center gap-3 mb-4 sm:mb-6"
               {...fadeUp(0.2)}
             >
               <div className="h-px w-10 bg-gold" />
@@ -88,7 +88,7 @@ export default function RecruitmentHero({
             </motion.div>
 
             <motion.h1
-              className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-4"
+              className="font-[family-name:var(--font-serif)] text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-3 sm:mb-4"
               {...fadeUp(0.4)}
             >
               {content.headline}
@@ -96,22 +96,24 @@ export default function RecruitmentHero({
               <span className="text-gold">{content.headlineAccent}</span>
             </motion.h1>
 
-            {/* Subtitle with gold rules */}
-            <motion.div
-              className="flex items-center justify-center gap-4 mt-4 mb-6"
-              {...fadeUp(0.5)}
-            >
-              <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
-              <span className="text-white/90 font-medium text-sm sm:text-base">
-                {content.subtitle}
-              </span>
-              <div className="h-px w-10 shrink-0 bg-[#F5CD55]" />
-            </motion.div>
+            {/* Person name with gold rules */}
+            {content.personName && (
+              <motion.div
+                className="flex items-center justify-center gap-3 sm:gap-4 mt-3 mb-4 sm:mb-6"
+                {...fadeUp(0.5)}
+              >
+                <div className="h-px w-8 sm:w-10 shrink-0 bg-[#F5CD55]" />
+                <span className="text-white not-italic font-medium uppercase text-sm sm:text-[1.05rem] tracking-[0.15em] whitespace-nowrap">
+                  {content.personName}
+                </span>
+                <div className="h-px w-8 sm:w-10 shrink-0 bg-[#F5CD55]" />
+              </motion.div>
+            )}
 
             {/* Stat badges */}
             {content.stats && (
               <motion.div
-                className="flex flex-wrap justify-center gap-3 mb-6"
+                className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-6"
                 {...fadeUp(0.6)}
               >
                 {content.stats.map((stat) => (
@@ -129,7 +131,7 @@ export default function RecruitmentHero({
             {/* Benefit pills */}
             {content.pills && (
               <motion.div
-                className="flex flex-wrap justify-center gap-2 mb-10"
+                className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-10"
                 {...fadeUp(0.65)}
               >
                 {content.pills.map((pill) => (
@@ -145,7 +147,7 @@ export default function RecruitmentHero({
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6"
               {...fadeUp(0.7)}
             >
               <a
