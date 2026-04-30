@@ -231,16 +231,16 @@ const STRINGS: Record<Locale, UiStrings> = {
   },
   de: {
     eyebrow: "5 Fragen · 2 Minuten",
-    heading: "Passt dieser Beruf zu mir?",
+    heading: "Passt der Beruf zu mir?",
     intro:
-      "Die Antworten gehen direkt an Vladislav - er meldet sich noch am selben Tag.",
+      "Deine Antworten gehen direkt an Vladislav — er meldet sich noch am selben Tag bei dir.",
     stepOf: (n, total) => `Schritt ${n} von ${total}`,
     back: "Zurück",
     next: "Weiter",
     submit: "An Vladislav senden",
     submitting: "Wird gesendet…",
     dsgvo:
-      "Deine Daten gehen nur an Vladislav. Keine Newsletter, kein Spam. Wir halten die DSGVO ein.",
+      "Deine Daten landen nur bei Vladislav. Kein Newsletter, kein Spam. DSGVO-konform.",
     networkError:
       "Senden ist fehlgeschlagen. Versuch es erneut oder schreib direkt auf WhatsApp:",
     errors: {
@@ -253,7 +253,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step0: {
       heading: "Wie heißt du?",
-      hint: `Vladislav spricht Kandidaten mit „Du" an - so ist es persönlicher.`,
+      hint: `Vladislav duzt dich von Anfang an — das ist persönlicher und so läuft's bei uns im Team.`,
       placeholder: "Dein Name",
     },
     step1: {

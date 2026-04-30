@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Persönlicher Finanzberater für Kunden in Deutschland. DVAG.
+              Persönliche Finanzberatung in Deutschland — über die DVAG.
             </p>
           </div>
 
@@ -27,7 +27,7 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Leistungen</h4>
             <ul className="space-y-2 text-sm text-white/50">
               <li>Finanzberatung</li>
-              <li>Investitionen und Fonds</li>
+              <li>Geldanlage und Fonds</li>
               <li>Altersvorsorge</li>
               <li>Versicherung</li>
               <li>Immobilienfinanzierung</li>

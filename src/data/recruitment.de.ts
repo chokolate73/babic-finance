@@ -21,91 +21,100 @@ export function waLink(utm: string, message: string) {
 }
 
 export const homeHero: HeroContent = {
-  headline: "Starte deine Karriere als",
-  headlineAccent: "Finanzberater in Deutschland",
+  headline: "Finanzberater werden —",
+  headlineAccent: "auch wenn du in Deutschland nochmal von vorn anfängst",
   subtitle: "Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
   personName: "Vladislav Babic",
-  trustLine: "Wir antworten innerhalb einer Stunde während der Geschäftszeiten",
+  trustLine:
+    "Während der Geschäftszeiten meldest du dich meist innerhalb einer Stunde — versprochen.",
   primaryCTA: {
-    text: "Passt dieser Beruf zu mir?",
+    text: "Passt der Beruf zu mir?",
     href: QUIZ_URL,
   },
-  secondaryCTA: { text: "Mehr erfahren", href: "#recognize" },
+  secondaryCTA: { text: "So läuft der Einstieg", href: "#recognize" },
   stats: [
-    { value: "21", label: "Jahre in Finanzen" },
+    { value: "21", label: "Jahre in der Finanzberatung" },
     { value: "4 387", label: "Kunden im Netzwerk" },
-    { value: "131+ Mio. €", label: "unter Verwaltung" },
+    { value: "Über 131 Mio. €", label: "Kundenkapital" },
   ],
   pills: [
     { text: "Ohne Vorerfahrung" },
-    { text: "Kostenlose Ausbildung" },
-    { text: "Volle Unterstützung" },
-    { text: "DVAG", mobileHidden: true },
+    { text: "Ausbildung kostenfrei" },
+    { text: "Begleitung durch DVAG" },
   ],
 };
 
 export const homePainPoints = {
-  eyebrow: "Situation",
-  title: "Kommt dir das bekannt vor?",
-  subtitle: "Wenn auch nur eines davon auf dich zutrifft - lies weiter",
+  eyebrow: "Vielleicht kennst du das",
+  title: "Kennst du das?",
+  subtitle: "Wenn dich auch nur ein Punkt trifft — bleib dran.",
   messages: [
     {
-      text: "Ich habe einen Hochschulabschluss, aber mein Diplom wird hier nicht anerkannt",
+      text: "Ich hab studiert, aber mein Abschluss wird hier nicht anerkannt.",
       time: "18:12",
     },
-    { text: "Ich arbeite seit 10 Jahren nicht in meinem Beruf", time: "18:14" },
     {
-      text: "Ich beziehe Bürgergeld. Ich will selbstständig sein, weiß aber nicht wie",
+      text: "Seit zehn Jahren arbeite ich nicht mehr in meinem Beruf.",
+      time: "18:14",
+    },
+    {
+      text: "Ich bin im Bürgergeld und würde mich gern selbstständig machen — weiß aber nicht, wie.",
       time: "18:16",
     },
     {
-      text: "Ich will Menschen helfen, aber weiß nicht, wie ich das zum Beruf mache",
+      text: "Ich möchte Menschen helfen — aber wie macht man daraus einen Beruf?",
       time: "18:19",
     },
-    { text: "Ich bin nicht mehr jung - ist es zu spät, was zu ändern?", time: "18:22" },
-    { text: "Meine Sprachen sind mein Plus, aber wo werden sie gebraucht?", time: "18:24" },
+    {
+      text: "Ich bin nicht mehr 25. Ist es jetzt zu spät, nochmal was Neues anzufangen?",
+      time: "18:22",
+    },
+    {
+      text: "Ich spreche zwei, drei Sprachen — und keiner fragt danach.",
+      time: "18:24",
+    },
   ],
   reply:
-    "Ich habe diesen Weg selbst gemacht. Ich zeige dir, wie du in Deutschland einen Beruf aufbauen kannst - auch wenn es zu spät scheint.",
+    "Ich kenne das alles. Ich zeig dir, wie der Weg in Deutschland trotzdem funktioniert — auch wenn er gerade aussichtslos aussieht.",
 } as const;
 
 export const myStoryContent = {
-  title: "Ich habe diesen Weg selbst gegangen",
+  title: "Ich bin den Weg selbst gegangen",
   paragraphs: [
-    "Ich kam 2003 aus Estland nach Deutschland. Ohne Sprache, ohne Kontakte, ohne Geld. Ich habe gearbeitet, gelernt, Fehler gemacht - aber bin weitergegangen.",
-    `2005 entdeckte ich das Finanzgeschäft. Damals sagten mir alle: „Lern erst Deutsch. Mach erst eine Ausbildung. Erst, erst, erst…" - ich wartete nicht. Ich begann zu handeln und zu lernen gleichzeitig.`,
-    `Heute bin ich Regionaldirektor der DVAG in Troisdorf - mit über 131 Millionen Euro Kundenkapital unter Verwaltung und 4 387 Menschen in meinem Netzwerk. Und ich helfe anderen, den gleichen Weg zu gehen: von „keine Ahnung von Finanzen" bis zum eigenständigen Berater mit eigenem Geschäft.`,
+    "2003 bin ich aus Estland nach Deutschland gekommen. Kein Deutsch, niemand, den ich kannte, kein Geld in der Tasche. Ich hab gearbeitet, gelernt, Fehler gemacht — und bin weitergegangen.",
+    `2005 bin ich in die Finanzberatung gerutscht. Damals hieß es ständig: „Lern erst mal Deutsch. Mach erst mal eine Ausbildung. Eins nach dem anderen." Ich hab nicht gewartet. Ich hab angefangen — und parallel dazu gelernt.`,
+    `Heute leite ich die DVAG-Direktion in Troisdorf. 4 387 Kunden im Netzwerk, über 131 Millionen Euro Kapital, ein Team, das genau diesen Weg geht. Und ich helfe anderen, ihn auch zu gehen — von „keine Ahnung von Finanzen" bis zum selbstständigen Berater mit eigenem Geschäft.`,
   ],
   pullQuote:
-    "Meine Mission ist es, die Angst zu nehmen und zu zeigen, dass man in Deutschland einen Beruf von Null aufbauen kann. Auch ohne Sprache, Erfahrung oder Selbstvertrauen.",
+    "Mir geht's darum, die Angst rauszunehmen. Du kannst in Deutschland einen Beruf von null aufbauen — auch ohne perfektes Deutsch, ohne Erfahrung, ohne das Gefühl, schon „bereit" zu sein.",
 } as const;
 
 export const segmentCards: SegmentCard[] = [
   {
     id: "quereinsteiger",
     iconName: "GraduationCap",
-    title: "Wenn du eine Ausbildung hast",
+    title: "Wenn du im Heimatland studiert hast",
     description:
-      "Dein Heimatdiplom wird nicht anerkannt oder du arbeitest nicht in deinem Beruf? Dieser Beruf nutzt deine Erfahrung und Sprachen - ohne dass du in Deutschland neu studieren musst.",
-    ctaLabel: "Quereinsteiger →",
+      "Dein Abschluss wird hier nicht anerkannt oder du arbeitest schon lange nicht mehr in dem Bereich? In der Finanzberatung zählen deine Erfahrung und deine Sprachen — und du musst nicht nochmal von vorn studieren.",
+    ctaLabel: "Zum Quereinstieg →",
     ctaHref: "/de/karriere/quereinstieg",
   },
   {
     id: "buergergeld",
     iconName: "FileCheck2",
-    title: "Wenn du Bürgergeld oder ALG I beziehst",
+    title: "Wenn du Bürgergeld oder ALG I bekommst",
     description:
-      "Der Staat unterstützt den Weg in die Selbstständigkeit - bis zu 24 Monate Zuschuss. Wir helfen dir mit den Unterlagen fürs Jobcenter und begleiten dich vom Empfänger zum Berater.",
-    ctaLabel: "Weg mit dem Jobcenter →",
+      "Der Staat fördert den Weg in die Selbstständigkeit — bis zu 24 Monate. Wir helfen dir bei den Unterlagen fürs Jobcenter und begleiten dich Schritt für Schritt aus dem Bezug raus.",
+    ctaLabel: "So geht's mit dem Jobcenter →",
     ctaHref: "/de/karriere/buergergeld",
   },
   {
     id: "side-start",
     iconName: "TrendingUp",
-    title: "Wenn du arbeitest, aber selbstständig sein willst",
+    title: "Wenn du angestellt bist, aber raus willst",
     description:
-      "Du musst deine Stelle nicht sofort aufgeben - du kannst parallel starten. Passend für alle, die bereits in Deutschland angekommen sind und eine langfristige Perspektive suchen.",
-    ctaLabel: "Mehr erfahren →",
+      "Du musst deinen Job nicht sofort kündigen — du kannst nebenberuflich anfangen und später wechseln. Passt, wenn du in Deutschland schon Fuß gefasst hast und langfristig was Eigenes aufbauen willst.",
+    ctaLabel: "Zum nebenberuflichen Einstieg →",
     ctaHref: QUIZ_URL,
   },
 ];
@@ -114,39 +123,39 @@ export const qualifications: Qualification[] = [
   {
     id: "ihk",
     title: "Kaufmann/-frau für Versicherungen und Finanzanlagen (IHK)",
-    subtitle: "IHK-Ausbildung bei der Deutschen Vermögensberatung",
+    subtitle: "Staatlich anerkannte Ausbildung — direkt bei der DVAG",
     description:
-      "Vollwertige IHK-Ausbildung zum staatlich anerkannten Beruf - direkt bei der DVAG. Mit dem IHK-Abschluss öffnen sich dir Türen zu jedem Finanzunternehmen in Deutschland.",
+      "Vollwertiger IHK-Abschluss in einem Beruf, der bundesweit anerkannt ist. Mit diesem Zeugnis stehen dir später die Türen jedes Finanzunternehmens in Deutschland offen.",
   },
   {
     id: "34f",
     title: "Finanzanlagenfachmann (§34f GewO)",
     subtitle: "Lizenz für Investments und Fonds",
     description:
-      "Normalerweise kosten Kurs und Prüfung 490–890 € + verpflichtende Berufshaftpflicht über 1,27 Mio. €. Bei der DVAG - alles inklusive.",
+      "Kurs und Prüfung kosten normalerweise 490–890 €, dazu kommt die Pflicht-Berufshaftpflicht über 1,27 Mio. €. Bei der DVAG ist das alles drin.",
   },
   {
     id: "34i",
     title: "Fachmann für Immobiliardarlehensvermittlung (§34i GewO)",
     subtitle: "Lizenz für Baufinanzierung und Immobilien",
     description:
-      "Einer der ertragreichsten Bereiche der Finanzberatung.",
+      "Einer der lukrativsten Bereiche in der Finanzberatung.",
   },
   {
     id: "dbbv",
     title: "Vermögensberater DBBV",
     subtitle: "Eigenes Branchenzertifikat",
     description:
-      "Deutsches Berufsbildungswerk für Vermögensberatung - in der Branche anerkannt.",
+      "Branchenzertifikat des Deutschen Berufsbildungswerks für Vermögensberatung — innerhalb der Branche das Standard-Siegel.",
   },
 ];
 
 export const qualificationsCallout = {
-  text: "Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung ihrer Berater.",
-  sub: "Für dich heißt das: du zahlst nichts für Prüfungen, Kurse und Versicherungen - und lernst sofort von den Besten.",
-  source: "Quelle: Unternehmensbericht DVAG, dvag-karriere.de",
+  text: "Die DVAG investiert pro Jahr über 80 Millionen Euro in die Ausbildung ihrer Berater.",
+  sub: "Für dich heißt das konkret: keine Kosten für Prüfungen, Kurse oder die Pflichtversicherung — und du lernst von Anfang an mit Profis.",
+  source: "Quelle: DVAG-Unternehmensbericht, dvag-karriere.de",
   productsPopup: {
-    label: "Welche Produkte werde ich beraten?",
+    label: "Welche Produkte berätst du am Ende?",
     title: "Welche Produkte du berätst",
     description:
       "Aus dem umfangreichen Angebot der DVAG wählst du gemeinsam mit deinen Kunden die für sie passenden Produkte aus. Dank der engen Kooperation mit unseren Produktpartnern bieten wir leistungsstarke Konzepte, die einzigartig am Markt und flexibel auf die individuelle Lebenssituation abgestimmt sind.",
@@ -172,47 +181,47 @@ export const pathSteps: PathStep[] = [
     num: 1,
     title: "Kennenlernen",
     description:
-      "Kostenloses Gespräch: Ziele, Zweifel, ehrliche Antwort - ob es zu dir passt.",
+      "Wir telefonieren oder treffen uns. Ziele, Zweifel, ehrliche Antwort: passt der Beruf zu dir?",
   },
   {
     num: 2,
     title: "10 Fragen",
     description:
-      `Offizieller DVAG-Test „10 Fragen zum Traumberuf". Ergebnis sehen wir beide.`,
+      `Offizieller DVAG-Test „10 Fragen zum Traumberuf". Das Ergebnis schauen wir uns gemeinsam an.`,
   },
   {
     num: 3,
     title: "Start der Ausbildung",
     description:
-      "Lernen mit meiner persönlichen Begleitung - Vollzeit oder berufsbegleitend.",
+      "Du startest die Ausbildung — Vollzeit oder neben dem Job. Ich begleite dich persönlich.",
   },
   {
     num: 4,
     title: "Erste Praxis",
     description:
-      "Echte Fälle von Anfang an - mit Mentor und Team im Rücken.",
+      "Du arbeitest von Anfang an mit echten Fällen. Mentor und Team stehen daneben.",
   },
   {
     num: 5,
     title: "Lizenzprüfungen",
     description:
-      "IHK-Prüfungen §34d / §34f / §34i - Kosten und Vorbereitung übernimmt die DVAG.",
+      "Die IHK-Prüfungen §34d / §34f / §34i. Vorbereitung und Kosten übernimmt die DVAG.",
   },
   {
     num: 6,
     title: "Selbstständigkeit",
     description:
-      "Am Ende der Ausbildung: Kunden, Erfahrung, Team. Du bist dein eigener Chef.",
+      "Am Ende: eigene Kunden, Erfahrung, Team. Du bist selbstständig — und dein eigener Chef.",
   },
 ];
 
 export const incomeContent = {
   eyebrow: "Einkommen",
-  title: "Was verdienen Berater",
-  subtitle: "Ehrlich, ohne Versprechen - auf Basis offener Quellen",
+  title: "Was verdienen DVAG-Berater?",
+  subtitle: "Ehrlich, ohne Versprechen — die Zahlen kommen aus öffentlichen Quellen.",
   mainRange: {
     value: "46 800 € - 119 700 €",
-    label: "Jahresverdienst-Bandbreite von DVAG-Beratern",
+    label: "Jahresgehalt-Spanne bei DVAG-Beratern",
     source: "Quelle: Kununu, 133 Bewertungen",
     sourceHref:
       "https://www.kununu.com/de/deutsche-vermoegensberatung/gehalt/vermoegensberater-in-45577",
@@ -223,21 +232,21 @@ export const incomeContent = {
       label: "Durchschnitt laut Kununu",
     },
     {
-      value: "Keine Obergrenze",
-      label: "Provision hängt von deinem Einsatz ab",
+      value: "Nach oben offen",
+      label: "Die Provision hängt davon ab, wie viel du machst",
     },
   ],
   explainer: [
-    "Bei der DVAG gibt es kein Festgehalt. Du bist selbstständiger Berater (§§ 84, 92 HGB), und dein Einkommen hängt direkt davon ab, wie vielen Kunden du hilfst und welche Lösungen du anbietest.",
+    "Bei der DVAG gibt es kein Festgehalt. Du arbeitest als selbstständiger Handelsvertreter (§§ 84, 92 HGB), und dein Einkommen hängt direkt davon ab, wie vielen Kunden du wirklich hilfst.",
   ],
   bullets: [
     {
-      strong: "Das Einkommen hat keine Obergrenze",
-      rest: " - Berater mit großem Portfolio und Führungsrollen im Team verdienen deutlich überdurchschnittlich",
+      strong: "Nach oben gibt's keine Grenze.",
+      rest: " Berater mit großem Kundenstamm und Verantwortung im Team verdienen deutlich über dem Durchschnitt.",
     },
     {
-      strong: "Die ersten Monate brauchen Geduld",
-      rest: " - wie in jedem Geschäft baut sich das Einkommen schrittweise auf. Deshalb starten wir mit der Ausbildung, nicht mit dem Verkauf",
+      strong: "Die ersten Monate brauchen Geduld.",
+      rest: " Wie in jedem eigenen Geschäft baut sich das Einkommen Schritt für Schritt auf. Deshalb fangen wir mit der Ausbildung an — nicht mit dem Verkauf.",
     },
   ],
   disclaimer:
@@ -270,42 +279,42 @@ export const transparenzItems: TransparenzItem[] = [
 export const menteesPlaceholder: MenteeStory[] = [];
 
 export const homeFAQContent = {
-  eyebrow: "Fragen",
-  title: "Häufige Fragen zum Beruf",
+  eyebrow: "Häufige Fragen",
+  title: "Häufige Fragen zum Einstieg",
 };
 
 export const homeFAQItems: FAQItem[] = [
   {
     q: "Ist das MLM oder Strukturvertrieb?",
-    a: `Nein. Die DVAG ist ein Versicherungs- und Finanzvermittler auf Provisionsbasis mit über 40 Produktpartnern (Banken, Versicherungen, Investmentgesellschaften). Du berätst Kunden und bekommst Provision vom Produktgeber für abgeschlossene Verträge - nicht von „Menschen unter dir". Die Struktur in der DVAG bedeutet Mentoring und Teamarbeit, nicht „bring einen Freund und bekomm Prozente".`,
+    a: `Nein. Die DVAG ist ein Versicherungs- und Finanzvermittler mit über 40 Produktpartnern (Banken, Versicherungen, Investmentgesellschaften). Du berätst Kunden und bekommst die Provision vom jeweiligen Produktgeber — nicht „von Menschen unter dir". Was es gibt: ein Team mit Mentoring und gemeinsamer Weiterbildung. Was es nicht gibt: „bring einen Freund und kassier Prozente vom Umsatz".`,
   },
   {
     q: "Muss ich Deutsch können?",
-    a: "Für den Start - nicht zwingend. Mein gesamtes Team in Troisdorf betreut Ausländer, und viele Berater starten mit Grundkenntnissen. Die Sprache wächst mit der Zeit - die IHK-Prüfungen sind auf Deutsch, aber bis dahin bist du bereit.",
+    a: "Zum Einstieg nicht perfekt, nein. Mein Team in Troisdorf betreut viele russisch- und ukrainisch-sprachige Kunden, und nicht wenige Berater fangen mit B1-/B2-Deutsch an. Bis zur IHK-Prüfung wächst die Sprache mit — die Prüfung selbst ist auf Deutsch, aber dann bist du auch soweit.",
   },
   {
     q: "Kann ich neben meinem Hauptjob einsteigen?",
-    a: "Ja. Die DVAG unterstützt offiziell den nebenberuflichen Einstieg. Du kannst als Assistent oder parallel zum Hauptjob anfangen und in die Vollzeit wechseln, wenn du dich bereit fühlst.",
+    a: "Ja. Der nebenberufliche Einstieg ist bei der DVAG offiziell vorgesehen. Du kannst als Assistent oder parallel zum Hauptjob starten und später in Vollzeit wechseln — wenn du soweit bist.",
   },
   {
     q: "Wann verdiene ich?",
-    a: "Zu Beginn der Ausbildung bekommst du eine tarifliche Ausbildungsvergütung plus mögliche Provisionen aus ersten Verträgen. Das volle Einkommen kommt schrittweise - die ersten 6–12 Monate gehen meist in den Aufbau der Kundenbasis. Das ist die ehrliche Realität jedes Geschäfts.",
+    a: "Schon während der Ausbildung — eine tarifliche Ausbildungsvergütung plus erste Provisionen aus den Verträgen, die du selbst abschließt. Das volle Einkommen kommt schrittweise: die ersten 6–12 Monate baust du dir den Kundenstamm auf. So läuft das in jedem eigenen Geschäft, und so bin ich auch ehrlich zu dir.",
   },
   {
     q: "Was ist die Bescheinigung fürs Jobcenter?",
-    a: "Wenn du Bürgergeld beziehst und in die Selbstständigkeit wechselst, fordert das Jobcenter eine Tragfähigkeitsbescheinigung - ein Dokument, das belegt, dass dein Geschäftsplan tragfähig ist. Wir helfen bei der Erstellung über IHK-Partner. Das Dokument stellt nicht die DVAG aus, sondern unabhängige Experten - wir begleiten aber den gesamten Prozess. Mehr auf der Seite zum Bürgergeld.",
+    a: "Wenn du aus dem Bürgergeld in die Selbstständigkeit wechselst, will das Jobcenter eine sogenannte Tragfähigkeitsbescheinigung — ein Dokument, das belegt: dein Geschäftsplan trägt sich. Diese Bescheinigung stellt nicht die DVAG aus, sondern eine unabhängige Stelle (z. B. die IHK). Wir helfen dir aber bei den Unterlagen und begleiten den ganzen Prozess. Details findest du auf der Seite zum Bürgergeld.",
   },
   {
     q: "Was kosten Ausbildung und Prüfungen?",
-    a: "Für dich - nichts. Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung ihrer Berater. IHK-Prüfungen (§34d, §34f, §34i), Vorbereitungskurse, verpflichtende Versicherung - alles zahlt das Unternehmen.",
+    a: "Für dich: nichts. Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung. IHK-Prüfungen (§34d, §34f, §34i), die Vorbereitungskurse und die Pflicht-Berufshaftpflicht — alles übernimmt das Unternehmen.",
   },
   {
     q: "Was, wenn es nicht klappt?",
-    a: "Das normale Risiko der Selbstständigkeit. Du kannst das Vertragsverhältnis mit der DVAG jederzeit beenden - aber sei bereit, dass Provisionen für nicht abgeschlossene Verträge im Rahmen der Stornohaftung neu berechnet werden können. Das ist Branchenstandard und steht im Vertrag.",
+    a: "Das normale Risiko der Selbstständigkeit. Du kannst das Vertragsverhältnis mit der DVAG jederzeit beenden. Wichtig zu wissen: für noch nicht ausfinanzierte Verträge greift die sogenannte Stornohaftung — Provisionen können dann nachträglich neu berechnet werden. Das ist Branchenstandard und steht so auch im Vertrag.",
   },
   {
     q: "Wie sieht der erste Schritt aus?",
-    a: `Wir beginnen mit einem kostenlosen Gespräch (persönlich in Troisdorf, per Zoom oder WhatsApp). Ich sage dir ehrlich, ob dieser Beruf zu dir passt. Danach - die offiziellen „10 Fragen zum Traumberuf" der DVAG. Wenn du sie bestehst - besprechen wir die Details.`,
+    a: `Wir starten mit einem kostenlosen Gespräch — bei mir im Büro in Troisdorf, per Zoom oder WhatsApp. Ich sage dir ehrlich, ob ich glaube, dass der Beruf zu dir passt. Danach machst du die offiziellen „10 Fragen zum Traumberuf" der DVAG. Wenn du sie bestehst, gehen wir in die Details.`,
   },
 ];
 
@@ -647,7 +656,7 @@ export const buergergeldFinalCTA = {
 // --- Shared strings for DE pages ---
 
 export const ui = {
-  pathEyebrow: "Weg",
+  pathEyebrow: "Ablauf",
   pathTitleHome: "So läuft's",
   pathTitleBuergergeld: "Schritt-für-Schritt-Plan für Bürgergeld / ALG I",
   transparenzEyebrow: "Ehrlich",
@@ -663,17 +672,17 @@ export const ui = {
   qualificationsEyebrow: "Qualifikationen",
   qualificationsTitle: "Vier Qualifikationen in einem Programm",
   qualificationsDescription:
-    "Die DVAG übernimmt Ausbildung, Prüfungen und Lizenzen - du bekommst einen Beruf, der in ganz Deutschland gefragt ist",
-  segmentsEyebrow: "Für wen",
+    "Ausbildung, Prüfungen und Lizenzen übernimmt die DVAG. Du bekommst am Ende einen Beruf, der in ganz Deutschland nachgefragt ist.",
+  segmentsEyebrow: "Für wen das ist",
   segmentsTitle: "Für dich, wenn...",
   segmentsSubtitle:
-    "Wähle die Situation, die dir näher ist - und erfahre den Weg im Detail",
+    "Klick auf das, was am ehesten passt — wir schauen uns deinen Weg konkret an.",
   supportEyebrow: "Staatliche Unterstützung",
   supportTitle: "Einstiegsgeld vs Gründungszuschuss",
   supportDescription:
     "Zwei staatliche Förderprogramme für den Weg in die Selbstständigkeit - eines für Bürgergeld-Empfänger, das andere für ALG I",
   supportParameter: "Parameter",
-  incomeThisMeans: "Das bedeutet zweierlei:",
+  incomeThisMeans: "Heißt zwei Dinge:",
   heroScrollLabel: "Nach unten scrollen",
   chatAriaLabel:
     "Visuelle Darstellung typischer Karriere-Fragen im Chat-Format",
