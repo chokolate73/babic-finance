@@ -10,6 +10,7 @@ import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
 import {
   homeHero,
   homePainPoints,
@@ -29,7 +30,7 @@ const URL_PATH = "/de";
 
 export const metadata: Metadata = {
   title:
-    "Karriere als Finanzberater in Deutschland — DVAG-Team | Babic Finance",
+    "Karriere als Finanzberater in Deutschland - DVAG-Team | Babic Finance",
   description:
     "Baue deine Karriere als Finanzberater in Deutschland auf. Ohne Vorerfahrung, mit voller Unterstützung des DVAG-Teams und persönlicher Begleitung von Vladislav Babic in Troisdorf.",
   alternates: {
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Karriere als Finanzberater in Deutschland — DVAG-Team",
+      "Karriere als Finanzberater in Deutschland - DVAG-Team",
     description:
       "Ohne Vorerfahrung. Mit voller Team-Unterstützung. Vom ersten Kennenlernen bis zum selbstständigen Berater mit vier anerkannten Qualifikationen.",
     url: `${SITE_URL}${URL_PATH}`,
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Karriere als Finanzberater in Deutschland — DVAG-Team",
+      "Karriere als Finanzberater in Deutschland - DVAG-Team",
     description:
       "Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
     images: ["/preview.webp"],
@@ -69,7 +70,7 @@ export default function DeHomePage() {
       <RecruitmentHero
         content={homeHero}
         scrollTargetId="recognize"
-        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
+        backgroundAlt="Babic Finance - Karriere als Finanzberater in Deutschland"
         scrollLabel={ui.heroScrollLabel}
       />
       <CareerPainPoints
@@ -109,6 +110,7 @@ export default function DeHomePage() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="de" />
+      <StickyMobileCTA label="Beratung anfragen" />
       <Footer />
     </div>
   );

@@ -23,7 +23,7 @@ const montserrat = Montserrat({
 });
 
 const siteDescription =
-  "Особистий фінансовий консультант у Німеччині — фінансове планування та консультації від Владислава Бабича.";
+  "Особистий фінансовий консультант у Німеччині - фінансове планування та консультації від Владислава Бабича.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fin-1.de"),

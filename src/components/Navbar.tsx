@@ -22,8 +22,7 @@ const klientyLinks: NavLink[] = [
 ];
 
 const recruitmentLinks: NavLink[] = [
-  { href: "#qualifications", label: "Что получу" },
-  { href: "#path", label: "Как это работает" },
+  { href: "#recognize", label: "Ситуация" },
   { href: "#faq", label: "FAQ" },
   {
     label: "Карьера",
@@ -45,8 +44,7 @@ const karriereLinks: NavLink[] = [
 ];
 
 const deRecruitmentLinks: NavLink[] = [
-  { href: "#qualifications", label: "Was du bekommst" },
-  { href: "#path", label: "So läuft's" },
+  { href: "#recognize", label: "Situation" },
   { href: "#faq", label: "FAQ" },
   {
     href: "/de/karriere",
@@ -69,8 +67,7 @@ const deKarriereLinks: NavLink[] = [
 ];
 
 const uaRecruitmentLinks: NavLink[] = [
-  { href: "#qualifications", label: "Що отримаю" },
-  { href: "#path", label: "Як це працює" },
+  { href: "#recognize", label: "Ситуація" },
   { href: "#faq", label: "FAQ" },
   {
     href: "/ua/karriere",
@@ -144,8 +141,17 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   const isDeKarriere = pathname.startsWith("/de/karriere");
   const isUaKarriere = pathname.startsWith("/ua/karriere");
   const isUaKlienty = pathname === "/ua/klienty" || pathname.startsWith("/ua/klienty/");
+  const isLegal =
+    pathname === "/impressum" ||
+    pathname === "/datenschutz" ||
+    pathname === "/de/impressum" ||
+    pathname === "/de/datenschutz" ||
+    pathname === "/ua/impressum" ||
+    pathname === "/ua/datenschutz";
 
-  const navLinks = isDe
+  const homeHref = isDe ? "/de" : isUa ? "/ua" : "/";
+
+  const rawNavLinks = isDe
     ? isDeKarriere
       ? deKarriereLinks
       : deRecruitmentLinks
@@ -160,6 +166,22 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
         : isKarriere
           ? karriereLinks
           : recruitmentLinks;
+
+  const prefixHash = (href: string | undefined) => {
+    if (!href || !href.startsWith("#")) return href;
+    return `${homeHref}${href}`;
+  };
+
+  const navLinks: NavLink[] = isLegal
+    ? rawNavLinks.map((link) => ({
+        ...link,
+        href: prefixHash(link.href),
+        children: link.children?.map((c) => ({
+          ...c,
+          href: prefixHash(c.href) ?? c.href,
+        })),
+      }))
+    : rawNavLinks;
 
   const logoHref = isDe
     ? "/de"

@@ -35,7 +35,7 @@ export default function Contact() {
     if (form.email.trim()) body.append("email", form.email.trim());
     body.append("phone", form.phone.trim());
     if (form.message.trim()) body.append("message", form.message.trim());
-    body.append("_subject", `📩 Заявка с сайта — ${form.name.trim()}`);
+    body.append("_subject", `📩 Заявка с сайта - ${form.name.trim()}`);
     body.append("formType", "contact");
     body.append("locale", "ru");
 

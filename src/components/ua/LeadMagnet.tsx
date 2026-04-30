@@ -60,7 +60,7 @@ export default function LeadMagnet() {
                   7 фінансових помилок, яких часто припускаються переселенці в Німеччині
                 </h3>
                 <p className="text-muted-foreground text-sm mt-2">
-                  Дізнайтеся, які типові помилки коштують вам сотень євро щороку — і як їх уникнути.
+                  Дізнайтеся, які типові помилки коштують вам сотень євро щороку - і як їх уникнути.
                 </p>
 
                 <ul className="mt-4 space-y-1.5">
@@ -73,7 +73,7 @@ export default function LeadMagnet() {
                 </ul>
 
                 <p className="text-muted-foreground text-sm mt-5">
-                  Посібник доступний безкоштовно у Telegram-каналі — підпишись і одразу отримай.
+                  Посібник доступний безкоштовно у Telegram-каналі - підпишись і одразу отримай.
                 </p>
 
                 <a
@@ -89,7 +89,7 @@ export default function LeadMagnet() {
                 </a>
 
                 <p className="text-muted-foreground text-xs mt-2.5 text-center">
-                  Без спаму — лише корисний контент про фінанси в Німеччині.
+                  Без спаму - лише корисний контент про фінанси в Німеччині.
                 </p>
               </div>
             </div>

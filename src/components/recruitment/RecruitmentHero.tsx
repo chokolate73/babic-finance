@@ -91,9 +91,7 @@ export default function RecruitmentHero({
               className="font-[family-name:var(--font-serif)] text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-3 sm:mb-4"
               {...fadeUp(0.4)}
             >
-              {content.headline.replace(/\s+als$/, "")}
-              <br />
-              <span className="whitespace-nowrap">als</span>
+              <span className="whitespace-nowrap">{content.headline}</span>
               <br />
               <span className="text-gold">{content.headlineAccent}</span>
             </motion.h1>

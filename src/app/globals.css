@@ -17,7 +17,7 @@
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-/* Cream-background sections use the previous (darker, less saturated) gold —
+/* Cream-background sections use the previous (darker, less saturated) gold -
    the bright gold (#F0C040) reads harsh on light cream surfaces but pops on
    dark hero backgrounds where it's intended. */
 .bg-cream {

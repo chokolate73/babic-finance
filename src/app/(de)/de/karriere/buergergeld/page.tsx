@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title:
     "Vom Bürgergeld in den Beruf als Finanzberater | Babic Finance",
   description:
-    "Mit staatlicher Unterstützung — Einstiegsgeld bis zu 24 Monate. Wir helfen bei der Tragfähigkeitsbescheinigung, begleiten den Jobcenter-Termin und den Weg bis zum ersten Kunden.",
+    "Mit staatlicher Unterstützung - Einstiegsgeld bis zu 24 Monate. Wir helfen bei der Tragfähigkeitsbescheinigung, begleiten den Jobcenter-Termin und den Weg bis zum ersten Kunden.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -72,7 +72,7 @@ export default function DeBuergergeldPage() {
         content={buergergeldHero}
         scrollTargetId="support"
         scrollLabel={ui.heroScrollLabel}
-        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
+        backgroundAlt="Babic Finance - Karriere als Finanzberater in Deutschland"
       />
       <SupportComparison
         table={supportTable}
