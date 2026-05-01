@@ -273,6 +273,10 @@ export const homeFAQContent = {
 
 export const homeFAQItems: FAQItem[] = [
   {
+    q: "Welche Perspektiven habe ich?",
+    a: "Eine fundierte Finanzausbildung, tiefes Wissen über den deutschen Finanzmarkt und die Möglichkeit, Menschen verständlich zu beraten. Dazu freie Zeiteinteilung - du gestaltest deinen Tag und dein Einkommen selbst.",
+  },
+  {
     q: "Ist das MLM oder Strukturvertrieb?",
     a: `Nein. Die DVAG ist ein Versicherungs- und Finanzvermittler mit über 40 Produktpartnern (Banken, Versicherungen, Investmentgesellschaften). Du berätst Kunden und bekommst die Provision vom jeweiligen Produktgeber - nicht „von Menschen unter dir". Was es gibt: ein Team mit Mentoring und gemeinsamer Weiterbildung. Was es nicht gibt: „bring einen Freund und kassier Prozente vom Umsatz".`,
   },
