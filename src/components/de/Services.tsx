@@ -21,7 +21,7 @@ const services = [
   },
   {
     title: "Vermögensberatung",
-    desc: "Langfristiger Vermögensaufbau für Privatpersonen und Familien — Analyse von Versorgungslücken, strukturierte Anlage, Absicherung. Alles in einer Hand.",
+    desc: "Langfristiger Vermögensaufbau für Privatpersonen und Familien - Analyse von Versorgungslücken, strukturierte Anlage, Absicherung. Alles in einer Hand.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
     href: "/de/leistungen/vermoegensberatung",
     details: [
@@ -57,7 +57,7 @@ const services = [
   },
   {
     title: "Berufsunfähigkeitsversicherung (BU)",
-    desc: "Berufsunfähigkeit ist statistisch das größte Einkommensrisiko — wir sichern dich richtig ab. Tarife der Generali Gruppe, mit klarer Gesundheitsprüfung und Leistungsumfang.",
+    desc: "Berufsunfähigkeit ist statistisch das größte Einkommensrisiko - wir sichern dich richtig ab. Tarife der Generali Gruppe, mit klarer Gesundheitsprüfung und Leistungsumfang.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
     href: "/de/leistungen/bu-beratung",
     details: [
@@ -69,7 +69,7 @@ const services = [
   },
   {
     title: "Private Krankenversicherung (PKV)",
-    desc: "PKV oder GKV? Eine Entscheidung für Jahrzehnte. Wir schauen ehrlich, ob der Wechsel in deiner Lebenssituation passt — Tarife der Central Krankenversicherung.",
+    desc: "PKV oder GKV? Eine Entscheidung für Jahrzehnte. Wir schauen ehrlich, ob der Wechsel in deiner Lebenssituation passt - Tarife der Central Krankenversicherung.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     href: "/de/leistungen/pkv-beratung",
     details: [
@@ -81,7 +81,7 @@ const services = [
   },
   {
     title: "Betriebliche Altersvorsorge (bAV)",
-    desc: "bAV als Mitarbeiterbenefit, der wirklich ankommt — steuerlich gefördert und administrativ schlank. Lösungen über Generali Pensionskasse.",
+    desc: "bAV als Mitarbeiterbenefit, der wirklich ankommt - steuerlich gefördert und administrativ schlank. Lösungen über Generali Pensionskasse.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
     href: "/de/leistungen/bav-betriebliche-altersvorsorge",
     details: [
@@ -93,7 +93,7 @@ const services = [
   },
   {
     title: "Rechtsschutzversicherung",
-    desc: "Beruf, Verkehr, Mieter, Eigentümer — wir wählen die richtigen Bausteine. Abgesichert über ADVOCARD.",
+    desc: "Beruf, Verkehr, Mieter, Eigentümer - wir wählen die richtigen Bausteine. Abgesichert über ADVOCARD.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
     href: "/de/leistungen/rechtsschutz",
     details: [
@@ -105,7 +105,7 @@ const services = [
   },
   {
     title: "Risikolebensversicherung",
-    desc: "Absicherung der Familie, falls dem Hauptverdiener etwas zustößt — schlank, bezahlbar, mit klarer Leistung. Tarife der Generali Gruppe.",
+    desc: "Absicherung der Familie, falls dem Hauptverdiener etwas zustößt - schlank, bezahlbar, mit klarer Leistung. Tarife der Generali Gruppe.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     details: [
       "Familienabsicherung im Todesfall",
@@ -127,7 +127,7 @@ const services = [
   },
   {
     title: "Hausrat- und Privathaftpflichtversicherung",
-    desc: "Zwei Klassiker, die in keinem Haushalt fehlen sollten — Hausrat schützt deine Sachen, Privathaftpflicht dich vor Schadenersatzforderungen.",
+    desc: "Zwei Klassiker, die in keinem Haushalt fehlen sollten - Hausrat schützt deine Sachen, Privathaftpflicht dich vor Schadenersatzforderungen.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
     details: [
       "Hausrat: Schutz bei Einbruch, Feuer, Wasser",

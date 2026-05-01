@@ -21,7 +21,7 @@ const services = [
   },
   {
     title: "Управление капиталом",
-    desc: "Долгосрочный план накоплений и защита для частных лиц и семей — анализ пробелов, структурированное вложение, страховая защита. Всё в одних руках.",
+    desc: "Долгосрочный план накоплений и защита для частных лиц и семей - анализ пробелов, структурированное вложение, страховая защита. Всё в одних руках.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
     href: "/uslugi/vermoegensberatung",
     details: [
@@ -57,7 +57,7 @@ const services = [
   },
   {
     title: "Страховка от потери трудоспособности (BU)",
-    desc: "Потеря трудоспособности — самый большой финансовый риск. Помогаем правильно застраховаться. Тарифы группы Generali, с разбором медосмотра и покрытия.",
+    desc: "Потеря трудоспособности - самый большой финансовый риск. Помогаем правильно застраховаться. Тарифы группы Generali, с разбором медосмотра и покрытия.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
     href: "/uslugi/bu-beratung",
     details: [
@@ -69,7 +69,7 @@ const services = [
   },
   {
     title: "Частная медицинская страховка (PKV)",
-    desc: "PKV или GKV? Решение на десятилетия. Честно смотрим, подходит ли переход в твоей жизненной ситуации — тарифы Central Krankenversicherung.",
+    desc: "PKV или GKV? Решение на десятилетия. Честно смотрим, подходит ли переход в твоей жизненной ситуации - тарифы Central Krankenversicherung.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     href: "/uslugi/pkv-beratung",
     details: [
@@ -81,7 +81,7 @@ const services = [
   },
   {
     title: "Корпоративная пенсия (bAV)",
-    desc: "bAV как бонус сотрудникам, который реально работает — с налоговой поддержкой и без бюрократии. Решения через Generali Pensionskasse.",
+    desc: "bAV как бонус сотрудникам, который реально работает - с налоговой поддержкой и без бюрократии. Решения через Generali Pensionskasse.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
     href: "/uslugi/bav-betriebliche-altersvorsorge",
     details: [
@@ -93,7 +93,7 @@ const services = [
   },
   {
     title: "Юридическая страховка",
-    desc: "Работа, транспорт, арендатор, собственник — выбираем правильные модули. Защита через ADVOCARD.",
+    desc: "Работа, транспорт, арендатор, собственник - выбираем правильные модули. Защита через ADVOCARD.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
     href: "/uslugi/rechtsschutz",
     details: [
@@ -104,8 +104,8 @@ const services = [
     ],
   },
   {
-    title: "Risikolebensversicherung — страховка жизни",
-    desc: "Защита семьи на случай ухода кормильца — лаконично, доступно, с понятным покрытием. Тарифы группы Generali.",
+    title: "Risikolebensversicherung - страховка жизни",
+    desc: "Защита семьи на случай ухода кормильца - лаконично, доступно, с понятным покрытием. Тарифы группы Generali.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     details: [
       "Защита семьи в случае смерти",
@@ -115,7 +115,7 @@ const services = [
     ],
   },
   {
-    title: "Pflegeversicherung — страховка по уходу",
+    title: "Pflegeversicherung - страховка по уходу",
     desc: "Государственная страховка по уходу покрывает только часть реальных расходов. Закрываем пробел частными модулями.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
     details: [
@@ -127,7 +127,7 @@ const services = [
   },
   {
     title: "Hausrat и Privathaftpflicht",
-    desc: "Два классика, которые нужны в каждом доме — Hausrat защищает имущество, Privathaftpflicht — от исков о возмещении ущерба.",
+    desc: "Два классика, которые нужны в каждом доме - Hausrat защищает имущество, Privathaftpflicht - от исков о возмещении ущерба.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
     details: [
       "Hausrat: защита от взлома, пожара, воды",

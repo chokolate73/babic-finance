@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title:
     "Vom Bürgergeld in den Beruf als Finanzberater | Babic Finance",
   description:
-    "Aus dem Bürgergeld in die Selbstständigkeit — mit Einstiegsgeld bis zu 24 Monaten. Wir helfen bei Tragfähigkeitsbescheinigung und Jobcenter-Termin und begleiten dich bis zum ersten Kunden.",
+    "Aus dem Bürgergeld in die Selbstständigkeit - mit Einstiegsgeld bis zu 24 Monaten. Wir helfen bei Tragfähigkeitsbescheinigung und Jobcenter-Termin und begleiten dich bis zum ersten Kunden.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {

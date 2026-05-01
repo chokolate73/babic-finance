@@ -21,7 +21,7 @@ const services = [
   },
   {
     title: "Управління капіталом",
-    desc: "Довгострокове накопичення та захист для приватних осіб і сімей — аналіз прогалин, структуроване вкладення, страховий захист. Усе в одних руках.",
+    desc: "Довгострокове накопичення та захист для приватних осіб і сімей - аналіз прогалин, структуроване вкладення, страховий захист. Усе в одних руках.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
     href: "/ua/poslugy/vermoegensberatung",
     details: [
@@ -57,7 +57,7 @@ const services = [
   },
   {
     title: "Страхування від втрати працездатності (BU)",
-    desc: "Втрата працездатності — найбільший фінансовий ризик. Допомагаємо правильно застрахуватися. Тарифи групи Generali, з розбором медогляду й покриття.",
+    desc: "Втрата працездатності - найбільший фінансовий ризик. Допомагаємо правильно застрахуватися. Тарифи групи Generali, з розбором медогляду й покриття.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
     href: "/ua/poslugy/bu-beratung",
     details: [
@@ -69,7 +69,7 @@ const services = [
   },
   {
     title: "Приватне медичне страхування (PKV)",
-    desc: "PKV чи GKV? Рішення на десятиліття. Чесно дивимося, чи підходить перехід саме у твоїй ситуації — тарифи Central Krankenversicherung.",
+    desc: "PKV чи GKV? Рішення на десятиліття. Чесно дивимося, чи підходить перехід саме у твоїй ситуації - тарифи Central Krankenversicherung.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     href: "/ua/poslugy/pkv-beratung",
     details: [
@@ -81,7 +81,7 @@ const services = [
   },
   {
     title: "Корпоративна пенсія (bAV)",
-    desc: "bAV як бонус для працівників, який реально працює — з податковою підтримкою і без бюрократії. Рішення через Generali Pensionskasse.",
+    desc: "bAV як бонус для працівників, який реально працює - з податковою підтримкою і без бюрократії. Рішення через Generali Pensionskasse.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
     href: "/ua/poslugy/bav-betriebliche-altersvorsorge",
     details: [
@@ -93,7 +93,7 @@ const services = [
   },
   {
     title: "Юридичне страхування",
-    desc: "Робота, транспорт, орендар, власник — обираємо правильні модулі. Захист через ADVOCARD.",
+    desc: "Робота, транспорт, орендар, власник - обираємо правильні модулі. Захист через ADVOCARD.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
     href: "/ua/poslugy/rechtsschutz",
     details: [
@@ -104,8 +104,8 @@ const services = [
     ],
   },
   {
-    title: "Risikolebensversicherung — страхування життя",
-    desc: "Захист сім'ї на випадок відходу годувальника — лаконічно, доступно, з чітким покриттям. Тарифи групи Generali.",
+    title: "Risikolebensversicherung - страхування життя",
+    desc: "Захист сім'ї на випадок відходу годувальника - лаконічно, доступно, з чітким покриттям. Тарифи групи Generali.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     details: [
       "Захист сім'ї у разі смерті",
@@ -115,7 +115,7 @@ const services = [
     ],
   },
   {
-    title: "Pflegeversicherung — страхування з догляду",
+    title: "Pflegeversicherung - страхування з догляду",
     desc: "Державне страхування з догляду покриває лише частину реальних витрат. Закриваємо прогалину приватними модулями.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
     details: [
@@ -127,7 +127,7 @@ const services = [
   },
   {
     title: "Hausrat і Privathaftpflicht",
-    desc: "Два класики, які потрібні в кожному домі — Hausrat захищає майно, Privathaftpflicht — від позовів про відшкодування шкоди.",
+    desc: "Два класики, які потрібні в кожному домі - Hausrat захищає майно, Privathaftpflicht - від позовів про відшкодування шкоди.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
     details: [
       "Hausrat: захист від крадіжки, пожежі, води",

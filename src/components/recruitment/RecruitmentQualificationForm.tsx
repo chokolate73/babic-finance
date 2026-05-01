@@ -233,7 +233,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     eyebrow: "5 Fragen · 2 Minuten",
     heading: "Passt der Beruf zu mir?",
     intro:
-      "Deine Antworten gehen direkt an Vladislav — er meldet sich noch am selben Tag bei dir.",
+      "Deine Antworten gehen direkt an Vladislav - er meldet sich noch am selben Tag bei dir.",
     stepOf: (n, total) => `Schritt ${n} von ${total}`,
     back: "Zurück",
     next: "Weiter",
@@ -253,7 +253,7 @@ const STRINGS: Record<Locale, UiStrings> = {
     },
     step0: {
       heading: "Wie heißt du?",
-      hint: `Vladislav duzt dich von Anfang an — das ist persönlicher und so läuft's bei uns im Team.`,
+      hint: `Vladislav duzt dich von Anfang an - das ist persönlicher und so läuft's bei uns im Team.`,
       placeholder: "Dein Name",
     },
     step1: {

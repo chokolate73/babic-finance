@@ -13,9 +13,9 @@ const DVAG_NEBENBERUF =
   "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/nebenberuf.html#vladislav.babic";
 
 export const metadata: Metadata = {
-  title: "Паралельний старт у фінансах — Babic Finance",
+  title: "Паралельний старт у фінансах - Babic Finance",
   description:
-    "Підробіток із мінімальними зусиллями — без ризиків. Vertrauensmitarbeiter або Vermögensberater-Assistent паралельно з основною роботою чи навчанням.",
+    "Підробіток із мінімальними зусиллями - без ризиків. Vertrauensmitarbeiter або Vermögensberater-Assistent паралельно з основною роботою чи навчанням.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Паралельний старт у фінансах — Babic Finance",
+    title: "Паралельний старт у фінансах - Babic Finance",
     description:
-      "Підробіток із мінімальними зусиллями — без ризиків. Vertrauensmitarbeiter або Vermögensberater-Assistent паралельно з основною роботою чи навчанням.",
+      "Підробіток із мінімальними зусиллями - без ризиків. Vertrauensmitarbeiter або Vermögensberater-Assistent паралельно з основною роботою чи навчанням.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Паралельний старт у фінансах — Babic Finance",
+    title: "Паралельний старт у фінансах - Babic Finance",
     description:
-      "Підробіток із мінімальними зусиллями — без ризиків. Паралельно з основною роботою чи навчанням.",
+      "Підробіток із мінімальними зусиллями - без ризиків. Паралельно з основною роботою чи навчанням.",
     images: ["/preview.webp"],
   },
 };
@@ -54,7 +54,7 @@ const benefitItems = [
   "вільний графік і максимальну гнучкість",
   "хороші умови оплати, прив'язані до результату",
   "персональну підтримку досвідченого фінансового коуча",
-  "осмислену справу — ти реально допомагаєш іншим людям",
+  "осмислену справу - ти реально допомагаєш іншим людям",
 ];
 
 export default function UaNebenberufPage() {
@@ -77,11 +77,11 @@ export default function UaNebenberufPage() {
               Паралельно з роботою або навчанням
             </span>
             <h1 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 leading-tight">
-              Підробіток із мінімальними зусиллями — без ризиків
+              Підробіток із мінімальними зусиллями - без ризиків
             </h1>
             <p className="text-white/80 mt-6 text-lg leading-relaxed">
               Якщо хочеш підзаробити й без зобов'язань познайомитися з професією
-              фінансового консультанта — формат підробітку ідеально підходить.
+              фінансового консультанта - формат підробітку ідеально підходить.
               Навіть без досвіду у фінансах.
             </p>
           </AnimateOnScroll>
@@ -98,7 +98,7 @@ export default function UaNebenberufPage() {
                 className="w-6 h-6 text-gold flex-shrink-0 mt-1"
               />
               <p className="text-foreground/90 text-base leading-relaxed">
-                Ти працюєш звідки хочеш і коли хочеш — паралельно зі своєю
+                Ти працюєш звідки хочеш і коли хочеш - паралельно зі своєю
                 основною діяльністю. Підходить і студентам, і школярам.
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function UaNebenberufPage() {
               <p className="text-foreground/85 text-base leading-relaxed">
                 <strong className="text-navy">Бонус:</strong> ти без ризику
                 вивчаєш цікаву професію зсередини. Через якийсь час сам
-                вирішуєш — чи хочеш перейти у фінансовий консалтинг як основну
+                вирішуєш - чи хочеш перейти у фінансовий консалтинг як основну
                 діяльність.
               </p>
               <a
@@ -152,7 +152,7 @@ export default function UaNebenberufPage() {
                 <p className="text-muted-foreground text-sm leading-relaxed mt-4">
                   Розширюєш коло знайомих, рекомендуєш консультацію свого
                   фінансового коуча. Якщо з твоєї рекомендації виходить новий
-                  клієнт — ти отримуєш грошову премію.
+                  клієнт - ти отримуєш грошову премію.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -166,9 +166,9 @@ export default function UaNebenberufPage() {
                   Асистент консультанта
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-4">
-                  Допомагаєш своєму особистому коучу в його роботі — наприклад,
+                  Допомагаєш своєму особистому коучу в його роботі - наприклад,
                   із заповненням клієнтських даних. Саму консультацію проводить
-                  коуч. У будь-який момент можеш вирішити — залишатися на
+                  коуч. У будь-який момент можеш вирішити - залишатися на
                   підробітку чи переходити на повну зайнятість.
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function UaNebenberufPage() {
                 <p className="text-muted-foreground text-sm leading-relaxed mt-3">
                   Твій дохід залежить від того, зі скількома зацікавленими
                   людьми пройшла успішна консультація. Кілька сотень євро
-                  додаткового доходу на місяць — реально.
+                  додаткового доходу на місяць - реально.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -206,8 +206,8 @@ export default function UaNebenberufPage() {
                   Максимальна гнучкість
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-3">
-                  Працюєш тоді, коли є час — ввечері, на вихідних, паралельно
-                  з основною діяльністю. Якщо виникають питання — твій
+                  Працюєш тоді, коли є час - ввечері, на вихідних, паралельно
+                  з основною діяльністю. Якщо виникають питання - твій
                   персональний коуч на зв'язку будь-коли.
                 </p>
               </div>

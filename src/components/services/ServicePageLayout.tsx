@@ -26,7 +26,7 @@ const labels: Record<
     cta: "Beratungstermin vereinbaren",
     whatsapp: "Auf WhatsApp schreiben",
     placeholder:
-      "Diese Seite wird gerade ausgebaut. Für eine persönliche Beratung — direkt Kontakt aufnehmen.",
+      "Diese Seite wird gerade ausgebaut. Für eine persönliche Beratung - direkt Kontakt aufnehmen.",
     homeHref: "/de",
     klientyHref: "/de/klienty",
   },
@@ -37,7 +37,7 @@ const labels: Record<
     cta: "Записаться на консультацию",
     whatsapp: "Написать в WhatsApp",
     placeholder:
-      "Страница в процессе подготовки. Для личной консультации — пиши напрямую.",
+      "Страница в процессе подготовки. Для личной консультации - пиши напрямую.",
     homeHref: "/",
     klientyHref: "/klienty",
   },
@@ -48,7 +48,7 @@ const labels: Record<
     cta: "Записатися на консультацію",
     whatsapp: "Написати в WhatsApp",
     placeholder:
-      "Сторінка в процесі підготовки. Для особистої консультації — пиши напряму.",
+      "Сторінка в процесі підготовки. Для особистої консультації - пиши напряму.",
     homeHref: "/ua",
     klientyHref: "/ua/klienty",
   },
