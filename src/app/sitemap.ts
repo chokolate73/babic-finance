@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { articlesDe } from "@/data/blog.de";
 import { articles } from "@/data/blog";
+import { services } from "@/data/services";
 
 const BASE_URL = "https://www.fin-1.de";
+const SERVICES_LASTMOD = new Date("2026-04-30");
 
 const lastModByPath: Record<string, string> = {
   "/": "2026-03-15",
@@ -40,6 +42,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
+  const serviceRoutes: MetadataRoute.Sitemap = services.flatMap((s) => {
+    const deUrl = `${BASE_URL}/de/leistungen/${s.slug}`;
+    const ruUrl = `${BASE_URL}/uslugi/${s.slug}`;
+    const uaUrl = `${BASE_URL}/ua/poslugy/${s.slug}`;
+    const languages = { de: deUrl, ru: ruUrl, uk: uaUrl };
+    const priority = s.slug === "pkv-beratung" ? 0.8 : 0.6;
+    return [
+      {
+        url: deUrl,
+        lastModified: SERVICES_LASTMOD,
+        changeFrequency: "monthly" as const,
+        priority,
+        alternates: { languages },
+      },
+      {
+        url: ruUrl,
+        lastModified: SERVICES_LASTMOD,
+        changeFrequency: "monthly" as const,
+        priority,
+        alternates: { languages },
+      },
+      {
+        url: uaUrl,
+        lastModified: SERVICES_LASTMOD,
+        changeFrequency: "monthly" as const,
+        priority,
+        alternates: { languages },
+      },
+    ];
+  });
+
   return [
     {
       url: `${BASE_URL}`,
@@ -235,6 +268,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...deBlogArticles,
+    ...serviceRoutes,
     {
       url: `${BASE_URL}/impressum`,
       lastModified: lm("/impressum"),
