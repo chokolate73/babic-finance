@@ -282,7 +282,7 @@ export const homeFAQItems: FAQItem[] = [
   },
   {
     q: "Wann verdiene ich?",
-    a: "Schon während der Ausbildung - eine tarifliche Ausbildungsvergütung plus erste Provisionen aus den Verträgen, die du selbst abschließt. Das volle Einkommen kommt schrittweise: die ersten 6–12 Monate baust du dir den Kundenstamm auf. So läuft das in jedem eigenen Geschäft, und so bin ich auch ehrlich zu dir.",
+    a: "Sofort. Vom ersten Tag an bekommst du eine tarifliche Ausbildungsvergütung, und mit dem ersten abgeschlossenen Vertrag kommt die erste Provision dazu. Je aktiver du arbeitest und je mehr Kunden du betreust, desto schneller wächst dein Einkommen.",
   },
   {
     q: "Was ist die Bescheinigung fürs Jobcenter?",
