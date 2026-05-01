@@ -185,30 +185,18 @@ export const pathSteps: PathStep[] = [
   },
   {
     num: 2,
-    title: "10 Fragen",
-    description:
-      `Offizieller DVAG-Test „10 Fragen zum Traumberuf". Das Ergebnis schauen wir uns gemeinsam an.`,
-  },
-  {
-    num: 3,
     title: "Start der Ausbildung",
     description:
       "Du startest die Ausbildung - Vollzeit oder neben dem Job. Ich begleite dich persönlich.",
   },
   {
-    num: 4,
+    num: 3,
     title: "Erste Praxis",
     description:
       "Du arbeitest von Anfang an mit echten Fällen. Mentor und Team stehen daneben.",
   },
   {
-    num: 5,
-    title: "Lizenzprüfungen",
-    description:
-      "Die IHK-Prüfungen §34d / §34f / §34i. Vorbereitung und Kosten übernimmt die DVAG.",
-  },
-  {
-    num: 6,
+    num: 4,
     title: "Selbstständigkeit",
     description:
       "Am Ende: eigene Kunden, Erfahrung, Team. Du bist selbstständig - und dein eigener Chef.",
