@@ -114,6 +114,14 @@ export default function FloatingContactButtons({
     };
   }, [open]);
 
+  useEffect(() => {
+    function handle() {
+      setOpen(true);
+    }
+    window.addEventListener("openContactPopover", handle);
+    return () => window.removeEventListener("openContactPopover", handle);
+  }, []);
+
   const items: {
     icon: React.ReactNode;
     label: string;
