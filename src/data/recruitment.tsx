@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 
-export const WHATSAPP_NUMBER = "491784743490";
+export const WHATSAPP_NUMBER = "4922418989424";
 
 export const UTM = {
   home: "utm_source=site&utm_medium=hero&utm_campaign=recruitment",

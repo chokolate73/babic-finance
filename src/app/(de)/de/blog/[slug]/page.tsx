@@ -159,7 +159,7 @@ export default async function BlogArticlePageDe({ params }: PageProps) {
               oder online.
             </p>
             <a
-              href="https://wa.me/491784743490"
+              href="https://wa.me/4922418989424"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"

@@ -21,7 +21,7 @@ const heroContent = {
     { text: "Пенсійне забезпечення", mobileHidden: true },
   ],
   cta: {
-    primary: { text: "Безкоштовна консультація", href: "https://wa.me/491784743490" },
+    primary: { text: "Безкоштовна консультація", href: "https://wa.me/4922418989424" },
     secondary: { text: "Як я працюю", href: "#process" },
   },
   trustLine: "Відповідаємо протягом години в робочий час",

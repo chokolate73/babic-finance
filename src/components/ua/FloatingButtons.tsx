@@ -18,7 +18,7 @@ export default function FloatingButtons() {
 
       <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-border/50 px-4 py-3 flex gap-3">
         <a
-          href="https://wa.me/491784743490"
+          href="https://wa.me/4922418989424"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 flex-1 py-3 bg-whatsapp text-white font-semibold rounded-full text-sm whitespace-nowrap hover:opacity-90 transition-all"

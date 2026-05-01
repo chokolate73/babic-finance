@@ -192,7 +192,7 @@ export default function Contact() {
 
             <div className="flex gap-3">
               <a
-                href="https://wa.me/491784743490"
+                href="https://wa.me/4922418989424"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-whatsapp text-white font-semibold rounded-xl hover:opacity-90 transition-all"

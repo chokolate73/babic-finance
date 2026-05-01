@@ -372,7 +372,7 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
               )}
             </div>
             <a
-              href="https://wa.me/491784743490"
+              href="https://wa.me/4922418989424"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-whatsapp text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"

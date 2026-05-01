@@ -86,7 +86,7 @@ export default function ServicePageLayout({ service, locale }: Props) {
 
         <div className="flex flex-col sm:flex-row gap-4 mb-10">
           <a
-            href="https://wa.me/491784743490"
+            href="https://wa.me/4922418989424"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-gold text-navy font-semibold px-6 py-3.5 hover:opacity-90 transition-all"

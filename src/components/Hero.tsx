@@ -21,7 +21,7 @@ const heroContent = {
     { text: "Altersvorsorge", mobileHidden: true },
   ],
   cta: {
-    primary: { text: "Бесплатная консультация", href: "https://wa.me/491784743490" },
+    primary: { text: "Бесплатная консультация", href: "https://wa.me/4922418989424" },
     secondary: { text: "Как я работаю", href: "#process" },
   },
   trustLine: "Отвечаем в течение часа в рабочее время",
