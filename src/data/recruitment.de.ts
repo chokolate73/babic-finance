@@ -129,14 +129,14 @@ export const qualifications: Qualification[] = [
   },
   {
     id: "34f",
-    title: "Finanzanlagenfachmann (§34f GewO)",
+    title: "Finanzanlagenfachmann",
     subtitle: "Lizenz für Investments und Fonds",
     description:
-      "Kurs und Prüfung kosten normalerweise 490–890 €, dazu kommt die Pflicht-Berufshaftpflicht über 1,27 Mio. €. Bei der DVAG ist das alles drin.",
+      "Das kostet normalerweise 490–890 €, dazu kommt die Pflicht-Berufshaftpflicht über 1,27 Mio. €. Bei der DVAG ist das alles drin.",
   },
   {
     id: "34i",
-    title: "Fachmann für Immobiliardarlehensvermittlung (§34i GewO)",
+    title: "Fachmann für Immobiliardarlehensvermittlung",
     subtitle: "Lizenz für Baufinanzierung und Immobilien",
     description:
       "Einer der lukrativsten Bereiche in der Finanzberatung.",
@@ -152,7 +152,7 @@ export const qualifications: Qualification[] = [
 
 export const qualificationsCallout = {
   text: "Die DVAG investiert pro Jahr über 80 Millionen Euro in die Ausbildung ihrer Berater.",
-  sub: "Für dich heißt das konkret: keine Kosten für Prüfungen, Kurse oder die Pflichtversicherung - und du lernst von Anfang an mit Profis.",
+  sub: "Für dich heißt das konkret: keine Kosten für Ausbildung, Kurse oder die Pflichtversicherung - und du lernst von Anfang an mit Profis.",
   source: "Quelle: DVAG-Unternehmensbericht, dvag-karriere.de",
   productsPopup: {
     label: "Welche Produkte berätst du am Ende?",
@@ -255,7 +255,7 @@ export const transparenzItems: TransparenzItem[] = [
   {
     title: "Die Ausbildung braucht Zeit",
     description:
-      "Die vollständige Zertifizierung (§34d + §34f + §34i) dauert parallel zur Praxis bis zu 3 Jahre. Eine ernsthafte Zeitinvestition - am Ende hast du vier anerkannte Qualifikationen fürs Leben.",
+      "Die vollständige Zertifizierung dauert parallel zur Praxis bis zu 3 Jahre. Eine ernsthafte Zeitinvestition - am Ende hast du vier anerkannte Qualifikationen fürs Leben.",
   },
   {
     title: "Wir unterstützen, aber der Erfolg ist deiner",
@@ -289,8 +289,8 @@ export const homeFAQItems: FAQItem[] = [
     a: "Wenn du aus dem Bürgergeld in die Selbstständigkeit wechselst, will das Jobcenter eine sogenannte Tragfähigkeitsbescheinigung - ein Dokument, das belegt: dein Geschäftsplan trägt sich. Diese Bescheinigung stellt Vladislav persönlich als fachkundige Stelle aus - nicht die DVAG. Vorbereitung, Unterlagen und Begleitung übernehmen wir - du musst das nicht allein durchziehen. Details findest du auf der Seite zum Bürgergeld.",
   },
   {
-    q: "Was kosten Ausbildung und Prüfungen?",
-    a: "Für dich: nichts. Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung. IHK-Prüfungen (§34d, §34f, §34i), die Vorbereitungskurse und die Pflicht-Berufshaftpflicht - alles übernimmt das Unternehmen.",
+    q: "Was kostet die Ausbildung?",
+    a: "Für dich: nichts. Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung. Alle erforderlichen Qualifikationen, die Vorbereitungskurse und die Pflicht-Berufshaftpflicht - alles übernimmt das Unternehmen.",
   },
   {
     q: "Was, wenn es nicht klappt?",
@@ -397,7 +397,7 @@ export const quereinstiegFAQItems: FAQItem[] = [
   },
   {
     q: "Wie lange dauert die Ausbildung?",
-    a: "Die Basisausbildung läuft 6–12 Monate parallel zur Praxis. Die volle Zertifizierung (§34d + §34f + §34i) zieht sich bis zu drei Jahre. Aber: du arbeitest schon ab dem ersten Monat mit echten Kunden - unter meiner Begleitung - und verdienst Provisionen.",
+    a: "Die Basisausbildung läuft 6–12 Monate parallel zur Praxis. Die volle Zertifizierung zieht sich bis zu drei Jahre. Aber: du arbeitest schon ab dem ersten Monat mit echten Kunden - unter meiner Begleitung - und verdienst Provisionen.",
   },
   {
     q: "Was ist mit Sozialabgaben?",
@@ -576,7 +576,7 @@ export const buergergeldTransparenzItems: TransparenzItem[] = [
       "Das ist eine Ermessensleistung, kein Anspruch. Die endgültige Entscheidung trifft dein Fallmanager. Unsere Aufgabe ist, die Unterlagen so vorzubereiten, dass die Chancen maximal sind.",
   },
   {
-    title: "Tragfähigkeit - unabhängige Prüfung",
+    title: "Tragfähigkeit - unabhängige Bewertung",
     description:
       "Die Bescheinigung über die Tragfähigkeit des Geschäfts stellt die IHK oder ein akkreditierter Experte aus, nicht die DVAG. Wir helfen bei der Vorbereitung und vermitteln Partner.",
   },
@@ -656,7 +656,7 @@ export const ui = {
   qualificationsEyebrow: "Qualifikationen",
   qualificationsTitle: "Vier Qualifikationen in einem Programm",
   qualificationsDescription:
-    "Ausbildung, Prüfungen und Lizenzen übernimmt die DVAG. Du bekommst am Ende einen Beruf, der in ganz Deutschland nachgefragt ist.",
+    "Ausbildung und Lizenzen übernimmt die DVAG. Du bekommst am Ende einen Beruf, der in ganz Deutschland nachgefragt ist.",
   segmentsEyebrow: "Für wen das ist",
   segmentsTitle: "Für dich, wenn...",
   segmentsSubtitle:
