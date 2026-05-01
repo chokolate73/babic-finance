@@ -368,9 +368,9 @@ export const quereinstiegBenefits = {
   title: "Warum der Beruf zu Quereinsteigern passt",
   items: [
     {
-      title: "Deine Sprache ist ein Vorteil, kein Hindernis",
+      title: "Dein Hintergrund ist ein Vorteil",
       description:
-        "In Deutschland leben Millionen Familien mit Migrationshintergrund, die einen Berater in ihrer Muttersprache suchen. Du startest in einer Nische, in der die Konkurrenz dünn ist.",
+        "Viele Menschen suchen einen Berater, der ihre Lebenssituation wirklich versteht. Wer mit echtem Bezug zur Zielgruppe einsteigt, findet schneller Vertrauen und tritt in eine Nische, in der die Konkurrenz dünn ist.",
     },
     {
       title: "Egal aus welcher Branche du kommst - es zählt",

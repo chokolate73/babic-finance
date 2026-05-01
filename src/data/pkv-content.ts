@@ -74,7 +74,7 @@ const pkvDE: PKVContent = {
     },
     {
       title: "Antrag und Begleitung",
-      body: "Gesundheitsfragen sauber beantworten, Antragsweg begleiten, im Schadenfall ansprechbar bleiben. Russisch oder Deutsch - wie's für dich besser ist.",
+      body: "Gesundheitsfragen sauber beantworten, Antragsweg begleiten, im Schadenfall ansprechbar bleiben - auch nach dem Abschluss.",
     },
   ],
   faqHeading: "Häufige Fragen zur PKV",
@@ -106,7 +106,7 @@ const pkvDE: PKVContent = {
   ],
   ctaHeading: "Erstgespräch - kostenlos und ohne Verpflichtung",
   ctaBody:
-    "45 Minuten, persönlich in Troisdorf, per Zoom oder WhatsApp. Wir schauen uns deine Situation an, ich sage dir ehrlich, ob PKV passt. Auf Russisch oder Deutsch.",
+    "45 Minuten, persönlich in Troisdorf, per Zoom oder WhatsApp. Wir schauen uns deine Situation an, ich sage dir ehrlich, ob PKV passt.",
 };
 
 const pkvRU: PKVContent = {

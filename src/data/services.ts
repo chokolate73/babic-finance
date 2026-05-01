@@ -30,7 +30,7 @@ export const services: Service[] = [
       de: [
         "Finanzberatung",
         "Finanzberater Troisdorf",
-        "Finanzberater russischsprachig",
+        "Finanzberatung Rhein-Sieg",
       ],
       ru: [
         "финансовый консультант бонн",
@@ -46,11 +46,11 @@ export const services: Service[] = [
       de: {
         title: "Finanzberatung in Bonn und Troisdorf",
         metaTitle:
-          "Finanzberater in Bonn und Troisdorf - auch auf Russisch | Babic Finance",
+          "Finanzberater in Bonn und Troisdorf | Babic Finance",
         metaDescription:
-          "Persönliche Finanzberatung in Troisdorf, Bonn und im Rhein-Sieg-Kreis. Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung. Beratung auf Deutsch und Russisch.",
+          "Persönliche Finanzberatung in Troisdorf, Bonn und im Rhein-Sieg-Kreis. Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung - alles in einer Hand.",
         shortDescription:
-          "Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung - alles in einer Hand. Auf Deutsch und Russisch.",
+          "Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung - alles in einer Hand.",
       },
       ru: {
         title: "Финансовый консультант в Бонне и Тройсдорфе",
@@ -97,7 +97,7 @@ export const services: Service[] = [
         title: "Vermögensberatung - langfristig planen, strukturiert aufbauen",
         metaTitle: "Vermögensberatung in Troisdorf und Bonn | Babic Finance",
         metaDescription:
-          "DVAG-Vermögensberater Vladislav Babic. Analyse von Versorgungslücken, langfristige Anlagestruktur, Absicherung - alles in einer Hand. Auch auf Russisch.",
+          "DVAG-Vermögensberater Vladislav Babic. Analyse von Versorgungslücken, langfristige Anlagestruktur, Absicherung - alles in einer Hand.",
         shortDescription:
           "Analyse, Strukturierung, Absicherung - langfristiger Vermögensaufbau für Privatpersonen und Familien.",
       },
@@ -149,7 +149,7 @@ export const services: Service[] = [
         metaTitle:
           "Altersvorsorge Beratung - Riester, Rürup, private Rente | Babic Finance",
         metaDescription:
-          "Strategische Altersvorsorge-Beratung: gesetzliche Rente, Riester, Rürup, betriebliche Vorsorge, private Rentenversicherung. Versorgungslücke berechnen - auf Russisch oder Deutsch.",
+          "Strategische Altersvorsorge-Beratung: gesetzliche Rente, Riester, Rürup, betriebliche Vorsorge, private Rentenversicherung. Versorgungslücke konkret berechnen.",
         shortDescription:
           "Gesetzliche Rente, Riester, Rürup, betriebliche und private Vorsorge - wir berechnen deine Versorgungslücke.",
       },
