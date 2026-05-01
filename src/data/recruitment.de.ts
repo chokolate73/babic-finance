@@ -155,7 +155,7 @@ export const qualificationsCallout = {
   sub: "Für dich heißt das konkret: keine Kosten für Ausbildung, Kurse oder die Pflichtversicherung - und du lernst von Anfang an mit Profis.",
   source: "Quelle: DVAG-Unternehmensbericht, dvag-karriere.de",
   productsPopup: {
-    label: "Welche Produkte berätst du am Ende?",
+    label: "Was bekommen unsere Kunden?",
     title: "Welche Produkte du berätst",
     description:
       "Aus dem umfangreichen Angebot der DVAG wählst du gemeinsam mit deinen Kunden die für sie passenden Produkte aus. Dank der engen Kooperation mit unseren Produktpartnern bieten wir leistungsstarke Konzepte, die einzigartig am Markt und flexibel auf die individuelle Lebenssituation abgestimmt sind.",
