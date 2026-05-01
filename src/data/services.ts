@@ -30,7 +30,7 @@ export const services: Service[] = [
       de: [
         "Finanzberatung",
         "Finanzberater Troisdorf",
-        "Finanzberater russischsprachig",
+        "Finanzberatung Rhein-Sieg",
       ],
       ru: [
         "финансовый консультант бонн",
@@ -46,29 +46,29 @@ export const services: Service[] = [
       de: {
         title: "Finanzberatung in Bonn und Troisdorf",
         metaTitle:
-          "Finanzberater in Bonn und Troisdorf — auch auf Russisch | Babic Finance",
+          "Finanzberater in Bonn und Troisdorf | Babic Finance",
         metaDescription:
-          "Persönliche Finanzberatung in Troisdorf, Bonn und im Rhein-Sieg-Kreis. Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung. Beratung auf Deutsch und Russisch.",
+          "Persönliche Finanzberatung in Troisdorf, Bonn und im Rhein-Sieg-Kreis. Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung - alles in einer Hand.",
         shortDescription:
-          "Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung — alles in einer Hand. Auf Deutsch und Russisch.",
+          "Vorsorge, Geldanlage, Versicherungen, Immobilienfinanzierung - alles in einer Hand.",
       },
       ru: {
         title: "Финансовый консультант в Бонне и Тройсдорфе",
         metaTitle:
-          "Финансовый консультант в Бонне и Тройсдорфе — на русском | Babic Finance",
+          "Финансовый консультант в Бонне и Тройсдорфе - на русском | Babic Finance",
         metaDescription:
           "Личная финансовая консультация в Тройсдорфе, Бонне и Райн-Зиг. Пенсия, инвестиции, страховки, ипотека. Консультация на русском и немецком.",
         shortDescription:
-          "Пенсия, инвестиции, страховки, ипотека — всё в одних руках. На русском и немецком.",
+          "Пенсия, инвестиции, страховки, ипотека - всё в одних руках. На русском и немецком.",
       },
       ua: {
         title: "Фінансовий консультант у Бонні та Тройсдорфі",
         metaTitle:
-          "Фінансовий консультант у Бонні та Тройсдорфі — українською | Babic Finance",
+          "Фінансовий консультант у Бонні та Тройсдорфі - українською | Babic Finance",
         metaDescription:
           "Особиста фінансова консультація в Тройсдорфі, Бонні та Райн-Зіг. Пенсія, інвестиції, страхування, іпотека. Консультація українською та німецькою.",
         shortDescription:
-          "Пенсія, інвестиції, страхування, іпотека — все в одних руках. Українською та німецькою.",
+          "Пенсія, інвестиції, страхування, іпотека - все в одних руках. Українською та німецькою.",
       },
     },
   },
@@ -94,31 +94,31 @@ export const services: Service[] = [
     generaliPartner: "Generali",
     content: {
       de: {
-        title: "Vermögensberatung — langfristig planen, strukturiert aufbauen",
+        title: "Vermögensberatung - langfristig planen, strukturiert aufbauen",
         metaTitle: "Vermögensberatung in Troisdorf und Bonn | Babic Finance",
         metaDescription:
-          "DVAG-Vermögensberater Vladislav Babic. Analyse von Versorgungslücken, langfristige Anlagestruktur, Absicherung — alles in einer Hand. Auch auf Russisch.",
+          "DVAG-Vermögensberater Vladislav Babic. Analyse von Versorgungslücken, langfristige Anlagestruktur, Absicherung - alles in einer Hand.",
         shortDescription:
-          "Analyse, Strukturierung, Absicherung — langfristiger Vermögensaufbau für Privatpersonen und Familien.",
+          "Analyse, Strukturierung, Absicherung - langfristiger Vermögensaufbau für Privatpersonen und Familien.",
       },
       ru: {
         title:
-          "Управление капиталом — долгосрочный план, структурированный подход",
+          "Управление капиталом - долгосрочный план, структурированный подход",
         metaTitle: "Управление капиталом в Тройсдорфе и Бонне | Babic Finance",
         metaDescription:
-          "DVAG-консультант по управлению капиталом Владислав Бабич. Анализ пробелов, долгосрочная структура, защита — всё в одних руках. Также на русском.",
+          "DVAG-консультант по управлению капиталом Владислав Бабич. Анализ пробелов, долгосрочная структура, защита - всё в одних руках. Также на русском.",
         shortDescription:
-          "Анализ, структурирование, защита — долгосрочное управление капиталом для частных лиц и семей.",
+          "Анализ, структурирование, защита - долгосрочное управление капиталом для частных лиц и семей.",
       },
       ua: {
         title:
-          "Управління капіталом — довгостроковий план, структурований підхід",
+          "Управління капіталом - довгостроковий план, структурований підхід",
         metaTitle:
           "Управління капіталом у Тройсдорфі та Бонні | Babic Finance",
         metaDescription:
-          "DVAG-консультант з управління капіталом Владислав Бабич. Аналіз прогалин, довгострокова структура, захист — все в одних руках. Також українською.",
+          "DVAG-консультант з управління капіталом Владислав Бабич. Аналіз прогалин, довгострокова структура, захист - все в одних руках. Також українською.",
         shortDescription:
-          "Аналіз, структурування, захист — довгострокове управління капіталом для приватних осіб та сімей.",
+          "Аналіз, структурування, захист - довгострокове управління капіталом для приватних осіб та сімей.",
       },
     },
   },
@@ -145,33 +145,33 @@ export const services: Service[] = [
     content: {
       de: {
         title:
-          "Altersvorsorge — Versorgungslücke schließen, bevor sie zu groß wird",
+          "Altersvorsorge - Versorgungslücke schließen, bevor sie zu groß wird",
         metaTitle:
-          "Altersvorsorge Beratung — Riester, Rürup, private Rente | Babic Finance",
+          "Altersvorsorge Beratung - Riester, Rürup, private Rente | Babic Finance",
         metaDescription:
-          "Strategische Altersvorsorge-Beratung: gesetzliche Rente, Riester, Rürup, betriebliche Vorsorge, private Rentenversicherung. Versorgungslücke berechnen — auf Russisch oder Deutsch.",
+          "Strategische Altersvorsorge-Beratung: gesetzliche Rente, Riester, Rürup, betriebliche Vorsorge, private Rentenversicherung. Versorgungslücke konkret berechnen.",
         shortDescription:
-          "Gesetzliche Rente, Riester, Rürup, betriebliche und private Vorsorge — wir berechnen deine Versorgungslücke.",
+          "Gesetzliche Rente, Riester, Rürup, betriebliche und private Vorsorge - wir berechnen deine Versorgungslücke.",
       },
       ru: {
         title:
-          "Пенсионное планирование — закрыть пробел до того, как станет поздно",
+          "Пенсионное планирование - закрыть пробел до того, как станет поздно",
         metaTitle:
-          "Пенсионная консультация — Riester, Rürup, частная пенсия | Babic Finance",
+          "Пенсионная консультация - Riester, Rürup, частная пенсия | Babic Finance",
         metaDescription:
-          "Стратегическая консультация по пенсии: государственная, Riester, Rürup, корпоративная, частная. Расчёт пенсионного пробела — на русском или немецком.",
+          "Стратегическая консультация по пенсии: государственная, Riester, Rürup, корпоративная, частная. Расчёт пенсионного пробела - на русском или немецком.",
         shortDescription:
-          "Государственная, Riester, Rürup, корпоративная и частная — рассчитываем твой пенсионный пробел.",
+          "Государственная, Riester, Rürup, корпоративная и частная - рассчитываем твой пенсионный пробел.",
       },
       ua: {
         title:
-          "Пенсійне планування — закрити прогалину, поки не стало пізно",
+          "Пенсійне планування - закрити прогалину, поки не стало пізно",
         metaTitle:
-          "Пенсійна консультація — Riester, Rürup, приватна пенсія | Babic Finance",
+          "Пенсійна консультація - Riester, Rürup, приватна пенсія | Babic Finance",
         metaDescription:
-          "Стратегічна консультація з пенсії: державна, Riester, Rürup, корпоративна, приватна. Розрахунок пенсійної прогалини — українською або німецькою.",
+          "Стратегічна консультація з пенсії: державна, Riester, Rürup, корпоративна, приватна. Розрахунок пенсійної прогалини - українською або німецькою.",
         shortDescription:
-          "Державна, Riester, Rürup, корпоративна та приватна — розраховуємо твою пенсійну прогалину.",
+          "Державна, Riester, Rürup, корпоративна та приватна - розраховуємо твою пенсійну прогалину.",
       },
     },
   },
@@ -198,33 +198,33 @@ export const services: Service[] = [
     content: {
       de: {
         title:
-          "Berufsunfähigkeitsversicherung — das größte Einkommensrisiko absichern",
+          "Berufsunfähigkeitsversicherung - das größte Einkommensrisiko absichern",
         metaTitle:
           "Berufsunfähigkeitsversicherung Beratung in Troisdorf | Babic Finance",
         metaDescription:
-          "BU-Beratung mit Tarifen der Generali Gruppe. Wir klären Gesundheitsprüfung, Beitragshöhe, Leistungsumfang — und helfen, das richtige BU-Modell zu finden.",
+          "BU-Beratung mit Tarifen der Generali Gruppe. Wir klären Gesundheitsprüfung, Beitragshöhe, Leistungsumfang - und helfen, das richtige BU-Modell zu finden.",
         shortDescription:
-          "Berufsunfähigkeit ist statistisch das größte Einkommensrisiko — wir sichern dich richtig ab.",
+          "Berufsunfähigkeit ist statistisch das größte Einkommensrisiko - wir sichern dich richtig ab.",
       },
       ru: {
         title:
-          "Страховка от потери трудоспособности — главный финансовый риск",
+          "Страховка от потери трудоспособности - главный финансовый риск",
         metaTitle:
-          "BU страховка — консультация в Тройсдорфе | Babic Finance",
+          "BU страховка - консультация в Тройсдорфе | Babic Finance",
         metaDescription:
-          "BU-консультация с тарифами Generali. Разбираем медицинский осмотр, размер взноса, объём покрытия — помогаем выбрать подходящую модель.",
+          "BU-консультация с тарифами Generali. Разбираем медицинский осмотр, размер взноса, объём покрытия - помогаем выбрать подходящую модель.",
         shortDescription:
-          "Потеря трудоспособности — самый большой риск дохода. Помогаем правильно застраховаться.",
+          "Потеря трудоспособности - самый большой риск дохода. Помогаем правильно застраховаться.",
       },
       ua: {
         title:
-          "Страхування від втрати працездатності — головний фінансовий ризик",
+          "Страхування від втрати працездатності - головний фінансовий ризик",
         metaTitle:
-          "BU страхування — консультація в Тройсдорфі | Babic Finance",
+          "BU страхування - консультація в Тройсдорфі | Babic Finance",
         metaDescription:
-          "BU-консультація з тарифами Generali. Розбираємо медогляд, розмір внеску, обсяг покриття — допомагаємо вибрати потрібну модель.",
+          "BU-консультація з тарифами Generali. Розбираємо медогляд, розмір внеску, обсяг покриття - допомагаємо вибрати потрібну модель.",
         shortDescription:
-          "Втрата працездатності — найбільший ризик доходу. Допомагаємо правильно застрахуватися.",
+          "Втрата працездатності - найбільший ризик доходу. Допомагаємо правильно застрахуватися.",
       },
     },
   },
@@ -251,9 +251,9 @@ export const services: Service[] = [
     content: {
       de: {
         title:
-          "Private Krankenversicherung — eine Entscheidung für Jahrzehnte",
+          "Private Krankenversicherung - eine Entscheidung für Jahrzehnte",
         metaTitle:
-          "PKV Beratung in Troisdorf — Private Krankenversicherung | Babic Finance",
+          "PKV Beratung in Troisdorf - Private Krankenversicherung | Babic Finance",
         metaDescription:
           "PKV oder GKV? Eine ehrliche Beratung dazu, ob sich der PKV-Wechsel in deiner Lebenssituation wirklich lohnt. Tarife der Central Krankenversicherung.",
         shortDescription:
@@ -261,9 +261,9 @@ export const services: Service[] = [
       },
       ru: {
         title:
-          "Частная медицинская страховка — решение на десятилетия",
+          "Частная медицинская страховка - решение на десятилетия",
         metaTitle:
-          "PKV консультация в Тройсдорфе — частная медстраховка | Babic Finance",
+          "PKV консультация в Тройсдорфе - частная медстраховка | Babic Finance",
         metaDescription:
           "PKV или GKV? Честная консультация: подходит ли переход на частную страховку именно тебе. Тарифы Central Krankenversicherung.",
         shortDescription:
@@ -271,9 +271,9 @@ export const services: Service[] = [
       },
       ua: {
         title:
-          "Приватна медична страховка — рішення на десятиліття",
+          "Приватна медична страховка - рішення на десятиліття",
         metaTitle:
-          "PKV консультація в Тройсдорфі — приватне медстрахування | Babic Finance",
+          "PKV консультація в Тройсдорфі - приватне медстрахування | Babic Finance",
         metaDescription:
           "PKV чи GKV? Чесна консультація: чи підходить перехід на приватну страховку саме тобі. Тарифи Central Krankenversicherung.",
         shortDescription:
@@ -304,31 +304,31 @@ export const services: Service[] = [
     content: {
       de: {
         title:
-          "Betriebliche Altersvorsorge (bAV) — für Arbeitgeber und Arbeitnehmer",
+          "Betriebliche Altersvorsorge (bAV) - für Arbeitgeber und Arbeitnehmer",
         metaTitle:
-          "bAV Beratung — betriebliche Altersvorsorge in Troisdorf | Babic Finance",
+          "bAV Beratung - betriebliche Altersvorsorge in Troisdorf | Babic Finance",
         metaDescription:
-          "bAV als Mitarbeiterbenefit, der wirklich ankommt — steuerlich gefördert und administrativ schlank. Lösungen über Generali Pensionskasse.",
+          "bAV als Mitarbeiterbenefit, der wirklich ankommt - steuerlich gefördert und administrativ schlank. Lösungen über Generali Pensionskasse.",
         shortDescription:
           "Für Arbeitgeber: ein Benefit, der ankommt. Für Arbeitnehmer: hol raus, was geht. Generali Pensionskasse.",
       },
       ru: {
         title:
-          "Корпоративная пенсия (bAV) — для работодателей и сотрудников",
+          "Корпоративная пенсия (bAV) - для работодателей и сотрудников",
         metaTitle:
-          "bAV консультация — корпоративная пенсия в Тройсдорфе | Babic Finance",
+          "bAV консультация - корпоративная пенсия в Тройсдорфе | Babic Finance",
         metaDescription:
-          "bAV как бонус сотрудникам, который реально работает — с налоговой поддержкой и без бюрократии. Решения через Generali Pensionskasse.",
+          "bAV как бонус сотрудникам, который реально работает - с налоговой поддержкой и без бюрократии. Решения через Generali Pensionskasse.",
         shortDescription:
           "Работодателю: бонус, который ценят. Сотруднику: возьми максимум. Generali Pensionskasse.",
       },
       ua: {
         title:
-          "Корпоративна пенсія (bAV) — для роботодавців і працівників",
+          "Корпоративна пенсія (bAV) - для роботодавців і працівників",
         metaTitle:
-          "bAV консультація — корпоративна пенсія в Тройсдорфі | Babic Finance",
+          "bAV консультація - корпоративна пенсія в Тройсдорфі | Babic Finance",
         metaDescription:
-          "bAV як бонус для працівників, який реально працює — з податковою підтримкою і без бюрократії. Рішення через Generali Pensionskasse.",
+          "bAV як бонус для працівників, який реально працює - з податковою підтримкою і без бюрократії. Рішення через Generali Pensionskasse.",
         shortDescription:
           "Роботодавцю: бонус, який цінують. Працівнику: візьми максимум. Generali Pensionskasse.",
       },
@@ -356,29 +356,29 @@ export const services: Service[] = [
     generaliPartner: "Generali",
     content: {
       de: {
-        title: "Geldanlage — strategisch, langfristig, mit klarem Plan",
+        title: "Geldanlage - strategisch, langfristig, mit klarem Plan",
         metaTitle:
-          "Geldanlage Beratung — Vermögensaufbau in Troisdorf | Babic Finance",
+          "Geldanlage Beratung - Vermögensaufbau in Troisdorf | Babic Finance",
         metaDescription:
-          "Strategische Geldanlage mit Investmentfonds der Generali Gruppe — renditeorientiert, transparent, ohne versteckte Gebühren. Sparpläne, Einmalanlagen, Mischportfolios.",
+          "Strategische Geldanlage mit Investmentfonds der Generali Gruppe - renditeorientiert, transparent, ohne versteckte Gebühren. Sparpläne, Einmalanlagen, Mischportfolios.",
         shortDescription:
-          "Investmentfonds der Generali — transparent, ohne versteckte Gebühren. Sparpläne, Einmalanlagen, Mischportfolios.",
+          "Investmentfonds der Generali - transparent, ohne versteckte Gebühren. Sparpläne, Einmalanlagen, Mischportfolios.",
       },
       ru: {
-        title: "Инвестиции — стратегически, долгосрочно, с понятным планом",
+        title: "Инвестиции - стратегически, долгосрочно, с понятным планом",
         metaTitle: "Консультация по инвестициям в Тройсдорфе | Babic Finance",
         metaDescription:
-          "Стратегические инвестиции через фонды Generali — прозрачно, без скрытых комиссий. Регулярные взносы, разовые вклады, смешанные портфели.",
+          "Стратегические инвестиции через фонды Generali - прозрачно, без скрытых комиссий. Регулярные взносы, разовые вклады, смешанные портфели.",
         shortDescription:
-          "Инвестиционные фонды Generali — прозрачно, без скрытых комиссий. Регулярные взносы, разовые вклады, портфели.",
+          "Инвестиционные фонды Generali - прозрачно, без скрытых комиссий. Регулярные взносы, разовые вклады, портфели.",
       },
       ua: {
-        title: "Інвестиції — стратегічно, довгостроково, з чітким планом",
+        title: "Інвестиції - стратегічно, довгостроково, з чітким планом",
         metaTitle: "Консультація з інвестицій у Тройсдорфі | Babic Finance",
         metaDescription:
-          "Стратегічні інвестиції через фонди Generali — прозоро, без прихованих комісій. Регулярні внески, разові вклади, змішані портфелі.",
+          "Стратегічні інвестиції через фонди Generali - прозоро, без прихованих комісій. Регулярні внески, разові вклади, змішані портфелі.",
         shortDescription:
-          "Інвестиційні фонди Generali — прозоро, без прихованих комісій. Регулярні внески, разові вклади, портфелі.",
+          "Інвестиційні фонди Generali - прозоро, без прихованих комісій. Регулярні внески, разові вклади, портфелі.",
       },
     },
   },
@@ -405,33 +405,33 @@ export const services: Service[] = [
     content: {
       de: {
         title:
-          "Rechtsschutzversicherung — über ADVOCARD, ohne Standardpaket-Überraschungen",
+          "Rechtsschutzversicherung - über ADVOCARD, ohne Standardpaket-Überraschungen",
         metaTitle:
-          "Rechtsschutzversicherung Beratung — ADVOCARD | Babic Finance",
+          "Rechtsschutzversicherung Beratung - ADVOCARD | Babic Finance",
         metaDescription:
-          "Rechtsschutz im Beruf, im Verkehr, als Mieter oder Eigentümer — abgesichert über ADVOCARD. Beratung zur richtigen Bausteinwahl.",
+          "Rechtsschutz im Beruf, im Verkehr, als Mieter oder Eigentümer - abgesichert über ADVOCARD. Beratung zur richtigen Bausteinwahl.",
         shortDescription:
-          "Beruf, Verkehr, Mieter, Eigentümer — wir wählen die richtigen Bausteine. ADVOCARD.",
+          "Beruf, Verkehr, Mieter, Eigentümer - wir wählen die richtigen Bausteine. ADVOCARD.",
       },
       ru: {
         title:
-          "Юридическая страховка — через ADVOCARD, без сюрпризов в стандартном пакете",
+          "Юридическая страховка - через ADVOCARD, без сюрпризов в стандартном пакете",
         metaTitle:
-          "Юридическая страховка — консультация через ADVOCARD | Babic Finance",
+          "Юридическая страховка - консультация через ADVOCARD | Babic Finance",
         metaDescription:
-          "Юридическая защита на работе, в транспорте, как арендатор или собственник — через ADVOCARD. Консультация по выбору модулей.",
+          "Юридическая защита на работе, в транспорте, как арендатор или собственник - через ADVOCARD. Консультация по выбору модулей.",
         shortDescription:
-          "Работа, транспорт, арендатор, собственник — выбираем правильные модули. ADVOCARD.",
+          "Работа, транспорт, арендатор, собственник - выбираем правильные модули. ADVOCARD.",
       },
       ua: {
         title:
-          "Юридична страховка — через ADVOCARD, без сюрпризів у стандартному пакеті",
+          "Юридична страховка - через ADVOCARD, без сюрпризів у стандартному пакеті",
         metaTitle:
-          "Юридична страховка — консультація через ADVOCARD | Babic Finance",
+          "Юридична страховка - консультація через ADVOCARD | Babic Finance",
         metaDescription:
-          "Юридичний захист на роботі, у транспорті, як орендар або власник — через ADVOCARD. Консультація з вибору модулів.",
+          "Юридичний захист на роботі, у транспорті, як орендар або власник - через ADVOCARD. Консультація з вибору модулів.",
         shortDescription:
-          "Робота, транспорт, орендар, власник — обираємо правильні модулі. ADVOCARD.",
+          "Робота, транспорт, орендар, власник - обираємо правильні модулі. ADVOCARD.",
       },
     },
   },

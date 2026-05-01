@@ -28,9 +28,9 @@ const SITE_URL = "https://www.fin-1.de";
 
 export const metadata: Metadata = {
   title:
-    "Зміна професії в Німеччині — фінансовий консультант DVAG | Babic Finance",
+    "Зміна професії в Німеччині - фінансовий консультант DVAG | Babic Finance",
   description:
-    "Зміна професії на фінансового консультанта в Німеччині — твій досвід і мови зараховуються. Можна паралельно з роботою, з повним супроводом DVAG.",
+    "Зміна професії на фінансового консультанта в Німеччині - твій досвід і мови зараховуються. Можна паралельно з роботою, з повним супроводом DVAG.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title:
       "Кар'єра фінансового консультанта в Німеччині для тих, хто змінює професію",
     description:
-      "Зміни професію в Німеччині — на ту, що потрібна. Повне навчання з підтримкою команди DVAG.",
+      "Зміни професію в Німеччині - на ту, що потрібна. Повне навчання з підтримкою команди DVAG.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -75,7 +75,7 @@ export default function UaQuereinstiegPage() {
         content={quereinstiegHero}
         scrollTargetId="why"
         scrollLabel={ui.heroScrollLabel}
-        backgroundAlt="Babic Finance — кар'єра фінансового консультанта в Німеччині"
+        backgroundAlt="Babic Finance - кар'єра фінансового консультанта в Німеччині"
       />
       <BenefitsList
         id="why"

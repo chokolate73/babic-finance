@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Особиста фінансова консультація в Німеччині — через DVAG.
+              Особиста фінансова консультація в Німеччині - через DVAG.
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-sm text-white/40">
-            &copy; 2026 Владислав Бабіч — регіональний директор, DVAG. Усі права захищені.
+            &copy; 2026 Владислав Бабіч - регіональний директор, DVAG. Усі права захищені.
           </p>
         </div>
       </div>

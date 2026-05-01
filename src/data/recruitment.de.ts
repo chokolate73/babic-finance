@@ -21,12 +21,12 @@ export function waLink(utm: string, message: string) {
 }
 
 export const homeHero: HeroContent = {
-  headline: "Finanzberater werden —",
+  headline: "Finanzberater werden -",
   headlineAccent: "auch wenn du in Deutschland nochmal von vorn anfängst",
   subtitle: "Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
   personName: "Vladislav Babic",
   trustLine:
-    "Während der Geschäftszeiten meldest du dich meist innerhalb einer Stunde — versprochen.",
+    "Während der Geschäftszeiten meldest du dich meist innerhalb einer Stunde - versprochen.",
   primaryCTA: {
     text: "Passt der Beruf zu mir?",
     href: QUIZ_URL,
@@ -47,7 +47,7 @@ export const homeHero: HeroContent = {
 export const homePainPoints = {
   eyebrow: "Vielleicht kennst du das",
   title: "Kennst du das?",
-  subtitle: "Wenn dich auch nur ein Punkt trifft — bleib dran.",
+  subtitle: "Wenn dich auch nur ein Punkt trifft - bleib dran.",
   messages: [
     {
       text: "Ich hab studiert, aber mein Abschluss wird hier nicht anerkannt.",
@@ -58,11 +58,11 @@ export const homePainPoints = {
       time: "18:14",
     },
     {
-      text: "Ich bin im Bürgergeld und würde mich gern selbstständig machen — weiß aber nicht, wie.",
+      text: "Ich bin im Bürgergeld und würde mich gern selbstständig machen - weiß aber nicht, wie.",
       time: "18:16",
     },
     {
-      text: "Ich möchte Menschen helfen — aber wie macht man daraus einen Beruf?",
+      text: "Ich möchte Menschen helfen - aber wie macht man daraus einen Beruf?",
       time: "18:19",
     },
     {
@@ -70,23 +70,23 @@ export const homePainPoints = {
       time: "18:22",
     },
     {
-      text: "Ich spreche zwei, drei Sprachen — und keiner fragt danach.",
+      text: "Ich spreche zwei, drei Sprachen - und keiner fragt danach.",
       time: "18:24",
     },
   ],
   reply:
-    "Ich kenne das alles. Ich zeig dir, wie der Weg in Deutschland trotzdem funktioniert — auch wenn er gerade aussichtslos aussieht.",
+    "Ich kenne das alles. Ich zeig dir, wie der Weg in Deutschland trotzdem funktioniert - auch wenn er gerade aussichtslos aussieht.",
 } as const;
 
 export const myStoryContent = {
   title: "Ich bin den Weg selbst gegangen",
   paragraphs: [
-    "2003 bin ich aus Estland nach Deutschland gekommen. Kein Deutsch, niemand, den ich kannte, kein Geld in der Tasche. Ich hab gearbeitet, gelernt, Fehler gemacht — und bin weitergegangen.",
-    `2005 bin ich in die Finanzberatung gerutscht. Damals hieß es ständig: „Lern erst mal Deutsch. Mach erst mal eine Ausbildung. Eins nach dem anderen." Ich hab nicht gewartet. Ich hab angefangen — und parallel dazu gelernt.`,
-    `Heute leite ich die DVAG-Direktion in Troisdorf. 4 387 Kunden im Netzwerk, über 131 Millionen Euro Kapital, ein Team, das genau diesen Weg geht. Und ich helfe anderen, ihn auch zu gehen — von „keine Ahnung von Finanzen" bis zum selbstständigen Berater mit eigenem Geschäft.`,
+    "2003 bin ich aus Estland nach Deutschland gekommen. Kein Deutsch, niemand, den ich kannte, kein Geld in der Tasche. Ich hab gearbeitet, gelernt, Fehler gemacht - und bin weitergegangen.",
+    `2005 bin ich in die Finanzberatung gerutscht. Damals hieß es ständig: „Lern erst mal Deutsch. Mach erst mal eine Ausbildung. Eins nach dem anderen." Ich hab nicht gewartet. Ich hab angefangen - und parallel dazu gelernt.`,
+    `Heute leite ich die DVAG-Direktion in Troisdorf. 4 387 Kunden im Netzwerk, über 131 Millionen Euro Kapital, ein Team, das genau diesen Weg geht. Und ich helfe anderen, ihn auch zu gehen - von „keine Ahnung von Finanzen" bis zum selbstständigen Berater mit eigenem Geschäft.`,
   ],
   pullQuote:
-    `Mir geht's darum, die Angst rauszunehmen. Du kannst in Deutschland einen Beruf von null aufbauen — auch ohne perfektes Deutsch, ohne Erfahrung, ohne das Gefühl, schon „bereit" zu sein.`,
+    `Mir geht's darum, die Angst rauszunehmen. Du kannst in Deutschland einen Beruf von null aufbauen - auch ohne perfektes Deutsch, ohne Erfahrung, ohne das Gefühl, schon „bereit" zu sein.`,
 } as const;
 
 export const segmentCards: SegmentCard[] = [
@@ -95,7 +95,7 @@ export const segmentCards: SegmentCard[] = [
     iconName: "GraduationCap",
     title: "Wenn du im Heimatland studiert hast",
     description:
-      "Dein Abschluss wird hier nicht anerkannt oder du arbeitest schon lange nicht mehr in dem Bereich? In der Finanzberatung zählen deine Erfahrung und deine Sprachen — und du musst nicht nochmal von vorn studieren.",
+      "Dein Abschluss wird hier nicht anerkannt oder du arbeitest schon lange nicht mehr in dem Bereich? In der Finanzberatung zählen deine Erfahrung und deine Sprachen - und du musst nicht nochmal von vorn studieren.",
     ctaLabel: "Zum Quereinstieg →",
     ctaHref: "/de/karriere/quereinstieg",
   },
@@ -104,7 +104,7 @@ export const segmentCards: SegmentCard[] = [
     iconName: "FileCheck2",
     title: "Wenn du Bürgergeld oder ALG I bekommst",
     description:
-      "Der Staat fördert den Weg in die Selbstständigkeit — bis zu 24 Monate. Wir helfen dir bei den Unterlagen fürs Jobcenter und begleiten dich Schritt für Schritt aus dem Bezug raus.",
+      "Der Staat fördert den Weg in die Selbstständigkeit - bis zu 24 Monate. Wir helfen dir bei den Unterlagen fürs Jobcenter und begleiten dich Schritt für Schritt aus dem Bezug raus.",
     ctaLabel: "So geht's mit dem Jobcenter →",
     ctaHref: "/de/karriere/buergergeld",
   },
@@ -113,7 +113,7 @@ export const segmentCards: SegmentCard[] = [
     iconName: "TrendingUp",
     title: "Wenn du angestellt bist, aber raus willst",
     description:
-      "Du musst deinen Job nicht sofort kündigen — du kannst nebenberuflich anfangen und später wechseln. Passt, wenn du in Deutschland schon Fuß gefasst hast und langfristig was Eigenes aufbauen willst.",
+      "Du musst deinen Job nicht sofort kündigen - du kannst nebenberuflich anfangen und später wechseln. Passt, wenn du in Deutschland schon Fuß gefasst hast und langfristig was Eigenes aufbauen willst.",
     ctaLabel: "Zum nebenberuflichen Einstieg →",
     ctaHref: "/de/karriere/quereinstieg",
   },
@@ -123,7 +123,7 @@ export const qualifications: Qualification[] = [
   {
     id: "ihk",
     title: "Kaufmann/-frau für Versicherungen und Finanzanlagen (IHK)",
-    subtitle: "Staatlich anerkannte Ausbildung — direkt bei der DVAG",
+    subtitle: "Staatlich anerkannte Ausbildung - direkt bei der DVAG",
     description:
       "Vollwertiger IHK-Abschluss in einem Beruf, der bundesweit anerkannt ist. Mit diesem Zeugnis stehen dir später die Türen jedes Finanzunternehmens in Deutschland offen.",
   },
@@ -146,13 +146,13 @@ export const qualifications: Qualification[] = [
     title: "Vermögensberater DBBV",
     subtitle: "Eigenes Branchenzertifikat",
     description:
-      "Branchenzertifikat des Deutschen Berufsbildungswerks für Vermögensberatung — innerhalb der Branche das Standard-Siegel.",
+      "Branchenzertifikat des Deutschen Berufsbildungswerks für Vermögensberatung - innerhalb der Branche das Standard-Siegel.",
   },
 ];
 
 export const qualificationsCallout = {
   text: "Die DVAG investiert pro Jahr über 80 Millionen Euro in die Ausbildung ihrer Berater.",
-  sub: "Für dich heißt das konkret: keine Kosten für Prüfungen, Kurse oder die Pflichtversicherung — und du lernst von Anfang an mit Profis.",
+  sub: "Für dich heißt das konkret: keine Kosten für Prüfungen, Kurse oder die Pflichtversicherung - und du lernst von Anfang an mit Profis.",
   source: "Quelle: DVAG-Unternehmensbericht, dvag-karriere.de",
   productsPopup: {
     label: "Welche Produkte berätst du am Ende?",
@@ -193,7 +193,7 @@ export const pathSteps: PathStep[] = [
     num: 3,
     title: "Start der Ausbildung",
     description:
-      "Du startest die Ausbildung — Vollzeit oder neben dem Job. Ich begleite dich persönlich.",
+      "Du startest die Ausbildung - Vollzeit oder neben dem Job. Ich begleite dich persönlich.",
   },
   {
     num: 4,
@@ -211,14 +211,14 @@ export const pathSteps: PathStep[] = [
     num: 6,
     title: "Selbstständigkeit",
     description:
-      "Am Ende: eigene Kunden, Erfahrung, Team. Du bist selbstständig — und dein eigener Chef.",
+      "Am Ende: eigene Kunden, Erfahrung, Team. Du bist selbstständig - und dein eigener Chef.",
   },
 ];
 
 export const incomeContent = {
   eyebrow: "Einkommen",
   title: "Was verdienen DVAG-Berater?",
-  subtitle: "Ehrlich, ohne Versprechen — die Zahlen kommen aus öffentlichen Quellen.",
+  subtitle: "Ehrlich, ohne Versprechen - die Zahlen kommen aus öffentlichen Quellen.",
   mainRange: {
     value: "46 800 € - 119 700 €",
     label: "Jahresgehalt-Spanne bei DVAG-Beratern",
@@ -237,7 +237,7 @@ export const incomeContent = {
     },
   ],
   explainer: [
-    "Bei der DVAG gibt es kein Festgehalt. Du arbeitest als selbstständiger Handelsvertreter (§§ 84, 92 HGB), und dein Einkommen hängt direkt davon ab, wie vielen Kunden du wirklich hilfst.",
+    "Bei der DVAG gibt es kein Festgehalt. Du arbeitest als selbstständiger Handelsvertreter (§ 84, 92 HGB), und dein Einkommen hängt direkt davon ab, wie vielen Kunden du wirklich hilfst.",
   ],
   bullets: [
     {
@@ -246,7 +246,7 @@ export const incomeContent = {
     },
     {
       strong: "Die ersten Monate brauchen Geduld.",
-      rest: " Wie in jedem eigenen Geschäft baut sich das Einkommen Schritt für Schritt auf. Deshalb fangen wir mit der Ausbildung an — nicht mit dem Verkauf.",
+      rest: " Wie in jedem eigenen Geschäft baut sich das Einkommen Schritt für Schritt auf. Deshalb fangen wir mit der Ausbildung an - nicht mit dem Verkauf.",
     },
   ],
   disclaimer:
@@ -257,7 +257,7 @@ export const transparenzItems: TransparenzItem[] = [
   {
     title: "Das ist Selbstständigkeit, keine Anstellung",
     description:
-      "Du wirst selbstständiger Handelsvertreter (§§ 84, 92 HGB). Das bedeutet Freiheit, aber auch Verantwortung: kein Festgehalt, keine Arbeitgeberbeiträge zur Sozialversicherung. Dafür auch keine Einkommensgrenze.",
+      "Du wirst selbstständiger Handelsvertreter (§ 84, 92 HGB). Das bedeutet Freiheit, aber auch Verantwortung: kein Festgehalt, keine Arbeitgeberbeiträge zur Sozialversicherung. Dafür auch keine Einkommensgrenze.",
   },
   {
     title: `Provision ist nicht sofort „auf dem Konto"`,
@@ -286,35 +286,31 @@ export const homeFAQContent = {
 export const homeFAQItems: FAQItem[] = [
   {
     q: "Ist das MLM oder Strukturvertrieb?",
-    a: `Nein. Die DVAG ist ein Versicherungs- und Finanzvermittler mit über 40 Produktpartnern (Banken, Versicherungen, Investmentgesellschaften). Du berätst Kunden und bekommst die Provision vom jeweiligen Produktgeber — nicht „von Menschen unter dir". Was es gibt: ein Team mit Mentoring und gemeinsamer Weiterbildung. Was es nicht gibt: „bring einen Freund und kassier Prozente vom Umsatz".`,
-  },
-  {
-    q: "Muss ich Deutsch können?",
-    a: "Zum Einstieg nicht perfekt, nein. Mein Team in Troisdorf betreut viele russisch- und ukrainisch-sprachige Kunden, und nicht wenige Berater fangen mit B1-/B2-Deutsch an. Bis zur IHK-Prüfung wächst die Sprache mit — die Prüfung selbst ist auf Deutsch, aber dann bist du auch soweit.",
+    a: `Nein. Die DVAG ist ein Versicherungs- und Finanzvermittler mit über 40 Produktpartnern (Banken, Versicherungen, Investmentgesellschaften). Du berätst Kunden und bekommst die Provision vom jeweiligen Produktgeber - nicht „von Menschen unter dir". Was es gibt: ein Team mit Mentoring und gemeinsamer Weiterbildung. Was es nicht gibt: „bring einen Freund und kassier Prozente vom Umsatz".`,
   },
   {
     q: "Kann ich neben meinem Hauptjob einsteigen?",
-    a: "Ja. Der nebenberufliche Einstieg ist bei der DVAG offiziell vorgesehen. Du kannst als Assistent oder parallel zum Hauptjob starten und später in Vollzeit wechseln — wenn du soweit bist.",
+    a: "Ja. Der nebenberufliche Einstieg ist bei der DVAG offiziell vorgesehen. Du kannst als Assistent oder parallel zum Hauptjob starten und später in Vollzeit wechseln - wenn du soweit bist.",
   },
   {
     q: "Wann verdiene ich?",
-    a: "Schon während der Ausbildung — eine tarifliche Ausbildungsvergütung plus erste Provisionen aus den Verträgen, die du selbst abschließt. Das volle Einkommen kommt schrittweise: die ersten 6–12 Monate baust du dir den Kundenstamm auf. So läuft das in jedem eigenen Geschäft, und so bin ich auch ehrlich zu dir.",
+    a: "Schon während der Ausbildung - eine tarifliche Ausbildungsvergütung plus erste Provisionen aus den Verträgen, die du selbst abschließt. Das volle Einkommen kommt schrittweise: die ersten 6–12 Monate baust du dir den Kundenstamm auf. So läuft das in jedem eigenen Geschäft, und so bin ich auch ehrlich zu dir.",
   },
   {
     q: "Was ist die Bescheinigung fürs Jobcenter?",
-    a: "Wenn du aus dem Bürgergeld in die Selbstständigkeit wechselst, will das Jobcenter eine sogenannte Tragfähigkeitsbescheinigung — ein Dokument, das belegt: dein Geschäftsplan trägt sich. Diese Bescheinigung stellt nicht die DVAG aus, sondern eine unabhängige Stelle (z. B. die IHK). Wir helfen dir aber bei den Unterlagen und begleiten den ganzen Prozess. Details findest du auf der Seite zum Bürgergeld.",
+    a: "Wenn du aus dem Bürgergeld in die Selbstständigkeit wechselst, will das Jobcenter eine sogenannte Tragfähigkeitsbescheinigung - ein Dokument, das belegt: dein Geschäftsplan trägt sich. Diese Bescheinigung stellt nicht die DVAG aus, sondern eine unabhängige Stelle (z. B. die IHK). Wir helfen dir aber bei den Unterlagen und begleiten den ganzen Prozess. Details findest du auf der Seite zum Bürgergeld.",
   },
   {
     q: "Was kosten Ausbildung und Prüfungen?",
-    a: "Für dich: nichts. Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung. IHK-Prüfungen (§34d, §34f, §34i), die Vorbereitungskurse und die Pflicht-Berufshaftpflicht — alles übernimmt das Unternehmen.",
+    a: "Für dich: nichts. Die DVAG investiert über 80 Millionen Euro pro Jahr in die Ausbildung. IHK-Prüfungen (§34d, §34f, §34i), die Vorbereitungskurse und die Pflicht-Berufshaftpflicht - alles übernimmt das Unternehmen.",
   },
   {
     q: "Was, wenn es nicht klappt?",
-    a: "Das normale Risiko der Selbstständigkeit. Du kannst das Vertragsverhältnis mit der DVAG jederzeit beenden. Wichtig zu wissen: für noch nicht ausfinanzierte Verträge greift die sogenannte Stornohaftung — Provisionen können dann nachträglich neu berechnet werden. Das ist Branchenstandard und steht so auch im Vertrag.",
+    a: "Das normale Risiko der Selbstständigkeit. Du kannst das Vertragsverhältnis mit der DVAG jederzeit beenden. Wichtig zu wissen: für noch nicht ausfinanzierte Verträge greift die sogenannte Stornohaftung - Provisionen können dann nachträglich neu berechnet werden. Das ist Branchenstandard und steht so auch im Vertrag.",
   },
   {
     q: "Wie sieht der erste Schritt aus?",
-    a: `Wir starten mit einem kostenlosen Gespräch — bei mir im Büro in Troisdorf, per Zoom oder WhatsApp. Ich sage dir ehrlich, ob ich glaube, dass der Beruf zu dir passt. Danach machst du die offiziellen „10 Fragen zum Traumberuf" der DVAG. Wenn du sie bestehst, gehen wir in die Details.`,
+    a: `Wir starten mit einem kostenlosen Gespräch - bei mir im Büro in Troisdorf, per Zoom oder WhatsApp. Ich sage dir ehrlich, ob ich glaube, dass der Beruf zu dir passt. Danach machst du die offiziellen „10 Fragen zum Traumberuf" der DVAG. Wenn du sie bestehst, gehen wir in die Details.`,
   },
 ];
 
@@ -335,10 +331,10 @@ export const finalCtaContent = {
 // --- Quereinstieg ---
 
 export const quereinstiegHero: HeroContent = {
-  headline: "Wechsle den Beruf —",
+  headline: "Wechsle den Beruf -",
   headlineAccent: "in einen, der wirklich gebraucht wird",
   subtitle:
-    "Finanzberater bei der DVAG — ein Beruf, in dem deine Erfahrung und deine Sprachen zählen.",
+    "Finanzberater bei der DVAG - ein Beruf, in dem deine Erfahrung und deine Sprachen zählen.",
   trustLine:
     "Von null oder parallel zum Job · Volle Ausbildung · Vier anerkannte Qualifikationen",
   primaryCTA: { text: "10 Fragen durchgehen", href: QUIZ_URL },
@@ -372,14 +368,14 @@ export const quereinstiegBenefits = {
   title: "Warum der Beruf zu Quereinsteigern passt",
   items: [
     {
-      title: "Deine Sprache ist ein Vorteil, kein Hindernis",
+      title: "Dein Hintergrund ist ein Vorteil",
       description:
-        "In Deutschland leben Millionen Familien mit Migrationshintergrund, die einen Berater in ihrer Muttersprache suchen. Du startest in einer Nische, in der die Konkurrenz dünn ist.",
+        "Viele Menschen suchen einen Berater, der ihre Lebenssituation wirklich versteht. Wer mit echtem Bezug zur Zielgruppe einsteigt, findet schneller Vertrauen und tritt in eine Nische, in der die Konkurrenz dünn ist.",
     },
     {
-      title: "Egal aus welcher Branche du kommst — es zählt",
+      title: "Egal aus welcher Branche du kommst - es zählt",
       description:
-        "Medizin, Ingenieurwesen, Pädagogik, Handwerk — du bringst Menschenkenntnis mit, strukturiertes Denken, die Fähigkeit, Komplexes einfach zu erklären. Das sind 80 % des Beraterberufs.",
+        "Medizin, Ingenieurwesen, Pädagogik, Handwerk - du bringst Menschenkenntnis mit, strukturiertes Denken, die Fähigkeit, Komplexes einfach zu erklären. Das sind 80 % des Beraterberufs.",
     },
     {
       title: "Du startest schrittweise",
@@ -389,7 +385,7 @@ export const quereinstiegBenefits = {
     {
       title: "Alter ist kein Nachteil",
       description:
-        "Kunden vertrauen Menschen mit Lebenserfahrung. Berater, die mit 35–50 einsteigen, wachsen oft schneller — mehr Kontakte, klarerer Blick auf Geld.",
+        "Kunden vertrauen Menschen mit Lebenserfahrung. Berater, die mit 35–50 einsteigen, wachsen oft schneller - mehr Kontakte, klarerer Blick auf Geld.",
     },
   ],
 };
@@ -397,38 +393,38 @@ export const quereinstiegBenefits = {
 export const quereinstiegFAQItems: FAQItem[] = [
   {
     q: "Muss ich meinen aktuellen Job kündigen?",
-    a: "Nein. Der nebenberufliche Einstieg ist bei der DVAG offiziell vorgesehen — du kannst parallel zur Hauptbeschäftigung starten. Die meisten meiner Mentees machen's genau so: erste 3–6 Monate nebenher, dann Wechsel in Vollzeit, wenn der Kundenstrom stabil läuft.",
+    a: "Nein. Der nebenberufliche Einstieg ist bei der DVAG offiziell vorgesehen - du kannst parallel zur Hauptbeschäftigung starten. Die meisten meiner Mentees machen's genau so: erste 3–6 Monate nebenher, dann Wechsel in Vollzeit, wenn der Kundenstrom stabil läuft.",
   },
   {
     q: "Und wenn ich vorher nichts mit Finanzen zu tun hatte?",
-    a: `Kein Problem. Das DVAG-Programm bringt dir die komplette Finanzbasis bei — von null. Wichtiger sind Menschenkenntnis, Disziplin und die Lust zu lernen. Meine besten Mentees waren vorher Ingenieure, Lehrer, Krankenpfleger, IT-Leute. Niemand mit „Finanzhintergrund".`,
+    a: `Kein Problem. Das DVAG-Programm bringt dir die komplette Finanzbasis bei - von null. Wichtiger sind Menschenkenntnis, Disziplin und die Lust zu lernen. Meine besten Mentees waren vorher Ingenieure, Lehrer, Krankenpfleger, IT-Leute. Niemand mit „Finanzhintergrund".`,
   },
   {
-    q: "Mein Abschluss wird in Deutschland nicht anerkannt — ist das ein Problem?",
-    a: "Für diesen Beruf nein. Die IHK-Zertifizierungen über die DVAG setzen kein deutsches Hochschulstudium voraus. Dein Abschluss aus dem Heimatland ist ein Plus — er zeigt, dass du lernen und durchziehen kannst.",
+    q: "Mein Abschluss wird in Deutschland nicht anerkannt - ist das ein Problem?",
+    a: "Für diesen Beruf nein. Die IHK-Zertifizierungen über die DVAG setzen kein deutsches Hochschulstudium voraus. Dein Abschluss aus dem Heimatland ist ein Plus - er zeigt, dass du lernen und durchziehen kannst.",
   },
   {
     q: "Ich bin 45. Zu spät?",
-    a: "Viele DVAG-Berater starten nach 40 — und gehören zu den erfolgreichsten. Alter heißt: Kontakte, Lebenserfahrung, Augenhöhe mit Kunden. Genau das schätzt die Finanzbranche mehr als Jugend.",
+    a: "Viele DVAG-Berater starten nach 40 - und gehören zu den erfolgreichsten. Alter heißt: Kontakte, Lebenserfahrung, Augenhöhe mit Kunden. Genau das schätzt die Finanzbranche mehr als Jugend.",
   },
   {
     q: "Wie lange dauert die Ausbildung?",
-    a: "Die Basisausbildung läuft 6–12 Monate parallel zur Praxis. Die volle Zertifizierung (§34d + §34f + §34i) zieht sich bis zu drei Jahre. Aber: du arbeitest schon ab dem ersten Monat mit echten Kunden — unter meiner Begleitung — und verdienst Provisionen.",
+    a: "Die Basisausbildung läuft 6–12 Monate parallel zur Praxis. Die volle Zertifizierung (§34d + §34f + §34i) zieht sich bis zu drei Jahre. Aber: du arbeitest schon ab dem ersten Monat mit echten Kunden - unter meiner Begleitung - und verdienst Provisionen.",
   },
   {
     q: "Was ist mit Sozialabgaben?",
-    a: "Als Selbstständiger kümmerst du dich selbst um Krankenversicherung und Rente. Klingt im ersten Moment kompliziert — die DVAG bietet dazu eigene Beratung an, und wir setzen das gemeinsam mit dir auf, passend zu deiner Situation.",
+    a: "Als Selbstständiger kümmerst du dich selbst um Krankenversicherung und Rente. Klingt im ersten Moment kompliziert - die DVAG bietet dazu eigene Beratung an, und wir setzen das gemeinsam mit dir auf, passend zu deiner Situation.",
   },
   {
-    q: "Was, wenn es nicht klappt — kann ich zurück in die Festanstellung?",
-    a: "Ja. Du bleibst Fachkraft mit IHK-Abschluss — und der ist am Markt gefragt. Nicht wenige Berater wechseln nach 2–3 Jahren bei der DVAG in besser bezahlte Festanstellungen bei Banken oder Versicherungen. Das ist dein Plan B.",
+    q: "Was, wenn es nicht klappt - kann ich zurück in die Festanstellung?",
+    a: "Ja. Du bleibst Fachkraft mit IHK-Abschluss - und der ist am Markt gefragt. Nicht wenige Berater wechseln nach 2–3 Jahren bei der DVAG in besser bezahlte Festanstellungen bei Banken oder Versicherungen. Das ist dein Plan B.",
   },
 ];
 
 export const quereinstiegFinalCTA = {
-  title: "Erster Schritt — ganz ohne Verpflichtung",
+  title: "Erster Schritt - ganz ohne Verpflichtung",
   description:
-    "Kostenloses 30-Minuten-Gespräch — bei mir im Büro in Troisdorf, per Zoom oder WhatsApp. Wir reden über deine Situation, und ich sage dir ehrlich, ob ich glaube, dass der Beruf zu dir passt.",
+    "Kostenloses 30-Minuten-Gespräch - bei mir im Büro in Troisdorf, per Zoom oder WhatsApp. Wir reden über deine Situation, und ich sage dir ehrlich, ob ich glaube, dass der Beruf zu dir passt.",
   primary: {
     text: "Schreib auf WhatsApp",
     href: waLink(
@@ -516,7 +512,7 @@ export const supportTable: {
     },
   ],
   disclaimer:
-    "Höhe und Bewilligung sind Ermessensleistungen — das Jobcenter bzw. die Arbeitsagentur entscheidet im Einzelfall. Eine Garantie auf Bewilligung können wir nicht geben, aber wir bereiten die Unterlagen so vor, dass deine Chancen so gut wie möglich stehen.",
+    "Höhe und Bewilligung sind Ermessensleistungen - das Jobcenter bzw. die Arbeitsagentur entscheidet im Einzelfall. Eine Garantie auf Bewilligung können wir nicht geben, aber wir bereiten die Unterlagen so vor, dass deine Chancen so gut wie möglich stehen.",
 };
 
 export const buergergeldHelp = {
@@ -526,7 +522,7 @@ export const buergergeldHelp = {
     {
       title: "Businessplan fürs Jobcenter",
       description:
-        "Wir bauen ihn mit dir auf — im Format, das dein Jobcenter sehen will.",
+        "Wir bauen ihn mit dir auf - im Format, das dein Jobcenter sehen will.",
     },
     {
       title: "Tragfähigkeitsbescheinigung",
@@ -536,7 +532,7 @@ export const buergergeldHelp = {
     {
       title: "Termin mit dem Fallmanager",
       description:
-        "Wir gehen mit dir zum Jobcenter-Termin — bei Bedarf mit Dolmetscher.",
+        "Wir gehen mit dir zum Jobcenter-Termin - bei Bedarf mit Dolmetscher.",
     },
     {
       title: "Gewerbeanmeldung",
@@ -557,7 +553,7 @@ export const buergergeldPathSteps: PathStep[] = [
     num: 2,
     title: "Unterlagen vorbereiten",
     description:
-      "Businessplan und Tragfähigkeitsbescheinigung — rechne mit etwa 2 Wochen. Wir sind in jedem Schritt dabei.",
+      "Businessplan und Tragfähigkeitsbescheinigung - rechne mit etwa 2 Wochen. Wir sind in jedem Schritt dabei.",
   },
   {
     num: 3,
@@ -575,7 +571,7 @@ export const buergergeldPathSteps: PathStep[] = [
     num: 5,
     title: "Start der Ausbildung",
     description:
-      "Du startest die Ausbildung — das Einstiegsgeld läuft parallel rein, dein Einkommen ist stabil.",
+      "Du startest die Ausbildung - das Einstiegsgeld läuft parallel rein, dein Einkommen ist stabil.",
   },
   {
     num: 6,
@@ -610,8 +606,8 @@ export const buergergeldTransparenzItems: TransparenzItem[] = [
 
 export const buergergeldFAQItems: FAQItem[] = [
   {
-    q: "Das Jobcenter lehnt ab — was jetzt?",
-    a: "Erster Schritt: schriftliche Begründung der Ablehnung anfordern. Oft sind es Formalien. Dann gibt's zwei Wege — neuer Antrag oder Widerspruch (innerhalb eines Monats). Wir helfen bei beidem. Eine erste Ablehnung heißt nicht, dass der Weg zu ist.",
+    q: "Das Jobcenter lehnt ab - was jetzt?",
+    a: "Erster Schritt: schriftliche Begründung der Ablehnung anfordern. Oft sind es Formalien. Dann gibt's zwei Wege - neuer Antrag oder Widerspruch (innerhalb eines Monats). Wir helfen bei beidem. Eine erste Ablehnung heißt nicht, dass der Weg zu ist.",
   },
   {
     q: "Kann ich das Bürgergeld anfangs behalten?",
@@ -619,11 +615,11 @@ export const buergergeldFAQItems: FAQItem[] = [
   },
   {
     q: "Was ist die Schonzeit und wie funktioniert sie?",
-    a: "Schonzeit ist der Zeitraum, in dem ein Teil deiner Einkünfte aus der Selbstständigkeit nicht aufs Bürgergeld angerechnet wird. Für frisch Selbstständige gelten in den ersten Monaten Sonderregeln. Die konkreten Konditionen hängen von deinem Jobcenter ab — das klären wir gemeinsam.",
+    a: "Schonzeit ist der Zeitraum, in dem ein Teil deiner Einkünfte aus der Selbstständigkeit nicht aufs Bürgergeld angerechnet wird. Für frisch Selbstständige gelten in den ersten Monaten Sonderregeln. Die konkreten Konditionen hängen von deinem Jobcenter ab - das klären wir gemeinsam.",
   },
   {
     q: "Brauche ich Deutsch fürs Jobcenter?",
-    a: "Wir begleiten dich durch den ganzen Prozess. Im Jobcenter selbst läuft alles auf Deutsch — aber diese Hürde gehen wir mit dir: wir bereiten dich aufs Gespräch vor, gehen mit zum Termin und organisieren bei Bedarf einen Dolmetscher.",
+    a: "Wir begleiten dich durch den ganzen Prozess. Im Jobcenter selbst läuft alles auf Deutsch - aber diese Hürde gehen wir mit dir: wir bereiten dich aufs Gespräch vor, gehen mit zum Termin und organisieren bei Bedarf einen Dolmetscher.",
   },
   {
     q: "Wie lange dauert der gesamte Prozess bis zum Start?",
@@ -631,18 +627,18 @@ export const buergergeldFAQItems: FAQItem[] = [
   },
   {
     q: "Ich bekomme ALG I, nicht Bürgergeld. Ist das ein anderes Programm?",
-    a: "Ja. Für ALG I gibt's den Gründungszuschuss — ein Programm der Arbeitsagentur. Andere Konditionen: Höhe = ALG I + 300 €/Monat für bis zu 15 Monate. Antrag stellen, bevor das ALG I ausläuft. Wir kennen beide Programme und arbeiten mit beiden.",
+    a: "Ja. Für ALG I gibt's den Gründungszuschuss - ein Programm der Arbeitsagentur. Andere Konditionen: Höhe = ALG I + 300 €/Monat für bis zu 15 Monate. Antrag stellen, bevor das ALG I ausläuft. Wir kennen beide Programme und arbeiten mit beiden.",
   },
   {
     q: "Soll ich der DVAG sagen, dass ich Bürgergeld bekomme?",
-    a: "Ja, sag's offen. Die DVAG nimmt Berater mit ganz unterschiedlichem Startstatus auf, Bürgergeld-Bezug ist kein Hindernis. Im Gegenteil — wir kennen die Besonderheiten und helfen, die Unterlagen richtig einzureichen. Ehrlicher Start = weniger Reibung später.",
+    a: "Ja, sag's offen. Die DVAG nimmt Berater mit ganz unterschiedlichem Startstatus auf, Bürgergeld-Bezug ist kein Hindernis. Im Gegenteil - wir kennen die Besonderheiten und helfen, die Unterlagen richtig einzureichen. Ehrlicher Start = weniger Reibung später.",
   },
 ];
 
 export const buergergeldFinalCTA = {
-  title: "Erstes Treffen — kostenlos",
+  title: "Erstes Treffen - kostenlos",
   description:
-    "30 Minuten — wir reden über deine Situation mit dem Jobcenter, gehen die Unterlagen durch, schauen uns den Zeitplan an. Ganz ohne Verpflichtung.",
+    "30 Minuten - wir reden über deine Situation mit dem Jobcenter, gehen die Unterlagen durch, schauen uns den Zeitplan an. Ganz ohne Verpflichtung.",
   primary: {
     text: "Schreib auf WhatsApp",
     href: waLink(
@@ -658,7 +654,7 @@ export const buergergeldFinalCTA = {
 export const ui = {
   pathEyebrow: "Ablauf",
   pathTitleHome: "So läuft's",
-  pathTitleBuergergeld: "Schritt-für-Schritt — Bürgergeld und ALG I",
+  pathTitleBuergergeld: "Schritt-für-Schritt - Bürgergeld und ALG I",
   transparenzEyebrow: "Ehrlich",
   transparenzTitleHome: "Ohne rosa Brille",
   transparenzSubtitleHome:
@@ -676,11 +672,11 @@ export const ui = {
   segmentsEyebrow: "Für wen das ist",
   segmentsTitle: "Für dich, wenn...",
   segmentsSubtitle:
-    "Klick auf das, was am ehesten passt — wir schauen uns deinen Weg konkret an.",
+    "Klick auf das, was am ehesten passt - wir schauen uns deinen Weg konkret an.",
   supportEyebrow: "Staatliche Unterstützung",
   supportTitle: "Einstiegsgeld vs Gründungszuschuss",
   supportDescription:
-    "Zwei staatliche Förderprogramme für den Weg in die Selbstständigkeit — eines für Bürgergeld, eines für ALG I.",
+    "Zwei staatliche Förderprogramme für den Weg in die Selbstständigkeit - eines für Bürgergeld, eines für ALG I.",
   supportParameter: "Parameter",
   incomeThisMeans: "Heißt zwei Dinge:",
   heroScrollLabel: "Nach unten scrollen",

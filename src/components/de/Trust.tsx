@@ -24,8 +24,8 @@ const credentials = [
     desc: "Ich erkläre das deutsche Finanzsystem verständlich und in einfachen Worten",
   },
   {
-    title: "Beratung für Ausländer",
-    desc: "Ohne Sprachbarrieren und komplizierte Formulierungen",
+    title: "Persönliche Beratung",
+    desc: "Klare Sprache statt komplizierter Formulierungen",
   },
 ];
 
