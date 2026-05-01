@@ -1,15 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Calendar,
-  Phone,
-  Mail,
-  MapPin,
-  Send,
-  X,
-  Phone as PhoneRound,
-} from "lucide-react";
+import { Calendar, Phone, Mail, MapPin, Send, X } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export type ContactPopoverLocale = "ru" | "de" | "ua";
@@ -175,92 +167,76 @@ export default function FloatingContactButtons({
 
   return (
     <>
-      {/* Desktop floating trigger */}
-      <div className="hidden sm:block fixed bottom-6 right-6 z-50">
-        <div className="relative" ref={popoverRef}>
-          {open && (
-            <div className="absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 border-b border-border">
-                <h3 className="font-[family-name:var(--font-serif)] font-bold text-navy text-base">
-                  {t.title}
-                </h3>
-                <button
-                  onClick={() => setOpen(false)}
-                  aria-label={t.close}
-                  className="text-muted-foreground hover:text-navy transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-              <ul className="py-2">
-                {items.map((it, i) => {
-                  const inner = (
-                    <span className="flex items-center gap-3 px-5 py-3 hover:bg-cream transition-colors">
-                      <span className="w-9 h-9 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                        {it.icon}
-                      </span>
-                      <span className="flex flex-col text-left">
-                        <span className="text-sm font-semibold text-navy">
-                          {it.label}
-                        </span>
-                        {it.detail && (
-                          <span className="text-xs text-muted-foreground">
-                            {it.detail}
-                          </span>
-                        )}
-                      </span>
-                    </span>
-                  );
-                  return (
-                    <li key={i}>
-                      {it.href ? (
-                        <a
-                          href={it.href}
-                          target={it.target}
-                          rel={
-                            it.target === "_blank"
-                              ? "noopener noreferrer"
-                              : undefined
-                          }
-                          onClick={() => setOpen(false)}
-                          className="block"
-                        >
-                          {inner}
-                        </a>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={it.onClick}
-                          className="block w-full"
-                        >
-                          {inner}
-                        </button>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          )}
-
-          <button
-            type="button"
-            onClick={() => setOpen((o) => !o)}
-            aria-expanded={open}
-            aria-label={t.triggerLabel}
-            className="relative w-16 h-16 rounded-full bg-gold text-navy flex items-center justify-center shadow-lg shadow-gold/30 hover:scale-110 transition-transform"
+      {/* Desktop popover anchored under the Navbar Контакт button */}
+      {open && (
+        <div className="hidden sm:block fixed top-20 right-4 lg:right-8 z-50">
+          <div
+            ref={popoverRef}
+            className="w-80 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden"
           >
-            {!open && (
-              <span className="absolute inset-0 rounded-full bg-gold animate-[pulse-ring_2s_ease-out_infinite]" />
-            )}
-            {open ? (
-              <X className="w-7 h-7 relative z-10" />
-            ) : (
-              <PhoneRound className="w-7 h-7 relative z-10" />
-            )}
-          </button>
+            <div className="flex items-center justify-between px-5 py-4 border-b border-border">
+              <h3 className="font-[family-name:var(--font-serif)] font-bold text-navy text-base">
+                {t.title}
+              </h3>
+              <button
+                onClick={() => setOpen(false)}
+                aria-label={t.close}
+                className="text-muted-foreground hover:text-navy transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <ul className="py-2">
+              {items.map((it, i) => {
+                const inner = (
+                  <span className="flex items-center gap-3 px-5 py-3 hover:bg-cream transition-colors">
+                    <span className="w-9 h-9 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
+                      {it.icon}
+                    </span>
+                    <span className="flex flex-col text-left">
+                      <span className="text-sm font-semibold text-navy">
+                        {it.label}
+                      </span>
+                      {it.detail && (
+                        <span className="text-xs text-muted-foreground">
+                          {it.detail}
+                        </span>
+                      )}
+                    </span>
+                  </span>
+                );
+                return (
+                  <li key={i}>
+                    {it.href ? (
+                      <a
+                        href={it.href}
+                        target={it.target}
+                        rel={
+                          it.target === "_blank"
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        onClick={() => setOpen(false)}
+                        className="block"
+                      >
+                        {inner}
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={it.onClick}
+                        className="block w-full"
+                      >
+                        {inner}
+                      </button>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Mobile sticky bar */}
       {showMobileBar && (
