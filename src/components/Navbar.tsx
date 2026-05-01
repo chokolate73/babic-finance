@@ -187,13 +187,7 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
       }))
     : rawNavLinks;
 
-  const logoHref = isDe
-    ? "/de"
-    : isUa
-      ? "/ua"
-      : isKlienty || isKarriere
-        ? "/"
-        : "#";
+  const logoHref = homeHref;
 
   const currentLocaleLabel = LOCALES.find((l) => l.code === currentLocale)!.label;
 
