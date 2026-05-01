@@ -294,7 +294,7 @@ export const homeFAQItems: FAQItem[] = [
   },
   {
     q: "Was, wenn es nicht klappt?",
-    a: "Das normale Risiko der Selbstständigkeit. Du kannst das Vertragsverhältnis mit der DVAG jederzeit beenden. Wichtig zu wissen: für noch nicht ausfinanzierte Verträge greift die sogenannte Stornohaftung - Provisionen können dann nachträglich neu berechnet werden. Das ist Branchenstandard und steht so auch im Vertrag.",
+    a: "Das normale Risiko der Selbstständigkeit. Du kannst das Vertragsverhältnis mit der DVAG jederzeit beenden.",
   },
   {
     q: "Wie sieht der erste Schritt aus?",
