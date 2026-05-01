@@ -286,7 +286,7 @@ export const homeFAQItems: FAQItem[] = [
   },
   {
     q: "Was ist die Bescheinigung fürs Jobcenter?",
-    a: "Wenn du aus dem Bürgergeld in die Selbstständigkeit wechselst, will das Jobcenter eine sogenannte Tragfähigkeitsbescheinigung - ein Dokument, das belegt: dein Geschäftsplan trägt sich. Diese Bescheinigung stellen wir dir selbst aus - für die Dauer deiner Starter-Ausbildung. Wir bereiten alles im Team vor und begleiten dich bis zum Jobcenter-Termin. Details findest du auf der Seite zum Bürgergeld.",
+    a: "Wenn du aus dem Bürgergeld in die Selbstständigkeit wechselst, will das Jobcenter eine sogenannte Tragfähigkeitsbescheinigung - ein Dokument, das belegt: dein Geschäftsplan trägt sich. Die Bescheinigung selbst stellt eine fachkundige Stelle aus, aber die ganze Vorbereitung übernehmen wir: Unterlagen, Termin, Begleitung - du musst das nicht allein durchziehen. Details findest du auf der Seite zum Bürgergeld.",
   },
   {
     q: "Was kosten Ausbildung und Prüfungen?",
