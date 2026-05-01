@@ -49,15 +49,6 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-gold flex-shrink-0" />
-                <a
-                  href="tel:+491784743490"
-                  className="text-white/50 hover:text-white transition-colors"
-                >
-                  +49 178 474 3490
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="mailto:Vladislav.Babic@dvag.de"

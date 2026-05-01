@@ -18,6 +18,7 @@ const klientyLinks: NavLink[] = [
   { href: "#seminar", label: "Семинар" },
   { href: "#process", label: "Как работаю" },
   { href: "#faq", label: "FAQ" },
+  { href: "/blog", label: "Блог" },
   { href: "#contact", label: "Контакт" },
 ];
 
@@ -32,6 +33,7 @@ const recruitmentLinks: NavLink[] = [
     ],
   },
   { href: "/klienty", label: "Для клиентов" },
+  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Оставить заявку" },
 ];
 
@@ -40,6 +42,7 @@ const karriereLinks: NavLink[] = [
   { href: "/karriere/nebenberuf", label: "Параллельно с работой" },
   { href: "/karriere/quereinstieg", label: "Смена профессии" },
   { href: "/klienty", label: "Для клиентов" },
+  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Оставить заявку" },
 ];
 
@@ -55,6 +58,7 @@ const deRecruitmentLinks: NavLink[] = [
     ],
   },
   { href: "/de/klienty", label: "Für Kunden" },
+  { href: "/de/blog", label: "Blog" },
   { href: "#apply", label: "Jetzt bewerben" },
 ];
 
@@ -63,6 +67,7 @@ const deKarriereLinks: NavLink[] = [
   { href: "/de/karriere/quereinstieg", label: "Quereinsteiger" },
   { href: "/de/karriere/buergergeld", label: "Aus Bürgergeld" },
   { href: "/de/klienty", label: "Für Kunden" },
+  { href: "/de/blog", label: "Blog" },
   { href: "#apply", label: "Jetzt bewerben" },
 ];
 
