@@ -407,7 +407,7 @@ export const homeFAQItems: FAQItem[] = [
     q: "Что такое справка для Jobcenter?",
     a: (
       <>
-        Если ты на Bürgergeld и переходишь в самозанятость, Jobcenter требует Tragfähigkeitsbescheinigung - документ, подтверждающий, что твой план бизнеса жизнеспособен. Мы помогаем подготовить этот документ через IHK-партнёров. Это не DVAG выдаёт, а независимые эксперты - но мы сопровождаем весь процесс.{" "}
+        Если ты на Bürgergeld и переходишь в самозанятость, Jobcenter требует Tragfähigkeitsbescheinigung - документ, подтверждающий, что твой план бизнеса жизнеспособен. Эту справку мы выдаём сами на период твоего стартового обучения - готовим всё внутри команды и сопровождаем тебя до Jobcenter.{" "}
         <Link href="/karriere/buergergeld" className="underline hover:no-underline">
           Подробнее на странице про Bürgergeld →
         </Link>
