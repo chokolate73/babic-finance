@@ -123,7 +123,7 @@ export const qualifications: Qualification[] = [
   {
     id: "ihk",
     title: "Kaufmann/-frau für Versicherungen und Finanzanlagen (IHK)",
-    subtitle: "Staatlich anerkannte Ausbildung - direkt bei der DVAG",
+    subtitle: "Duale Ausbildung - direkt bei der DVAG",
     description:
       "Vollwertiger IHK-Abschluss in einem Beruf, der bundesweit anerkannt ist. Mit diesem Zeugnis stehen dir später die Türen jedes Finanzunternehmens in Deutschland offen.",
   },
