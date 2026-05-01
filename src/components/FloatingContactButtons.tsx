@@ -265,8 +265,8 @@ export default function FloatingContactButtons({
             onClick={() => setOpen(false)}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
-          <div className="relative w-full bg-white rounded-t-2xl shadow-2xl max-h-[85vh] flex flex-col">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-border">
+          <div className="relative w-full bg-white rounded-t-2xl shadow-2xl max-h-[90dvh] flex flex-col pb-[env(safe-area-inset-bottom)]">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-border flex-shrink-0">
               <h3 className="font-[family-name:var(--font-serif)] font-bold text-navy text-base">
                 {t.title}
               </h3>
@@ -278,10 +278,10 @@ export default function FloatingContactButtons({
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <ul className="overflow-y-auto py-2">
+            <ul className="overflow-y-auto py-1 flex-1">
               {items.map((it, i) => {
                 const inner = (
-                  <span className="flex items-center gap-3 px-5 py-4 hover:bg-cream transition-colors">
+                  <span className="flex items-center gap-3 px-5 py-3 hover:bg-cream transition-colors">
                     <span className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
                       {it.icon}
                     </span>
