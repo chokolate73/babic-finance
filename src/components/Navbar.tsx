@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import WhatsAppIcon from "./WhatsAppIcon";
 
 type NavLink = {
   href?: string;
@@ -371,15 +370,15 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
                 </div>
               )}
             </div>
-            <a
-              href="https://wa.me/491784743490"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-whatsapp text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent("openContactPopover"))
+              }
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
             >
-              <WhatsAppIcon className="w-4 h-4" />
-              WhatsApp
-            </a>
+              {isDe ? "Kontakt" : isUa ? "Зв'язатися" : "Контакт"}
+            </button>
           </div>
 
           <div className="lg:hidden flex items-center gap-2">

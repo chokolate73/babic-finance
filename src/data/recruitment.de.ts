@@ -123,7 +123,7 @@ export const qualifications: Qualification[] = [
   {
     id: "ihk",
     title: "Kaufmann/-frau für Versicherungen und Finanzanlagen (IHK)",
-    subtitle: "Staatlich anerkannte Ausbildung - direkt bei der DVAG",
+    subtitle: "Duale Ausbildung - direkt bei der DVAG",
     description:
       "Vollwertiger IHK-Abschluss in einem Beruf, der bundesweit anerkannt ist. Mit diesem Zeugnis stehen dir später die Türen jedes Finanzunternehmens in Deutschland offen.",
   },
@@ -155,10 +155,10 @@ export const qualificationsCallout = {
   sub: "Für dich heißt das konkret: keine Kosten für Ausbildung, Kurse oder die Pflichtversicherung - und du lernst von Anfang an mit Profis.",
   source: "Quelle: DVAG-Unternehmensbericht, dvag-karriere.de",
   productsPopup: {
-    label: "Welche Produkte berätst du am Ende?",
+    label: "Was bekommen unsere Kunden?",
     title: "Welche Produkte du berätst",
     description:
-      "Aus dem umfangreichen Angebot der DVAG wählst du gemeinsam mit deinen Kunden die für sie passenden Produkte aus. Dank der engen Kooperation mit unseren Produktpartnern bieten wir leistungsstarke Konzepte, die einzigartig am Markt und flexibel auf die individuelle Lebenssituation abgestimmt sind.",
+      "Der Kunde bekommt eine persönliche Beratung zu seiner individuellen Lebenssituation. Möglich wird das durch die enge Kooperation mit führenden Versicherungs-, Bank- und Investmentpartnern. Wir verkaufen keine Finanzprodukte - wir liefern eine Strategie.",
     categories: [
       "Absicherung",
       "Altersvorsorge",
@@ -273,6 +273,10 @@ export const homeFAQContent = {
 
 export const homeFAQItems: FAQItem[] = [
   {
+    q: "Welche Perspektiven habe ich?",
+    a: "Eine fundierte Finanzausbildung, tiefes Wissen über den deutschen Finanzmarkt und die Möglichkeit, Menschen verständlich zu beraten. Dazu freie Zeiteinteilung - du gestaltest deinen Tag und dein Einkommen selbst.",
+  },
+  {
     q: "Ist das MLM oder Strukturvertrieb?",
     a: `Nein. Die DVAG ist ein Versicherungs- und Finanzvermittler mit über 40 Produktpartnern (Banken, Versicherungen, Investmentgesellschaften). Du berätst Kunden und bekommst die Provision vom jeweiligen Produktgeber - nicht „von Menschen unter dir". Was es gibt: ein Team mit Mentoring und gemeinsamer Weiterbildung. Was es nicht gibt: „bring einen Freund und kassier Prozente vom Umsatz".`,
   },
@@ -298,7 +302,11 @@ export const homeFAQItems: FAQItem[] = [
   },
   {
     q: "Wie sieht der erste Schritt aus?",
-    a: `Wir starten mit einem kostenlosen Gespräch - bei mir im Büro in Troisdorf, per Zoom oder WhatsApp. Ich sage dir ehrlich, ob ich glaube, dass der Beruf zu dir passt. Danach machst du die offiziellen „10 Fragen zum Traumberuf" der DVAG. Wenn du sie bestehst, gehen wir in die Details.`,
+    a: "Wir starten mit einem persönlichen oder Online-Gespräch und einem Besuch des Tags der offenen Tür in unserem Berufs Bildungszentrum (BBZ) in Düsseldorf.",
+  },
+  {
+    q: "Ist die Ausbildung auch online möglich?",
+    a: "Ja. Die Ausbildung läuft offline oder online - ganz nach deiner Wahl.",
   },
 ];
 

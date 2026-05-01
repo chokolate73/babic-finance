@@ -38,7 +38,7 @@ const CARDS: Card[] = [
     description:
       "Schreib direkt auf WhatsApp - Vladislav antwortet innerhalb einer Stunde während der Geschäftszeiten.",
     ctaText: "Auf WhatsApp schreiben",
-    ctaHref: "https://wa.me/491784743490",
+    ctaHref: "https://wa.me/4922418989424",
     external: true,
     accent: "whatsapp",
   },

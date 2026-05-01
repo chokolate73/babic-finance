@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/de/Footer";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
@@ -114,6 +115,7 @@ export default function DeBuergergeldPage() {
         secondary={buergergeldFinalCTA.secondary}
       />
       <RecruitmentQualificationForm sourcePage="buergergeld" locale="de" />
+      <FloatingContactButtons locale="de" showMobileBar={false} />
       <Footer />
     </div>
   );

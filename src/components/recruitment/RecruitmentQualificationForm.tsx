@@ -118,7 +118,7 @@ const FALLBACK_MESSAGES: Record<Locale, string> = {
 
 function whatsappFallback(locale: Locale) {
   return (
-    "https://wa.me/491784743490?text=" +
+    "https://wa.me/4922418989424?text=" +
     encodeURIComponent(FALLBACK_MESSAGES[locale])
   );
 }

@@ -12,6 +12,7 @@ import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import Seminar from "@/components/Seminar";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import {
   homeHero,
   homePainPoints,
@@ -110,6 +111,7 @@ export default function Home() {
       />
       <RecruitmentQualificationForm sourcePage="homepage" />
       <StickyMobileCTA label="Проконсультироваться" />
+      <FloatingContactButtons locale="ru" showMobileBar={false} />
       <Footer />
     </div>
   );

@@ -177,8 +177,18 @@ export default function Contact() {
                   <p className="font-medium">Vladislav.Babic@dvag.de</p>
                 </div>
               </a>
-              <div className="flex items-center gap-4 text-foreground/80">
-                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+              <a
+
+                href="https://www.google.com/maps/place/?q=place_id:ChIJYxNUvUrfvkcR9wFAfsljmig"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+                className="flex items-center gap-4 text-foreground/80 hover:text-navy transition-colors group"
+
+              >
+                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
                   <MapPin className="w-5 h-5 text-gold" />
                 </div>
                 <div>
@@ -187,12 +197,12 @@ export default function Contact() {
                     Mottmannstr. 8, 53842 Troisdorf
                   </p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div className="flex gap-3">
               <a
-                href="https://wa.me/491784743490"
+                href="https://wa.me/4922418989424"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-whatsapp text-white font-semibold rounded-xl hover:opacity-90 transition-all"

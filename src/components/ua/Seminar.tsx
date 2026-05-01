@@ -152,7 +152,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Вітаю, Владиславе! Хочу дізнатися більше про курс «Фінансовий консультант у Німеччині».')}`;
+const waLink = `https://wa.me/4922418989424?text=${encodeURIComponent('Вітаю, Владиславе! Хочу дізнатися більше про курс «Фінансовий консультант у Німеччині».')}`;
 
 export default function Seminar() {
   const [showModal, setShowModal] = useState(false);
