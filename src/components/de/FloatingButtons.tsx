@@ -6,7 +6,7 @@ export default function FloatingButtons() {
       {/* Desktop floating phone button */}
       <div className="hidden sm:flex fixed bottom-6 right-6 z-50">
         <a
-          href="tel:+491784743490"
+          href="tel:+4922418989424"
           className="relative w-16 h-16 rounded-full bg-gold text-navy flex items-center justify-center shadow-lg shadow-gold/30 hover:scale-110 transition-transform"
           title="Anrufen"
         >

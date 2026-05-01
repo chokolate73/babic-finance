@@ -166,18 +166,6 @@ export default function Contact() {
                 </div>
               </a>
               <a
-                href="tel:+491784743490"
-                className="flex items-center gap-4 text-foreground/80 hover:text-navy transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <Phone className="w-5 h-5 text-gold" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Мобільний</p>
-                  <p className="font-medium">+49 178 474 3490</p>
-                </div>
-              </a>
-              <a
                 href="mailto:Vladislav.Babic@dvag.de"
                 className="flex items-center gap-4 text-foreground/80 hover:text-navy transition-colors group"
               >

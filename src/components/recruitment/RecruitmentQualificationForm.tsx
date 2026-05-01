@@ -980,7 +980,7 @@ export default function RecruitmentQualificationForm({
                     className="underline font-semibold inline-flex items-center gap-1.5"
                   >
                     <WhatsAppIcon className="w-4 h-4" />
-                    +49 178 474 3490
+                    WhatsApp
                   </a>
                 </div>
               )}

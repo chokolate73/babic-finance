@@ -859,5 +859,5 @@ export const buergergeldFinalCTA = {
       "Здравствуйте, Владислав! Я на Bürgergeld / ALG I - хочу обсудить путь в профессию.",
     ),
   },
-  secondary: { text: "Позвонить", href: "tel:+491784743490" },
+  secondary: { text: "Позвонить", href: "tel:+4922418989424" },
 };

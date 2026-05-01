@@ -698,7 +698,7 @@ export const buergergeldFinalCTA = {
       "Вітаю, Владиславе! Я на Bürgergeld / ALG I - хочу обговорити шлях у професію.",
     ),
   },
-  secondary: { text: "Зателефонувати", href: "tel:+491784743490" },
+  secondary: { text: "Зателефонувати", href: "tel:+4922418989424" },
 };
 
 // --- Nebenberuf page ---

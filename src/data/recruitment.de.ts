@@ -646,7 +646,7 @@ export const buergergeldFinalCTA = {
       "Hallo Vladislav! Ich bekomme Bürgergeld / ALG I - will den Weg in den Beruf besprechen.",
     ),
   },
-  secondary: { text: "Anrufen", href: "tel:+491784743490" },
+  secondary: { text: "Anrufen", href: "tel:+4922418989424" },
 };
 
 // --- Shared strings for DE pages ---
