@@ -10,6 +10,7 @@ const services = [
     title: "Finanzberatung",
     desc: "Vollständige Analyse Ihrer finanziellen Situation und eine persönliche Strategie. Wir betrachten Einnahmen, Ausgaben und Steuern und erarbeiten einen klaren Handlungsplan.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    href: "/de/leistungen/finanzberatung",
     details: [
       "Analyse von Einnahmen, Ausgaben und Steuern",
       "Persönliche Finanzstrategie",
@@ -21,6 +22,7 @@ const services = [
     title: "Investitionen & Fonds",
     desc: "Durchdachte Geldanlage unter Berücksichtigung Ihrer Ziele und Ihrer persönlichen Risikobereitschaft. Wir wählen die Instrumente, die für Sie arbeiten.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    href: "/de/leistungen/geldanlage",
     details: [
       "Aktien und Anleihen",
       "ETFs und Investmentfonds",
@@ -32,6 +34,7 @@ const services = [
     title: "Altersvorsorge",
     desc: "Staatliche und private Vorsorgeprogramme für ein angenehmes Leben im Ruhestand. Riester, Rürup, betriebliche Altersvorsorge - wir finden gemeinsam heraus, was zu Ihnen passt.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/de/leistungen/altersvorsorge",
     details: [
       "Riester-Rente",
       "Rürup-Rente (Basisrente)",
@@ -40,15 +43,72 @@ const services = [
     ],
   },
   {
-    title: "Versicherung",
-    desc: "Schutz für Sie und Ihre Familie - Gesundheit, Eigentum, Haftung. Wir prüfen Ihre bestehenden Policen und optimieren den Versicherungsschutz.",
+    title: "Private Krankenversicherung (PKV)",
+    desc: "PKV oder GKV? Eine Entscheidung für Jahrzehnte. Wir schauen ehrlich, ob der Wechsel in deiner Lebenssituation passt — Tarife der Central Krankenversicherung.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
+    href: "/de/leistungen/pkv-beratung",
+    details: [
+      "Beratung zum PKV-Wechsel",
+      "Tarife der Central Krankenversicherung",
+      "Beitragsentwicklung und Altersrückstellung",
+      "Familienplanung und Beihilfe",
+    ],
+  },
+  {
+    title: "Betriebliche Altersvorsorge (bAV)",
+    desc: "bAV als Mitarbeiterbenefit, der wirklich ankommt — steuerlich gefördert und administrativ schlank. Lösungen über Generali Pensionskasse.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/de/leistungen/bav-betriebliche-altersvorsorge",
+    details: [
+      "Direktversicherung über Generali Pensionskasse",
+      "Entgeltumwandlung mit Steuervorteil",
+      "Lösungen für Arbeitgeber und Arbeitnehmer",
+      "Schlanke Administration",
+    ],
+  },
+  {
+    title: "Rechtsschutzversicherung",
+    desc: "Beruf, Verkehr, Mieter, Eigentümer — wir wählen die richtigen Bausteine. Abgesichert über ADVOCARD.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
+    href: "/de/leistungen/rechtsschutz",
+    details: [
+      "Berufsrechtsschutz",
+      "Verkehrsrechtsschutz",
+      "Wohnrechtsschutz (Mieter und Eigentümer)",
+      "Privatrechtsschutz",
+    ],
+  },
+  {
+    title: "Risikolebensversicherung",
+    desc: "Absicherung der Familie, falls dem Hauptverdiener etwas zustößt — schlank, bezahlbar, mit klarer Leistung. Tarife der Generali Gruppe.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     details: [
-      "Krankenversicherung",
-      "Lebensversicherung",
-      "Unfallversicherung",
-      "Haftpflichtversicherung",
-      "Rechtsschutzversicherung",
+      "Familienabsicherung im Todesfall",
+      "Schutz bei laufender Immobilienfinanzierung",
+      "Tarife der Generali Gruppe",
+      "Anpassbare Versicherungssumme",
+    ],
+  },
+  {
+    title: "Pflegeversicherung",
+    desc: "Die staatliche Pflegeversicherung deckt nur einen Teil der echten Pflegekosten. Mit privaten Bausteinen schließen wir die Lücke.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    details: [
+      "Pflegetagegeld als Ergänzung",
+      "Vorsorge gegen Eigenanteile im Heim",
+      "Schutz für Familie und Angehörige",
+      "Tarife der Generali Gruppe",
+    ],
+  },
+  {
+    title: "Hausrat- und Privathaftpflichtversicherung",
+    desc: "Zwei Klassiker, die in keinem Haushalt fehlen sollten — Hausrat schützt deine Sachen, Privathaftpflicht dich vor Schadenersatzforderungen.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
+    details: [
+      "Hausrat: Schutz bei Einbruch, Feuer, Wasser",
+      "Privathaftpflicht: Schäden an Dritten",
+      "Tarife der Generali Gruppe",
+      "Familien- und Singletarife",
     ],
   },
   {
@@ -357,6 +417,14 @@ export default function Services() {
               >
                 Beratungstermin vereinbaren
               </a>
+              {"href" in modalService && modalService.href && (
+                <a
+                  href={modalService.href as string}
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2 px-6 py-3 border-2 border-navy text-navy font-semibold rounded-full text-sm sm:text-base hover:bg-navy hover:text-white transition-all"
+                >
+                  Zur Detailseite →
+                </a>
+              )}
             </div>
           </div>
         </div>

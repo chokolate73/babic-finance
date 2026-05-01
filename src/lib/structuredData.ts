@@ -137,6 +137,30 @@ export interface FaqQA {
   aText: string;
 }
 
+export function getServiceLd(opts: {
+  name: string;
+  description: string;
+  url: string;
+  locale: Locale;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${opts.url}#service`,
+    name: opts.name,
+    description: opts.description,
+    provider: { "@id": ORG_ID },
+    serviceType: "FinancialService",
+    areaServed: [
+      { "@type": "City", name: "Troisdorf" },
+      { "@type": "City", name: "Bonn" },
+      { "@type": "AdministrativeArea", name: "Rhein-Sieg-Kreis" },
+    ],
+    url: opts.url,
+    inLanguage: localeTag[opts.locale],
+  };
+}
+
 export function getFaqLd(items: FaqQA[], locale: Locale) {
   return {
     "@context": "https://schema.org",
