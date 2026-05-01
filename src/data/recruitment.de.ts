@@ -298,7 +298,7 @@ export const homeFAQItems: FAQItem[] = [
   },
   {
     q: "Wie sieht der erste Schritt aus?",
-    a: `Wir starten mit einem kostenlosen Gespräch - bei mir im Büro in Troisdorf, per Zoom oder WhatsApp. Ich sage dir ehrlich, ob ich glaube, dass der Beruf zu dir passt. Danach machst du die offiziellen „10 Fragen zum Traumberuf" der DVAG. Wenn du sie bestehst, gehen wir in die Details.`,
+    a: "Wir starten mit einem persönlichen oder Online-Gespräch und einem Besuch des Tags der offenen Tür in unserem Berufs Bildungszentrum (BBZ) in Düsseldorf.",
   },
 ];
 
