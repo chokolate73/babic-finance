@@ -289,10 +289,6 @@ export const homeFAQItems: FAQItem[] = [
     a: `Nein. Die DVAG ist ein Versicherungs- und Finanzvermittler mit über 40 Produktpartnern (Banken, Versicherungen, Investmentgesellschaften). Du berätst Kunden und bekommst die Provision vom jeweiligen Produktgeber - nicht „von Menschen unter dir". Was es gibt: ein Team mit Mentoring und gemeinsamer Weiterbildung. Was es nicht gibt: „bring einen Freund und kassier Prozente vom Umsatz".`,
   },
   {
-    q: "Muss ich Deutsch können?",
-    a: "Zum Einstieg nicht perfekt, nein. Mein Team in Troisdorf betreut viele russisch- und ukrainisch-sprachige Kunden, und nicht wenige Berater fangen mit B1-/B2-Deutsch an. Bis zur IHK-Prüfung wächst die Sprache mit - die Prüfung selbst ist auf Deutsch, aber dann bist du auch soweit.",
-  },
-  {
     q: "Kann ich neben meinem Hauptjob einsteigen?",
     a: "Ja. Der nebenberufliche Einstieg ist bei der DVAG offiziell vorgesehen. Du kannst als Assistent oder parallel zum Hauptjob starten und später in Vollzeit wechseln - wenn du soweit bist.",
   },

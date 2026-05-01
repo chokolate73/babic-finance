@@ -63,12 +63,6 @@ export const faqs: FaqItem[] = [
       "Die Termine können sowohl persönlich in meinem Büro in Troisdorf als auch online stattfinden. Sie wählen das für Sie passende Format.",
   },
   {
-    q: "Muss ich Deutsch sprechen können?",
-    a: "Nein, das ist nicht notwendig. Die gesamte Kommunikation mit den deutschen Gesellschaften übernehme ich für Sie und erkläre alles in einfacher Sprache.",
-    aText:
-      "Nein, das ist nicht notwendig. Die gesamte Kommunikation mit den deutschen Gesellschaften übernehme ich für Sie und erkläre alles in einfacher Sprache.",
-  },
-  {
     q: "Sind die Seminare kostenlos?",
     a: "Ja, alle meine Seminare und Bildungsveranstaltungen sind absolut kostenlos. Das ist Teil meiner Mission - die Finanzbildung zu fördern.",
     aText:
