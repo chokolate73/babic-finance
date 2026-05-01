@@ -253,10 +253,10 @@ export default function FloatingContactButtons({
         </div>
       )}
 
-      {/* Mobile fullscreen sheet */}
+      {/* Mobile centered modal */}
       {open && (
         <div
-          className="sm:hidden fixed inset-0 z-[60] flex items-end"
+          className="sm:hidden fixed inset-0 z-[60] flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
         >
@@ -265,7 +265,7 @@ export default function FloatingContactButtons({
             onClick={() => setOpen(false)}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
-          <div className="relative w-full bg-white rounded-t-2xl shadow-2xl max-h-[90dvh] flex flex-col pb-[env(safe-area-inset-bottom)]">
+          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl max-h-[85dvh] flex flex-col overflow-hidden">
             <div className="flex items-center justify-between px-5 py-4 border-b border-border flex-shrink-0">
               <h3 className="font-[family-name:var(--font-serif)] font-bold text-navy text-base">
                 {t.title}
