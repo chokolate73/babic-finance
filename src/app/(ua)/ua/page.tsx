@@ -11,6 +11,7 @@ import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import Seminar from "@/components/ua/Seminar";
 import {
   homeHero,
@@ -129,6 +130,7 @@ export default function UaHomePage() {
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="ua" />
       <StickyMobileCTA label="Проконсультуватися" />
+      <FloatingContactButtons locale="ua" showMobileBar={false} />
       <Footer />
     </div>
   );

@@ -86,8 +86,10 @@ function scrollToApplyForm() {
 
 export default function FloatingContactButtons({
   locale,
+  showMobileBar = true,
 }: {
   locale: ContactPopoverLocale;
+  showMobileBar?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const popoverRef = useRef<HTMLDivElement | null>(null);
@@ -261,15 +263,17 @@ export default function FloatingContactButtons({
       </div>
 
       {/* Mobile sticky bar */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-border/50 px-4 py-3">
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="w-full py-3 bg-gold text-navy font-semibold rounded-full text-sm hover:opacity-90 transition-all"
-        >
-          {t.triggerLabel}
-        </button>
-      </div>
+      {showMobileBar && (
+        <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-border/50 px-4 py-3">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="w-full py-3 bg-gold text-navy font-semibold rounded-full text-sm hover:opacity-90 transition-all"
+          >
+            {t.triggerLabel}
+          </button>
+        </div>
+      )}
 
       {/* Mobile fullscreen sheet */}
       {open && (

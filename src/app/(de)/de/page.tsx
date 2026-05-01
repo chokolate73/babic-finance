@@ -11,6 +11,7 @@ import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import {
   homeHero,
   homePainPoints,
@@ -111,6 +112,7 @@ export default function DeHomePage() {
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="de" />
       <StickyMobileCTA label="Beratung anfragen" />
+      <FloatingContactButtons locale="de" showMobileBar={false} />
       <Footer />
     </div>
   );
