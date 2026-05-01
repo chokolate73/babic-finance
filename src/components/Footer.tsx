@@ -59,9 +59,14 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-white/50">
+                <a
+                  href="https://www.google.com/maps/place/?q=place_id:ChIJYxNUvUrfvkcR9wFAfsljmig"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/50 hover:text-white transition-colors"
+                >
                   Mottmannstr. 8, 53842 Troisdorf
-                </span>
+                </a>
               </li>
             </ul>
           </div>
