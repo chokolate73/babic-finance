@@ -300,6 +300,10 @@ export const homeFAQItems: FAQItem[] = [
     q: "Wie sieht der erste Schritt aus?",
     a: "Wir starten mit einem persönlichen oder Online-Gespräch und einem Besuch des Tags der offenen Tür in unserem Berufs Bildungszentrum (BBZ) in Düsseldorf.",
   },
+  {
+    q: "Ist die Ausbildung auch online möglich?",
+    a: "Ja. Die Ausbildung läuft offline oder online - ganz nach deiner Wahl.",
+  },
 ];
 
 export const finalCtaContent = {
