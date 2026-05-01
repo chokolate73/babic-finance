@@ -4,9 +4,12 @@ import { useEffect, useState } from "react";
 
 export default function StickyMobileCTA({
   label,
-  href = "#apply",
 }: {
   label: string;
+  /**
+   * @deprecated kept for prop-compatibility, ignored — button now opens
+   * the contact popover via openContactPopover event.
+   */
   href?: string;
 }) {
   const [visible, setVisible] = useState(false);
@@ -27,9 +30,12 @@ export default function StickyMobileCTA({
           : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
-      <a
-        href={href}
-        className="flex items-center gap-2 px-6 py-3 rounded-full bg-navy/70 backdrop-blur-md text-white text-sm font-semibold tracking-wide uppercase whitespace-nowrap shadow-xl shadow-black/30 border border-white/10 hover:bg-navy/85 transition-colors"
+      <button
+        type="button"
+        onClick={() =>
+          window.dispatchEvent(new CustomEvent("openContactPopover"))
+        }
+        className="flex items-center gap-2 px-6 py-3 rounded-full bg-gold/70 backdrop-blur-md text-navy text-sm font-semibold tracking-wide uppercase whitespace-nowrap shadow-xl shadow-black/30 border border-gold/40 hover:bg-gold/85 transition-colors"
       >
         <svg
           className="w-4 h-4"
@@ -46,7 +52,7 @@ export default function StickyMobileCTA({
           />
         </svg>
         {label}
-      </a>
+      </button>
     </div>
   );
 }
