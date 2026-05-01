@@ -3,7 +3,7 @@ import AnimateOnScroll from "../AnimateOnScroll";
 
 const messages = [
   { text: "Ich verstehe nicht, woher die Abzüge auf meinem Gehalt kommen 😐", time: "22:47" },
-  { text: "Der Versicherungsberater spricht Deutsch - ich nicke und unterschreibe", time: "22:48" },
+  { text: "Mein Berater redet im Fachjargon - ich nicke und unterschreibe", time: "22:48" },
   { text: "Ich weiß nicht, ob meine Rente in Deutschland ausreichen wird", time: "22:49" },
   { text: "Ich möchte eine Wohnung kaufen, aber weiß nicht, wo ich anfangen soll", time: "22:51" },
   { text: "Alle reden von Steuern, aber ich weiß nicht einmal, was eine Steuerklasse ist 🫠", time: "22:53" },

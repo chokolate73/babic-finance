@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title:
     "Quereinstieg in die Finanzberatung - Karriere wechseln in Deutschland | Babic Finance",
   description:
-    "Quereinstieg in die Finanzberatung - auch ohne Finanzhintergrund. Deine Erfahrung und deine Sprachen zählen. Start parallel zum Hauptjob möglich, persönliche Begleitung in Troisdorf.",
+    "Quereinstieg in die Finanzberatung - auch ohne Finanzhintergrund. Deine Erfahrung und dein Engagement zählen. Start parallel zum Hauptjob möglich, persönliche Begleitung in Troisdorf.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {

@@ -70,7 +70,7 @@ export const homePainPoints = {
       time: "18:22",
     },
     {
-      text: "Ich spreche zwei, drei Sprachen - und keiner fragt danach.",
+      text: "Ich will mehr aus mir machen - aber alles, was ich sehe, ist Hamsterrad.",
       time: "18:24",
     },
   ],
@@ -81,21 +81,21 @@ export const homePainPoints = {
 export const myStoryContent = {
   title: "Ich bin den Weg selbst gegangen",
   paragraphs: [
-    "2003 bin ich aus Estland nach Deutschland gekommen. Kein Deutsch, niemand, den ich kannte, kein Geld in der Tasche. Ich hab gearbeitet, gelernt, Fehler gemacht - und bin weitergegangen.",
-    `2005 bin ich in die Finanzberatung gerutscht. Damals hieß es ständig: „Lern erst mal Deutsch. Mach erst mal eine Ausbildung. Eins nach dem anderen." Ich hab nicht gewartet. Ich hab angefangen - und parallel dazu gelernt.`,
+    "Ich habe früh angefangen, mir meinen eigenen Weg aufzubauen. Ohne Kontakte in der Branche, ohne Startkapital, ohne Plan B. Was ich hatte: den Wunsch, mehr aus meinem Leben zu machen.",
+    `2005 bin ich in die Finanzberatung gerutscht. Damals hieß es ständig: „Mach erst mal eine Ausbildung. Sammle erst mal Erfahrung. Eins nach dem anderen." Ich hab nicht gewartet. Ich hab angefangen - und parallel dazu gelernt.`,
     `Heute leite ich die DVAG-Direktion in Troisdorf. 4 387 Kunden im Netzwerk, über 131 Millionen Euro Kapital, ein Team, das genau diesen Weg geht. Und ich helfe anderen, ihn auch zu gehen - von „keine Ahnung von Finanzen" bis zum selbstständigen Berater mit eigenem Geschäft.`,
   ],
   pullQuote:
-    `Mir geht's darum, die Angst rauszunehmen. Du kannst in Deutschland einen Beruf von null aufbauen - auch ohne perfektes Deutsch, ohne Erfahrung, ohne das Gefühl, schon „bereit" zu sein.`,
+    `Mir geht's darum, die Angst rauszunehmen. Du kannst dir einen Beruf von null aufbauen - auch ohne Branchenerfahrung, ohne Beziehungen, ohne das Gefühl, schon „bereit" zu sein.`,
 } as const;
 
 export const segmentCards: SegmentCard[] = [
   {
     id: "quereinsteiger",
     iconName: "GraduationCap",
-    title: "Wenn du im Heimatland studiert hast",
+    title: "Wenn du studiert hast, aber nicht in der Branche arbeitest",
     description:
-      "Dein Abschluss wird hier nicht anerkannt oder du arbeitest schon lange nicht mehr in dem Bereich? In der Finanzberatung zählen deine Erfahrung und deine Sprachen - und du musst nicht nochmal von vorn studieren.",
+      "Dein Abschluss passt nicht zu dem, was du heute machst, oder du hast schon lange den Beruf gewechselt? In der Finanzberatung zählen deine Lebenserfahrung und dein Engagement - und du musst nicht nochmal von vorn studieren.",
     ctaLabel: "Zum Quereinstieg →",
     ctaHref: "/de/karriere/quereinstieg",
   },
@@ -322,7 +322,7 @@ export const quereinstiegHero: HeroContent = {
   headline: "Wechsle den Beruf -",
   headlineAccent: "in einen, der wirklich gebraucht wird",
   subtitle:
-    "Finanzberater bei der DVAG - ein Beruf, in dem deine Erfahrung und deine Sprachen zählen.",
+    "Finanzberater bei der DVAG - ein Beruf, in dem deine Erfahrung und dein Engagement zählen.",
   trustLine:
     "Von null oder parallel zum Job · Volle Ausbildung · Vier anerkannte Qualifikationen",
   primaryCTA: { text: "10 Fragen durchgehen", href: QUIZ_URL },
@@ -356,9 +356,9 @@ export const quereinstiegBenefits = {
   title: "Warum der Beruf zu Quereinsteigern passt",
   items: [
     {
-      title: "Dein Hintergrund ist ein Vorteil",
+      title: "Deine Lebenserfahrung ist ein Vorteil",
       description:
-        "Viele Menschen suchen einen Berater, der ihre Lebenssituation wirklich versteht. Wer mit echtem Bezug zur Zielgruppe einsteigt, findet schneller Vertrauen und tritt in eine Nische, in der die Konkurrenz dünn ist.",
+        "Wer Menschen wirklich versteht, baut schneller Vertrauen auf. In der Finanzberatung zählt nicht ein bestimmter Ausbildungsweg, sondern die Fähigkeit, Klienten ehrlich und auf Augenhöhe zu beraten.",
     },
     {
       title: "Egal aus welcher Branche du kommst - es zählt",
@@ -389,7 +389,7 @@ export const quereinstiegFAQItems: FAQItem[] = [
   },
   {
     q: "Mein Abschluss wird in Deutschland nicht anerkannt - ist das ein Problem?",
-    a: "Für diesen Beruf nein. Die IHK-Zertifizierungen über die DVAG setzen kein deutsches Hochschulstudium voraus. Dein Abschluss aus dem Heimatland ist ein Plus - er zeigt, dass du lernen und durchziehen kannst.",
+    a: "Für diesen Beruf nein. Die IHK-Zertifizierungen über die DVAG setzen kein Hochschulstudium voraus. Wenn du schon einen Abschluss hast, ist das ein Plus - er zeigt, dass du lernen und durchziehen kannst.",
   },
   {
     q: "Ich bin 45. Zu spät?",
@@ -520,7 +520,7 @@ export const buergergeldHelp = {
     {
       title: "Termin mit dem Fallmanager",
       description:
-        "Wir gehen mit dir zum Jobcenter-Termin - bei Bedarf mit Dolmetscher.",
+        "Wir gehen mit dir zum Jobcenter-Termin und unterstützen dich vor Ort.",
     },
     {
       title: "Gewerbeanmeldung",
@@ -606,8 +606,8 @@ export const buergergeldFAQItems: FAQItem[] = [
     a: "Schonzeit ist der Zeitraum, in dem ein Teil deiner Einkünfte aus der Selbstständigkeit nicht aufs Bürgergeld angerechnet wird. Für frisch Selbstständige gelten in den ersten Monaten Sonderregeln. Die konkreten Konditionen hängen von deinem Jobcenter ab - das klären wir gemeinsam.",
   },
   {
-    q: "Brauche ich Deutsch fürs Jobcenter?",
-    a: "Wir begleiten dich durch den ganzen Prozess. Im Jobcenter selbst läuft alles auf Deutsch - aber diese Hürde gehen wir mit dir: wir bereiten dich aufs Gespräch vor, gehen mit zum Termin und organisieren bei Bedarf einen Dolmetscher.",
+    q: "Wie läuft der Termin mit dem Fallmanager?",
+    a: "Wir bereiten dich auf das Gespräch vor: welche Unterlagen du brauchst, welche Fragen kommen, wie du den Antrag begründest. Beim Termin selbst gehen wir mit - du musst da nicht allein hin.",
   },
   {
     q: "Wie lange dauert der gesamte Prozess bis zum Start?",

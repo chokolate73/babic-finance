@@ -37,9 +37,9 @@ export default function About() {
           <AnimateOnScroll animation="fade-up" delay={100}>
             <div className="lg:w-[44%] lg:mr-auto text-left md:text-center lg:text-left">
               <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:mx-0">
-                Ich kam 2003 aus Estland nach Deutschland. Ohne Sprachkenntnisse,
-                ohne Kontakte, ohne Unterstützung. Das Einzige, was ich hatte,
-                war der Wunsch, mehr zu erreichen.
+                Ich habe früh angefangen, mir meinen eigenen Weg aufzubauen.
+                Ohne Kontakte in der Branche, ohne Startkapital, ohne Plan B.
+                Das Einzige, was ich hatte, war der Wunsch, mehr zu erreichen.
               </p>
             </div>
           </AnimateOnScroll>
@@ -49,10 +49,10 @@ export default function About() {
             <div className="lg:w-[44%] lg:ml-auto text-left md:text-center lg:text-right">
               <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:ml-auto lg:mx-0">
                 Ende 2004 kam ich zum ersten Mal mit der Finanzbranche in Berührung.
-                Man sagte mir: „Lerne erst die Sprache", „Mache dich mit den
-                Gesetzen vertraut". Ich habe einen anderen Weg gewählt - ich
-                habe sofort angefangen. Gelernt, Fehler gemacht und gewachsen -
-                mitten im Prozess.
+                Man sagte mir: „Mach erst eine Ausbildung", „Sammle erst
+                Berufserfahrung", „Eins nach dem anderen". Ich habe einen
+                anderen Weg gewählt - ich habe sofort angefangen. Gelernt,
+                Fehler gemacht und gewachsen - mitten im Prozess.
               </p>
             </div>
           </AnimateOnScroll>
@@ -62,9 +62,9 @@ export default function About() {
             <div className="lg:w-[44%] lg:mr-auto text-left md:text-center lg:text-left">
               <p className="text-white/[0.92] text-base sm:text-lg lg:text-[18px] leading-[1.65] max-w-[52ch] mx-auto lg:mx-0">
                 Heute helfe ich Menschen nicht nur dabei, ihre finanzielle Zukunft
-                aufzubauen, sondern zeige ihnen auch, dass es in Deutschland
-                möglich ist, bei null anzufangen und sich zu verwirklichen -
-                auch ohne Sprachkenntnisse, Erfahrung oder Selbstvertrauen.
+                aufzubauen, sondern zeige ihnen auch, dass es möglich ist, bei
+                null anzufangen und sich zu verwirklichen - auch ohne
+                Branchenerfahrung oder Selbstvertrauen.
               </p>
             </div>
           </AnimateOnScroll>
