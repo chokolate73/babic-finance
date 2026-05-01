@@ -169,11 +169,12 @@ export default function FloatingContactButtons({
     <>
       {/* Desktop popover anchored under the Navbar Контакт button */}
       {open && (
-        <div className="hidden sm:block fixed top-20 right-4 lg:right-8 z-50">
-          <div
-            ref={popoverRef}
-            className="w-80 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden"
-          >
+        <div className="hidden sm:block fixed inset-x-0 top-20 z-50 pointer-events-none">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
+            <div
+              ref={popoverRef}
+              className="pointer-events-auto w-80 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden"
+            >
             <div className="flex items-center justify-between px-5 py-4 border-b border-border">
               <h3 className="font-[family-name:var(--font-serif)] font-bold text-navy text-base">
                 {t.title}
@@ -234,6 +235,7 @@ export default function FloatingContactButtons({
                 );
               })}
             </ul>
+            </div>
           </div>
         </div>
       )}
