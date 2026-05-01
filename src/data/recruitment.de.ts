@@ -237,7 +237,7 @@ export const incomeContent = {
     },
   ],
   explainer: [
-    "Bei der DVAG gibt es kein Festgehalt. Du arbeitest als selbstständiger Handelsvertreter (§§ 84, 92 HGB), und dein Einkommen hängt direkt davon ab, wie vielen Kunden du wirklich hilfst.",
+    "Bei der DVAG gibt es kein Festgehalt. Du arbeitest als selbstständiger Handelsvertreter (§ 84, 92 HGB), und dein Einkommen hängt direkt davon ab, wie vielen Kunden du wirklich hilfst.",
   ],
   bullets: [
     {
@@ -257,7 +257,7 @@ export const transparenzItems: TransparenzItem[] = [
   {
     title: "Das ist Selbstständigkeit, keine Anstellung",
     description:
-      "Du wirst selbstständiger Handelsvertreter (§§ 84, 92 HGB). Das bedeutet Freiheit, aber auch Verantwortung: kein Festgehalt, keine Arbeitgeberbeiträge zur Sozialversicherung. Dafür auch keine Einkommensgrenze.",
+      "Du wirst selbstständiger Handelsvertreter (§ 84, 92 HGB). Das bedeutet Freiheit, aber auch Verantwortung: kein Festgehalt, keine Arbeitgeberbeiträge zur Sozialversicherung. Dafür auch keine Einkommensgrenze.",
   },
   {
     title: `Provision ist nicht sofort „auf dem Konto"`,
