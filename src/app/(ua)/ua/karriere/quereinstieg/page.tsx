@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/ua/Footer";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import BenefitsList from "@/components/recruitment/BenefitsList";
 import Qualifications from "@/components/recruitment/Qualifications";
@@ -110,6 +111,7 @@ export default function UaQuereinstiegPage() {
         secondary={quereinstiegFinalCTA.secondary}
       />
       <RecruitmentQualificationForm sourcePage="quereinstieg" locale="ua" />
+      <FloatingContactButtons locale="ua" showMobileBar={false} />
       <Footer />
     </div>
   );
