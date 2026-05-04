@@ -1,4 +1,4 @@
-export const SITE_URL = "https://www.fin-1.de";
+export const SITE_URL = "https://www.babicfinance.de";
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const PERSON_ID = `${SITE_URL}/#person`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;

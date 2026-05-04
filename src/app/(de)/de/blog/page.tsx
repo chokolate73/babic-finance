@@ -7,7 +7,7 @@ import { articlesDe, formatDateDe } from "@/data/blog.de";
 import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 const URL_PATH = "/de/blog";
 
 export const metadata: Metadata = {
