@@ -14,7 +14,7 @@ import { renderMarkdown } from "@/lib/markdownRenderer";
 import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

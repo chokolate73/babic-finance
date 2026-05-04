@@ -3,7 +3,7 @@ import { articlesDe } from "@/data/blog.de";
 import { articles } from "@/data/blog";
 import { services } from "@/data/services";
 
-const BASE_URL = "https://www.fin-1.de";
+const BASE_URL = "https://www.babicfinance.de";
 const SERVICES_LASTMOD = new Date("2026-04-30");
 
 const lastModByPath: Record<string, string> = {
