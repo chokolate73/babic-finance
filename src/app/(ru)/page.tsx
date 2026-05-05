@@ -13,6 +13,7 @@ import Seminar from "@/components/Seminar";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
 import FloatingContactButtons from "@/components/FloatingContactButtons";
+import { EventsSection } from "@/components/sections/EventsSection";
 import {
   homeHero,
   homePainPoints,
@@ -68,6 +69,7 @@ export default function Home() {
         scrollTargetId="recognize"
         backgroundAlt="Babic Finance - карьера финансового консультанта в Германии"
       />
+      <EventsSection locale="ru" />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}
