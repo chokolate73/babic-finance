@@ -12,6 +12,7 @@ import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
 import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
 import FloatingContactButtons from "@/components/FloatingContactButtons";
+import { EventsSection } from "@/components/sections/EventsSection";
 import {
   homeHero,
   homePainPoints,
@@ -74,6 +75,7 @@ export default function DeHomePage() {
         backgroundAlt="Babic Finance - Karriere als Finanzberater in Deutschland"
         scrollLabel={ui.heroScrollLabel}
       />
+      <EventsSection locale="de" />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}
