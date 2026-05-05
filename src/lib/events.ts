@@ -78,3 +78,53 @@ export function getUpcomingEvents(): LocalizedEvent[] {
   today.setHours(0, 0, 0, 0);
   return upcomingEvents.filter((e) => new Date(e.date) >= today);
 }
+
+export function formatEventDate(iso: string, locale: "de" | "ru" | "uk"): string {
+  const d = new Date(iso);
+  const day = String(d.getDate()).padStart(2, "0");
+  const months: Record<"de" | "ru" | "uk", string[]> = {
+    de: [
+      "Januar",
+      "Februar",
+      "März",
+      "April",
+      "Mai",
+      "Juni",
+      "Juli",
+      "August",
+      "September",
+      "Oktober",
+      "November",
+      "Dezember",
+    ],
+    ru: [
+      "января",
+      "февраля",
+      "марта",
+      "апреля",
+      "мая",
+      "июня",
+      "июля",
+      "августа",
+      "сентября",
+      "октября",
+      "ноября",
+      "декабря",
+    ],
+    uk: [
+      "січня",
+      "лютого",
+      "березня",
+      "квітня",
+      "травня",
+      "червня",
+      "липня",
+      "серпня",
+      "вересня",
+      "жовтня",
+      "листопада",
+      "грудня",
+    ],
+  };
+  return `${day} ${months[locale][d.getMonth()]}`;
+}
