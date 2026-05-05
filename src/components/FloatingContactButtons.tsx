@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Calendar, Phone, Mail, MapPin, Send, X } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
@@ -84,7 +84,6 @@ export default function FloatingContactButtons({
   showMobileBar?: boolean;
 }) {
   const [open, setOpen] = useState(false);
-  const popoverRef = useRef<HTMLDivElement | null>(null);
   const t = STRINGS[locale];
 
   useEffect(() => {
@@ -92,19 +91,17 @@ export default function FloatingContactButtons({
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") setOpen(false);
     }
-    function onClick(e: MouseEvent) {
-      if (
-        popoverRef.current &&
-        !popoverRef.current.contains(e.target as Node)
-      ) {
+    function onPointerDown(e: MouseEvent) {
+      const target = e.target as Element | null;
+      if (!target?.closest("[data-contact-popover]")) {
         setOpen(false);
       }
     }
     document.addEventListener("keydown", onKey);
-    document.addEventListener("mousedown", onClick);
+    document.addEventListener("mousedown", onPointerDown);
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("mousedown", onPointerDown);
     };
   }, [open]);
 
@@ -172,7 +169,7 @@ export default function FloatingContactButtons({
         <div className="hidden sm:block fixed inset-x-0 top-20 z-50 pointer-events-none">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
             <div
-              ref={popoverRef}
+              data-contact-popover
               className="pointer-events-auto w-80 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden"
             >
             <div className="flex items-center justify-between px-5 py-4 border-b border-border">
@@ -265,7 +262,10 @@ export default function FloatingContactButtons({
             onClick={() => setOpen(false)}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
-          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl max-h-[85dvh] flex flex-col overflow-hidden">
+          <div
+            data-contact-popover
+            className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl max-h-[85dvh] flex flex-col overflow-hidden"
+          >
             <div className="flex items-center justify-between px-5 py-4 border-b border-border flex-shrink-0">
               <h3 className="font-[family-name:var(--font-serif)] font-bold text-navy text-base">
                 {t.title}
