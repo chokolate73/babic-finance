@@ -1,6 +1,7 @@
 export type EventContent = {
   title: string;
   location: string;
+  addressLine2?: string;
   description: string;
   bullets: string[];
   included: string;
@@ -127,4 +128,69 @@ export function formatEventDate(iso: string, locale: "de" | "ru" | "uk"): string
     ],
   };
   return `${day} ${months[locale][d.getMonth()]}`;
+}
+
+export function formatDayOfWeek(iso: string, locale: "de" | "ru" | "uk"): string {
+  const d = new Date(iso);
+  const days: Record<"de" | "ru" | "uk", string[]> = {
+    de: [
+      "Sonntag",
+      "Montag",
+      "Dienstag",
+      "Mittwoch",
+      "Donnerstag",
+      "Freitag",
+      "Samstag",
+    ],
+    ru: [
+      "воскресенье",
+      "понедельник",
+      "вторник",
+      "среда",
+      "четверг",
+      "пятница",
+      "суббота",
+    ],
+    uk: [
+      "неділя",
+      "понеділок",
+      "вівторок",
+      "середа",
+      "четвер",
+      "пʼятниця",
+      "субота",
+    ],
+  };
+  return days[locale][d.getDay()];
+}
+
+export function getDaysUntil(iso: string): number {
+  const event = new Date(iso);
+  event.setHours(0, 0, 0, 0);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return Math.round((event.getTime() - today.getTime()) / 86400000);
+}
+
+function slavicPlural(n: number, forms: [string, string, string]): string {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return forms[0];
+  if ([2, 3, 4].includes(mod10) && ![12, 13, 14].includes(mod100)) return forms[1];
+  return forms[2];
+}
+
+export function formatCountdown(days: number, locale: "de" | "ru" | "uk"): string {
+  if (days === 0) return { de: "Heute", ru: "Сегодня", uk: "Сьогодні" }[locale];
+  if (days === 1) return { de: "Morgen", ru: "Завтра", uk: "Завтра" }[locale];
+
+  if (locale === "de") {
+    return `In ${days} Tagen`;
+  }
+  if (locale === "ru") {
+    const word = slavicPlural(days, ["день", "дня", "дней"]);
+    return `Через ${days} ${word}`;
+  }
+  const word = slavicPlural(days, ["день", "дні", "днів"]);
+  return `Через ${days} ${word}`;
 }

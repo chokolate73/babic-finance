@@ -13,7 +13,7 @@ import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQu
 import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
 import FloatingContactButtons from "@/components/FloatingContactButtons";
 import Seminar from "@/components/ua/Seminar";
-import { AnnouncementStrip } from "@/components/sections/AnnouncementStrip";
+import { EventsSection } from "@/components/sections/EventsSection";
 import {
   homeHero,
   homePainPoints,
@@ -75,7 +75,7 @@ export default function UaHomePage() {
         backgroundAlt="Babic Finance - кар'єра фінансового консультанта в Німеччині"
         scrollLabel={ui.heroScrollLabel}
       />
-      <AnnouncementStrip locale="uk" />
+      <EventsSection locale="uk" />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}
