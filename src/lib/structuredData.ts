@@ -1,4 +1,4 @@
-export const SITE_URL = "https://www.fin-1.de";
+export const SITE_URL = "https://www.babicfinance.de";
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const PERSON_ID = `${SITE_URL}/#person`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -97,6 +97,7 @@ export function getPersonLd() {
       "https://www.dvag.de/vladislav.babic/karriere.html",
       "https://www.google.com/maps/place/?q=place_id:ChIJYxNUvUrfvkcR9wFAfsljmig",
       "https://t.me/babic_fin",
+      "https://www.facebook.com/p/Vladislav-Babic-61574094595836/",
     ],
   };
 }
@@ -134,6 +135,30 @@ export function getBreadcrumbLd(items: BreadcrumbItem[]) {
 export interface FaqQA {
   q: string;
   aText: string;
+}
+
+export function getServiceLd(opts: {
+  name: string;
+  description: string;
+  url: string;
+  locale: Locale;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${opts.url}#service`,
+    name: opts.name,
+    description: opts.description,
+    provider: { "@id": ORG_ID },
+    serviceType: "FinancialService",
+    areaServed: [
+      { "@type": "City", name: "Troisdorf" },
+      { "@type": "City", name: "Bonn" },
+      { "@type": "AdministrativeArea", name: "Rhein-Sieg-Kreis" },
+    ],
+    url: opts.url,
+    inLanguage: localeTag[opts.locale],
+  };
 }
 
 export function getFaqLd(items: FaqQA[], locale: Locale) {

@@ -5,7 +5,7 @@ import { articles, formatDate } from "@/data/blog";
 import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 export const metadata: Metadata = {
   title: "Блог - Babic Finance",

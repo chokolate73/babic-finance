@@ -18,14 +18,14 @@ import JsonLd from "@/components/JsonLd";
 import { faqs } from "@/data/faq.de";
 import { getBreadcrumbLd, getFaqLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 const URL_PATH = "/de/klienty";
 
 export const metadata: Metadata = {
   title:
-    "Persönlicher Finanzberater in Deutschland — auf Russisch & Deutsch | Babic Finance",
+    "Persönlicher Finanzberater in Troisdorf und Bonn | Babic Finance",
   description:
-    "Finanzberatung in Deutschland — Vorsorge, Versicherung, Bürgergeld, Investitionen. Persönliche Beratung in Russisch und Deutsch von Vladislav Babic, DVAG Troisdorf.",
+    "Finanzberatung in Deutschland - Vorsorge, Versicherung, Bürgergeld, Investitionen. Persönliche Beratung von Vladislav Babic, DVAG Troisdorf.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Persönlicher Finanzberater in Deutschland — auf Russisch & Deutsch | Babic Finance",
+      "Persönlicher Finanzberater in Troisdorf und Bonn | Babic Finance",
     description:
-      "Finanzberatung in Deutschland — Vorsorge, Versicherung, Bürgergeld, Investitionen.",
+      "Finanzberatung in Deutschland - Vorsorge, Versicherung, Bürgergeld, Investitionen.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Persönlicher Finanzberater in Deutschland — auf Russisch & Deutsch | Babic Finance",
+      "Persönlicher Finanzberater in Troisdorf und Bonn | Babic Finance",
     description:
-      "Finanzberatung in Deutschland — Vorsorge, Versicherung, Bürgergeld, Investitionen.",
+      "Finanzberatung in Deutschland - Vorsorge, Versicherung, Bürgergeld, Investitionen.",
     images: ["/preview.webp"],
   },
 };

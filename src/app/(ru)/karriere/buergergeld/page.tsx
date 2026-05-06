@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
@@ -19,13 +20,13 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/karriere/buergergeld";
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 export const metadata: Metadata = {
   title:
     "Путь из Bürgergeld в профессию финансового консультанта | Babic Finance",
   description:
-    "С поддержкой государства — Einstiegsgeld до 24 месяцев. Помогаем оформить Tragfähigkeitsbescheinigung, сопровождаем встречу с Jobcenter и путь до первого клиента.",
+    "С поддержкой государства - Einstiegsgeld до 24 месяцев. Помогаем оформить Tragfähigkeitsbescheinigung, сопровождаем встречу с Jobcenter и путь до первого клиента.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -69,7 +70,7 @@ export default function BuergergeldPage() {
       <RecruitmentHero
         content={buergergeldHero}
         scrollTargetId="support"
-        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+        backgroundAlt="Babic Finance - карьера финансового консультанта в Германии"
       />
       <SupportComparison />
       <BenefitsList
@@ -106,6 +107,7 @@ export default function BuergergeldPage() {
         secondary={buergergeldFinalCTA.secondary}
       />
       <RecruitmentQualificationForm sourcePage="buergergeld" />
+      <FloatingContactButtons locale="ru" showMobileBar={false} />
       <Footer />
     </div>
   );

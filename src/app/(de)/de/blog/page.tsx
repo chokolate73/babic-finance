@@ -7,18 +7,18 @@ import { articlesDe, formatDateDe } from "@/data/blog.de";
 import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 const URL_PATH = "/de/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Babic Finance",
+  title: "Blog - Babic Finance",
   description:
-    "Fachartikel zu Versicherung, Finanzen und Vorsorge in Deutschland — verständlich erklärt von Vladislav Babich.",
+    "Fachartikel zu Versicherung, Finanzen und Vorsorge in Deutschland - verständlich erklärt von Vladislav Babich.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
   },
   openGraph: {
-    title: "Blog — Babic Finance",
+    title: "Blog - Babic Finance",
     description:
       "Fachartikel zu Versicherung, Finanzen und Vorsorge in Deutschland.",
     url: `${SITE_URL}${URL_PATH}`,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog — Babic Finance",
+    title: "Blog - Babic Finance",
     description:
       "Fachartikel zu Versicherung, Finanzen und Vorsorge in Deutschland.",
     images: ["/preview.webp"],
@@ -59,7 +59,7 @@ export default function BlogIndexDe() {
               Blog
             </h1>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
-              Fachartikel zu Versicherung, Finanzen und Vorsorge in Deutschland —
+              Fachartikel zu Versicherung, Finanzen und Vorsorge in Deutschland -
               verständlich erklärt.
             </p>
           </div>

@@ -21,7 +21,7 @@ const heroContent = {
     { text: "Altersvorsorge", mobileHidden: true },
   ],
   cta: {
-    primary: { text: "Kostenlose Beratung", href: "https://wa.me/491784743490" },
+    primary: { text: "Kostenlose Beratung", href: "https://wa.me/4922418989424" },
     secondary: { text: "So arbeite ich", href: "#process" },
   },
   trustLine: "Wir antworten innerhalb einer Stunde während der Geschäftszeiten",
@@ -79,7 +79,7 @@ export default function Hero() {
         />
         {/* Desktop overlay: gradient with exposed right side (for bg image focal point) */}
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 via-40% to-transparent" />
-        {/* Mobile overlay: vertical gradient — top stays lighter so face reads, bottom darker for text legibility */}
+        {/* Mobile overlay: vertical gradient - top stays lighter so face reads, bottom darker for text legibility */}
         <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
       </div>
 

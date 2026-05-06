@@ -142,7 +142,7 @@ export default function SegmentCards({
   items = segmentCardsRu,
   eyebrow = "Для кого",
   title = "Для тебя, если...",
-  subtitle = "Выбери ситуацию, которая ближе — и узнай путь в деталях",
+  subtitle = "Выбери ситуацию, которая ближе - и узнай путь в деталях",
 }: Props = {}) {
   return (
     <section

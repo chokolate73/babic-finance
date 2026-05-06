@@ -23,10 +23,10 @@ const montserrat = Montserrat({
 });
 
 const siteDescription =
-  "Persönlicher Finanzberater in Deutschland — Finanzplanung und Beratung von Vladislav Babic.";
+  "Persönlicher Finanzberater in Deutschland - Finanzplanung und Beratung von Vladislav Babic.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fin-1.de"),
+  metadataBase: new URL("https://www.babicfinance.de"),
   title: "Babic Finance",
   description: siteDescription,
   manifest: "/site.webmanifest",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Babic Finance",
     description: siteDescription,
-    url: "https://www.fin-1.de/de",
+    url: "https://www.babicfinance.de/de",
     siteName: "Babic Finance",
     type: "website",
     locale: "de_DE",

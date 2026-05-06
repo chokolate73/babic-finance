@@ -35,7 +35,7 @@ export default function Contact() {
     if (form.email.trim()) body.append("email", form.email.trim());
     body.append("phone", form.phone.trim());
     if (form.message.trim()) body.append("message", form.message.trim());
-    body.append("_subject", `📩 Anfrage von der Website — ${form.name.trim()}`);
+    body.append("_subject", `📩 Anfrage von der Website - ${form.name.trim()}`);
     body.append("formType", "contact");
     body.append("locale", "de");
 
@@ -168,18 +168,6 @@ export default function Contact() {
                 </div>
               </a>
               <a
-                href="tel:+491784743490"
-                className="flex items-center gap-4 text-foreground/80 hover:text-navy transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                  <Phone className="w-5 h-5 text-gold" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Mobil</p>
-                  <p className="font-medium">+49 178 474 3490</p>
-                </div>
-              </a>
-              <a
                 href="mailto:Vladislav.Babic@dvag.de"
                 className="flex items-center gap-4 text-foreground/80 hover:text-navy transition-colors group"
               >
@@ -191,8 +179,18 @@ export default function Contact() {
                   <p className="font-medium">Vladislav.Babic@dvag.de</p>
                 </div>
               </a>
-              <div className="flex items-center gap-4 text-foreground/80">
-                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+              <a
+
+                href="https://www.google.com/maps/place/?q=place_id:ChIJYxNUvUrfvkcR9wFAfsljmig"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+                className="flex items-center gap-4 text-foreground/80 hover:text-navy transition-colors group"
+
+              >
+                <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
                   <MapPin className="w-5 h-5 text-gold" />
                 </div>
                 <div>
@@ -201,12 +199,12 @@ export default function Contact() {
                     Mottmannstr. 8, 53842 Troisdorf
                   </p>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div className="flex gap-3">
               <a
-                href="https://wa.me/491784743490"
+                href="https://wa.me/4922418989424"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-whatsapp text-white font-semibold rounded-xl hover:opacity-90 transition-all"

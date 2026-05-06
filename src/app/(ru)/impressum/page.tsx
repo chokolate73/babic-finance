@@ -5,12 +5,12 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/impressum";
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 export const metadata: Metadata = {
-  title: "Impressum — Babic Finance",
+  title: "Impressum - Babic Finance",
   description:
-    "Impressum, gesetzliche Pflichtangaben und Aufsichtsbehörden — Vladislav Babic, Vermögensberater DVAG.",
+    "Impressum, gesetzliche Pflichtangaben und Aufsichtsbehörden - Vladislav Babic, Vermögensberater DVAG.",
   alternates: { canonical: `${SITE_URL}${URL_PATH}` },
   robots: { index: true, follow: true },
 };
@@ -125,8 +125,8 @@ export default function ImpressumPage() {
 
             <p>
               Die Anlageberatung und Anlagevermittlung zu Investmentfonds
-              erfolgen in deutscher und — soweit mit dem Vermögensberater
-              individuell vereinbart — in englischer Sprache. Detaillierte
+              erfolgen in deutscher und - soweit mit dem Vermögensberater
+              individuell vereinbart - in englischer Sprache. Detaillierte
               Informationen zu diesen Produkten können den Fondsunterlagen (z.B.
               Prospekt und wesentliche Anlegerinformationen) entnommen werden,
               die kostenlos in deutscher Sprache vom Vermögensberater oder auf

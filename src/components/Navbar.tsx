@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import WhatsAppIcon from "./WhatsAppIcon";
 
 type NavLink = {
   href?: string;
@@ -18,12 +17,12 @@ const klientyLinks: NavLink[] = [
   { href: "#seminar", label: "Семинар" },
   { href: "#process", label: "Как работаю" },
   { href: "#faq", label: "FAQ" },
+  { href: "/blog", label: "Блог" },
   { href: "#contact", label: "Контакт" },
 ];
 
 const recruitmentLinks: NavLink[] = [
-  { href: "#qualifications", label: "Что получу" },
-  { href: "#path", label: "Как это работает" },
+  { href: "#recognize", label: "Ситуация" },
   { href: "#faq", label: "FAQ" },
   {
     label: "Карьера",
@@ -33,6 +32,7 @@ const recruitmentLinks: NavLink[] = [
     ],
   },
   { href: "/klienty", label: "Для клиентов" },
+  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Оставить заявку" },
 ];
 
@@ -41,12 +41,12 @@ const karriereLinks: NavLink[] = [
   { href: "/karriere/nebenberuf", label: "Параллельно с работой" },
   { href: "/karriere/quereinstieg", label: "Смена профессии" },
   { href: "/klienty", label: "Для клиентов" },
+  { href: "/blog", label: "Блог" },
   { href: "#apply", label: "Оставить заявку" },
 ];
 
 const deRecruitmentLinks: NavLink[] = [
-  { href: "#qualifications", label: "Was du bekommst" },
-  { href: "#path", label: "So läuft's" },
+  { href: "#recognize", label: "Situation" },
   { href: "#faq", label: "FAQ" },
   {
     href: "/de/karriere",
@@ -57,6 +57,7 @@ const deRecruitmentLinks: NavLink[] = [
     ],
   },
   { href: "/de/klienty", label: "Für Kunden" },
+  { href: "/de/blog", label: "Blog" },
   { href: "#apply", label: "Jetzt bewerben" },
 ];
 
@@ -65,12 +66,12 @@ const deKarriereLinks: NavLink[] = [
   { href: "/de/karriere/quereinstieg", label: "Quereinsteiger" },
   { href: "/de/karriere/buergergeld", label: "Aus Bürgergeld" },
   { href: "/de/klienty", label: "Für Kunden" },
+  { href: "/de/blog", label: "Blog" },
   { href: "#apply", label: "Jetzt bewerben" },
 ];
 
 const uaRecruitmentLinks: NavLink[] = [
-  { href: "#qualifications", label: "Що отримаю" },
-  { href: "#path", label: "Як це працює" },
+  { href: "#recognize", label: "Ситуація" },
   { href: "#faq", label: "FAQ" },
   {
     href: "/ua/karriere",
@@ -144,8 +145,17 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
   const isDeKarriere = pathname.startsWith("/de/karriere");
   const isUaKarriere = pathname.startsWith("/ua/karriere");
   const isUaKlienty = pathname === "/ua/klienty" || pathname.startsWith("/ua/klienty/");
+  const isLegal =
+    pathname === "/impressum" ||
+    pathname === "/datenschutz" ||
+    pathname === "/de/impressum" ||
+    pathname === "/de/datenschutz" ||
+    pathname === "/ua/impressum" ||
+    pathname === "/ua/datenschutz";
 
-  const navLinks = isDe
+  const homeHref = isDe ? "/de" : isUa ? "/ua" : "/";
+
+  const rawNavLinks = isDe
     ? isDeKarriere
       ? deKarriereLinks
       : deRecruitmentLinks
@@ -161,13 +171,23 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
           ? karriereLinks
           : recruitmentLinks;
 
-  const logoHref = isDe
-    ? "/de"
-    : isUa
-      ? "/ua"
-      : isKlienty || isKarriere
-        ? "/"
-        : "#";
+  const prefixHash = (href: string | undefined) => {
+    if (!href || !href.startsWith("#")) return href;
+    return `${homeHref}${href}`;
+  };
+
+  const navLinks: NavLink[] = isLegal
+    ? rawNavLinks.map((link) => ({
+        ...link,
+        href: prefixHash(link.href),
+        children: link.children?.map((c) => ({
+          ...c,
+          href: prefixHash(c.href) ?? c.href,
+        })),
+      }))
+    : rawNavLinks;
+
+  const logoHref = homeHref;
 
   const currentLocaleLabel = LOCALES.find((l) => l.code === currentLocale)!.label;
 
@@ -344,15 +364,15 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
                 </div>
               )}
             </div>
-            <a
-              href="https://wa.me/491784743490"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-whatsapp text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent("openContactPopover"))
+              }
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
             >
-              <WhatsAppIcon className="w-4 h-4" />
-              WhatsApp
-            </a>
+              {isDe ? "Kontakt" : isUa ? "Зв'язатися" : "Контакт"}
+            </button>
           </div>
 
           <div className="lg:hidden flex items-center gap-2">

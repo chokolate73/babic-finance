@@ -62,7 +62,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
     const body = new URLSearchParams();
     body.append("name", form.name.trim());
     body.append("phone", form.phone.trim());
-    body.append("_subject", `🎓 Запис на курс — ${form.name.trim()}`);
+    body.append("_subject", `🎓 Запис на курс - ${form.name.trim()}`);
     body.append("formType", "seminar");
     body.append("locale", "ua");
 
@@ -152,7 +152,7 @@ function RegistrationModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-const waLink = `https://wa.me/491784743490?text=${encodeURIComponent('Вітаю, Владиславе! Хочу дізнатися більше про курс «Фінансовий консультант у Німеччині».')}`;
+const waLink = `https://wa.me/4922418989424?text=${encodeURIComponent('Вітаю, Владиславе! Хочу дізнатися більше про курс «Фінансовий консультант у Німеччині».')}`;
 
 export default function Seminar() {
   const [showModal, setShowModal] = useState(false);
@@ -178,10 +178,10 @@ export default function Seminar() {
               Унікальний курс для тих, хто хоче розібратися у фінансовій системі Німеччини
             </p>
             <p className="text-navy/70 text-sm mt-2 max-w-lg mx-auto">
-              Раз на тиждень зустрічаємося наживо — розбираємо теми та відповідаю на запитання. Запис кожного заняття залишається у вас.
+              Раз на тиждень зустрічаємося наживо - розбираємо теми та відповідаю на запитання. Запис кожного заняття залишається у вас.
             </p>
             <p className="text-navy/60 text-xs italic mt-3 max-w-lg mx-auto">
-              Курс — у живому форматі з детальним розбором німецької фінансової термінології.
+              Курс - у живому форматі з детальним розбором німецької фінансової термінології.
             </p>
 
             <div className="mt-6 flex justify-center">
@@ -223,7 +223,7 @@ export default function Seminar() {
               <BulletItem icon={Video}>Онлайн-заняття раз на тиждень увечері</BulletItem>
               <BulletItem icon={FolderOpen}>Доступ до всіх записів уроків</BulletItem>
               <BulletItem icon={Languages}>Розбір німецької фінансової термінології</BulletItem>
-              <BulletItem icon={FileText}>За потреби — довідка для Jobcenter</BulletItem>
+              <BulletItem icon={FileText}>За потреби - довідка для Jobcenter</BulletItem>
             </div>
           </AnimateOnScroll>
         </div>
@@ -238,7 +238,7 @@ export default function Seminar() {
               <CheckItem gold>Продовжити навчання німецькою мовою</CheckItem>
               <CheckItem gold>Готуватися до отримання ліцензій IHK (GewO)</CheckItem>
               <CheckItem gold>Використовувати знання для роботи або особистого розвитку</CheckItem>
-              <CheckItem gold>Навіть якщо у вас немає досвіду у фінансах — почати можна з нуля</CheckItem>
+              <CheckItem gold>Навіть якщо у вас немає досвіду у фінансах - почати можна з нуля</CheckItem>
             </div>
           </div>
         </AnimateOnScroll>

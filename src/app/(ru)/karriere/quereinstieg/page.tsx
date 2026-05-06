@@ -23,10 +23,10 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/karriere/quereinstieg";
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 export const metadata: Metadata = {
-  title: "Смена профессии — финансовый консультант — Babic Finance",
+  title: "Смена профессии - финансовый консультант - Babic Finance",
   description:
     "Сменить профессию и стать финансовым консультантом. Полное обучение, персональный коуч, старт параллельно с текущей работой возможен.",
   alternates: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Смена профессии — финансовый консультант — Babic Finance",
+    title: "Смена профессии - финансовый консультант - Babic Finance",
     description:
       "Сменить профессию и стать финансовым консультантом. Полное обучение, персональный коуч, старт параллельно с текущей работой возможен.",
     url: `${SITE_URL}${URL_PATH}`,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Смена профессии — финансовый консультант — Babic Finance",
+    title: "Смена профессии - финансовый консультант - Babic Finance",
     description:
       "Сменить профессию и стать финансовым консультантом. Полное обучение и персональный коуч.",
     images: ["/preview.webp"],
@@ -68,7 +68,7 @@ export default function QuereinstiegPage() {
       />
       <Navbar />
 
-      {/* Block A — Intro */}
+      {/* Block A - Intro */}
       <section className="bg-cream pt-24 lg:pt-32 pb-12 lg:pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="fade-up">
@@ -83,13 +83,13 @@ export default function QuereinstiegPage() {
             </p>
           </AnimateOnScroll>
 
-          {/* Block B — 📌 Bonus callout */}
+          {/* Block B - 📌 Bonus callout */}
           <AnimateOnScroll animation="fade-up" delay={80}>
             <div className="mt-10 rounded-2xl border border-[#F5CD55]/40 bg-white p-6 lg:p-8">
               <p className="text-foreground/90 leading-relaxed">
                 <span aria-hidden="true">📌</span>{" "}
                 <strong className="text-navy">
-                  Мы ищем тебя — кандидата на смену профессии в роли
+                  Мы ищем тебя - кандидата на смену профессии в роли
                   самостоятельного финансового консультанта.
                 </strong>{" "}
                 Место работы можешь выбрать гибко по всей Германии. Можешь
@@ -109,7 +109,7 @@ export default function QuereinstiegPage() {
                 >
                   нашему обучению на топ-уровне
                 </a>{" "}
-                и персональному карьерному коучу рядом — твой вход в профессию
+                и персональному карьерному коучу рядом - твой вход в профессию
                 максимально простой.
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function QuereinstiegPage() {
         </div>
       </section>
 
-      {/* Block C — Tasks */}
+      {/* Block C - Tasks */}
       <BenefitsList
         id="tasks"
         eyebrow={quereinstiegTasks.eyebrow}
@@ -126,7 +126,7 @@ export default function QuereinstiegPage() {
         background="white"
       />
 
-      {/* Block D — Good to know */}
+      {/* Block D - Good to know */}
       <section className="bg-cream py-12 lg:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="fade-up">
@@ -134,8 +134,8 @@ export default function QuereinstiegPage() {
               <p className="text-foreground/90 leading-relaxed italic">
                 <strong className="not-italic text-navy">Good to know:</strong>{" "}
                 у нас ты можешь сначала попробовать профессию финансового коуча
-                — без риска и без необходимости сразу увольняться с текущей
-                работы. Начни параллельно — и пойми, твоё ли это направление.{" "}
+                - без риска и без необходимости сразу увольняться с текущей
+                работы. Начни параллельно - и пойми, твоё ли это направление.{" "}
                 <Link
                   href="/karriere/nebenberuf"
                   className="not-italic underline hover:no-underline text-[#F5CD55] font-semibold"
@@ -148,7 +148,7 @@ export default function QuereinstiegPage() {
         </div>
       </section>
 
-      {/* Block E — Profile */}
+      {/* Block E - Profile */}
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="fade-up">

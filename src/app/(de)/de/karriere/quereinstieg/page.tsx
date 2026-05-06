@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/de/Footer";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import BenefitsList from "@/components/recruitment/BenefitsList";
 import Qualifications from "@/components/recruitment/Qualifications";
@@ -24,13 +25,13 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/de/karriere/quereinstieg";
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 export const metadata: Metadata = {
   title:
-    "Karriere als Finanzberater in Deutschland für Quereinsteiger | Babic Finance",
+    "Quereinstieg in die Finanzberatung - Karriere wechseln in Deutschland | Babic Finance",
   description:
-    "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Finanzberater DVAG nutzt deine Erfahrung und Sprachen, starte parallel zum Job mit persönlichem Mentor.",
+    "Quereinstieg in die Finanzberatung - auch ohne Finanzhintergrund. Deine Erfahrung und dein Engagement zählen. Start parallel zum Hauptjob möglich, persönliche Begleitung in Troisdorf.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -42,9 +43,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
+      "Quereinstieg in die Finanzberatung - Karriere wechseln in Deutschland",
     description:
-      "Wechsle in Deutschland den Beruf — in einen, der gebraucht wird. Vollständige Ausbildung mit DVAG-Team-Support.",
+      "Quereinstieg in die Finanzberatung - auch ohne Finanzhintergrund. Vollständige Ausbildung mit Begleitung durch DVAG-Team.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -54,9 +55,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Karriere als Finanzberater in Deutschland für Quereinsteiger",
+      "Quereinstieg in die Finanzberatung - Karriere wechseln in Deutschland",
     description:
-      "Wechsle in Deutschland den Beruf. Vollständige Ausbildung.",
+      "Quereinstieg in die Finanzberatung - Karriere wechseln, ohne nochmal von vorn zu studieren.",
     images: ["/preview.webp"],
   },
 };
@@ -76,7 +77,7 @@ export default function DeQuereinstiegPage() {
         content={quereinstiegHero}
         scrollTargetId="why"
         scrollLabel={ui.heroScrollLabel}
-        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
+        backgroundAlt="Babic Finance - Karriere als Finanzberater in Deutschland"
       />
       <BenefitsList
         id="why"
@@ -111,6 +112,7 @@ export default function DeQuereinstiegPage() {
         secondary={quereinstiegFinalCTA.secondary}
       />
       <RecruitmentQualificationForm sourcePage="quereinstieg" locale="de" />
+      <FloatingContactButtons locale="de" showMobileBar={false} />
       <Footer />
     </div>
   );

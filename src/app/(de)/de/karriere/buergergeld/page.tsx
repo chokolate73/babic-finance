@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/de/Footer";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
@@ -22,13 +23,13 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/de/karriere/buergergeld";
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 export const metadata: Metadata = {
   title:
     "Vom Bürgergeld in den Beruf als Finanzberater | Babic Finance",
   description:
-    "Mit staatlicher Unterstützung — Einstiegsgeld bis zu 24 Monate. Wir helfen bei der Tragfähigkeitsbescheinigung, begleiten den Jobcenter-Termin und den Weg bis zum ersten Kunden.",
+    "Aus dem Bürgergeld in die Selbstständigkeit - mit Einstiegsgeld bis zu 24 Monaten. Wir helfen bei Tragfähigkeitsbescheinigung und Jobcenter-Termin und begleiten dich bis zum ersten Kunden.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -72,7 +73,7 @@ export default function DeBuergergeldPage() {
         content={buergergeldHero}
         scrollTargetId="support"
         scrollLabel={ui.heroScrollLabel}
-        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
+        backgroundAlt="Babic Finance - Karriere als Finanzberater in Deutschland"
       />
       <SupportComparison
         table={supportTable}
@@ -114,6 +115,7 @@ export default function DeBuergergeldPage() {
         secondary={buergergeldFinalCTA.secondary}
       />
       <RecruitmentQualificationForm sourcePage="buergergeld" locale="de" />
+      <FloatingContactButtons locale="de" showMobileBar={false} />
       <Footer />
     </div>
   );

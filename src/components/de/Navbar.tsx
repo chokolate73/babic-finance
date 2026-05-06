@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
-import WhatsAppIcon from "../WhatsAppIcon";
 
 function getRuPath(pathname: string): string {
   if (pathname === "/de") return "/";
@@ -75,15 +74,15 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="https://wa.me/491784743490"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-whatsapp text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent("openContactPopover"))
+              }
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
             >
-              <WhatsAppIcon className="w-4 h-4" />
-              WhatsApp
-            </a>
+              Kontakt
+            </button>
           </div>
 
           <div className="lg:hidden flex items-center gap-2">
@@ -126,15 +125,15 @@ export default function Navbar({ forceDark = false }: { forceDark?: boolean }) {
                 {link.label}
               </a>
             ))}
-            <a
-              href="https://wa.me/491784743490"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-whatsapp text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent("openContactPopover"))
+              }
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-navy text-sm font-semibold rounded-full hover:opacity-90 transition-opacity"
             >
-              <WhatsAppIcon className="w-4 h-4" />
-              WhatsApp
-            </a>
+              Kontakt
+            </button>
           </div>
         </div>
       )}

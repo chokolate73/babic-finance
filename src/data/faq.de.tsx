@@ -29,7 +29,7 @@ export const faqs: FaqItem[] = [
     q: "Was ist die DVAG?",
     a: (
       <>
-        Die Deutsche Vermögensberatung (DVAG) ist das größte Finanzberatungsunternehmen Deutschlands. Über die DVAG biete ich ausschließlich lizenzierte und geprüfte Finanzprodukte an. Mehr über die Ergebnisse des Unternehmens — im{" "}
+        Die Deutsche Vermögensberatung (DVAG) ist das größte Finanzberatungsunternehmen Deutschlands. Über die DVAG biete ich ausschließlich lizenzierte und geprüfte Finanzprodukte an. Mehr über die Ergebnisse des Unternehmens - im{" "}
         <a
           href="https://unternehmensbericht.dvag/"
           target="_blank"
@@ -42,13 +42,13 @@ export const faqs: FaqItem[] = [
       </>
     ),
     aText:
-      "Die Deutsche Vermögensberatung (DVAG) ist das größte Finanzberatungsunternehmen Deutschlands. Über die DVAG biete ich ausschließlich lizenzierte und geprüfte Finanzprodukte an. Mehr über die Ergebnisse des Unternehmens — im offiziellen DVAG-Bericht.",
+      "Die Deutsche Vermögensberatung (DVAG) ist das größte Finanzberatungsunternehmen Deutschlands. Über die DVAG biete ich ausschließlich lizenzierte und geprüfte Finanzprodukte an. Mehr über die Ergebnisse des Unternehmens - im offiziellen DVAG-Bericht.",
   },
   {
     q: "Mit welchen Versicherungen und Banken arbeiten Sie zusammen?",
-    a: "Ich vermittle Produkte der DVAG-Gruppe — die Versicherungsgesellschaften der Generali (Generali Versicherung, Central Krankenversicherung, ADVOCARD Rechtsschutz u. a.) sowie Partnerbanken. Damit lässt sich für jede Lebenssituation eine passende Lösung finden.",
+    a: "Ich vermittle Produkte der DVAG-Gruppe - die Versicherungsgesellschaften der Generali (Generali Versicherung, Central Krankenversicherung, ADVOCARD Rechtsschutz u. a.) sowie Partnerbanken. Damit lässt sich für jede Lebenssituation eine passende Lösung finden.",
     aText:
-      "Ich vermittle Produkte der DVAG-Gruppe — die Versicherungsgesellschaften der Generali (Generali Versicherung, Central Krankenversicherung, ADVOCARD Rechtsschutz u. a.) sowie Partnerbanken. Damit lässt sich für jede Lebenssituation eine passende Lösung finden.",
+      "Ich vermittle Produkte der DVAG-Gruppe - die Versicherungsgesellschaften der Generali (Generali Versicherung, Central Krankenversicherung, ADVOCARD Rechtsschutz u. a.) sowie Partnerbanken. Damit lässt sich für jede Lebenssituation eine passende Lösung finden.",
   },
   {
     q: "Ich bin erst kürzlich nach Deutschland gekommen. Können Sie mir helfen?",
@@ -61,12 +61,6 @@ export const faqs: FaqItem[] = [
     a: "Die Termine können sowohl persönlich in meinem Büro in Troisdorf als auch online stattfinden. Sie wählen das für Sie passende Format.",
     aText:
       "Die Termine können sowohl persönlich in meinem Büro in Troisdorf als auch online stattfinden. Sie wählen das für Sie passende Format.",
-  },
-  {
-    q: "Muss ich Deutsch sprechen können?",
-    a: "Nein, das ist nicht notwendig. Die gesamte Kommunikation mit den deutschen Gesellschaften übernehme ich für Sie und erkläre alles in einfacher Sprache.",
-    aText:
-      "Nein, das ist nicht notwendig. Die gesamte Kommunikation mit den deutschen Gesellschaften übernehme ich für Sie und erkläre alles in einfacher Sprache.",
   },
   {
     q: "Sind die Seminare kostenlos?",

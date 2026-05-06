@@ -80,7 +80,7 @@ export default function VideoHero() {
           style={{ transitionDelay: "700ms" }}
         >
           <a
-            href="https://wa.me/491784743490"
+            href="https://wa.me/4922418989424"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-whatsapp text-white font-semibold rounded-full text-base hover:opacity-90 transition-all shadow-lg shadow-whatsapp/25"

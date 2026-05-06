@@ -15,7 +15,7 @@ export default function SupportComparison({
   table = supportTableRu,
   eyebrow = "Поддержка государства",
   title = "Einstiegsgeld vs Gründungszuschuss",
-  description = "Две программы государственной поддержки перехода в самозанятость — одна для получателей Bürgergeld, другая для ALG I",
+  description = "Две программы государственной поддержки перехода в самозанятость - одна для получателей Bürgergeld, другая для ALG I",
   parameterHeader = "Параметр",
 }: Props = {}) {
   const supportTable = table;

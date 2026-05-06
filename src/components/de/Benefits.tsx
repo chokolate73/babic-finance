@@ -32,8 +32,8 @@ const benefits = [
   },
   {
     icon: Globe,
-    title: "Ohne Sprachbarriere",
-    desc: "Komplexe Themen erkläre ich einfach und verständlich. Ohne Bürokratendeutsch.",
+    title: "Verständlich erklärt",
+    desc: "Komplexe Themen erkläre ich einfach und nachvollziehbar. Ohne Bürokratendeutsch.",
   },
   {
     icon: GraduationCap,

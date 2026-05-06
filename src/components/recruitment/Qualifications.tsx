@@ -1,4 +1,5 @@
 import AnimateOnScroll from "../AnimateOnScroll";
+import ProductsPopover from "./ProductsPopover";
 import {
   qualifications as qualificationsRu,
   qualificationsCallout as qualificationsCalloutRu,
@@ -20,7 +21,7 @@ export default function Qualifications({
   callout = qualificationsCalloutRu,
   eyebrow = "Квалификации",
   title = "Четыре квалификации в одной программе",
-  description = "DVAG берёт на себя обучение, экзамены и лицензии — а ты получаешь профессию, которую ищут по всей Германии",
+  description = "DVAG берёт на себя обучение, экзамены и лицензии - а ты получаешь профессию, которую ищут по всей Германии",
 }: Props = {}) {
   return (
     <section id="qualifications" className="py-20 lg:py-28 bg-cream">
@@ -93,16 +94,8 @@ export default function Qualifications({
             <p className="text-muted-foreground/80 text-xs mt-4 italic">
               {callout.source}
             </p>
-            {callout.link && (
-              <a
-                href={callout.link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-6 px-4 py-2 border border-[#D4AF55] rounded-full text-sm font-semibold text-[#D4AF55] hover:bg-[#D4AF55] hover:text-white transition-colors"
-              >
-                {callout.link.label}
-                <span aria-hidden="true">→</span>
-              </a>
+            {callout.productsPopup && (
+              <ProductsPopover popup={callout.productsPopup} />
             )}
           </div>
         </AnimateOnScroll>

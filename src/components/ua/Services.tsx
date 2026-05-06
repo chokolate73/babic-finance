@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X } from "lucide-react";
 import AnimateOnScroll from "../AnimateOnScroll";
 
@@ -10,6 +11,7 @@ const services = [
     title: "Фінансове консультування",
     desc: "Повний аналіз вашої фінансової ситуації та персональна стратегія. Розглядаємо доходи, витрати та податки й розробляємо чіткий план дій.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    href: "/ua/poslugy/finanzberatung",
     details: [
       "Аналіз доходів, витрат і податків",
       "Персональна фінансова стратегія",
@@ -18,9 +20,22 @@ const services = [
     ],
   },
   {
+    title: "Управління капіталом",
+    desc: "Довгострокове накопичення та захист для приватних осіб і сімей - аналіз прогалин, структуроване вкладення, страховий захист. Усе в одних руках.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    href: "/ua/poslugy/vermoegensberatung",
+    details: [
+      "Аналіз пенсійних і страхових прогалин",
+      "Довгострокова структура вкладень",
+      "Захист сім'ї та активів",
+      "Супровід на роки",
+    ],
+  },
+  {
     title: "Інвестиції та фонди",
     desc: "Продумане розміщення коштів з урахуванням ваших цілей і особистої готовності до ризику. Підбираємо інструменти, які працюватимуть саме для вас.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    href: "/ua/poslugy/geldanlage",
     details: [
       "Акції та облігації",
       "ETF та інвестиційні фонди",
@@ -30,25 +45,95 @@ const services = [
   },
   {
     title: "Пенсійне забезпечення",
-    desc: "Державні та приватні програми накопичення для комфортного життя на пенсії. Riester, Rürup, корпоративна пенсія — разом знаходимо те, що підходить вам.",
+    desc: "Державні та приватні програми накопичення для комфортного життя на пенсії. Riester, Rürup, корпоративна пенсія - разом знаходимо те, що підходить вам.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/ua/poslugy/altersvorsorge",
     details: [
       "Riester-Rente",
       "Rürup-Rente (Basisrente)",
-      "bAV — корпоративна пенсія",
+      "bAV - корпоративна пенсія",
       "Приватне пенсійне страхування",
     ],
   },
   {
-    title: "Страхування",
-    desc: "Захист вас і вашої родини — здоров'я, майно, відповідальність. Перевіряємо ваші наявні поліси й оптимізуємо страховий захист.",
+    title: "Страхування від втрати працездатності (BU)",
+    desc: "Втрата працездатності - найбільший фінансовий ризик. Допомагаємо правильно застрахуватися. Тарифи групи Generali, з розбором медогляду й покриття.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    href: "/ua/poslugy/bu-beratung",
+    details: [
+      "Захист доходу при втраті працездатності",
+      "Тарифи групи Generali",
+      "Розбір медичного огляду",
+      "Розмір внеску й покриття",
+    ],
+  },
+  {
+    title: "Приватне медичне страхування (PKV)",
+    desc: "PKV чи GKV? Рішення на десятиліття. Чесно дивимося, чи підходить перехід саме у твоїй ситуації - тарифи Central Krankenversicherung.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
+    href: "/ua/poslugy/pkv-beratung",
+    details: [
+      "Консультація з переходу в PKV",
+      "Тарифи Central Krankenversicherung",
+      "Динаміка внесків і резерви за віком",
+      "Сімейне планування і Beihilfe",
+    ],
+  },
+  {
+    title: "Корпоративна пенсія (bAV)",
+    desc: "bAV як бонус для працівників, який реально працює - з податковою підтримкою і без бюрократії. Рішення через Generali Pensionskasse.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/ua/poslugy/bav-betriebliche-altersvorsorge",
+    details: [
+      "Direktversicherung через Generali Pensionskasse",
+      "Entgeltumwandlung з податковою вигодою",
+      "Рішення для роботодавця і працівника",
+      "Проста адміністрація",
+    ],
+  },
+  {
+    title: "Юридичне страхування",
+    desc: "Робота, транспорт, орендар, власник - обираємо правильні модулі. Захист через ADVOCARD.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
+    href: "/ua/poslugy/rechtsschutz",
+    details: [
+      "Захист на роботі (Berufsrechtsschutz)",
+      "Транспортний захист (Verkehrsrechtsschutz)",
+      "Орендар і власник (Wohnrechtsschutz)",
+      "Приватний захист (Privatrechtsschutz)",
+    ],
+  },
+  {
+    title: "Risikolebensversicherung - страхування життя",
+    desc: "Захист сім'ї на випадок відходу годувальника - лаконічно, доступно, з чітким покриттям. Тарифи групи Generali.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     details: [
-      "Медичне страхування",
-      "Страхування життя",
-      "Страхування від нещасних випадків",
-      "Страхування цивільної відповідальності",
-      "Страхування правового захисту (Rechtsschutz)",
+      "Захист сім'ї у разі смерті",
+      "Захист при іпотеці",
+      "Тарифи групи Generali",
+      "Гнучка страхова сума",
+    ],
+  },
+  {
+    title: "Pflegeversicherung - страхування з догляду",
+    desc: "Державне страхування з догляду покриває лише частину реальних витрат. Закриваємо прогалину приватними модулями.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    details: [
+      "Pflegetagegeld як доплата",
+      "Захист від власного внеску в будинку для літніх",
+      "Захист для сім'ї та близьких",
+      "Тарифи групи Generali",
+    ],
+  },
+  {
+    title: "Hausrat і Privathaftpflicht",
+    desc: "Два класики, які потрібні в кожному домі - Hausrat захищає майно, Privathaftpflicht - від позовів про відшкодування шкоди.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
+    details: [
+      "Hausrat: захист від крадіжки, пожежі, води",
+      "Privathaftpflicht: шкода третім особам",
+      "Тарифи групи Generali",
+      "Тарифи для сімей та одиноких",
     ],
   },
   {
@@ -75,11 +160,11 @@ const services = [
   },
   {
     title: "Консультації для бізнесу",
-    desc: "Фінансові рішення для компаній — від стартапу до сталого підприємства. Корпоративне страхування та пенсії для співробітників.",
+    desc: "Фінансові рішення для компаній - від стартапу до сталого підприємства. Корпоративне страхування та пенсії для співробітників.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/5e9da606e_generated_157ca161.png",
     details: [
       "Корпоративне страхування",
-      "bAV — корпоративна пенсія",
+      "bAV - корпоративна пенсія",
       "Страхування відповідальності для GmbH",
       "Фінансове планування для компаній",
     ],
@@ -144,12 +229,21 @@ export default function Services() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {current.desc}
               </p>
-              <button
-                onClick={() => setModalIndex(active)}
-                className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
-              >
-                Дізнатися більше &rarr;
-              </button>
+              {"href" in current && current.href ? (
+                <Link
+                  href={current.href}
+                  className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
+                >
+                  Перейти на сторінку послуги &rarr;
+                </Link>
+              ) : (
+                <button
+                  onClick={() => setModalIndex(active)}
+                  className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
+                >
+                  Дивитися деталі &rarr;
+                </button>
+              )}
             </div>
           </AnimateOnScroll>
 
@@ -164,32 +258,41 @@ export default function Services() {
             </AnimateOnScroll>
 
             <div className="space-y-0">
-              {services.map((s, i) => (
-                <button
-                  key={s.title}
-                  onClick={() => setActive(i)}
-                  className={`w-full text-left flex items-center gap-5 py-4 border-b border-border transition-all duration-300 group ${
-                    i === active
-                      ? "border-gold"
-                      : "hover:border-gold/40"
-                  }`}
-                >
-                  <span
-                    className={`font-[family-name:var(--font-serif)] text-2xl font-bold transition-colors duration-300 ${
-                      i === active ? "text-gold" : "text-border group-hover:text-gold/50"
-                    }`}
+              {services.map((s, i) => {
+                const rowClass = `w-full text-left flex items-center gap-5 py-4 border-b border-border transition-all duration-300 group ${
+                  i === active ? "border-gold" : "hover:border-gold/40"
+                }`;
+                const numClass = `font-[family-name:var(--font-serif)] text-2xl font-bold transition-colors duration-300 ${
+                  i === active ? "text-gold" : "text-border group-hover:text-gold/50"
+                }`;
+                const titleClass = `text-base font-medium transition-colors duration-300 ${
+                  i === active ? "text-navy" : "text-muted-foreground group-hover:text-navy"
+                }`;
+                if ("href" in s && s.href) {
+                  return (
+                    <Link
+                      key={s.title}
+                      href={s.href}
+                      onMouseEnter={() => setActive(i)}
+                      onFocus={() => setActive(i)}
+                      className={rowClass}
+                    >
+                      <span className={numClass}>{pad(i + 1)}.</span>
+                      <span className={titleClass}>{s.title}</span>
+                    </Link>
+                  );
+                }
+                return (
+                  <button
+                    key={s.title}
+                    onClick={() => setActive(i)}
+                    className={rowClass}
                   >
-                    {pad(i + 1)}.
-                  </span>
-                  <span
-                    className={`text-base font-medium transition-colors duration-300 ${
-                      i === active ? "text-navy" : "text-muted-foreground group-hover:text-navy"
-                    }`}
-                  >
-                    {s.title}
-                  </span>
-                </button>
-              ))}
+                    <span className={numClass}>{pad(i + 1)}.</span>
+                    <span className={titleClass}>{s.title}</span>
+                  </button>
+                );
+              })}
             </div>
 
             <div className="mt-10 text-center">
@@ -218,6 +321,23 @@ export default function Services() {
           <div className="space-y-0">
             {services.map((s, i) => {
               const isOpen = mobileOpen === i;
+              if ("href" in s && s.href) {
+                return (
+                  <Link
+                    key={s.title}
+                    href={s.href}
+                    className="border-b border-border w-full flex items-center gap-4 py-5 text-left"
+                  >
+                    <span className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy">
+                      {pad(i + 1)}.
+                    </span>
+                    <span className="font-medium text-muted-foreground">
+                      {s.title}
+                    </span>
+                    <span className="ml-auto text-muted-foreground">→</span>
+                  </Link>
+                );
+              }
               return (
                 <div key={s.title} className="border-b border-border">
                   <button
@@ -277,7 +397,7 @@ export default function Services() {
                         onClick={() => setModalIndex(i)}
                         className="inline-flex items-center gap-2 text-gold font-semibold hover:underline text-sm"
                       >
-                        Дізнатися більше &rarr;
+                        Дивитися деталі &rarr;
                       </button>
                     </div>
                   </div>
@@ -350,6 +470,14 @@ export default function Services() {
               >
                 Записатися на консультацію
               </a>
+              {"href" in modalService && modalService.href && (
+                <a
+                  href={modalService.href as string}
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2 px-6 py-3 border-2 border-navy text-navy font-semibold rounded-full text-sm sm:text-base hover:bg-navy hover:text-white transition-all"
+                >
+                  Перейти на сторінку послуги →
+                </a>
+              )}
             </div>
           </div>
         </div>

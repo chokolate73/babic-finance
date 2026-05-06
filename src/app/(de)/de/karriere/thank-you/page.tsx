@@ -26,7 +26,7 @@ const CARDS: Card[] = [
   {
     icon: "zap",
     title: "Willst du den Prozess beschleunigen?",
-    description: `Mach den offiziellen DVAG-Fragebogen „10 Fragen zum Traumberuf" — dann hat Vladislav ein vollständiges Bild bis zum Gespräch.`,
+    description: `Mach den offiziellen DVAG-Fragebogen „10 Fragen zum Traumberuf" - dann hat Vladislav ein vollständiges Bild bis zum Gespräch.`,
     ctaText: "DVAG-Fragebogen starten",
     ctaHref: "https://dvag-karriere.de/10-fragen",
     external: true,
@@ -36,9 +36,9 @@ const CARDS: Card[] = [
     icon: "whatsapp",
     title: "Dringende Frage?",
     description:
-      "Schreib direkt auf WhatsApp — Vladislav antwortet innerhalb einer Stunde während der Geschäftszeiten.",
+      "Schreib direkt auf WhatsApp - Vladislav antwortet innerhalb einer Stunde während der Geschäftszeiten.",
     ctaText: "Auf WhatsApp schreiben",
-    ctaHref: "https://wa.me/491784743490",
+    ctaHref: "https://wa.me/4922418989424",
     external: true,
     accent: "whatsapp",
   },

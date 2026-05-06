@@ -10,6 +10,9 @@ import CareerPath from "@/components/recruitment/CareerPath";
 import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
+import { EventsSection } from "@/components/sections/EventsSection";
 import {
   homeHero,
   homePainPoints,
@@ -24,14 +27,14 @@ import {
   ui,
 } from "@/data/recruitment.de";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 const URL_PATH = "/de";
 
 export const metadata: Metadata = {
   title:
-    "Karriere als Finanzberater in Deutschland — DVAG-Team | Babic Finance",
+    "Finanzberater werden in Deutschland - Quereinstieg mit DVAG | Babic Finance",
   description:
-    "Baue deine Karriere als Finanzberater in Deutschland auf. Ohne Vorerfahrung, mit voller Unterstützung des DVAG-Teams und persönlicher Begleitung von Vladislav Babic in Troisdorf.",
+    "Quereinstieg in die Finanzberatung - auch ohne Vorerfahrung. Persönliche Begleitung durch Vladislav Babic in Troisdorf, Ausbildung über die DVAG, IHK-Abschluss inklusive.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Karriere als Finanzberater in Deutschland — DVAG-Team",
+      "Finanzberater werden in Deutschland - Quereinstieg mit DVAG",
     description:
       "Ohne Vorerfahrung. Mit voller Team-Unterstützung. Vom ersten Kennenlernen bis zum selbstständigen Berater mit vier anerkannten Qualifikationen.",
     url: `${SITE_URL}${URL_PATH}`,
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Karriere als Finanzberater in Deutschland — DVAG-Team",
+      "Finanzberater werden in Deutschland - Quereinstieg mit DVAG",
     description:
       "Ohne Vorerfahrung. Mit voller Team-Unterstützung.",
     images: ["/preview.webp"],
@@ -69,9 +72,10 @@ export default function DeHomePage() {
       <RecruitmentHero
         content={homeHero}
         scrollTargetId="recognize"
-        backgroundAlt="Babic Finance — Karriere als Finanzberater in Deutschland"
+        backgroundAlt="Babic Finance - Karriere als Finanzberater in Deutschland"
         scrollLabel={ui.heroScrollLabel}
       />
+      <EventsSection locale="de" />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}
@@ -109,6 +113,8 @@ export default function DeHomePage() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" locale="de" />
+      <StickyMobileCTA label="Beratung anfragen" />
+      <FloatingContactButtons locale="de" showMobileBar={false} />
       <Footer />
     </div>
   );

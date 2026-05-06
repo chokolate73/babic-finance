@@ -17,7 +17,7 @@ import JsonLd from "@/components/JsonLd";
 import { faqs } from "@/data/faq";
 import { getBreadcrumbLd, getFaqLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 const URL_PATH = "/klienty";
 
 export const metadata: Metadata = {

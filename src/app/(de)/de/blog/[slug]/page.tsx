@@ -14,7 +14,7 @@ import { renderMarkdown } from "@/lib/markdownRenderer";
 import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!article) return {};
   const url = `${SITE_URL}/de/blog/${article.slug}`;
   return {
-    title: `${article.title} — Babic Finance`,
+    title: `${article.title} - Babic Finance`,
     description: article.metaDescription,
     alternates: { canonical: url },
     openGraph: {
@@ -155,11 +155,11 @@ export default async function BlogArticlePageDe({ params }: PageProps) {
               Persönliche Beratung anfragen
             </h3>
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              30 Minuten unverbindliches Erstgespräch — vor Ort in Troisdorf
+              30 Minuten unverbindliches Erstgespräch - vor Ort in Troisdorf
               oder online.
             </p>
             <a
-              href="https://wa.me/491784743490"
+              href="https://wa.me/4922418989424"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-full hover:opacity-90 transition-all"

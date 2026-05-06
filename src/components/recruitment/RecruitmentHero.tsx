@@ -91,8 +91,11 @@ export default function RecruitmentHero({
               className="font-[family-name:var(--font-serif)] text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-3 sm:mb-4"
               {...fadeUp(0.4)}
             >
-              {content.headline}
-              <br />
+              {content.headline.split("\n").map((line, i) => (
+                <span key={i} className="block whitespace-nowrap">
+                  {line}
+                </span>
+              ))}
               <span className="text-gold">{content.headlineAccent}</span>
             </motion.h1>
 

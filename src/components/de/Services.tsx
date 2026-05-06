@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X } from "lucide-react";
 import AnimateOnScroll from "../AnimateOnScroll";
 
@@ -10,6 +11,7 @@ const services = [
     title: "Finanzberatung",
     desc: "Vollständige Analyse Ihrer finanziellen Situation und eine persönliche Strategie. Wir betrachten Einnahmen, Ausgaben und Steuern und erarbeiten einen klaren Handlungsplan.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    href: "/de/leistungen/finanzberatung",
     details: [
       "Analyse von Einnahmen, Ausgaben und Steuern",
       "Persönliche Finanzstrategie",
@@ -18,9 +20,22 @@ const services = [
     ],
   },
   {
+    title: "Vermögensberatung",
+    desc: "Langfristiger Vermögensaufbau für Privatpersonen und Familien - Analyse von Versorgungslücken, strukturierte Anlage, Absicherung. Alles in einer Hand.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    href: "/de/leistungen/vermoegensberatung",
+    details: [
+      "Analyse der Versorgungslücken",
+      "Langfristige Anlagestruktur",
+      "Persönliche und familiäre Absicherung",
+      "Begleitung über Jahre hinweg",
+    ],
+  },
+  {
     title: "Investitionen & Fonds",
     desc: "Durchdachte Geldanlage unter Berücksichtigung Ihrer Ziele und Ihrer persönlichen Risikobereitschaft. Wir wählen die Instrumente, die für Sie arbeiten.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    href: "/de/leistungen/geldanlage",
     details: [
       "Aktien und Anleihen",
       "ETFs und Investmentfonds",
@@ -32,6 +47,7 @@ const services = [
     title: "Altersvorsorge",
     desc: "Staatliche und private Vorsorgeprogramme für ein angenehmes Leben im Ruhestand. Riester, Rürup, betriebliche Altersvorsorge - wir finden gemeinsam heraus, was zu Ihnen passt.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/de/leistungen/altersvorsorge",
     details: [
       "Riester-Rente",
       "Rürup-Rente (Basisrente)",
@@ -40,15 +56,84 @@ const services = [
     ],
   },
   {
-    title: "Versicherung",
-    desc: "Schutz für Sie und Ihre Familie - Gesundheit, Eigentum, Haftung. Wir prüfen Ihre bestehenden Policen und optimieren den Versicherungsschutz.",
+    title: "Berufsunfähigkeitsversicherung (BU)",
+    desc: "Berufsunfähigkeit ist statistisch das größte Einkommensrisiko - wir sichern dich richtig ab. Tarife der Generali Gruppe, mit klarer Gesundheitsprüfung und Leistungsumfang.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    href: "/de/leistungen/bu-beratung",
+    details: [
+      "Absicherung des Einkommens bei Berufsunfähigkeit",
+      "Tarife der Generali Gruppe",
+      "Klärung der Gesundheitsprüfung",
+      "Beitragshöhe und Leistungsumfang",
+    ],
+  },
+  {
+    title: "Private Krankenversicherung (PKV)",
+    desc: "PKV oder GKV? Eine Entscheidung für Jahrzehnte. Wir schauen ehrlich, ob der Wechsel in deiner Lebenssituation passt - Tarife der Central Krankenversicherung.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
+    href: "/de/leistungen/pkv-beratung",
+    details: [
+      "Beratung zum PKV-Wechsel",
+      "Tarife der Central Krankenversicherung",
+      "Beitragsentwicklung und Altersrückstellung",
+      "Familienplanung und Beihilfe",
+    ],
+  },
+  {
+    title: "Betriebliche Altersvorsorge (bAV)",
+    desc: "bAV als Mitarbeiterbenefit, der wirklich ankommt - steuerlich gefördert und administrativ schlank. Lösungen über Generali Pensionskasse.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/de/leistungen/bav-betriebliche-altersvorsorge",
+    details: [
+      "Direktversicherung über Generali Pensionskasse",
+      "Entgeltumwandlung mit Steuervorteil",
+      "Lösungen für Arbeitgeber und Arbeitnehmer",
+      "Schlanke Administration",
+    ],
+  },
+  {
+    title: "Rechtsschutzversicherung",
+    desc: "Beruf, Verkehr, Mieter, Eigentümer - wir wählen die richtigen Bausteine. Abgesichert über ADVOCARD.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
+    href: "/de/leistungen/rechtsschutz",
+    details: [
+      "Berufsrechtsschutz",
+      "Verkehrsrechtsschutz",
+      "Wohnrechtsschutz (Mieter und Eigentümer)",
+      "Privatrechtsschutz",
+    ],
+  },
+  {
+    title: "Risikolebensversicherung",
+    desc: "Absicherung der Familie, falls dem Hauptverdiener etwas zustößt - schlank, bezahlbar, mit klarer Leistung. Tarife der Generali Gruppe.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     details: [
-      "Krankenversicherung",
-      "Lebensversicherung",
-      "Unfallversicherung",
-      "Haftpflichtversicherung",
-      "Rechtsschutzversicherung",
+      "Familienabsicherung im Todesfall",
+      "Schutz bei laufender Immobilienfinanzierung",
+      "Tarife der Generali Gruppe",
+      "Anpassbare Versicherungssumme",
+    ],
+  },
+  {
+    title: "Pflegeversicherung",
+    desc: "Die staatliche Pflegeversicherung deckt nur einen Teil der echten Pflegekosten. Mit privaten Bausteinen schließen wir die Lücke.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    details: [
+      "Pflegetagegeld als Ergänzung",
+      "Vorsorge gegen Eigenanteile im Heim",
+      "Schutz für Familie und Angehörige",
+      "Tarife der Generali Gruppe",
+    ],
+  },
+  {
+    title: "Hausrat- und Privathaftpflichtversicherung",
+    desc: "Zwei Klassiker, die in keinem Haushalt fehlen sollten - Hausrat schützt deine Sachen, Privathaftpflicht dich vor Schadenersatzforderungen.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
+    details: [
+      "Hausrat: Schutz bei Einbruch, Feuer, Wasser",
+      "Privathaftpflicht: Schäden an Dritten",
+      "Tarife der Generali Gruppe",
+      "Familien- und Singletarife",
     ],
   },
   {
@@ -146,12 +231,21 @@ export default function Services() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {current.desc}
               </p>
-              <button
-                onClick={() => setModalIndex(active)}
-                className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
-              >
-                Mehr erfahren &rarr;
-              </button>
+              {"href" in current && current.href ? (
+                <Link
+                  href={current.href}
+                  className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
+                >
+                  Zur Detailseite &rarr;
+                </Link>
+              ) : (
+                <button
+                  onClick={() => setModalIndex(active)}
+                  className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
+                >
+                  Mehr erfahren &rarr;
+                </button>
+              )}
             </div>
           </AnimateOnScroll>
 
@@ -167,32 +261,41 @@ export default function Services() {
             </AnimateOnScroll>
 
             <div className="space-y-0">
-              {services.map((s, i) => (
-                <button
-                  key={s.title}
-                  onClick={() => setActive(i)}
-                  className={`w-full text-left flex items-center gap-5 py-4 border-b border-border transition-all duration-300 group ${
-                    i === active
-                      ? "border-gold"
-                      : "hover:border-gold/40"
-                  }`}
-                >
-                  <span
-                    className={`font-[family-name:var(--font-serif)] text-2xl font-bold transition-colors duration-300 ${
-                      i === active ? "text-gold" : "text-border group-hover:text-gold/50"
-                    }`}
+              {services.map((s, i) => {
+                const rowClass = `w-full text-left flex items-center gap-5 py-4 border-b border-border transition-all duration-300 group ${
+                  i === active ? "border-gold" : "hover:border-gold/40"
+                }`;
+                const numClass = `font-[family-name:var(--font-serif)] text-2xl font-bold transition-colors duration-300 ${
+                  i === active ? "text-gold" : "text-border group-hover:text-gold/50"
+                }`;
+                const titleClass = `text-base font-medium transition-colors duration-300 ${
+                  i === active ? "text-navy" : "text-muted-foreground group-hover:text-navy"
+                }`;
+                if ("href" in s && s.href) {
+                  return (
+                    <Link
+                      key={s.title}
+                      href={s.href}
+                      onMouseEnter={() => setActive(i)}
+                      onFocus={() => setActive(i)}
+                      className={rowClass}
+                    >
+                      <span className={numClass}>{pad(i + 1)}.</span>
+                      <span className={titleClass}>{s.title}</span>
+                    </Link>
+                  );
+                }
+                return (
+                  <button
+                    key={s.title}
+                    onClick={() => setActive(i)}
+                    className={rowClass}
                   >
-                    {pad(i + 1)}.
-                  </span>
-                  <span
-                    className={`text-base font-medium transition-colors duration-300 ${
-                      i === active ? "text-navy" : "text-muted-foreground group-hover:text-navy"
-                    }`}
-                  >
-                    {s.title}
-                  </span>
-                </button>
-              ))}
+                    <span className={numClass}>{pad(i + 1)}.</span>
+                    <span className={titleClass}>{s.title}</span>
+                  </button>
+                );
+              })}
             </div>
 
             <div className="mt-10 text-center">
@@ -222,6 +325,23 @@ export default function Services() {
           <div className="space-y-0">
             {services.map((s, i) => {
               const isOpen = mobileOpen === i;
+              if ("href" in s && s.href) {
+                return (
+                  <Link
+                    key={s.title}
+                    href={s.href}
+                    className="border-b border-border w-full flex items-center gap-4 py-5 text-left"
+                  >
+                    <span className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy">
+                      {pad(i + 1)}.
+                    </span>
+                    <span className="font-medium text-muted-foreground">
+                      {s.title}
+                    </span>
+                    <span className="ml-auto text-muted-foreground">→</span>
+                  </Link>
+                );
+              }
               return (
                 <div key={s.title} className="border-b border-border">
                   <button
@@ -357,6 +477,14 @@ export default function Services() {
               >
                 Beratungstermin vereinbaren
               </a>
+              {"href" in modalService && modalService.href && (
+                <a
+                  href={modalService.href as string}
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2 px-6 py-3 border-2 border-navy text-navy font-semibold rounded-full text-sm sm:text-base hover:bg-navy hover:text-white transition-all"
+                >
+                  Zur Detailseite →
+                </a>
+              )}
             </div>
           </div>
         </div>

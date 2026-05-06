@@ -8,14 +8,14 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/karriere/nebenberuf";
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 const DVAG_NEBENBERUF =
   "https://www.dvag-karriere.de/einstiegsmoeglichkeiten/nebenberuf.html#vladislav.babic";
 
 export const metadata: Metadata = {
-  title: "Параллельный старт в финансах — Babic Finance",
+  title: "Параллельный старт в финансах - Babic Finance",
   description:
-    "Подработка с минимальными усилиями — без рисков. Vertrauensmitarbeiter или Vermögensberater-Assistent параллельно с основной работой или учёбой.",
+    "Подработка с минимальными усилиями - без рисков. Vertrauensmitarbeiter или Vermögensberater-Assistent параллельно с основной работой или учёбой.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Параллельный старт в финансах — Babic Finance",
+    title: "Параллельный старт в финансах - Babic Finance",
     description:
-      "Подработка с минимальными усилиями — без рисков. Vertrauensmitarbeiter или Vermögensberater-Assistent параллельно с основной работой или учёбой.",
+      "Подработка с минимальными усилиями - без рисков. Vertrauensmitarbeiter или Vermögensberater-Assistent параллельно с основной работой или учёбой.",
     url: `${SITE_URL}${URL_PATH}`,
     siteName: "Babic Finance",
     type: "website",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Параллельный старт в финансах — Babic Finance",
+    title: "Параллельный старт в финансах - Babic Finance",
     description:
-      "Подработка с минимальными усилиями — без рисков. Параллельно с основной работой или учёбой.",
+      "Подработка с минимальными усилиями - без рисков. Параллельно с основной работой или учёбой.",
     images: ["/preview.webp"],
   },
 };
@@ -54,7 +54,7 @@ const benefitItems = [
   "свободный график и максимум гибкости",
   "хорошие условия оплаты, привязанные к результату",
   "персональную поддержку опытного финансового коуча",
-  "осмысленное дело — ты реально помогаешь другим людям",
+  "осмысленное дело - ты реально помогаешь другим людям",
 ];
 
 export default function NebenberufPage() {
@@ -77,11 +77,11 @@ export default function NebenberufPage() {
               Параллельно с работой или учёбой
             </span>
             <h1 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 leading-tight">
-              Подработка с минимальными усилиями — без рисков
+              Подработка с минимальными усилиями - без рисков
             </h1>
             <p className="text-white/80 mt-6 text-lg leading-relaxed">
               Если хочешь подзаработать и без обязательств познакомиться с
-              профессией финансового консультанта — формат подработки идеально
+              профессией финансового консультанта - формат подработки идеально
               подходит. Даже без опыта в финансах.
             </p>
           </AnimateOnScroll>
@@ -98,7 +98,7 @@ export default function NebenberufPage() {
                 className="w-6 h-6 text-gold flex-shrink-0 mt-1"
               />
               <p className="text-foreground/90 text-base leading-relaxed">
-                Ты работаешь откуда хочешь и когда хочешь — параллельно со своей
+                Ты работаешь откуда хочешь и когда хочешь - параллельно со своей
                 основной деятельностью. Подходит и студентам, и школьникам.
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function NebenberufPage() {
               <p className="text-foreground/85 text-base leading-relaxed">
                 <strong className="text-navy">Бонус:</strong> ты без риска
                 изучаешь интересную профессию изнутри. Через какое-то время сам
-                решаешь — хочешь ли перейти в финансовый консалтинг как основную
+                решаешь - хочешь ли перейти в финансовый консалтинг как основную
                 деятельность.
               </p>
               <a
@@ -152,7 +152,7 @@ export default function NebenberufPage() {
                 <p className="text-muted-foreground text-sm leading-relaxed mt-4">
                   Расширяешь круг знакомых, рекомендуешь консультацию своего
                   финансового коуча. Если из твоей рекомендации получается новый
-                  клиент — ты получаешь денежную премию.
+                  клиент - ты получаешь денежную премию.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -166,9 +166,9 @@ export default function NebenberufPage() {
                   Ассистент консультанта
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-4">
-                  Помогаешь своему личному коучу в его работе — например, с
+                  Помогаешь своему личному коучу в его работе - например, с
                   заполнением клиентских данных. Саму консультацию проводит
-                  коуч. В любой момент можешь решить — оставаться на подработке
+                  коуч. В любой момент можешь решить - оставаться на подработке
                   или переходить в полную занятость.
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function NebenberufPage() {
                 <p className="text-muted-foreground text-sm leading-relaxed mt-3">
                   Твой доход зависит от того, со сколькими заинтересованными
                   людьми прошла успешная консультация. Несколько сотен евро
-                  дополнительного дохода в месяц — реально.
+                  дополнительного дохода в месяц - реально.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -206,8 +206,8 @@ export default function NebenberufPage() {
                   Максимальная гибкость
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mt-3">
-                  Работаешь тогда, когда есть время — вечером, по выходным,
-                  параллельно с основной деятельностью. Если возникают вопросы —
+                  Работаешь тогда, когда есть время - вечером, по выходным,
+                  параллельно с основной деятельностью. Если возникают вопросы -
                   твой персональный коуч на связи в любой момент.
                 </p>
               </div>

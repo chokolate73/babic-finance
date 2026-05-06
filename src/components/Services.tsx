@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -10,6 +11,7 @@ const services = [
     title: "Финансовые консультации",
     desc: "Полный анализ вашей финансовой ситуации и персональная стратегия развития. Разберём доходы, расходы, налоги и выстроим план действий.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    href: "/uslugi/finanzberatung",
     details: [
       "Анализ доходов, расходов и налогов",
       "Персональная финансовая стратегия",
@@ -18,9 +20,22 @@ const services = [
     ],
   },
   {
+    title: "Управление капиталом",
+    desc: "Долгосрочный план накоплений и защита для частных лиц и семей - анализ пробелов, структурированное вложение, страховая защита. Всё в одних руках.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/1628b021a_generated_082efb02.png",
+    href: "/uslugi/vermoegensberatung",
+    details: [
+      "Анализ пенсионных и страховых пробелов",
+      "Долгосрочная структура вложений",
+      "Защита семьи и активов",
+      "Сопровождение на годы",
+    ],
+  },
+  {
     title: "Investitionen & Fonds",
     desc: "Грамотное вложение средств с учётом ваших целей и допустимого уровня риска. Подберём инструменты, которые работают на вас.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    href: "/uslugi/geldanlage",
     details: [
       "Акции и облигации",
       "ETF и инвестиционные фонды",
@@ -32,6 +47,7 @@ const services = [
     title: "Altersvorsorge",
     desc: "Государственные и частные пенсионные программы для достойной жизни на пенсии. Riester, Rürup, betriebliche Altersvorsorge - разберёмся, что подходит именно вам.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/uslugi/altersvorsorge",
     details: [
       "Riester-Rente",
       "Rürup-Rente (Basisrente)",
@@ -40,20 +56,89 @@ const services = [
     ],
   },
   {
-    title: "Versicherung",
-    desc: "Защита вас и вашей семьи - здоровье, имущество, ответственность. Проверим текущие полисы и оптимизируем покрытие.",
+    title: "Страховка от потери трудоспособности (BU)",
+    desc: "Потеря трудоспособности - самый большой финансовый риск. Помогаем правильно застраховаться. Тарифы группы Generali, с разбором медосмотра и покрытия.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/b14967efb_generated_513e3db2.png",
+    href: "/uslugi/bu-beratung",
+    details: [
+      "Защита дохода при потере трудоспособности",
+      "Тарифы группы Generali",
+      "Разбор медицинского осмотра",
+      "Размер взноса и покрытия",
+    ],
+  },
+  {
+    title: "Частная медицинская страховка (PKV)",
+    desc: "PKV или GKV? Решение на десятилетия. Честно смотрим, подходит ли переход в твоей жизненной ситуации - тарифы Central Krankenversicherung.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
+    href: "/uslugi/pkv-beratung",
+    details: [
+      "Консультация по переходу в PKV",
+      "Тарифы Central Krankenversicherung",
+      "Динамика взносов и резервы по возрасту",
+      "Семейное планирование и Beihilfe",
+    ],
+  },
+  {
+    title: "Корпоративная пенсия (bAV)",
+    desc: "bAV как бонус сотрудникам, который реально работает - с налоговой поддержкой и без бюрократии. Решения через Generali Pensionskasse.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    href: "/uslugi/bav-betriebliche-altersvorsorge",
+    details: [
+      "Direktversicherung через Generali Pensionskasse",
+      "Entgeltumwandlung с налоговой выгодой",
+      "Решения для работодателя и сотрудника",
+      "Простая администрация",
+    ],
+  },
+  {
+    title: "Юридическая страховка",
+    desc: "Работа, транспорт, арендатор, собственник - выбираем правильные модули. Защита через ADVOCARD.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/3fbdd843e_generated_5a2adb79.png",
+    href: "/uslugi/rechtsschutz",
+    details: [
+      "Защита по работе (Berufsrechtsschutz)",
+      "Транспортная защита (Verkehrsrechtsschutz)",
+      "Арендатор и собственник (Wohnrechtsschutz)",
+      "Частная защита (Privatrechtsschutz)",
+    ],
+  },
+  {
+    title: "Risikolebensversicherung - страховка жизни",
+    desc: "Защита семьи на случай ухода кормильца - лаконично, доступно, с понятным покрытием. Тарифы группы Generali.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/e8b703938_generated_42b248f1.png",
     details: [
-      "Krankenversicherung (медицинская)",
-      "Lebensversicherung (жизни)",
-      "Unfallversicherung (от несчастных случаев)",
-      "Haftpflicht (гражданская ответственность)",
-      "Rechtsschutz (юридическая защита)",
+      "Защита семьи в случае смерти",
+      "Защита при ипотеке",
+      "Тарифы группы Generali",
+      "Гибкая страховая сумма",
+    ],
+  },
+  {
+    title: "Pflegeversicherung - страховка по уходу",
+    desc: "Государственная страховка по уходу покрывает только часть реальных расходов. Закрываем пробел частными модулями.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/90b1fb9ed_generated_2d20261b.png",
+    details: [
+      "Pflegetagegeld как доплата",
+      "Защита от собственного взноса в доме престарелых",
+      "Защита для семьи и близких",
+      "Тарифы группы Generali",
+    ],
+  },
+  {
+    title: "Hausrat и Privathaftpflicht",
+    desc: "Два классика, которые нужны в каждом доме - Hausrat защищает имущество, Privathaftpflicht - от исков о возмещении ущерба.",
+    img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
+    details: [
+      "Hausrat: защита от взлома, пожара, воды",
+      "Privathaftpflicht: ущерб третьим лицам",
+      "Тарифы группы Generali",
+      "Тарифы для семей и одиноких",
     ],
   },
   {
     title: "Immobilienfinanzierung",
-    desc: "Подбор условий финансирования недвижимости в Германии в рамках программ банков-партнёров DVAG. Сопровождаю весь путь — от расчёта Tilgungsplan до подачи документов.",
+    desc: "Подбор условий финансирования недвижимости в Германии в рамках программ банков-партнёров DVAG. Сопровождаю весь путь - от расчёта Tilgungsplan до подачи документов.",
     img: "https://media.base44.com/images/public/69d7965f4b77d1c59126e18e/79242769b_generated_51f11134.png",
     details: [
       "Ипотечные кредиты (Baufinanzierung)",
@@ -146,12 +231,21 @@ export default function Services() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {current.desc}
               </p>
-              <button
-                onClick={() => setModalIndex(active)}
-                className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
-              >
-                Узнать подробнее &rarr;
-              </button>
+              {"href" in current && current.href ? (
+                <Link
+                  href={current.href}
+                  className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
+                >
+                  Подробнее на странице услуги &rarr;
+                </Link>
+              ) : (
+                <button
+                  onClick={() => setModalIndex(active)}
+                  className="inline-flex items-center gap-2 text-gold font-semibold hover:underline"
+                >
+                  Узнать подробнее &rarr;
+                </button>
+              )}
             </div>
           </AnimateOnScroll>
 
@@ -167,32 +261,41 @@ export default function Services() {
             </AnimateOnScroll>
 
             <div className="space-y-0">
-              {services.map((s, i) => (
-                <button
-                  key={s.title}
-                  onClick={() => setActive(i)}
-                  className={`w-full text-left flex items-center gap-5 py-4 border-b border-border transition-all duration-300 group ${
-                    i === active
-                      ? "border-gold"
-                      : "hover:border-gold/40"
-                  }`}
-                >
-                  <span
-                    className={`font-[family-name:var(--font-serif)] text-2xl font-bold transition-colors duration-300 ${
-                      i === active ? "text-gold" : "text-border group-hover:text-gold/50"
-                    }`}
+              {services.map((s, i) => {
+                const rowClass = `w-full text-left flex items-center gap-5 py-4 border-b border-border transition-all duration-300 group ${
+                  i === active ? "border-gold" : "hover:border-gold/40"
+                }`;
+                const numClass = `font-[family-name:var(--font-serif)] text-2xl font-bold transition-colors duration-300 ${
+                  i === active ? "text-gold" : "text-border group-hover:text-gold/50"
+                }`;
+                const titleClass = `text-base font-medium transition-colors duration-300 ${
+                  i === active ? "text-navy" : "text-muted-foreground group-hover:text-navy"
+                }`;
+                if ("href" in s && s.href) {
+                  return (
+                    <Link
+                      key={s.title}
+                      href={s.href}
+                      onMouseEnter={() => setActive(i)}
+                      onFocus={() => setActive(i)}
+                      className={rowClass}
+                    >
+                      <span className={numClass}>{pad(i + 1)}.</span>
+                      <span className={titleClass}>{s.title}</span>
+                    </Link>
+                  );
+                }
+                return (
+                  <button
+                    key={s.title}
+                    onClick={() => setActive(i)}
+                    className={rowClass}
                   >
-                    {pad(i + 1)}.
-                  </span>
-                  <span
-                    className={`text-base font-medium transition-colors duration-300 ${
-                      i === active ? "text-navy" : "text-muted-foreground group-hover:text-navy"
-                    }`}
-                  >
-                    {s.title}
-                  </span>
-                </button>
-              ))}
+                    <span className={numClass}>{pad(i + 1)}.</span>
+                    <span className={titleClass}>{s.title}</span>
+                  </button>
+                );
+              })}
             </div>
 
             <div className="mt-10 text-center">
@@ -222,6 +325,23 @@ export default function Services() {
           <div className="space-y-0">
             {services.map((s, i) => {
               const isOpen = mobileOpen === i;
+              if ("href" in s && s.href) {
+                return (
+                  <Link
+                    key={s.title}
+                    href={s.href}
+                    className="border-b border-border w-full flex items-center gap-4 py-5 text-left"
+                  >
+                    <span className="font-[family-name:var(--font-serif)] text-xl font-bold text-navy">
+                      {pad(i + 1)}.
+                    </span>
+                    <span className="font-medium text-muted-foreground">
+                      {s.title}
+                    </span>
+                    <span className="ml-auto text-muted-foreground">→</span>
+                  </Link>
+                );
+              }
               return (
                 <div key={s.title} className="border-b border-border">
                   <button
@@ -357,6 +477,14 @@ export default function Services() {
               >
                 Записаться на консультацию
               </a>
+              {"href" in modalService && modalService.href && (
+                <a
+                  href={modalService.href as string}
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2 px-6 py-3 border-2 border-navy text-navy font-semibold rounded-full text-sm sm:text-base hover:bg-navy hover:text-white transition-all"
+                >
+                  Перейти на страницу услуги →
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Особистий фінансовий консультант у Німеччині. DVAG.
+              Особиста фінансова консультація в Німеччині - через DVAG.
             </p>
           </div>
 
@@ -74,15 +74,6 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-gold flex-shrink-0" />
-                <a
-                  href="tel:+491784743490"
-                  className="text-white/50 hover:text-white transition-colors"
-                >
-                  +49 178 474 3490
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="mailto:Vladislav.Babic@dvag.de"
@@ -93,9 +84,14 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-white/50">
+                <a
+                  href="https://www.google.com/maps/place/?q=place_id:ChIJYxNUvUrfvkcR9wFAfsljmig"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/50 hover:text-white transition-colors"
+                >
                   Mottmannstr. 8, 53842 Troisdorf
-                </span>
+                </a>
               </li>
             </ul>
           </div>
@@ -131,13 +127,13 @@ export default function Footer() {
                 Профіль на DVAG
               </a>
               <a
-                href="/impressum"
+                href="/ua/impressum"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Impressum
               </a>
               <a
-                href="/datenschutz"
+                href="/ua/datenschutz"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Datenschutz
@@ -148,7 +144,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-sm text-white/40">
-            &copy; 2026 Владислав Бабіч — регіональний директор, DVAG. Усі права захищені.
+            &copy; 2026 Владислав Бабіч - регіональний директор, DVAG. Усі права захищені.
           </p>
         </div>
       </div>

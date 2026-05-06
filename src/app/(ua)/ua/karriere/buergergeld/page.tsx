@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/ua/Footer";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import RecruitmentHero from "@/components/recruitment/RecruitmentHero";
 import SupportComparison from "@/components/recruitment/SupportComparison";
 import BenefitsList from "@/components/recruitment/BenefitsList";
@@ -22,13 +23,13 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbLd } from "@/lib/structuredData";
 
 const URL_PATH = "/ua/karriere/buergergeld";
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
 
 export const metadata: Metadata = {
   title:
     "Із Bürgergeld у професію фінансового консультанта | Babic Finance",
   description:
-    "З підтримкою держави — Einstiegsgeld до 24 місяців. Допомагаємо з Tragfähigkeitsbescheinigung, супроводжуємо зустріч у Jobcenter і шлях до першого клієнта.",
+    "З підтримкою держави - Einstiegsgeld до 24 місяців. Допомагаємо з Tragfähigkeitsbescheinigung, супроводжуємо зустріч у Jobcenter і шлях до першого клієнта.",
   alternates: {
     canonical: `${SITE_URL}${URL_PATH}`,
     languages: {
@@ -71,7 +72,7 @@ export default function UaBuergergeldPage() {
         content={buergergeldHero}
         scrollTargetId="support"
         scrollLabel={ui.heroScrollLabel}
-        backgroundAlt="Babic Finance — кар'єра фінансового консультанта в Німеччині"
+        backgroundAlt="Babic Finance - кар'єра фінансового консультанта в Німеччині"
       />
       <SupportComparison
         table={supportTable}
@@ -113,6 +114,7 @@ export default function UaBuergergeldPage() {
         secondary={buergergeldFinalCTA.secondary}
       />
       <RecruitmentQualificationForm sourcePage="buergergeld" locale="ua" />
+      <FloatingContactButtons locale="ua" showMobileBar={false} />
       <Footer />
     </div>
   );

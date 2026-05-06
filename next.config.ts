@@ -11,6 +11,22 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "fin-1.de" }],
+        destination: "https://www.babicfinance.de/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.fin-1.de" }],
+        destination: "https://www.babicfinance.de/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

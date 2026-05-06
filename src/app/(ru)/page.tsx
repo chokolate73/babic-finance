@@ -11,6 +11,9 @@ import IncomeRange from "@/components/recruitment/IncomeRange";
 import RecruitmentFAQ from "@/components/recruitment/RecruitmentFAQ";
 import Seminar from "@/components/Seminar";
 import RecruitmentQualificationForm from "@/components/recruitment/RecruitmentQualificationForm";
+import StickyMobileCTA from "@/components/recruitment/StickyMobileCTA";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
+import { EventsSection } from "@/components/sections/EventsSection";
 import {
   homeHero,
   homePainPoints,
@@ -19,28 +22,29 @@ import {
   homeFAQItems,
 } from "@/data/recruitment";
 
-const SITE_URL = "https://www.fin-1.de";
+const SITE_URL = "https://www.babicfinance.de";
+const RU_HOME_URL = "https://www.babicfinance.de/";
 
 export const metadata: Metadata = {
   title:
-    "Карьера финансового консультанта в Германии — команда DVAG | Babic Finance",
+    "Карьера финансового консультанта в Германии - команда DVAG | Babic Finance",
   description:
-    "Построй карьеру финансового консультанта в Германии. Без опыта, с полной поддержкой команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
+    "Построй карьеру финансового консультанта в Германии. Без опыта, с полной поддержкой интернациональной команды DVAG и сопровождением Владислава Бабича в Troisdorf.",
   alternates: {
-    canonical: `${SITE_URL}/`,
+    canonical: RU_HOME_URL,
     languages: {
-      ru: `${SITE_URL}/`,
+      ru: RU_HOME_URL,
       de: `${SITE_URL}/de`,
       uk: `${SITE_URL}/ua`,
-      "x-default": `${SITE_URL}/`,
+      "x-default": RU_HOME_URL,
     },
   },
   openGraph: {
     title:
-      "Карьера финансового консультанта в Германии — команда DVAG",
+      "Карьера финансового консультанта в Германии - команда DVAG",
     description:
-      "Без опыта. С полной поддержкой команды. Путь от первой встречи до самостоятельного консультанта с четырьмя признанными квалификациями.",
-    url: `${SITE_URL}/`,
+      "Без опыта. С полной поддержкой интернациональной команды. Путь от первой встречи до самостоятельного консультанта с четырьмя признанными квалификациями.",
+    url: RU_HOME_URL,
     siteName: "Babic Finance",
     type: "website",
     locale: "ru_RU",
@@ -49,9 +53,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Карьера финансового консультанта в Германии — команда DVAG",
+      "Карьера финансового консультанта в Германии - команда DVAG",
     description:
-      "Без опыта. С полной поддержкой команды DVAG.",
+      "Без опыта. С полной поддержкой интернациональной команды DVAG.",
     images: ["/preview.webp"],
   },
 };
@@ -63,8 +67,9 @@ export default function Home() {
       <RecruitmentHero
         content={homeHero}
         scrollTargetId="recognize"
-        backgroundAlt="Babic Finance — карьера финансового консультанта в Германии"
+        backgroundAlt="Babic Finance - карьера финансового консультанта в Германии"
       />
+      <EventsSection locale="ru" />
       <CareerPainPoints
         id="recognize"
         eyebrow={homePainPoints.eyebrow}
@@ -87,7 +92,7 @@ export default function Home() {
             className="block w-[60px] h-[2px] bg-gold mx-auto mt-6"
           />
           <p className="text-muted-foreground mt-6 max-w-xl mx-auto">
-            Людям нужны люди. На этом построена работа DVAG — и моя личная философия консультирования.
+            Людям нужны люди. На этом построена работа DVAG - и моя личная философия консультирования.
           </p>
         </div>
       </section>
@@ -107,6 +112,8 @@ export default function Home() {
         items={homeFAQItems}
       />
       <RecruitmentQualificationForm sourcePage="homepage" />
+      <StickyMobileCTA label="Проконсультироваться" />
+      <FloatingContactButtons locale="ru" showMobileBar={false} />
       <Footer />
     </div>
   );
