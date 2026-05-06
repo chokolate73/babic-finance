@@ -37,11 +37,6 @@ export const homeHero: HeroContent = {
     { value: "4 387", label: "Kunden im Netzwerk" },
     { value: "Über 131 Mio. €", label: "Kundenkapital" },
   ],
-  pills: [
-    { text: "Ohne Vorerfahrung" },
-    { text: "Ausbildung kostenfrei" },
-    { text: "Begleitung durch DVAG" },
-  ],
 };
 
 export const homePainPoints = {
