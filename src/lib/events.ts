@@ -28,7 +28,7 @@ export const upcomingEvents: LocalizedEvent[] = [
     date: "2026-05-09",
     startTime: "10:00",
     endTime: "13:00",
-    registrationUrl: "https://wa.me/491234567890",
+    registrationUrl: "https://forms.office.com/e/TpLbVP0Tn5",
     isHighlighted: true,
     translations: {
       de: {
