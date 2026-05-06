@@ -33,7 +33,7 @@ const benefits = [
   {
     icon: Globe,
     title: "Verständlich erklärt",
-    desc: "Komplexe Themen erkläre ich einfach und nachvollziehbar. Ohne Bürokratendeutsch.",
+    desc: "Komplexe Themen erkläre ich einfach und nachvollziehbar.",
   },
   {
     icon: GraduationCap,

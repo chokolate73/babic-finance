@@ -46,12 +46,6 @@ export const homeHero: HeroContent = {
     { value: "4 387", label: "клиентов в сети" },
     { value: "131+ млн €", label: "под управлением" },
   ],
-  pills: [
-    { text: "Без опыта" },
-    { text: "Бесплатное обучение" },
-    { text: "Полная поддержка" },
-    { text: "DVAG", mobileHidden: true },
-  ],
 };
 export const homePainPoints = {
   eyebrow: "Ситуация",

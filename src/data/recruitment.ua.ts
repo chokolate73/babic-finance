@@ -36,12 +36,6 @@ export const homeHero: HeroContent = {
     { value: "4 387", label: "клієнтів у мережі" },
     { value: "131+ млн €", label: "під управлінням" },
   ],
-  pills: [
-    { text: "Без досвіду" },
-    { text: "Безкоштовне навчання" },
-    { text: "Повна підтримка" },
-    { text: "DVAG", mobileHidden: true },
-  ],
 };
 
 export const homePainPoints = {

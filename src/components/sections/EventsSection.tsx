@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Coffee, ArrowRight } from "lucide-react";
 import {
@@ -10,7 +9,6 @@ import {
   getDaysUntil,
   formatCountdown,
 } from "@/lib/events";
-import { EventModal } from "./EventModal";
 
 type Locale = "de" | "ru" | "uk";
 
@@ -42,7 +40,6 @@ const strings: Record<
 };
 
 export function EventsSection({ locale }: { locale: Locale }) {
-  const [isOpen, setIsOpen] = useState(false);
   const events = getUpcomingEvents();
   const event = events.find((e) => e.isHighlighted) ?? events[0];
   if (!event) return null;
@@ -122,26 +119,17 @@ export function EventsSection({ locale }: { locale: Locale }) {
                 <span className="text-xs text-gold font-medium">{c.included}</span>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setIsOpen(true)}
+              <a
+                href="/event"
                 className="w-full flex items-center justify-center gap-1.5 bg-gold text-navy py-3 px-4 rounded font-semibold text-sm hover:bg-gold/90 transition-colors"
               >
                 <span>{t.cta}</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>
       </section>
-
-      {isOpen && (
-        <EventModal
-          event={event}
-          locale={locale}
-          onClose={() => setIsOpen(false)}
-        />
-      )}
     </>
   );
 }

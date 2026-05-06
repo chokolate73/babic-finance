@@ -22,7 +22,7 @@ const klientyLinks: NavLink[] = [
 ];
 
 const recruitmentLinks: NavLink[] = [
-  { href: "#recognize", label: "Ситуация" },
+  { href: "/event", label: "Ивенты" },
   { href: "#faq", label: "FAQ" },
   {
     label: "Карьера",
@@ -46,7 +46,7 @@ const karriereLinks: NavLink[] = [
 ];
 
 const deRecruitmentLinks: NavLink[] = [
-  { href: "#recognize", label: "Situation" },
+  { href: "/event", label: "Events" },
   { href: "#faq", label: "FAQ" },
   {
     href: "/de/karriere",
@@ -71,7 +71,7 @@ const deKarriereLinks: NavLink[] = [
 ];
 
 const uaRecruitmentLinks: NavLink[] = [
-  { href: "#recognize", label: "Ситуація" },
+  { href: "/event", label: "Івенти" },
   { href: "#faq", label: "FAQ" },
   {
     href: "/ua/karriere",
