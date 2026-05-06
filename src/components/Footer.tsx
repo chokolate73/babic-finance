@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import InstagramIcon from "./InstagramIcon";
 import FacebookIcon from "./FacebookIcon";
@@ -26,12 +27,36 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Услуги</h4>
             <ul className="space-y-2 text-sm text-white/50">
-              <li>Финансовые консультации</li>
-              <li>Инвестиции и фонды</li>
-              <li>Пенсионное обеспечение</li>
-              <li>Страхование</li>
-              <li>Ипотека</li>
-              <li>Bausparen</li>
+              <li>
+                <Link href="/finansovye-konsultatsii" className="hover:text-white transition-colors">
+                  Финансовые консультации
+                </Link>
+              </li>
+              <li>
+                <Link href="/investitsii-i-fondy" className="hover:text-white transition-colors">
+                  Инвестиции и фонды
+                </Link>
+              </li>
+              <li>
+                <Link href="/pensionnoe-obespechenie" className="hover:text-white transition-colors">
+                  Пенсионное обеспечение
+                </Link>
+              </li>
+              <li>
+                <Link href="/strakhovanie" className="hover:text-white transition-colors">
+                  Страхование
+                </Link>
+              </li>
+              <li>
+                <Link href="/ipoteka" className="hover:text-white transition-colors">
+                  Ипотека
+                </Link>
+              </li>
+              <li>
+                <Link href="/bausparen" className="hover:text-white transition-colors">
+                  Bausparen
+                </Link>
+              </li>
             </ul>
           </div>
 

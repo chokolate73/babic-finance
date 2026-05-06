@@ -22,6 +22,24 @@ const lastModByPath: Record<string, string> = {
   "/de/blog": "2026-04-30",
   "/impressum": "2026-01-15",
   "/datenschutz": "2026-01-15",
+  "/de/finanzberatung": "2026-05-06",
+  "/de/altersvorsorge": "2026-05-06",
+  "/de/versicherungen": "2026-05-06",
+  "/de/geldanlage-investmentfonds": "2026-05-06",
+  "/de/immobilienfinanzierung": "2026-05-06",
+  "/de/bausparen": "2026-05-06",
+  "/finansovye-konsultatsii": "2026-05-06",
+  "/pensionnoe-obespechenie": "2026-05-06",
+  "/strakhovanie": "2026-05-06",
+  "/investitsii-i-fondy": "2026-05-06",
+  "/ipoteka": "2026-05-06",
+  "/bausparen": "2026-05-06",
+  "/ua/finansovi-konsultatsii": "2026-05-06",
+  "/ua/pensiine-zabezpechennia": "2026-05-06",
+  "/ua/strakhuvannia": "2026-05-06",
+  "/ua/investytsii-i-fondy": "2026-05-06",
+  "/ua/ipoteka": "2026-05-06",
+  "/ua/bausparen": "2026-05-06",
 };
 
 const lm = (path: string) => new Date(lastModByPath[path]);
@@ -227,6 +245,240 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...deBlogArticles,
+    {
+      url: `${BASE_URL}/de/finanzberatung`,
+      lastModified: lm("/de/finanzberatung"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          de: `${BASE_URL}/de/finanzberatung`,
+          ru: `${BASE_URL}/finansovye-konsultatsii`,
+          uk: `${BASE_URL}/ua/finansovi-konsultatsii`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/de/altersvorsorge`,
+      lastModified: lm("/de/altersvorsorge"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${BASE_URL}/de/altersvorsorge`,
+          ru: `${BASE_URL}/pensionnoe-obespechenie`,
+          uk: `${BASE_URL}/ua/pensiine-zabezpechennia`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/de/versicherungen`,
+      lastModified: lm("/de/versicherungen"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${BASE_URL}/de/versicherungen`,
+          ru: `${BASE_URL}/strakhovanie`,
+          uk: `${BASE_URL}/ua/strakhuvannia`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/de/geldanlage-investmentfonds`,
+      lastModified: lm("/de/geldanlage-investmentfonds"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${BASE_URL}/de/geldanlage-investmentfonds`,
+          ru: `${BASE_URL}/investitsii-i-fondy`,
+          uk: `${BASE_URL}/ua/investytsii-i-fondy`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/de/immobilienfinanzierung`,
+      lastModified: lm("/de/immobilienfinanzierung"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${BASE_URL}/de/immobilienfinanzierung`,
+          ru: `${BASE_URL}/ipoteka`,
+          uk: `${BASE_URL}/ua/ipoteka`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/de/bausparen`,
+      lastModified: lm("/de/bausparen"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${BASE_URL}/de/bausparen`,
+          ru: `${BASE_URL}/bausparen`,
+          uk: `${BASE_URL}/ua/bausparen`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/finansovye-konsultatsii`,
+      lastModified: lm("/finansovye-konsultatsii"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+      alternates: {
+        languages: {
+          ru: `${BASE_URL}/finansovye-konsultatsii`,
+          de: `${BASE_URL}/de/finanzberatung`,
+          uk: `${BASE_URL}/ua/finansovi-konsultatsii`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/pensionnoe-obespechenie`,
+      lastModified: lm("/pensionnoe-obespechenie"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+      alternates: {
+        languages: {
+          ru: `${BASE_URL}/pensionnoe-obespechenie`,
+          de: `${BASE_URL}/de/altersvorsorge`,
+          uk: `${BASE_URL}/ua/pensiine-zabezpechennia`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/strakhovanie`,
+      lastModified: lm("/strakhovanie"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+      alternates: {
+        languages: {
+          ru: `${BASE_URL}/strakhovanie`,
+          de: `${BASE_URL}/de/versicherungen`,
+          uk: `${BASE_URL}/ua/strakhuvannia`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/investitsii-i-fondy`,
+      lastModified: lm("/investitsii-i-fondy"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+      alternates: {
+        languages: {
+          ru: `${BASE_URL}/investitsii-i-fondy`,
+          de: `${BASE_URL}/de/geldanlage-investmentfonds`,
+          uk: `${BASE_URL}/ua/investytsii-i-fondy`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/ipoteka`,
+      lastModified: lm("/ipoteka"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+      alternates: {
+        languages: {
+          ru: `${BASE_URL}/ipoteka`,
+          de: `${BASE_URL}/de/immobilienfinanzierung`,
+          uk: `${BASE_URL}/ua/ipoteka`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/bausparen`,
+      lastModified: lm("/bausparen"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+      alternates: {
+        languages: {
+          ru: `${BASE_URL}/bausparen`,
+          de: `${BASE_URL}/de/bausparen`,
+          uk: `${BASE_URL}/ua/bausparen`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/ua/finansovi-konsultatsii`,
+      lastModified: lm("/ua/finansovi-konsultatsii"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          uk: `${BASE_URL}/ua/finansovi-konsultatsii`,
+          de: `${BASE_URL}/de/finanzberatung`,
+          ru: `${BASE_URL}/finansovye-konsultatsii`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/ua/pensiine-zabezpechennia`,
+      lastModified: lm("/ua/pensiine-zabezpechennia"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          uk: `${BASE_URL}/ua/pensiine-zabezpechennia`,
+          de: `${BASE_URL}/de/altersvorsorge`,
+          ru: `${BASE_URL}/pensionnoe-obespechenie`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/ua/strakhuvannia`,
+      lastModified: lm("/ua/strakhuvannia"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          uk: `${BASE_URL}/ua/strakhuvannia`,
+          de: `${BASE_URL}/de/versicherungen`,
+          ru: `${BASE_URL}/strakhovanie`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/ua/investytsii-i-fondy`,
+      lastModified: lm("/ua/investytsii-i-fondy"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          uk: `${BASE_URL}/ua/investytsii-i-fondy`,
+          de: `${BASE_URL}/de/geldanlage-investmentfonds`,
+          ru: `${BASE_URL}/investitsii-i-fondy`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/ua/ipoteka`,
+      lastModified: lm("/ua/ipoteka"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          uk: `${BASE_URL}/ua/ipoteka`,
+          de: `${BASE_URL}/de/immobilienfinanzierung`,
+          ru: `${BASE_URL}/ipoteka`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/ua/bausparen`,
+      lastModified: lm("/ua/bausparen"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          uk: `${BASE_URL}/ua/bausparen`,
+          de: `${BASE_URL}/de/bausparen`,
+          ru: `${BASE_URL}/bausparen`,
+        },
+      },
+    },
     {
       url: `${BASE_URL}/impressum`,
       lastModified: lm("/impressum"),
