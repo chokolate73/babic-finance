@@ -247,7 +247,7 @@ export default function Seminar() {
         {/* Italic note */}
         <AnimateOnScroll animation="fade-up">
           <p className="font-[family-name:var(--font-serif)] italic text-muted-foreground text-center mb-10">
-            Auch ohne Erfahrung im Finanzbereich können Sie bei null anfangen
+            Auch ohne Vorkenntnisse im Finanzbereich ist ein Einstieg möglich.
           </p>
 
           {/* CTAs */}
