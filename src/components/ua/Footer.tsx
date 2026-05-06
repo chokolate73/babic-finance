@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import InstagramIcon from "../InstagramIcon";
 import FacebookIcon from "../FacebookIcon";
@@ -26,12 +27,36 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Послуги</h4>
             <ul className="space-y-2 text-sm text-white/50">
-              <li>Фінансове консультування</li>
-              <li>Інвестиції та фонди</li>
-              <li>Пенсійне забезпечення</li>
-              <li>Страхування</li>
-              <li>Іпотечне фінансування</li>
-              <li>Ощадне будівництво (Bausparen)</li>
+              <li>
+                <Link href="/ua/finansovi-konsultatsii" className="hover:text-white transition-colors">
+                  Фінансове консультування
+                </Link>
+              </li>
+              <li>
+                <Link href="/ua/investytsii-i-fondy" className="hover:text-white transition-colors">
+                  Інвестиції та фонди
+                </Link>
+              </li>
+              <li>
+                <Link href="/ua/pensiine-zabezpechennia" className="hover:text-white transition-colors">
+                  Пенсійне забезпечення
+                </Link>
+              </li>
+              <li>
+                <Link href="/ua/strakhuvannia" className="hover:text-white transition-colors">
+                  Страхування
+                </Link>
+              </li>
+              <li>
+                <Link href="/ua/ipoteka" className="hover:text-white transition-colors">
+                  Іпотечне фінансування
+                </Link>
+              </li>
+              <li>
+                <Link href="/ua/bausparen" className="hover:text-white transition-colors">
+                  Ощадне будівництво (Bausparen)
+                </Link>
+              </li>
             </ul>
           </div>
 

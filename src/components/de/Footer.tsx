@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import InstagramIcon from "../InstagramIcon";
 import FacebookIcon from "../FacebookIcon";
@@ -18,7 +19,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Persönliche Finanzberatung in Deutschland - über die DVAG.
+              Persönlicher Finanzberater für Kunden in Deutschland. DVAG.
             </p>
           </div>
 
@@ -26,12 +27,36 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Leistungen</h4>
             <ul className="space-y-2 text-sm text-white/50">
-              <li>Finanzberatung</li>
-              <li>Geldanlage und Fonds</li>
-              <li>Altersvorsorge</li>
-              <li>Versicherung</li>
-              <li>Immobilienfinanzierung</li>
-              <li>Bausparen</li>
+              <li>
+                <Link href="/de/finanzberatung" className="hover:text-white transition-colors">
+                  Finanzberatung
+                </Link>
+              </li>
+              <li>
+                <Link href="/de/geldanlage-investmentfonds" className="hover:text-white transition-colors">
+                  Investitionen und Fonds
+                </Link>
+              </li>
+              <li>
+                <Link href="/de/altersvorsorge" className="hover:text-white transition-colors">
+                  Altersvorsorge
+                </Link>
+              </li>
+              <li>
+                <Link href="/de/versicherungen" className="hover:text-white transition-colors">
+                  Versicherung
+                </Link>
+              </li>
+              <li>
+                <Link href="/de/immobilienfinanzierung" className="hover:text-white transition-colors">
+                  Immobilienfinanzierung
+                </Link>
+              </li>
+              <li>
+                <Link href="/de/bausparen" className="hover:text-white transition-colors">
+                  Bausparen
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -49,6 +74,15 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-gold flex-shrink-0" />
+                <a
+                  href="tel:+491784743490"
+                  className="text-white/50 hover:text-white transition-colors"
+                >
+                  +49 178 474 3490
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="mailto:Vladislav.Babic@dvag.de"
@@ -59,14 +93,9 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                <a
-                  href="https://www.google.com/maps/place/?q=place_id:ChIJYxNUvUrfvkcR9wFAfsljmig"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/50 hover:text-white transition-colors"
-                >
+                <span className="text-white/50">
                   Mottmannstr. 8, 53842 Troisdorf
-                </a>
+                </span>
               </li>
             </ul>
           </div>
@@ -94,19 +123,13 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-sm">
               <a
-                href="/de/blog"
-                className="block text-white/50 hover:text-white transition-colors"
-              >
-                Blog
-              </a>
-              <a
-                href="/de/impressum"
+                href="/impressum"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Impressum
               </a>
               <a
-                href="/de/datenschutz"
+                href="/datenschutz"
                 className="block text-white/50 hover:text-white transition-colors"
               >
                 Datenschutz
